@@ -2,7 +2,7 @@
 name: Update Existing Community
 description: Request changes or updates to an existing community entry.
 title: "[Update] <Community Name>"
-labels: ["update"]
+labels: ["Update Community"]
 assignees: []
 body:
   - type: markdown
@@ -50,21 +50,11 @@ body:
       placeholder: e.g., Frequency change approved on 2025‑10‑02 due to interference.
       render: markdown
 
-  - type: textarea
-    id: references
-    attributes:
-      label: References / Evidence
-      description: Links to announcements, meeting notes, commit logs, screenshots, etc.
-      render: markdown
-
   - type: checkboxes
-    id: scope
+    id: consent
     attributes:
-      label: Impact Scope (optional)
-      description: Select any that apply.
+      label: Consent & Accuracy
+      description: Please confirm the info provided is accurate to your knowledge and appropriate to share publicly.
       options:
-        - label: Radio parameters changed
-        - label: Coverage area changed
-        - label: Communication channels changed
-        - label: Governance/maintainers changed
-        - label: Status changed (Active/Inactive/Forming)
+        - label: I confirm the information is accurate and appropriate to publish.
+          required: true
