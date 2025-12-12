@@ -77,13 +77,6 @@ body:
       placeholder: e.g., CR5
 
   - type: input
-    id: modulation
-    attributes:
-      label: Modulation / Technology
-      description: e.g., LoRa, Wi-Fi, AREDN, MeshRF, custom
-      placeholder: e.g., LoRa
-
-  - type: input
     id: discord
     attributes:
       label: Discord
@@ -104,17 +97,9 @@ body:
   - type: textarea
     id: other
     attributes:
-      label: Other Links / Resources
+      label: Other Links / Resources / Notes
       description: Forums, docs, GitHub, social media, coverage maps, signal reports, etc.
       placeholder: Add any extra relevant links or references.
-      render: markdown
-
-  - type: textarea
-    id: notes
-    attributes:
-      label: Notes
-      description: Context, goals, onboarding steps, meeting times, or anything else helpful.
-      placeholder: e.g., Weekly build night, open to newcomers, operates test nodes downtown.
       render: markdown
 
   - type: checkboxes
@@ -125,10 +110,3 @@ body:
       options:
         - label: I confirm the information is accurate and appropriate to publish.
           required: true
-
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Evidence / Verification (optional)
-      description: Provide screenshots, links, or references that validate activity or parameters.
-      render: markdown
