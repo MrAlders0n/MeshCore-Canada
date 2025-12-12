@@ -30,5 +30,3 @@ If you want to start a new community in your area, you can add it by following t
 | Prince Edward Island         | [Prince Edward Island](provinces/prince-edward-island.md) |
 | Newfoundland and Labrador    | [Newfoundland and Labrador](provinces/newfoundland-and-labrador.md) |
 | Territories (YT / NT / NU)   | [Territories](provinces/territories.md)                |
-
----
