@@ -1,0 +1,56 @@
+
+name: General Request
+description: Suggest improvements, features, or other non-community-specific changes.
+title: "[Request] <Short Description>"
+labels: ["request"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make the directory better? Share it here.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One-line description of your request.
+      placeholder: e.g., Add map-based browsing for communities
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should be added/changed and why? Include user stories or examples.
+      placeholder: |
+        As a newcomer, I want to see nearby communities on a map so I can quickly find local options.
+      render: markdown
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: type
+    attributes:
+      label: Request Type
+      description: Pick the best fit.
+      options:
+        - label: Feature / Enhancement
+        - label: Documentation / Content
+        - label: Data Import / Automation
+        - label: UX / Design
+        - label: Other
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected Impact
+      description: Who benefits and how? Include measurable outcomes if possible.
+      render: markdown
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Examples
+      description: Link to prior art, mockups, or related repos.
