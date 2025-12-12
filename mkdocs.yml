@@ -23,13 +23,6 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/MrAlders0n/MeshCore-Canada
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/asdCX#@d  # example
-
 markdown_extensions:
   - admonition
   - attr_list
