@@ -8,20 +8,9 @@ theme:
   favicon: assets/MeshCore-Canada-Favicon.png       # optional
   logo: assets/MeshCore-Canada-Favicon.png             # optional
   palette:
-    - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
       accent: blue
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
 
 markdown_extensions:
   - admonition
