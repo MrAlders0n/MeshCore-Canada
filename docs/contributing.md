@@ -27,22 +27,7 @@ Choose the template that matches what you want to do:
 
 ## 3. Fill out the form
 
-Provide as much detail as possible. Example:
-
-**Name:** Greater Ottawa Mesh Enthusiasts
-
-**Region:** Eastern Ontario & Western Quebec
-
-**Status:** Active
-
-**Frequency:** 910.525 MHz, 62.5 kHz, SF7, CR5
-
-**Discord:** <https://discord.gg/WSDF2ffd>
-
-**Website:** <https://ottawamesh.ca/>
-**Other:**
-
-If you're updating an existing entry, mention what changed.
+Provide as much detail as possible.
 
 ---
 
@@ -65,8 +50,6 @@ If you know GitHub and want to edit the markdown files directly:
 1. Fork the repo  
 2. Edit the relevant file in `docs/provinces/`  
 3. Open a pull request  
-
-See the full contributor guide in `contributing.md`.
 
 ---
 
