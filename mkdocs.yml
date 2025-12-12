@@ -7,14 +7,6 @@ theme:
   name: material
   favicon: images/favicon.png       # optional
   logo: images/logo.png             # optional
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.instant
-    - navigation.footer
-    - toc.integrate
-    - content.code.copy
-    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
