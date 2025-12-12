@@ -15,9 +15,9 @@ See [Contributing](../contributing.md) for how to add or update entries.
 
 **Frequency:** 910.525 MHz / 62.5 kHz / 7 / 5  
 
-**Discord:** [discord.gg/WSyNd8SfNr](https://discord.gg/WSyNd8SfNr)  
+**Discord:** [https://discord.gg/WSyNd8SfNr](https://discord.gg/WSyNd8SfNr)  
 
-**Website:** [ottawamesh.ca](https://ottawamesh.ca/)
+**Website:** [https://ottawamesh.ca](https://ottawamesh.ca/)
 
 ---
 
