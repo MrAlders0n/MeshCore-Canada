@@ -50,7 +50,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
   - Communities:
       - Overview: provinces/ontario.md        # or a general overview later
       - British Columbia: provinces/british-columbia.md
