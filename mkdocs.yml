@@ -1,7 +1,7 @@
 site_name: MeshCore Canada
 site_url: https://meshcore.ca
 repo_name: MeshCore Canada
-repo_url: https://github.com/YourOrg/meshcore-canada  # update this
+repo_url: https://github.com/MrAlders0n/MeshCore-Canada  # update this
 
 theme:
   name: material
@@ -34,9 +34,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/YourOrg/meshcore-canada
+      link: https://github.com/MrAlders0n/MeshCore-Canada
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/WSyNd8SfNr  # example
+      link: https://discord.gg/asdCX#@d  # example
 
 markdown_extensions:
   - admonition
