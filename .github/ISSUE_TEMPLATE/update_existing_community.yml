@@ -1,0 +1,70 @@
+
+name: Update Existing Community
+description: Request changes or updates to an existing community entry.
+title: "[Update] <Community Name>"
+labels: ["update"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help keep the directory accurate by providing the exact changes needed.
+        If multiple fields changed, list them clearly.
+
+  - type: input
+    id: name
+    attributes:
+      label: Community Name
+      description: The existing community’s name as shown in the directory.
+      placeholder: e.g., Greater Ottawa Mesh Enthusiasts
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Entry (optional)
+      description: Paste the current details or link to the entry to make review faster.
+      placeholder: Paste current values or URL to the community page.
+      render: markdown
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: Changes Needed
+      description: Describe exactly what should be updated (fields and new values).
+      placeholder: |
+        Example:
+        - Status: Active → Inactive
+        - Frequency: 910.525 MHz → 915.000 MHz
+        - Discord: oldlink → https://discord.gg/newlink
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason / Context
+      description: Why are these changes needed? Include dates, decisions, and any relevant context.
+      placeholder: e.g., Frequency change approved on 2025‑10‑02 due to interference.
+      render: markdown
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Evidence
+      description: Links to announcements, meeting notes, commit logs, screenshots, etc.
+      render: markdown
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Impact Scope (optional)
+      description: Select any that apply.
+      options:
+        - label: Radio parameters changed
+        - label: Coverage area changed
+        - label: Communication channels changed
+        - label: Governance/maintainers changed
+        - label: Status changed (Active/Inactive/Forming)
