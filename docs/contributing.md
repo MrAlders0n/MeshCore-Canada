@@ -10,7 +10,7 @@ You do not need to know Git, GitHub, or how to edit the website. Just follow the
 
 Visit the MeshCore Canada GitHub repository and click **Issues**.
 
-Link: https://github.com/MrAlders0n/MeshCore-Canada/issues
+Link: <https://github.com/MrAlders0n/MeshCore-Canada/issues>
 
 ---
 
@@ -29,12 +29,13 @@ Choose the template that matches what you want to do:
 
 Provide as much detail as possible. Example:
 
-**Community Name:** Ottawa MeshCore  
-**Province:** Ontario  
-**Region:** Ottawa and surrounding area  
-**Contact:** https://discord.gg/D89Dn2dnas  
-**Status:** Active  
-**Notes:** Using 910.525 MHz, 62.5 kHz, SF7, CR5.
+**Name:** Greater Ottawa Mesh Enthusiasts
+**Region:** Eastern Ontario & Western Quebec
+**Status:** Active
+**Frequency:** 910.525 MHz, 62.5 kHz, SF7, CR5
+**Discord:** <https://discord.gg/WSDF2ffd>
+**Website:** <https://ottawamesh.ca/>
+**Other:**
 
 If you're updating an existing entry, mention what changed.
 

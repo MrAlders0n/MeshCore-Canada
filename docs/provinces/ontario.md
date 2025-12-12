@@ -11,13 +11,18 @@ See [Contributing](../contributing.md) for how to add or update entries.
 
 **Name:** Greater Ottawa Mesh Enthusiasts
 **Region:** Eastern Ontario & Western Quebec
-**Status:** Active 
+**Status:** Active
+**Frequency:** 910.525 MHz / 62.5 kHz /7 / 5
+**Discord:** [<link>](https://discord.gg/WSyNd8SfNr)
+**Website:** [<link>](https://ottawamesh.ca/)
 
-**Contact:**
-- **Discord:** [<link>](https://discord.gg/WSyNd8SfNr)
-- **Website:** [<link>](https://ottawamesh.ca/)
+---
 
-**Notes:**
-- **Default MeshCore settings:** 910.525 MHz / 62.5 kHz /7 / 5
+**Name:** GTA+-Lora-Meshes
+**Region:** Southern Ontario
+**Status:** Active
+**Frequency:** 910.525 MHz / 62.5 kHz /7 / 5
+**Discord:** N/A
+**Website:** N/A
 
 ---
