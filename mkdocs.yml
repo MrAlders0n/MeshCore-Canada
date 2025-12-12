@@ -6,19 +6,19 @@ repo_url: https://github.com/MrAlders0n/MeshCore-Canada  # update this
 theme:
   name: material
   favicon: assets/MeshCore-Canada-Favicon.png       # optional
-  logo: assets/MeshCore-Canada-Logo.png             # optional
+  logo: assets/MeshCore-Canada-Favicon.png             # optional
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: red
-      accent: red
+      primary: amber
+      accent: amber
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: red
-      accent: red
+      primary: amber
+      accent: amber
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
