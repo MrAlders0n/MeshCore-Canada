@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # MeshCore Communities Across Canada
 
 MeshCore is a long range, low power mesh protocol built on LoRa radios.  
