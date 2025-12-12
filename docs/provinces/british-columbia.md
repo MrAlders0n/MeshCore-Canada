@@ -16,3 +16,5 @@ See [Contributing](../contributing.md) for how to add or update entries.
 **Frequency:** 910.525 MHz / 62.5 kHz / 7 / 5  
 
 **Website:** [https://salishmesh.net/](https://salishmesh.net/)
+
+---
