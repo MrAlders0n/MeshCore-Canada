@@ -30,10 +30,15 @@ Choose the template that matches what you want to do:
 Provide as much detail as possible. Example:
 
 **Name:** Greater Ottawa Mesh Enthusiasts
+
 **Region:** Eastern Ontario & Western Quebec
+
 **Status:** Active
+
 **Frequency:** 910.525 MHz, 62.5 kHz, SF7, CR5
+
 **Discord:** <https://discord.gg/WSDF2ffd>
+
 **Website:** <https://ottawamesh.ca/>
 **Other:**
 
