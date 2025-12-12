@@ -1,0 +1,67 @@
+site_name: MeshCore Canada
+site_url: https://meshcore.ca
+repo_name: MeshCore Canada
+repo_url: https://github.com/YourOrg/meshcore-canada  # update this
+
+theme:
+  name: material
+  favicon: images/favicon.png       # optional
+  logo: images/logo.png             # optional
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.instant
+    - navigation.footer
+    - toc.integrate
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YourOrg/meshcore-canada
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/WSyNd8SfNr  # example
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Communities:
+      - Overview: provinces/ontario.md        # or a general overview later
+      - British Columbia: provinces/british-columbia.md
+      - Alberta: provinces/alberta.md
+      - Saskatchewan: provinces/saskatchewan.md
+      - Manitoba: provinces/manitoba.md
+      - Ontario: provinces/ontario.md
+      - Quebec: provinces/quebec.md
+      - New Brunswick: provinces/new-brunswick.md
+      - Nova Scotia: provinces/nova-scotia.md
+      - Prince Edward Island: provinces/prince-edward-island.md
+      - Newfoundland and Labrador: provinces/newfoundland-and-labrador.md
+      - Territories (YT / NT / NU): provinces/territories.md
+  - Contributing: contributing.md
