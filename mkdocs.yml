@@ -17,8 +17,8 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
-      accent: cyan
+      primary: indigo
+      accent: blue
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
