@@ -29,8 +29,6 @@ See [Contributing](../contributing.md) for how to add or update entries.
 
 **Frequency:** 910.525 MHz / 62.5 kHz /7 / 5
 
-**Discord:** N/A
-
-**Website:** N/A
+**Discord:** [https://discord.gg/sj2EMzSMf](https://discord.gg/sj2EMzSMf)
 
 ---
