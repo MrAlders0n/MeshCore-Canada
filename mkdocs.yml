@@ -5,8 +5,8 @@ repo_url: https://github.com/MrAlders0n/MeshCore-Canada  # update this
 
 theme:
   name: material
-  favicon: images/favicon.png       # optional
-  logo: images/logo.png             # optional
+  favicon: assets/MeshCore-Canada-Favicon.png       # optional
+  logo: assets/MeshCore-Canada-Logo.png             # optional
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
