@@ -7,4 +7,12 @@ See [Contributing](../contributing.md) for how to add or update entries.
 
 ## Communities
 
-WIP
+**Name:** Salish Mesh
+
+**Region:** Salish Sea and surrounding area  
+
+**Status:** Active  
+
+**Frequency:** 910.525 MHz / 62.5 kHz / 7 / 5  
+
+**Website:** [https://salishmesh.net/](https://salishmesh.net/)
