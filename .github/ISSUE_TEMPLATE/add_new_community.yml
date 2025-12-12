@@ -1,0 +1,134 @@
+
+name: Add a New Community
+description: Submit details for a new community to be added to the directory.
+title: "[New Community] <Community Name>"
+labels: ["new-community"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Please provide accurate details so others can discover and connect with this community.
+        Fields marked **required** must be completed.
+
+  - type: input
+    id: name
+    attributes:
+      label: Community Name
+      description: Official/common name of the community.
+      placeholder: e.g., Greater Ottawa Mesh Enthusiasts
+    validations:
+      required: true
+
+  - type: input
+    id: region
+    attributes:
+      label: Region
+      description: Geographic area(s) served by the community.
+      placeholder: e.g., Eastern Ontario & Western Quebec
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      description: Is the community currently active?
+      options:
+        - Active
+        - Inactive
+        - Forming
+        - Unknown
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### Radio / Network Parameters (fill what you know)"
+
+  - type: input
+    id: frequency
+    attributes:
+      label: Frequency
+      description: Carrier frequency (if applicable).
+      placeholder: e.g., 910.525 MHz
+    validations:
+      required: false
+
+  - type: input
+    id: bandwidth
+    attributes:
+      label: Bandwidth / Channel Spacing
+      description: e.g., 62.5 kHz, 125 kHz, etc.
+      placeholder: e.g., 62.5 kHz
+
+  - type: input
+    id: spreading_factor
+    attributes:
+      label: Spreading Factor (SF)
+      description: e.g., SF7, SF9
+      placeholder: e.g., SF7
+
+  - type: input
+    id: coding_rate
+    attributes:
+      label: Coding Rate (CR)
+      description: e.g., CR5, 4/7
+      placeholder: e.g., CR5
+
+  - type: input
+    id: modulation
+    attributes:
+      label: Modulation / Technology
+      description: e.g., LoRa, Wi-Fi, AREDN, MeshRF, custom
+      placeholder: e.g., LoRa
+
+  - type: input
+    id: discord
+    attributes:
+      label: Discord
+      description: Link to the Discord server (if any).
+      placeholder: e.g., https://discord.gg/WSDF2ffd
+    validations:
+      required: false
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Official website or landing page.
+      placeholder: e.g., https://ottawamesh.ca/
+    validations:
+      required: false
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Other Links / Resources
+      description: Forums, docs, GitHub, social media, coverage maps, signal reports, etc.
+      placeholder: Add any extra relevant links or references.
+      render: markdown
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Context, goals, onboarding steps, meeting times, or anything else helpful.
+      placeholder: e.g., Weekly build night, open to newcomers, operates test nodes downtown.
+      render: markdown
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent & Accuracy
+      description: Please confirm the info provided is accurate to your knowledge and appropriate to share publicly.
+      options:
+        - label: I confirm the information is accurate and appropriate to publish.
+          required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Verification (optional)
+      description: Provide screenshots, links, or references that validate activity or parameters.
+      render: markdown
