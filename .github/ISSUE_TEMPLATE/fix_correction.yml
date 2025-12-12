@@ -1,0 +1,47 @@
+
+name: Fix a Mistake / Small Correction
+description: Report typos, incorrect info, or minor fixes for a community entry.
+title: "[Correction] <Community Name>"
+labels: ["correction"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Small fixes help keep the directory clean and trustworthy—thanks!
+
+  - type: input
+    id: name
+    attributes:
+      label: Community Name
+      description: Which entry has the mistake?
+      placeholder: e.g., Greater Ottawa Mesh Enthusiasts
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What’s wrong?
+      description: Describe the mistake or typo (include the current incorrect text/value).
+      placeholder: e.g., The website is spelled “ottawamesh.co” but should be “ottawamesh.ca”.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Proposed Fix
+      description: Provide the corrected value or wording.
+      placeholder: e.g., Website: https://ottawamesh.ca/
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: proof
+    attributes:
+      label: Reference (optional)
+      description: Link or evidence supporting the correction.
+      render: markdown
