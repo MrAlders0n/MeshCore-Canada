@@ -43,7 +43,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Communities:
-      - Overview: provinces/ontario.md        # or a general overview later
       - British Columbia: provinces/british-columbia.md
       - Alberta: provinces/alberta.md
       - Saskatchewan: provinces/saskatchewan.md
