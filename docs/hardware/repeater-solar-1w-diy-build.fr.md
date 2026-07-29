@@ -20,7 +20,7 @@ requires:
   - fabrication-experience
   - manufacturer-documentation
 page_styles:
-  - assets/styles/devices-builds.css?v=20260722-2
+  - assets/styles/devices-builds.css?v=20260728-1
 ---
 
 # Répéteur solaire expérimental de 1 W

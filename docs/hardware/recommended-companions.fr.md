@@ -15,7 +15,7 @@ difficulty: beginner
 estimated_time: 10-15 minutes
 destructive: false
 page_styles:
-  - assets/styles/devices-builds.css?v=20260722-2
+  - assets/styles/devices-builds.css?v=20260728-1
 ---
 
 # Choisir un appareil compagnon

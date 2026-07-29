@@ -195,12 +195,68 @@
     padding: var(--mc-space-4);
   }
 
-  .mc-table-wrap {
-    margin-inline: calc(-1 * var(--mc-space-2));
-    width: calc(100% + (2 * var(--mc-space-2)));
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0;
+  .mc-table-wrap--responsive {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .mc-table-wrap table.mc-table--responsive {
+    display: block;
+    min-width: 0;
+    border-collapse: separate;
+  }
+
+  .mc-table--responsive thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .mc-table--responsive tbody {
+    display: grid;
+    gap: var(--mc-space-3);
+  }
+
+  .mc-table--responsive tbody tr {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--mc-color-border);
+    border-radius: var(--mc-radius-sm);
+    background: var(--mc-color-surface);
+    box-shadow: var(--mc-shadow-1);
+  }
+
+  .mc-table--responsive tbody :is(th, td) {
+    display: grid;
+    grid-template-columns: minmax(6.75rem, 38%) minmax(0, 1fr);
+    gap: var(--mc-space-3);
+    align-items: start;
+    width: 100%;
+    padding: var(--mc-space-3);
+    border: 0;
+    border-bottom: 1px solid var(--mc-color-border);
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .mc-table--responsive tbody :is(th, td)::before {
+    color: var(--mc-color-text-muted);
+    content: attr(data-label);
+    font-size: 0.76rem;
+    font-weight: 720;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+
+  .mc-table--responsive tbody :is(th, td):last-child {
+    border-bottom: 0;
   }
 }
 

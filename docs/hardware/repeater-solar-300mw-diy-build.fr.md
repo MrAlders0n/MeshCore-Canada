@@ -19,7 +19,7 @@ requires:
   - safe-work-area
   - manufacturer-documentation
 page_styles:
-  - assets/styles/devices-builds.css?v=20260722-2
+  - assets/styles/devices-builds.css?v=20260728-1
 ---
 
 # Construire un répéteur solaire de 300 mW

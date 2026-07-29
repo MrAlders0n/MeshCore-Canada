@@ -20,7 +20,7 @@ requires:
   - fabrication-experience
   - manufacturer-documentation
 page_styles:
-  - assets/styles/devices-builds.css?v=20260722-2
+  - assets/styles/devices-builds.css?v=20260728-1
 ---
 
 # Experimental 1 W Solar Repeater

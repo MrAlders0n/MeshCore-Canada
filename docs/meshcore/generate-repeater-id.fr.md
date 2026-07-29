@@ -19,7 +19,7 @@ requires:
   - trusted-serial-connection
   - secure-key-storage
 page_styles:
-  - assets/styles/devices-builds.css?v=20260722-2
+  - assets/styles/devices-builds.css?v=20260728-1
 ---
 # Changer l’identifiant d’un répéteur dans une ancienne région à identifiant sur 1 octet
 

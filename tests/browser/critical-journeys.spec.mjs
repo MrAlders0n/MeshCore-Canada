@@ -388,3 +388,53 @@ test("mobile critical pages do not overflow the viewport", async ({ page }, test
     expect(overflow.content, `${route} should fit its mobile viewport`).toBeLessThanOrEqual(overflow.viewport + 1);
   }
 });
+
+test("mobile home region search stays compact in both languages", async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.startsWith("mobile-"), "Mobile layout contract");
+  for (const route of ["/", "/fr/"]) {
+    await page.goto(siteRoute(route), { waitUntil: "domcontentloaded" });
+    const geometry = await page.locator(".mc-place-search").evaluate((form) => {
+      const input = form.querySelector("input[type='search']");
+      const inputRect = input.getBoundingClientRect();
+      const formRect = form.getBoundingClientRect();
+      return {
+        inputHeight: inputRect.height,
+        formHeight: formRect.height,
+        inputWidth: inputRect.width,
+        formWidth: formRect.width
+      };
+    });
+    expect(geometry.inputHeight, `${route} search field should be a single line`).toBeLessThan(64);
+    expect(geometry.formHeight, `${route} search form should stay compact`).toBeLessThan(260);
+    expect(geometry.inputWidth).toBeLessThanOrEqual(geometry.formWidth);
+  }
+});
+
+test("build tables become labelled mobile cards in both languages", async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.startsWith("mobile-"), "Mobile table contract");
+  for (const route of [
+    "/hardware/repeater-solar-1w-diy-build/#check-the-readings",
+    "/fr/hardware/repeater-solar-1w-diy-build/#verifier-les-mesures"
+  ]) {
+    await page.goto(siteRoute(route), { waitUntil: "domcontentloaded" });
+    const table = page.locator(".mc-table-wrap table").first();
+    await expect(table).toHaveClass(/mc-table--responsive/);
+    const layout = await table.evaluate((element) => {
+      const wrapper = element.closest(".mc-table-wrap");
+      const cells = Array.from(element.querySelectorAll("tbody td"));
+      return {
+        viewportWidth: document.documentElement.clientWidth,
+        documentWidth: document.documentElement.scrollWidth,
+        tableWidth: element.getBoundingClientRect().width,
+        wrapperWidth: wrapper.getBoundingClientRect().width,
+        wrapperOverflow: getComputedStyle(wrapper).overflowX,
+        labelledCells: cells.filter((cell) => (cell.dataset.label || "").trim()).length,
+        cellCount: cells.length
+      };
+    });
+    expect(layout.documentWidth).toBeLessThanOrEqual(layout.viewportWidth + 1);
+    expect(layout.wrapperOverflow).toBe("visible");
+    expect(layout.tableWidth).toBeLessThanOrEqual(layout.wrapperWidth + 1);
+    expect(layout.labelledCells).toBe(layout.cellCount);
+  }
+});

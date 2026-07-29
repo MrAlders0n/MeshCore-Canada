@@ -364,6 +364,12 @@ a[target="_blank"]::after {
     flex-direction: column;
   }
 
+  .mc-place-search input[type="search"] {
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
   .mc-place-search button {
     width: 100%;
   }

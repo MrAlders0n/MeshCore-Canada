@@ -140,11 +140,37 @@
     });
   }
 
+  function initialiseResponsiveTables() {
+    document.querySelectorAll(".mc-table-wrap table").forEach(function (table) {
+      if (table.dataset.mcResponsiveReady === "true") return;
+
+      var headings = Array.from(table.querySelectorAll("thead th")).map(function (heading) {
+        return (heading.textContent || "").replace(/\s+/g, " ").trim();
+      });
+      if (!headings.length) return;
+
+      table.querySelectorAll("tbody tr").forEach(function (row) {
+        var column = 0;
+        Array.from(row.children).forEach(function (cell) {
+          var span = Math.max(Number.parseInt(cell.getAttribute("colspan") || "1", 10), 1);
+          var labels = headings.slice(column, column + span).filter(Boolean);
+          if (labels.length) cell.setAttribute("data-label", labels.join(" / "));
+          column += span;
+        });
+      });
+
+      table.dataset.mcResponsiveReady = "true";
+      table.classList.add("mc-table--responsive");
+      table.closest(".mc-table-wrap").classList.add("mc-table-wrap--responsive");
+    });
+  }
+
   function initialise() {
     initialiseProgress();
     labelExternalLinks();
     labelThemeControls();
     initialiseSearchInputs();
+    initialiseResponsiveTables();
   }
 
   if (window.document$ && typeof window.document$.subscribe === "function") {
