@@ -23,7 +23,7 @@ If you know of a community that is missing or needs an update, open an update re
 | Field | Value |
 |-------|-------|
 | Region | Regina / Southern Saskatchewan |
-| Status | Forming |
+| Status | Active |
 | Radio preset | `USA/Canada (Recommended)` |
 | Raw radio values | `910.525 MHz / 62.5 kHz / SF7 / CR5` |
 | Path hash mode | `3-byte` |
