@@ -293,8 +293,8 @@ def validate_data(data: dict[str, Any]) -> Validation:
                 check.error(f"{label} repeats inherited national {field} as an override")
 
         contacts = community.get("contacts")
-        if not isinstance(contacts, list) or not contacts:
-            check.error(f"{label}.contacts must be a non-empty array")
+        if not isinstance(contacts, list):
+            check.error(f"{label}.contacts must be an array")
             contacts = []
         contact_keys: set[tuple[Any, Any, Any]] = set()
         for contact_index, contact in enumerate(contacts):
@@ -782,15 +782,24 @@ def render_community_card(community: dict[str, Any], metadata: dict[str, Any]) -
                 "</p>",
             ]
         )
+    if community["contacts"]:
+        lines.extend(
+            [
+                "<h4>Contacts</h4>",
+                '<ul class="mc-community-contacts">',
+                *render_contacts(community),
+                "</ul>",
+                '<p class="mc-community-contact-health">',
+                "<strong>Contact check:</strong> Not yet verified",
+                "</p>",
+            ]
+        )
+    else:
+        lines.append(
+            '<p class="mc-community-no-contact">No public contact has been provided yet.</p>'
+        )
     lines.extend(
         [
-            "<h4>Contacts</h4>",
-            '<ul class="mc-community-contacts">',
-            *render_contacts(community),
-            "</ul>",
-            '<p class="mc-community-contact-health">',
-            "<strong>Contact check:</strong> Not yet verified",
-            "</p>",
             (
                 '<p class="mc-community-card__action"><a href="../../submit-idea/">'
                 "Update this listing</a></p>"
@@ -1349,15 +1358,24 @@ def render_community_card_fr(
                 "</p>",
             ]
         )
+    if community["contacts"]:
+        lines.extend(
+            [
+                "<h4>Coordonnées</h4>",
+                '<ul class="mc-community-contacts">',
+                *render_contacts_fr(community),
+                "</ul>",
+                '<p class="mc-community-contact-health">',
+                "<strong>Vérification du contact :</strong> Pas encore vérifié",
+                "</p>",
+            ]
+        )
+    else:
+        lines.append(
+            '<p class="mc-community-no-contact">Aucune coordonnée publique n’a encore été fournie.</p>'
+        )
     lines.extend(
         [
-            "<h4>Coordonnées</h4>",
-            '<ul class="mc-community-contacts">',
-            *render_contacts_fr(community),
-            "</ul>",
-            '<p class="mc-community-contact-health">',
-            "<strong>Vérification du contact :</strong> Pas encore vérifié",
-            "</p>",
             (
                 '<p class="mc-community-card__action"><a href="../../submit-idea/">'
                 "Mettre cette fiche à jour</a></p>"

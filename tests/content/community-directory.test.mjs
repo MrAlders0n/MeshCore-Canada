@@ -85,6 +85,7 @@ const expectedCommunities = new Map([
     ["https://discord.gg/CznDhsRWnJ", "https://meshmonitoring.com/"],
   ],
   ["stoonmesh", ["https://discord.gg/7yGnJuMGkG"]],
+  ["yqrmesh", []],
   [
     "greater-ottawa-mesh-enthusiasts",
     ["https://discord.gg/WSyNd8SfNr", "https://ottawamesh.ca/"],
@@ -147,8 +148,8 @@ function idsMatching(query) {
     .map((community) => community.id);
 }
 
-test("all 21 structured listings and every curated contact URL are preserved", () => {
-  assert.equal(data.communities.length, 21);
+test("all 22 structured listings and every curated contact URL are preserved", () => {
+  assert.equal(data.communities.length, 22);
   assert.deepEqual(
     new Set(data.communities.map((community) => community.id)),
     new Set(expectedCommunities.keys()),
@@ -184,7 +185,7 @@ test("the generated directory cannot drift from structured data", () => {
       encoding: "utf8",
     },
   );
-  assert.match(output, /Community directory validated: 21 listings/);
+  assert.match(output, /Community directory validated: 22 listings/);
 });
 
 test("search covers reviewed place names and common aliases", () => {
@@ -198,6 +199,8 @@ test("search covers reviewed place names and common aliases", () => {
   assert.deepEqual(idsMatching("YTF"), [
     "reseau-mesh-saguenay-lac-saint-jean-ytf",
   ]);
+  assert.deepEqual(idsMatching("YQR"), ["yqrmesh"]);
+  assert.deepEqual(idsMatching("Regina"), ["yqrmesh"]);
   assert.deepEqual(idsMatching("Montréal"), ["montreal-mesh", "reseau-libre"]);
   assert.deepEqual(idsMatching("Airdrie"), [
     "alberta-meshcore-networks",
@@ -280,6 +283,11 @@ test("all listings inherit the three-byte Canada baseline", () => {
     (community) => community.id === "stoonmesh",
   );
   assert.deepEqual(stoonmesh.settings.overrides, {});
+  const yqrmesh = data.communities.find(
+    (community) => community.id === "yqrmesh",
+  );
+  assert.deepEqual(yqrmesh.settings.overrides, {});
+  assert.deepEqual(yqrmesh.contacts, []);
 
   const saskatchewan = readFileSync(
     join(provinceDir, "saskatchewan.md"),
@@ -291,6 +299,19 @@ test("all listings inherit the three-byte Canada baseline", () => {
   );
   assert.doesNotMatch(saskatchewan, /1-byte/);
   assert.match(saskatchewan, /Uses the Canada defaults/);
+  assert.match(
+    saskatchewan,
+    /<h3>YQRMesh<\/h3>[\s\S]*?No public contact has been provided yet\./,
+  );
+
+  const saskatchewanFr = readFileSync(
+    join(provinceDir, "saskatchewan.fr.md"),
+    "utf8",
+  );
+  assert.match(
+    saskatchewanFr,
+    /<h3>YQRMesh<\/h3>[\s\S]*?Aucune coordonnée publique n’a encore été fournie\./,
+  );
 });
 
 test("summaries and added social contact types render from structured data", () => {

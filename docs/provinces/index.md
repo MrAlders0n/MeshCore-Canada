@@ -27,13 +27,13 @@ Search by place, province, community name, or a common alias. The full list
 works without a map, location permission, or a GitHub account.
 
 !!! note "Community information can change"
-    21 of 21 listings do not have a recent contact check.
+    22 of 22 listings do not have a recent contact check.
     Confirm important settings and contacts before relying on them.
 
 <div class="mc-directory-summary" aria-label="Directory summary">
-<span><strong>21</strong> listings</span>
+<span><strong>22</strong> listings</span>
 <span><strong>20</strong> listed active</span>
-<span><strong>1</strong> listed forming</span>
+<span><strong>2</strong> listed forming</span>
 <span><strong>0</strong> with different local settings</span>
 </div>
 
@@ -56,7 +56,7 @@ works without a map, location permission, or a GitHub account.
   </label>
   <button class="md-button" type="button" data-community-clear>Clear</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Showing 21 communities
+    Showing 22 communities
   </output>
 </div>
 
@@ -262,6 +262,19 @@ works without a map, location permission, or a GitHub account.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-stoonmesh">View listing details</a></p>
 </article>
+<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="forming" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan sk saskatchewan regina southern saskatchewan yqr">
+<div class="mc-community-card__header">
+<h3><a href="saskatchewan/#community-yqrmesh">YQRMesh</a></h3>
+<span class="mc-community-status" data-status="forming">Forming</span>
+</div>
+<p class="mc-community-area">Regina and Southern Saskatchewan</p>
+<p><strong>Province:</strong> <a href="saskatchewan/">Saskatchewan</a></p>
+<p><strong>Settings:</strong> Uses the Canada defaults</p>
+<p><strong>Last verified:</strong> Not yet verified</p>
+<ul class="mc-community-contacts">
+</ul>
+<p class="mc-community-card__action"><a href="saskatchewan/#community-yqrmesh">View listing details</a></p>
+</article>
 <article class="mc-community-card" id="directory-greater-ottawa-mesh-enthusiasts" data-community-card data-community-status="active" data-community-override="false" data-community-search="greater ottawa mesh enthusiasts eastern ontario and western quebec on ontario ottawa eastern ontario western quebec">
 <div class="mc-community-card__header">
 <h3><a href="ontario/#community-greater-ottawa-mesh-enthusiasts">Greater Ottawa Mesh Enthusiasts</a></h3>
@@ -437,7 +450,7 @@ Use these settings unless your local community lists different ones.
 </article>
 <article class="mc-province-card">
 <h3><a href="saskatchewan/">Saskatchewan</a></h3>
-<p>1 active</p>
+<p>1 active, 1 forming</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="manitoba/">Manitoba</a></h3>

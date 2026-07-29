@@ -27,13 +27,13 @@ Recherchez par lieu, province, nom de communauté ou alias courant. La liste
 complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 
 !!! note "Les renseignements sur les communautés peuvent changer"
-    21 fiches sur 21 n’ont pas fait l’objet d’une vérification récente des coordonnées.
+    22 fiches sur 22 n’ont pas fait l’objet d’une vérification récente des coordonnées.
     Confirmez les réglages et les coordonnées importants avant de vous y fier.
 
 <div class="mc-directory-summary" aria-label="Résumé du répertoire">
-<span><strong>21</strong> fiches</span>
+<span><strong>22</strong> fiches</span>
 <span><strong>20</strong> fiches actives</span>
-<span><strong>1</strong> fiche en formation</span>
+<span><strong>2</strong> fiches en formation</span>
 <span><strong>0</strong> fiches avec des réglages locaux différents</span>
 </div>
 
@@ -56,7 +56,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
   </label>
   <button class="md-button" type="button" data-community-clear>Effacer</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Affichage de 21 communautés
+    Affichage de 22 communautés
   </output>
 </div>
 
@@ -262,6 +262,19 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-stoonmesh">Voir les détails de la fiche</a></p>
 </article>
+<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="forming" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan regina et sud de la saskatchewan sk saskatchewan regina southern saskatchewan yqr">
+<div class="mc-community-card__header">
+<h3><a href="saskatchewan/#community-yqrmesh">YQRMesh</a></h3>
+<span class="mc-community-status" data-status="forming">En formation</span>
+</div>
+<p class="mc-community-area">Regina et sud de la Saskatchewan</p>
+<p><strong>Province ou territoire :</strong> <a href="saskatchewan/">Saskatchewan</a></p>
+<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
+<ul class="mc-community-contacts">
+</ul>
+<p class="mc-community-card__action"><a href="saskatchewan/#community-yqrmesh">Voir les détails de la fiche</a></p>
+</article>
 <article class="mc-community-card" id="directory-greater-ottawa-mesh-enthusiasts" data-community-card data-community-status="active" data-community-override="false" data-community-search="greater ottawa mesh enthusiasts eastern ontario and western quebec est de l’ontario et ouest du quebec on ontario ottawa eastern ontario western quebec">
 <div class="mc-community-card__header">
 <h3><a href="ontario/#community-greater-ottawa-mesh-enthusiasts">Greater Ottawa Mesh Enthusiasts</a></h3>
@@ -437,7 +450,7 @@ Utilisez ces réglages sauf si votre communauté locale en indique d’autres.
 </article>
 <article class="mc-province-card">
 <h3><a href="saskatchewan/">Saskatchewan</a></h3>
-<p>1 active</p>
+<p>1 active, 1 en formation</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="manitoba/">Manitoba</a></h3>

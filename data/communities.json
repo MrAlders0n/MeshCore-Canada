@@ -794,6 +794,35 @@
       "canonical_route": "/provinces/saskatchewan/#community-stoonmesh"
     },
     {
+      "id": "yqrmesh",
+      "name": "YQRMesh",
+      "province": "SK",
+      "service_area": "Regina and Southern Saskatchewan",
+      "places": [
+        "Regina"
+      ],
+      "aliases": [
+        "Southern Saskatchewan",
+        "YQR"
+      ],
+      "status": "forming",
+      "languages": [],
+      "location": {
+        "latitude": null,
+        "longitude": null,
+        "precision": "service-area"
+      },
+      "settings": {
+        "inherit_national": true,
+        "overrides": {}
+      },
+      "contacts": [],
+      "owner": null,
+      "verified_at": null,
+      "verify_by": null,
+      "canonical_route": "/provinces/saskatchewan/#community-yqrmesh"
+    },
+    {
       "id": "greater-ottawa-mesh-enthusiasts",
       "name": "Greater Ottawa Mesh Enthusiasts",
       "province": "ON",
