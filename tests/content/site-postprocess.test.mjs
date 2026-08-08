@@ -52,7 +52,7 @@ test("noindex pages are removed from the sitemap and recorded in the manifest", 
     );
 
     assert.match(sitemap, /https:\/\/canadaverse\.org\/meshcore-canada\/<\/loc>/);
-    assert.match(home, /href="https:\/\/canadaverse\.org\/meshcore-canada\/fr\/" hreflang="fr"/);
+    assert.doesNotMatch(home, /<link\b[^>]*rel="alternate"/);
     assert.doesNotMatch(sitemap, /meshcore-canada\/(?:draft|raw)\//);
     assert.equal(sitemapGzip, sitemap);
     assert.equal(manifest.indexedPageCount, 1);
@@ -79,7 +79,7 @@ test("noindex pages are removed from the sitemap and recorded in the manifest", 
   }
 });
 
-test("language alternates target equivalent English and French routes", async () => {
+test("head alternates are removed while the direct language menu remains", async () => {
   const root = await mkdtemp(join(tmpdir(), "mcc-site-language-alternates-"));
   try {
     await mkdir(join(root, "hardware"), { recursive: true });
@@ -93,8 +93,12 @@ test("language alternates target equivalent English and French routes", async ()
       '<link rel="alternate" href="/meshcore-canada/" hreflang="en">',
       '<link rel="alternate" href="/meshcore-canada/fr/" hreflang="fr">',
     ].join("");
-    await writeFile(join(root, "hardware", "index.html"), staleAlternates, "utf8");
-    await writeFile(join(root, "fr", "hardware", "index.html"), staleAlternates, "utf8");
+    const directMenu = [
+      '<a class="md-select__link" href="./" hreflang="en" target="_self">English</a>',
+      '<a class="md-select__link" href="../../fr/hardware/" hreflang="fr" target="_self">Français</a>',
+    ].join("");
+    await writeFile(join(root, "hardware", "index.html"), staleAlternates + directMenu, "utf8");
+    await writeFile(join(root, "fr", "hardware", "index.html"), staleAlternates + directMenu, "utf8");
     const stale404 = staleAlternates + [
       '<a class="md-select__link" href="/meshcore-canada/tools/" hreflang="en">English</a>',
       '<a class="md-select__link" href="/meshcore-canada/fr/tools/" hreflang="fr">Français</a>',
@@ -119,8 +123,9 @@ test("language alternates target equivalent English and French routes", async ()
       join(root, "fr", "hardware", "index.html"),
     ]) {
       const html = await readFile(page, "utf8");
-      assert.match(html, /href="https:\/\/canadaverse\.org\/meshcore-canada\/hardware\/" hreflang="en"/);
-      assert.match(html, /href="https:\/\/canadaverse\.org\/meshcore-canada\/fr\/hardware\/" hreflang="fr"/);
+      assert.doesNotMatch(html, /<link\b[^>]*rel="alternate"/);
+      assert.match(html, /href="\.\/" hreflang="en" target="_self"/);
+      assert.match(html, /href="\.\.\/\.\.\/fr\/hardware\/" hreflang="fr" target="_self"/);
     }
     const notFound = await readFile(join(root, "404.html"), "utf8");
     assert.doesNotMatch(notFound, /rel="alternate"/);

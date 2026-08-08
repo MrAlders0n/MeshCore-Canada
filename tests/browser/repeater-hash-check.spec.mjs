@@ -104,6 +104,17 @@ test("the configurator defers Beacon region loading until the checker needs it",
   await expect.poll(() => iataRequests).toBe(1);
 });
 
+test("nested pages do not probe page-relative sitemaps or an absent GitHub release", async ({ page }) => {
+  const requests = [];
+  page.on("request", (request) => requests.push(request.url()));
+  await page.goto(siteRoute("/start/repeater/"));
+  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
+  await page.waitForTimeout(250);
+
+  expect(requests.filter((url) => /\/start\/repeater\/sitemap\.xml$/.test(url))).toEqual([]);
+  expect(requests.filter((url) => url.endsWith("/releases/latest"))).toEqual([]);
+});
+
 test("the configurator checker mounts without a disruptive layout shift", async ({ page }) => {
   await page.addInitScript(() => {
     window.__mcLayoutShift = 0;

@@ -28,9 +28,11 @@ const languageMenuAnchorPattern =
   /<a\b(?=[^>]*\bclass=["'][^"']*\bmd-select__link\b)(?=[^>]*\bhreflang=["'](?:en|fr)["'])[^>]*>/gi;
 
 function rewriteAlternateLinks(html, siteBaseUrl, pageName) {
+  // The bilingual sitemap already carries hreflang pairs. Material treats head
+  // alternates as site roots and otherwise probes <page>/sitemap.xml on load.
+  const withoutHeadAlternates = html.replace(alternateTagPattern, "");
   if (pageName === "404.html") {
-    return html
-      .replace(alternateTagPattern, "")
+    return withoutHeadAlternates
       .replace(languageMenuAnchorPattern, (tag) => {
         const language = tag.match(/\bhreflang=["'](en|fr)["']/i)?.[1]?.toLowerCase();
         const route = language === "fr" ? "fr/" : "";
@@ -38,21 +40,7 @@ function rewriteAlternateLinks(html, siteBaseUrl, pageName) {
         return tag.replace(/\bhref=["'][^"']*["']/i, `href="${absoluteHref}"`);
       });
   }
-
-  const equivalentPage = pageName.startsWith("fr/")
-    ? pageName.slice("fr/".length)
-    : pageName;
-  const equivalentRoute = equivalentPage.endsWith("index.html")
-    ? equivalentPage.slice(0, -"index.html".length)
-    : equivalentPage;
-
-  return html.replace(alternateTagPattern, (tag) => {
-    const language = tag.match(/\bhreflang=["'](en|fr)["']/i)?.[1]?.toLowerCase();
-    if (!language) return tag;
-    const route = language === "fr" ? `fr/${equivalentRoute}` : equivalentRoute;
-    const absoluteHref = new URL(route, siteBaseUrl).href;
-    return tag.replace(/\bhref=["'][^"']*["']/i, `href="${absoluteHref}"`);
-  });
+  return withoutHeadAlternates;
 }
 
 async function pathStat(path) {
