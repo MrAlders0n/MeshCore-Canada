@@ -138,3 +138,17 @@ test("local Learn links point to source pages", () => {
     }
   }
 });
+
+test("About pages preserve the live service maintainer credits", () => {
+  const english = read("docs/about.md");
+  const french = read("docs/about.fr.md");
+  for (const [name, url] of [
+    ["Mr. Alderson", "https://github.com/MrAlders0n"],
+    ["Ded", "https://github.com/446564"],
+    ["n30nex", "https://github.com/n30nex"],
+    ["Kranic", "https://forum.meshcore.ca/u/djkranic"],
+  ]) {
+    assert.ok(english.includes(`[${name}](${url})`), name);
+    assert.ok(french.includes(`[${name}](${url})`), `${name} French credit`);
+  }
+});

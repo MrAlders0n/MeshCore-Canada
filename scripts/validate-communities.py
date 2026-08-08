@@ -535,6 +535,20 @@ def render_contacts(community: dict[str, Any], *, indent: str = "") -> list[str]
     return lines
 
 
+def contact_check_label(contacts: list[dict[str, Any]]) -> str:
+    health = {contact["health"] for contact in contacts}
+    if "expired" in health:
+        return "A link needs updating"
+    if health == {"verified"}:
+        checked_dates = {contact["last_checked"] for contact in contacts}
+        if len(checked_dates) == 1:
+            return f"Verified on {checked_dates.pop()}"
+        return "All links verified"
+    if "verified" in health:
+        return "Some links still need review"
+    return "Not yet verified"
+
+
 def render_settings(community: dict[str, Any], *, compact: bool = False) -> str:
     overrides = community["settings"]["overrides"]
     if not overrides:
@@ -789,8 +803,17 @@ def render_community_card(community: dict[str, Any], metadata: dict[str, Any]) -
                 '<ul class="mc-community-contacts">',
                 *render_contacts(community),
                 "</ul>",
+            ]
+        )
+        if community["owner"]:
+            lines.append(
+                '<p class="mc-community-owner"><strong>Listing contact:</strong> '
+                f'{html.escape(community["owner"])}</p>'
+            )
+        lines.extend(
+            [
                 '<p class="mc-community-contact-health">',
-                "<strong>Contact check:</strong> Not yet verified",
+                f"<strong>Contact check:</strong> {contact_check_label(community['contacts'])}",
                 "</p>",
             ]
         )
@@ -916,7 +939,10 @@ def render_province_page(data: dict[str, Any], page: dict[str, Any]) -> str:
             lines.extend(
                 [
                     f"<p><strong>{contact['type'].title()}:</strong> {rendered}</p>",
-                    "<p><strong>Contact check:</strong> Not yet verified</p>",
+                    (
+                        "<p><strong>Contact check:</strong> "
+                        f"{contact_check_label([contact])}</p>"
+                    ),
                 ]
             )
         lines.extend(["</div>", ""])
@@ -1063,6 +1089,20 @@ def render_contacts_fr(community: dict[str, Any], *, indent: str = "") -> list[s
     return lines
 
 
+def contact_check_label_fr(contacts: list[dict[str, Any]]) -> str:
+    health = {contact["health"] for contact in contacts}
+    if "expired" in health:
+        return "Un lien doit être mis à jour"
+    if health == {"verified"}:
+        checked_dates = {contact["last_checked"] for contact in contacts}
+        if len(checked_dates) == 1:
+            return f"Effectuée le {checked_dates.pop()}"
+        return "Tous les liens sont vérifiés"
+    if "verified" in health:
+        return "Certains liens restent à vérifier"
+    return "Pas encore effectuée"
+
+
 def render_settings_fr(community: dict[str, Any], *, compact: bool = False) -> str:
     overrides = community["settings"]["overrides"]
     if not overrides:
@@ -1207,7 +1247,7 @@ def render_index_fr(data: dict[str, Any], french: dict[str, Any]) -> str:
         "  </label>",
         '  <button class="md-button" type="button" data-community-clear>Effacer</button>',
         '  <output class="mc-directory-tools__count" data-community-count aria-live="polite">',
-        f"    Affichage de {len(communities)} communautés",
+        f"    {len(communities)} communautés affichées",
         "  </output>",
         "</div>",
         "",
@@ -1365,8 +1405,20 @@ def render_community_card_fr(
                 '<ul class="mc-community-contacts">',
                 *render_contacts_fr(community),
                 "</ul>",
+            ]
+        )
+        if community["owner"]:
+            lines.append(
+                '<p class="mc-community-owner"><strong>Contact pour cette fiche :</strong> '
+                f'{html.escape(community["owner"])}</p>'
+            )
+        lines.extend(
+            [
                 '<p class="mc-community-contact-health">',
-                "<strong>Vérification du contact :</strong> Pas encore vérifié",
+                (
+                    "<strong>Vérification :</strong> "
+                    f"{contact_check_label_fr(community['contacts'])}"
+                ),
                 "</p>",
             ]
         )
@@ -1505,7 +1557,10 @@ def render_province_page_fr(
             lines.extend(
                 [
                     f"<p><strong>{contact_type_label_fr(contact['type'])} :</strong> {rendered}</p>",
-                    "<p><strong>Vérification du contact :</strong> Pas encore vérifié</p>",
+                    (
+                        "<p><strong>Vérification :</strong> "
+                        f"{contact_check_label_fr([contact])}</p>"
+                    ),
                 ]
             )
         lines.extend(["</div>", ""])

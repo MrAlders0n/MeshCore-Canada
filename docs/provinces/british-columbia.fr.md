@@ -46,7 +46,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://salishmesh.net/" rel="noopener">Site Web de Salish Mesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>

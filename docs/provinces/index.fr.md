@@ -56,7 +56,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
   </label>
   <button class="md-button" type="button" data-community-clear>Effacer</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Affichage de 23 communautés
+    23 communautés affichées
   </output>
 </div>
 

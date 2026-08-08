@@ -49,7 +49,7 @@ Ce groupe est en formation. Communiquez avec lui pour savoir ce qui fonctionne e
 <li><strong>Facebook :</strong> <a href="https://www.facebook.com/groups/613466831163684" rel="noopener">MESHCORE Saint John, N.B.</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>

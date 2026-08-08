@@ -9,9 +9,9 @@ task: understand-project
 scope: canada-baseline
 status: verified
 owner: site-maintainers
-last_reviewed: 2026-07-22
-review_by: 2026-10-22
-evidence: Project scope and contribution routes reviewed on 2026-07-22
+last_reviewed: 2026-08-08
+review_by: 2026-11-08
+evidence: Project scope, contribution routes, and live service credits reviewed on 2026-08-08
 difficulty: beginner
 estimated_time: 3 minutes
 destructive: false
@@ -34,6 +34,12 @@ plus sur le micrologiciel, les applications et le protocole, consultez la
 - le répertoire des communautés canadiennes et la carte des régions;
 - des outils pour les répéteurs et les observateurs;
 - le [code source du site Web](https://github.com/MeshCore-ca/MeshCore-Canada){ target="_blank" rel="noopener" }.
+
+Nous exploitons aussi des services MQTT et CoreScope partagés pour les
+utilisateurs canadiens. Ces services sont maintenus par
+[Mr. Alderson](https://github.com/MrAlders0n), [Ded](https://github.com/446564),
+[n30nex](https://github.com/n30nex) et
+[Kranic](https://forum.meshcore.ca/u/djkranic).
 
 ## Participer
 

@@ -45,8 +45,9 @@ sauf si une fiche indique des réglages locaux différents.
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
+<p class="mc-community-owner"><strong>Contact pour cette fiche :</strong> pifane</p>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Effectuée le 2026-08-08
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -67,7 +68,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://qcmesh.net" rel="noopener">Site Web de Mesh Québec</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -88,7 +89,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://www.montrealmesh.ca" rel="noopener">Site Web de Montreal Mesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -109,7 +110,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Discord :</strong> <a href="https://discord.gg/UhGjTF2MfA" rel="noopener">Discord du Réseau Mesh de la Capitale YQB</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -132,7 +133,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>MeshMapper :</strong> <a href="https://ytf.meshmapper.net/" rel="noopener">Carte MeshMapper du Réseau Mesh du Saguenay–Lac-Saint-Jean YTF</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -153,7 +154,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://lora.reseaulibre.ca/" rel="noopener">Site Web de Réseau Libre</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>

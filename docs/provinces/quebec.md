@@ -45,8 +45,9 @@ card lists different local settings.
 <ul class="mc-community-contacts">
 <li><strong>Website:</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(external)</span></li>
 </ul>
+<p class="mc-community-owner"><strong>Listing contact:</strong> pifane</p>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-08
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>

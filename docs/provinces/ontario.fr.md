@@ -47,7 +47,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://ottawamesh.ca/" rel="noopener">Site Web d’Ottawa Mesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -68,7 +68,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Discord :</strong> <a href="https://discord.gg/wSHbeb86r4" rel="noopener">Discord de GTA+-Lora-Meshes</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -90,7 +90,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://quintemesh.ca/" rel="noopener">Site Web de Quinte Mesh Network</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification du contact :</strong> Pas encore vérifié
+<strong>Vérification :</strong> Pas encore effectuée
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>

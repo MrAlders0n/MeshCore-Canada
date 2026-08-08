@@ -243,6 +243,11 @@ test("the list remains complete without JavaScript or a map", () => {
 
 test("overview counts, empty states, and page metadata are generated", () => {
   const index = readFileSync(join(provinceDir, "index.md"), "utf8");
+  const indexFr = readFileSync(join(provinceDir, "index.fr.md"), "utf8");
+  const directoryScript = readFileSync(
+    join(root, "docs", "assets", "javascripts", "communities.js"),
+    "utf8",
+  );
   const active = data.communities.filter(
     (community) => community.status === "active",
   ).length;
@@ -251,6 +256,9 @@ test("overview counts, empty states, and page metadata are generated", () => {
   ).length;
   assert.match(index, new RegExp(`<strong>${active}</strong> listed active`));
   assert.match(index, new RegExp(`<strong>${forming}</strong> listed forming`));
+  assert.match(indexFr, new RegExp(`${data.communities.length} communautés affichées`));
+  assert.match(directoryScript, /document\.documentElement\.lang/);
+  assert.match(directoryScript, /communauté affichée/);
 
   for (const page of data.directory_pages) {
     const markdown = readFileSync(join(provinceDir, `${page.slug}.md`), "utf8");
@@ -299,6 +307,17 @@ test("all listings inherit the three-byte Canada baseline", () => {
   assert.equal(charlevoix.status, "active");
   assert.deepEqual(charlevoix.settings.overrides, {});
   assert.equal(charlevoix.owner, "pifane");
+
+  const quebec = readFileSync(join(provinceDir, "quebec.md"), "utf8");
+  assert.match(
+    quebec,
+    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Listing contact:<\/strong> pifane[\s\S]*?<strong>Contact check:<\/strong> Verified on 2026-08-08/,
+  );
+  const quebecFr = readFileSync(join(provinceDir, "quebec.fr.md"), "utf8");
+  assert.match(
+    quebecFr,
+    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Contact pour cette fiche :<\/strong> pifane[\s\S]*?<strong>Vérification :<\/strong> Effectuée le 2026-08-08/,
+  );
 
   const saskatchewan = readFileSync(
     join(provinceDir, "saskatchewan.md"),

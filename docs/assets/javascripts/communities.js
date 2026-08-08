@@ -25,6 +25,7 @@
     );
     var empty = page.querySelector("[data-community-empty]");
     var clearButtons = page.querySelectorAll("[data-community-clear]");
+    var isFrench = document.documentElement.lang.toLowerCase().indexOf("fr") === 0;
 
     if (!search || !status || !override || !count || !empty || !cards.length) {
       return;
@@ -66,8 +67,9 @@
       });
 
       empty.hidden = visible !== 0;
-      count.textContent =
-        "Showing " + visible + " " + (visible === 1 ? "community" : "communities");
+      count.textContent = isFrench
+        ? visible + " " + (visible === 1 ? "communauté affichée" : "communautés affichées")
+        : "Showing " + visible + " " + (visible === 1 ? "community" : "communities");
       if (!options || options.updateUrl !== false) {
         updateUrl(search.value.trim());
       }
