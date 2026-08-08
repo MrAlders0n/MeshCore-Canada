@@ -156,6 +156,9 @@
       var number = (fields.number.value || "").trim();
       var ssid = fields.ssid.value || "";
       var password = fields.password.value || "";
+      var passwordBytes = utf8Length(password);
+      var validWpaPassword = (passwordBytes >= 8 && passwordBytes <= 63) ||
+        (passwordBytes === 64 && /^[0-9A-Fa-f]{64}$/.test(password));
       var repeat = fields.repeat.value;
       var nodeName = iata && number ? iata + "-" + role + "-" + number : "";
 
@@ -191,10 +194,10 @@
         ));
         markInvalid(fields.ssid, true);
       }
-      if (!password || utf8Length(password) > 64 || !safeCliToken(password)) {
+      if (!validWpaPassword || !safeCliToken(password)) {
         messages.push(tr(
-          "Enter a 1–64 byte password using the safe CLI character set, or use Configure via USB for this network.",
-          "Entrez un mot de passe de 1 à 64 octets avec les caractères permis par l’interface de commande, ou utilisez Configure via USB pour ce réseau."
+          "Enter an 8–63 byte Wi-Fi password, or an exact 64-digit hexadecimal PSK, using the safe CLI character set. Use Configure via USB for other networks.",
+          "Entrez un mot de passe Wi-Fi de 8 à 63 octets, ou une clé PSK hexadécimale d’exactement 64 caractères, avec les caractères permis par l’interface de commande. Utilisez Configure via USB pour les autres réseaux."
         ));
         markInvalid(fields.password, true);
       }

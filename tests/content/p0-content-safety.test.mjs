@@ -217,6 +217,21 @@ test("observer builder fails closed and redacts valid WiFi credentials", () => {
   assert.match(errors.textContent, /safe CLI character set/);
   assert.doesNotMatch(output.textContent, /bad|reboot/);
 
+  elements.get("observer-password").value = "short7";
+  rootElement.dispatch("input");
+  assert.equal(copyButton.disabled, true);
+  assert.match(errors.textContent, /8–63 byte Wi-Fi password/);
+
+  elements.get("observer-password").value = "Z".repeat(64);
+  rootElement.dispatch("input");
+  assert.equal(copyButton.disabled, true);
+  assert.match(errors.textContent, /64-digit hexadecimal PSK/);
+
+  elements.get("observer-password").value = "A1".repeat(32);
+  rootElement.dispatch("input");
+  assert.equal(errors.textContent, "");
+  assert.match(output.textContent, /set wifi\.pwd \[hidden\]/);
+
   windowListeners.get("pagehide")();
   assert.equal(elements.get("observer-ssid").value, "");
   assert.equal(elements.get("observer-password").value, "");
