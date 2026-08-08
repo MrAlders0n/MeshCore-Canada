@@ -2,6 +2,16 @@
   margin: var(--mc-space-8) 0;
 }
 
+/* Reserve the form's space until its small progressive-enhancement script runs. */
+[data-mc-repeater-hash-check]:empty {
+  display: block;
+  min-height: 44.25rem;
+}
+
+[data-mc-repeater-hash-check][data-mc-hash-layout="wide"] {
+  min-height: 35.5rem;
+}
+
 .mc-hash-checker {
   padding: clamp(1rem, 3vw, 1.6rem);
   border: 1px solid var(--mc-color-border);
@@ -286,6 +296,11 @@
 }
 
 @media (max-width: 46rem) {
+  [data-mc-repeater-hash-check]:empty,
+  [data-mc-repeater-hash-check][data-mc-hash-layout="wide"]:empty {
+    min-height: 52.5rem;
+  }
+
   .mc-hash-controls {
     grid-template-columns: 1fr;
   }

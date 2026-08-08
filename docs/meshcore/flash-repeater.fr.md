@@ -19,9 +19,9 @@ requires:
   - data-capable-usb-cable
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
-  - assets/styles/repeater-hash-check.css?v=20260808-1
+  - assets/styles/repeater-hash-check.css?v=20260808-2
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260808-1
+  - assets/javascripts/repeater-hash-check.js?v=20260808-2
 ---
 # Programmer, configurer et tester un répéteur sur l’établi
 

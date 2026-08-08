@@ -14,12 +14,12 @@ tested_with:
 difficulty: intermediate
 estimated_time: 5-10 minutes
 page_styles:
-  - assets/regions/regions.css?v=20260722-3
-  - assets/styles/repeater-hash-check.css?v=20260808-1
+  - assets/regions/regions.css?v=20260808-4
+  - assets/styles/repeater-hash-check.css?v=20260808-2
 page_scripts:
   - assets/regions/modules/configurator-support.js?v=20260722-2
   - assets/regions/regions.js?v=20260722-3
-  - assets/javascripts/repeater-hash-check.js?v=20260808-1
+  - assets/javascripts/repeater-hash-check.js?v=20260808-2
 hide:
   - navigation
   - toc
@@ -31,7 +31,7 @@ if your local network uses them.
 
 <div data-mcc-regions="config" data-mcc-root="./"></div>
 
-<div data-mc-repeater-hash-check></div>
+<div data-mc-repeater-hash-check data-mc-hash-layout="wide"></div>
 
 <noscript>JavaScript is required. [Read the region standard](standard.md).</noscript>
 

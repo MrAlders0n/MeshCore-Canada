@@ -20,9 +20,9 @@ requires:
   - secure-key-storage
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
-  - assets/styles/repeater-hash-check.css?v=20260808-1
+  - assets/styles/repeater-hash-check.css?v=20260808-2
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260808-1
+  - assets/javascripts/repeater-hash-check.js?v=20260808-2
 ---
 # Changer l’identifiant d’un répéteur dans une ancienne région à identifiant sur 1 octet
 

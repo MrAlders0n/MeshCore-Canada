@@ -103,6 +103,12 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   color: var(--mcc-text);
 }
 
+/* Match the first configurator step before its progressive enhancement mounts. */
+[data-mcc-regions="config"] {
+  display: block;
+  min-height: 35.5rem;
+}
+
 .mcc-tool *,
 [data-mcc-regions] * {
   box-sizing: border-box;

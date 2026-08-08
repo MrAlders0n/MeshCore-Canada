@@ -14,7 +14,7 @@ tested_with:
   region_catalog: national-partition-2026-07-19
 difficulty: intermediate
 page_styles:
-  - assets/regions/regions.css?v=20260722-3
+  - assets/regions/regions.css?v=20260808-4
 page_scripts:
   - assets/regions/modules/configurator-support.js?v=20260722-2
   - assets/regions/regions.js?v=20260722-3

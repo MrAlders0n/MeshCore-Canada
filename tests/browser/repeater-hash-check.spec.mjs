@@ -88,6 +88,38 @@ test("French repeater pages render and report collisions in French", async ({ pa
   await expect(page.getByRole("heading", { name: "Comparer les tailles d’identifiant" })).toBeVisible();
 });
 
+test("the configurator defers Beacon region loading until the checker needs it", async ({ page }) => {
+  let iataRequests = 0;
+  await page.route("https://dev.meshcore.ca/api/v1/iatas", async (route) => {
+    iataRequests += 1;
+    await route.fulfill({ contentType: "application/json", body: "[]" });
+  });
+  await page.goto(siteRoute("/config/"));
+  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What are you configuring?" })).toBeVisible();
+  await page.waitForTimeout(250);
+  expect(iataRequests).toBe(0);
+
+  await page.getByLabel("Closest Beacon region").focus();
+  await expect.poll(() => iataRequests).toBe(1);
+});
+
+test("the configurator checker mounts without a disruptive layout shift", async ({ page }) => {
+  await page.addInitScript(() => {
+    window.__mcLayoutShift = 0;
+    new PerformanceObserver((list) => {
+      list.getEntries().forEach((entry) => {
+        if (!entry.hadRecentInput) window.__mcLayoutShift += entry.value;
+      });
+    }).observe({ type: "layout-shift", buffered: true });
+  });
+  await page.goto(siteRoute("/config/"));
+  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What are you configuring?" })).toBeVisible();
+  await page.waitForTimeout(250);
+  expect(await page.evaluate(() => window.__mcLayoutShift)).toBeLessThan(0.1);
+});
+
 test("the configurator selects the nearest Beacon region without sending the location to Beacon", async ({ page }) => {
   const nodeRequests = await mockBeacon(page);
   await page.goto(siteRoute("/config/?place=Ottawa"), { waitUntil: "domcontentloaded" });

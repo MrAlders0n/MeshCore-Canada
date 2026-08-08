@@ -109,5 +109,7 @@ test("loads one shared checker on the English and French repeater configuration 
   const css = readFileSync("docs/assets/styles/repeater-hash-check.css", "utf8");
   assert.match(css, /@media \(max-width: 46rem\)/);
   assert.match(css, /content: attr\(data-label\)/);
+  assert.match(css, /\[data-mc-repeater-hash-check\]:empty[\s\S]*min-height/);
+  assert.match(script, /regionInput\.addEventListener\("focus", loadIatas/);
   assert.doesNotMatch(script, /privateKey|prv\.key[^"']*fetch/i);
 });

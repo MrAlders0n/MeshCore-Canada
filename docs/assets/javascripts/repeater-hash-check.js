@@ -462,7 +462,7 @@
       '<p class="mc-hash-hint" id="mc-hash-region-hint-' + instanceCount + '">' + escapeHtml(message(language, "regionHint")) + '</p>' +
       '<div class="mc-hash-actions"><button type="submit" class="md-button md-button--primary">' + escapeHtml(message(language, "check")) + '</button></div>' +
       '<p class="mc-hash-privacy">' + escapeHtml(message(language, "privacy")) + '</p>' +
-      '<div class="mc-hash-status" data-role="hash-status" aria-live="polite">' + escapeHtml(message(language, "loadingRegions")) + '</div>' +
+      '<div class="mc-hash-status" data-role="hash-status" aria-live="polite"></div>' +
       '</form><div data-role="result"></div></section>';
   }
 
@@ -498,26 +498,34 @@
     var status = host.querySelector("[data-role='hash-status']");
     var datalist = host.querySelector("datalist");
     var submit = host.querySelector("button[type='submit']");
+    var loadedIatas = null;
     var saved = storedIata();
     if (saved) regionInput.value = saved;
 
-    sharedIatas().then(function (iatas) {
-      datalist.innerHTML = iatas.sort(function (left, right) {
-        return normalizeIata(left.iata).localeCompare(normalizeIata(right.iata));
-      }).map(function (item) {
-        return '<option value="' + escapeHtml(normalizeIata(item.iata)) + '">' + escapeHtml(item.displayName || "") + '</option>';
-      }).join("");
-      status.textContent = "";
-      if (host._mcSelectedRegion) applyLocation(host, iatas, host._mcSelectedRegion, language);
-    }).catch(function () {
-      status.textContent = message(language, "regionsUnavailable");
-    });
+    function loadIatas() {
+      if (loadedIatas) return Promise.resolve(loadedIatas);
+      status.textContent = message(language, "loadingRegions");
+      return sharedIatas().then(function (iatas) {
+        loadedIatas = iatas.slice().sort(function (left, right) {
+          return normalizeIata(left.iata).localeCompare(normalizeIata(right.iata));
+        });
+        datalist.innerHTML = loadedIatas.map(function (item) {
+          return '<option value="' + escapeHtml(normalizeIata(item.iata)) + '">' + escapeHtml(item.displayName || "") + '</option>';
+        }).join("");
+        status.textContent = "";
+        if (host._mcSelectedRegion) applyLocation(host, loadedIatas, host._mcSelectedRegion, language);
+        return loadedIatas;
+      }).catch(function () {
+        status.textContent = message(language, "regionsUnavailable");
+        return [];
+      });
+    }
+
+    regionInput.addEventListener("focus", loadIatas, { once: true });
 
     document.addEventListener("meshcore:region-selected", function (event) {
       host._mcSelectedRegion = event.detail || null;
-      sharedIatas().then(function (iatas) {
-        applyLocation(host, iatas, host._mcSelectedRegion, language);
-      }).catch(function () { /* Manual IATA entry remains available. */ });
+      loadIatas();
     });
 
     regionInput.addEventListener("input", function () {
