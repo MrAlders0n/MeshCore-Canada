@@ -19,6 +19,9 @@ requires:
   - data-capable-usb-cable
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 # Flash, configure, and bench-test a repeater
 
@@ -125,6 +128,10 @@ The last command should report `moderate`. Watch for lost legitimate traffic
 and restore the recorded value if delivery gets worse. This setting can limit
 a packet storm; it does not repair a faulty repeater or prove the mesh is
 healthy. See the [official CLI reference](https://docs.meshcore.io/cli_commands/#view-or-change-this-nodes-loop-detection){ target="_blank" rel="noopener" }.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript is required for the live duplicate-ID check. You can also [search the public-key prefix in CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Verify and bench-test
 

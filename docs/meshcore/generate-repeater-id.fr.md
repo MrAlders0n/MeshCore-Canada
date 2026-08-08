@@ -20,6 +20,9 @@ requires:
   - secure-key-storage
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 # Changer l’identifiant d’un répéteur dans une ancienne région à identifiant sur 1 octet
 
@@ -38,6 +41,10 @@ Changer la clé privée change l’identité du nœud. Cette opération peut rom
 4. Confirmez que l’identifiant proposé de 2 à 6 caractères n’est pas déjà utilisé dans le registre de coordination de la région.
 
 Ne publiez et ne transmettez jamais une clé privée dans un billet, une capture d’écran, une discussion publique ou un journal. La clé privée précédente que vous avez sauvegardée est votre seul moyen de revenir en arrière.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript est requis pour vérifier les identifiants en direct. Vous pouvez aussi [rechercher le préfixe proposé dans CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Générer et appliquer la clé
 

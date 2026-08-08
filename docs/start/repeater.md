@@ -18,6 +18,10 @@ destructive: false
 requires:
   - supported-repeater
   - data-capable-usb-cable
+page_styles:
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 
 # Start with a repeater
@@ -69,6 +73,10 @@ community lists different settings.
 
 Use the [repeater configurator](../config/index.md) to find the regional
 settings and review its commands before applying them.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript is required for the live duplicate-ID check. You can also [search the public-key prefix in CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Make sure it works
 

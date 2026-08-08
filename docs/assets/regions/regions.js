@@ -2288,6 +2288,14 @@
         state.maxStep = Math.max(state.maxStep, 3);
         setStatus(els.status, "Region found.", "info");
         renderConfigRegionBrowser(state.resolution.primary.seed.tag);
+        document.dispatchEvent(new CustomEvent("meshcore:region-selected", {
+          detail: {
+            lat: state.lat,
+            lon: state.lon,
+            label: state.name,
+            tag: state.resolution.primary.seed.tag
+          }
+        }));
       }
       refreshTool(data, els, state, updateMapLinks);
       updateMapLinks();

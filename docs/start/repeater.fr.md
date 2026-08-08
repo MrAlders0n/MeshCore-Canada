@@ -18,6 +18,10 @@ destructive: false
 requires:
   - supported-repeater
   - data-capable-usb-cable
+page_styles:
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 
 # Commencer avec un répéteur
@@ -73,6 +77,10 @@ sur **3 octets**, sauf si votre communauté indique d’autres paramètres.
 
 Utilisez le [configurateur de répéteur](../config/index.md) pour trouver les
 paramètres régionaux. Relisez les commandes avant de les appliquer.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript est requis pour vérifier les identifiants en direct. Vous pouvez aussi [rechercher le préfixe de la clé publique dans CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Vérifier que tout fonctionne
 

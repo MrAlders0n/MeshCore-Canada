@@ -26,6 +26,7 @@ Vous pouvez consulter ce site sans compte MeshCore Canada ni compte GitHub.
 | Rechercher dans cette documentation | Vos mots de recherche restent dans le navigateur | Nulle part |
 | Rechercher un lieu dans les outils de région | Le lieu, le code d’aéroport ou le code postal saisi | Vérification locale d’abord, puis OpenStreetMap ou geocoder.ca au besoin |
 | Ouvrir la carte interactive des régions | Votre adresse IP et la partie visible de la carte | OpenStreetMap |
+| Vérifier un identifiant de parcours de répéteur | Le premier octet de la clé publique | Beacon à dev.meshcore.ca; les comparaisons régionales et des préfixes plus longs restent dans votre navigateur |
 | Ouvrir un lien externe | Les renseignements habituels d’une requête Web | Le service externe indiqué |
 | Soumettre une idée ou une proposition de région | Le texte et les détails affichés lors de la révision, ainsi que la vérification antipourriel | Le service de soumission de MeshCore Canada, Cloudflare Turnstile et un billet GitHub public |
 
@@ -41,10 +42,11 @@ limitation du débit. Aucune période de conservation n’a encore été publié
 
 ## Données enregistrées sur votre appareil
 
-Les listes de configuration et les brouillons d’idées sont enregistrés
-uniquement dans votre navigateur lorsque vous utilisez ces fonctions. Les mots
-de passe, les clés privées, les jetons antipourriel et les recherches
-d’emplacement n’y sont pas enregistrés.
+Les listes de configuration, les brouillons d’idées et le dernier code de
+région Beacon choisi dans l’outil de vérification sont enregistrés uniquement
+dans votre navigateur lorsque vous utilisez ces fonctions. Les clés publiques
+des répéteurs, les mots de passe, les clés privées, les jetons antipourriel et
+les recherches d’emplacement n’y sont pas enregistrés.
 
 Vous pouvez effacer les données enregistrées par ce site dans les paramètres de
 votre navigateur. Le formulaire d’idée offre aussi l’action

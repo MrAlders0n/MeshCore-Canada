@@ -20,6 +20,9 @@ requires:
   - secure-key-storage
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 # Change a Repeater ID for a Legacy 1-Byte Region
 
@@ -38,6 +41,10 @@ Changing the private key changes the node identity. It can break existing admini
 4. Confirm the proposed 2–6 character ID is unused in the local region's coordination record.
 
 Never post or transmit either private key through an issue, screenshot, public chat, or log. The saved old private key is the rollback path.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript is required for the live duplicate-ID check. You can also [search the proposed prefix in CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Generate and apply the key
 

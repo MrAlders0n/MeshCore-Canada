@@ -26,6 +26,7 @@ You can read this site without a MeshCore Canada or GitHub account.
 | Search this documentation | Your search words stay in the browser | Nowhere |
 | Search for a place in the region tools | The place, airport code, or postal code you enter | Checked locally first, then sent to OpenStreetMap or geocoder.ca if needed |
 | Open the interactive region map | Your IP address and the visible map area | OpenStreetMap |
+| Check a repeater path ID | The first byte of the public key | Beacon at dev.meshcore.ca; regional and longer-prefix comparisons stay in your browser |
 | Open an external link | Normal web request information | The named external service |
 | Submit an idea or region proposal | The text and proposal details shown at review, plus anti-spam verification | MeshCore Canada’s submission service, Cloudflare Turnstile, and a public GitHub issue |
 
@@ -40,8 +41,9 @@ period has not yet been published.
 
 ## Saved on your device
 
-Setup checklists and idea drafts are saved in your browser only when you use
-those features. Passwords, private keys, anti-spam tokens, and location
+Setup checklists, idea drafts, and the last Beacon region code selected in the
+repeater-ID checker are saved in your browser only when you use those features.
+Repeater public keys, passwords, private keys, anti-spam tokens, and location
 searches are not saved there.
 
 You can clear saved site data through your browser settings. The idea form also

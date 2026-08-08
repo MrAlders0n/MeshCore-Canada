@@ -19,6 +19,9 @@ requires:
   - data-capable-usb-cable
 page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
+  - assets/styles/repeater-hash-check.css?v=20260808-1
+page_scripts:
+  - assets/javascripts/repeater-hash-check.js?v=20260808-1
 ---
 # Programmer, configurer et tester un répéteur sur l’établi
 
@@ -150,6 +153,10 @@ légitime et restaurez la valeur notée si la livraison se dégrade. Ce réglage
 peut limiter une tempête de paquets; il ne répare pas un répéteur défectueux et
 ne prouve pas que le réseau maillé est sain. Consultez la
 [référence officielle de la CLI](https://docs.meshcore.io/cli_commands/#view-or-change-this-nodes-loop-detection){ target="_blank" rel="noopener" }.
+
+<div data-mc-repeater-hash-check></div>
+
+<noscript>JavaScript est requis pour vérifier les identifiants en direct. Vous pouvez aussi [rechercher le préfixe de la clé publique dans CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
 ## Vérifier et tester sur l’établi
 
