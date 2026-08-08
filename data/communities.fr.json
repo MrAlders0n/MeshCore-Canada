@@ -99,6 +99,9 @@
     "quinte-mesh-network": {
       "service_area": "Région de Quinte, y compris Belleville, Trenton, le comté de Prince Edward et les environs"
     },
+    "charlevoix-yml": {
+      "service_area": "Charlevoix, y compris La Malbaie"
+    },
     "mesh-quebec": {
       "service_area": "Québec"
     },

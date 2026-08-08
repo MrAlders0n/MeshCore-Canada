@@ -27,13 +27,13 @@ Recherchez par lieu, province, nom de communauté ou alias courant. La liste
 complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 
 !!! note "Les renseignements sur les communautés peuvent changer"
-    22 fiches sur 22 n’ont pas fait l’objet d’une vérification récente des coordonnées.
+    22 fiches sur 23 n’ont pas fait l’objet d’une vérification récente des coordonnées.
     Confirmez les réglages et les coordonnées importants avant de vous y fier.
 
 <div class="mc-directory-summary" aria-label="Résumé du répertoire">
-<span><strong>22</strong> fiches</span>
-<span><strong>20</strong> fiches actives</span>
-<span><strong>2</strong> fiches en formation</span>
+<span><strong>23</strong> fiches</span>
+<span><strong>22</strong> fiches actives</span>
+<span><strong>1</strong> fiche en formation</span>
 <span><strong>0</strong> fiches avec des réglages locaux différents</span>
 </div>
 
@@ -56,7 +56,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
   </label>
   <button class="md-button" type="button" data-community-clear>Effacer</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Affichage de 22 communautés
+    Affichage de 23 communautés
   </output>
 </div>
 
@@ -262,10 +262,10 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-stoonmesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="forming" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan regina et sud de la saskatchewan sk saskatchewan regina southern saskatchewan yqr">
+<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan regina et sud de la saskatchewan sk saskatchewan regina southern saskatchewan yqr">
 <div class="mc-community-card__header">
 <h3><a href="saskatchewan/#community-yqrmesh">YQRMesh</a></h3>
-<span class="mc-community-status" data-status="forming">En formation</span>
+<span class="mc-community-status" data-status="active">Active</span>
 </div>
 <p class="mc-community-area">Regina et sud de la Saskatchewan</p>
 <p><strong>Province ou territoire :</strong> <a href="saskatchewan/">Saskatchewan</a></p>
@@ -318,6 +318,20 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <li><strong>Site Web :</strong> <a href="https://quintemesh.ca/" rel="noopener">Site Web de Quinte Mesh Network</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-card__action"><a href="ontario/#community-quinte-mesh-network">Voir les détails de la fiche</a></p>
+</article>
+<article class="mc-community-card" id="directory-charlevoix-yml" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de charlevoix (yml) charlevoix, including la malbaie charlevoix, y compris la malbaie qc quebec la malbaie charlevoix yml">
+<div class="mc-community-card__header">
+<h3><a href="quebec/#community-charlevoix-yml">Réseau MESH de Charlevoix (YML)</a></h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Charlevoix, y compris La Malbaie</p>
+<p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
+<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Dernière vérification :</strong> 2026-07-31</p>
+<ul class="mc-community-contacts">
+<li><strong>Site Web :</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(externe)</span></li>
+</ul>
+<p class="mc-community-card__action"><a href="quebec/#community-charlevoix-yml">Voir les détails de la fiche</a></p>
 </article>
 <article class="mc-community-card" id="directory-mesh-quebec" data-community-card data-community-status="active" data-community-override="false" data-community-search="mesh quebec quebec qc">
 <div class="mc-community-card__header">
@@ -450,7 +464,7 @@ Utilisez ces réglages sauf si votre communauté locale en indique d’autres.
 </article>
 <article class="mc-province-card">
 <h3><a href="saskatchewan/">Saskatchewan</a></h3>
-<p>1 active, 1 en formation</p>
+<p>2 actives</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="manitoba/">Manitoba</a></h3>
@@ -462,7 +476,7 @@ Utilisez ces réglages sauf si votre communauté locale en indique d’autres.
 </article>
 <article class="mc-province-card">
 <h3><a href="quebec/">Québec</a></h3>
-<p>5 actives</p>
+<p>6 actives</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="new-brunswick/">Nouveau-Brunswick</a></h3>

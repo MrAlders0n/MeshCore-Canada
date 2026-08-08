@@ -21,7 +21,7 @@ page_styles:
 
 # Communautés MeshCore au Québec
 
-Il y a **5 fiches de communauté actives** au Québec.
+Il y a **6 fiches de communauté actives** au Québec.
 
 Toutes les fiches utilisent les [réglages par défaut du Canada](index.md#canada-baseline),
 sauf si une fiche indique des réglages locaux différents.
@@ -29,6 +29,27 @@ sauf si une fiche indique des réglages locaux différents.
 ## Fiches des communautés
 
 <div class="mc-community-grid">
+<article class="mc-community-card mc-community-card--detail" id="community-charlevoix-yml">
+<div class="mc-community-card__header">
+<h3>Réseau MESH de Charlevoix (YML)</h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Charlevoix, y compris La Malbaie</p>
+<dl class="mc-community-facts">
+<div><dt>Réglages</dt>
+<dd>Utilise les réglages par défaut du Canada</dd></div>
+<div><dt>Dernière vérification</dt>
+<dd>2026-07-31</dd></div>
+</dl>
+<h4>Coordonnées</h4>
+<ul class="mc-community-contacts">
+<li><strong>Site Web :</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(externe)</span></li>
+</ul>
+<p class="mc-community-contact-health">
+<strong>Vérification du contact :</strong> Pas encore vérifié
+</p>
+<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+</article>
 <article class="mc-community-card mc-community-card--detail" id="community-mesh-quebec">
 <div class="mc-community-card__header">
 <h3>Mesh Quebec</h3>

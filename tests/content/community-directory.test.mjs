@@ -95,6 +95,7 @@ const expectedCommunities = new Map([
     "quinte-mesh-network",
     ["https://discord.gg/V5esJEP67X", "https://quintemesh.ca/"],
   ],
+  ["charlevoix-yml", ["https://chxmesh.ca/"]],
   ["mesh-quebec", ["https://qcmesh.net"]],
   ["montreal-mesh", ["https://www.montrealmesh.ca"]],
   ["reseau-mesh-capitale-yqb", ["https://discord.gg/UhGjTF2MfA"]],
@@ -148,8 +149,8 @@ function idsMatching(query) {
     .map((community) => community.id);
 }
 
-test("all 22 structured listings and every curated contact URL are preserved", () => {
-  assert.equal(data.communities.length, 22);
+test("all 23 structured listings and every curated contact URL are preserved", () => {
+  assert.equal(data.communities.length, 23);
   assert.deepEqual(
     new Set(data.communities.map((community) => community.id)),
     new Set(expectedCommunities.keys()),
@@ -185,7 +186,7 @@ test("the generated directory cannot drift from structured data", () => {
       encoding: "utf8",
     },
   );
-  assert.match(output, /Community directory validated: 22 listings/);
+  assert.match(output, /Community directory validated: 23 listings/);
 });
 
 test("search covers reviewed place names and common aliases", () => {
@@ -196,6 +197,8 @@ test("search covers reviewed place names and common aliases", () => {
   ]);
   assert.deepEqual(idsMatching("Belleville"), ["quinte-mesh-network"]);
   assert.deepEqual(idsMatching("Quebec City"), ["reseau-mesh-capitale-yqb"]);
+  assert.deepEqual(idsMatching("La Malbaie"), ["charlevoix-yml"]);
+  assert.deepEqual(idsMatching("YML"), ["charlevoix-yml"]);
   assert.deepEqual(idsMatching("YTF"), [
     "reseau-mesh-saguenay-lac-saint-jean-ytf",
   ]);
@@ -286,8 +289,16 @@ test("all listings inherit the three-byte Canada baseline", () => {
   const yqrmesh = data.communities.find(
     (community) => community.id === "yqrmesh",
   );
+  assert.equal(yqrmesh.status, "active");
   assert.deepEqual(yqrmesh.settings.overrides, {});
   assert.deepEqual(yqrmesh.contacts, []);
+
+  const charlevoix = data.communities.find(
+    (community) => community.id === "charlevoix-yml",
+  );
+  assert.equal(charlevoix.status, "active");
+  assert.deepEqual(charlevoix.settings.overrides, {});
+  assert.equal(charlevoix.owner, "pifane");
 
   const saskatchewan = readFileSync(
     join(provinceDir, "saskatchewan.md"),

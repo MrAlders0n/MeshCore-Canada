@@ -27,13 +27,13 @@ Search by place, province, community name, or a common alias. The full list
 works without a map, location permission, or a GitHub account.
 
 !!! note "Community information can change"
-    22 of 22 listings do not have a recent contact check.
+    22 of 23 listings do not have a recent contact check.
     Confirm important settings and contacts before relying on them.
 
 <div class="mc-directory-summary" aria-label="Directory summary">
-<span><strong>22</strong> listings</span>
-<span><strong>20</strong> listed active</span>
-<span><strong>2</strong> listed forming</span>
+<span><strong>23</strong> listings</span>
+<span><strong>22</strong> listed active</span>
+<span><strong>1</strong> listed forming</span>
 <span><strong>0</strong> with different local settings</span>
 </div>
 
@@ -56,7 +56,7 @@ works without a map, location permission, or a GitHub account.
   </label>
   <button class="md-button" type="button" data-community-clear>Clear</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Showing 22 communities
+    Showing 23 communities
   </output>
 </div>
 
@@ -262,10 +262,10 @@ works without a map, location permission, or a GitHub account.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-stoonmesh">View listing details</a></p>
 </article>
-<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="forming" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan sk saskatchewan regina southern saskatchewan yqr">
+<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan sk saskatchewan regina southern saskatchewan yqr">
 <div class="mc-community-card__header">
 <h3><a href="saskatchewan/#community-yqrmesh">YQRMesh</a></h3>
-<span class="mc-community-status" data-status="forming">Forming</span>
+<span class="mc-community-status" data-status="active">Active</span>
 </div>
 <p class="mc-community-area">Regina and Southern Saskatchewan</p>
 <p><strong>Province:</strong> <a href="saskatchewan/">Saskatchewan</a></p>
@@ -318,6 +318,20 @@ works without a map, location permission, or a GitHub account.
 <li><strong>Website:</strong> <a href="https://quintemesh.ca/" rel="noopener">Quinte Mesh Network website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-card__action"><a href="ontario/#community-quinte-mesh-network">View listing details</a></p>
+</article>
+<article class="mc-community-card" id="directory-charlevoix-yml" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de charlevoix (yml) charlevoix, including la malbaie qc quebec la malbaie charlevoix yml">
+<div class="mc-community-card__header">
+<h3><a href="quebec/#community-charlevoix-yml">Réseau MESH de Charlevoix (YML)</a></h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Charlevoix, including La Malbaie</p>
+<p><strong>Province:</strong> <a href="quebec/">Quebec</a></p>
+<p><strong>Settings:</strong> Uses the Canada defaults</p>
+<p><strong>Last verified:</strong> 2026-07-31</p>
+<ul class="mc-community-contacts">
+<li><strong>Website:</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(external)</span></li>
+</ul>
+<p class="mc-community-card__action"><a href="quebec/#community-charlevoix-yml">View listing details</a></p>
 </article>
 <article class="mc-community-card" id="directory-mesh-quebec" data-community-card data-community-status="active" data-community-override="false" data-community-search="mesh quebec quebec qc">
 <div class="mc-community-card__header">
@@ -450,7 +464,7 @@ Use these settings unless your local community lists different ones.
 </article>
 <article class="mc-province-card">
 <h3><a href="saskatchewan/">Saskatchewan</a></h3>
-<p>1 active, 1 forming</p>
+<p>2 active</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="manitoba/">Manitoba</a></h3>
@@ -462,7 +476,7 @@ Use these settings unless your local community lists different ones.
 </article>
 <article class="mc-province-card">
 <h3><a href="quebec/">Quebec</a></h3>
-<p>5 active</p>
+<p>6 active</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="new-brunswick/">New Brunswick</a></h3>

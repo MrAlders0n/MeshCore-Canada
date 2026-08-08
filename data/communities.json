@@ -805,7 +805,7 @@
         "Southern Saskatchewan",
         "YQR"
       ],
-      "status": "forming",
+      "status": "active",
       "languages": [],
       "location": {
         "latitude": null,
@@ -945,6 +945,45 @@
       "verified_at": null,
       "verify_by": null,
       "canonical_route": "/provinces/ontario/#community-quinte-mesh-network"
+    },
+    {
+      "id": "charlevoix-yml",
+      "name": "Réseau MESH de Charlevoix (YML)",
+      "province": "QC",
+      "service_area": "Charlevoix, including La Malbaie",
+      "places": [
+        "La Malbaie"
+      ],
+      "aliases": [
+        "Charlevoix",
+        "YML"
+      ],
+      "status": "active",
+      "languages": [
+        "fr"
+      ],
+      "location": {
+        "latitude": null,
+        "longitude": null,
+        "precision": "service-area"
+      },
+      "settings": {
+        "inherit_national": true,
+        "overrides": {}
+      },
+      "contacts": [
+        {
+          "type": "website",
+          "label": "Réseau MESH de Charlevoix",
+          "url": "https://chxmesh.ca/",
+          "health": "verified",
+          "last_checked": "2026-08-08"
+        }
+      ],
+      "owner": "pifane",
+      "verified_at": "2026-07-31",
+      "verify_by": "2027-01-31",
+      "canonical_route": "/provinces/quebec/#community-charlevoix-yml"
     },
     {
       "id": "mesh-quebec",

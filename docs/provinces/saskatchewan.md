@@ -21,7 +21,7 @@ page_styles:
 
 # MeshCore communities in Saskatchewan
 
-Saskatchewan has **2 community listings** (1 active, 1 forming).
+Saskatchewan has **2 active community listings**.
 
 All listings use the [Canada defaults](index.md#canada-baseline) unless a
 card lists different local settings.
@@ -53,7 +53,7 @@ card lists different local settings.
 <article class="mc-community-card mc-community-card--detail" id="community-yqrmesh">
 <div class="mc-community-card__header">
 <h3>YQRMesh</h3>
-<span class="mc-community-status" data-status="forming">Forming</span>
+<span class="mc-community-status" data-status="active">Active</span>
 </div>
 <p class="mc-community-area">Regina and Southern Saskatchewan</p>
 <dl class="mc-community-facts">
@@ -62,9 +62,6 @@ card lists different local settings.
 <div><dt>Last verified</dt>
 <dd>Not yet verified</dd></div>
 </dl>
-<p class="mc-community-forming">
-This group is forming. Contact it to learn what is working and where help is needed.
-</p>
 <p class="mc-community-no-contact">No public contact has been provided yet.</p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>

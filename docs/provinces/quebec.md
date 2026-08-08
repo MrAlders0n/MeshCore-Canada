@@ -21,7 +21,7 @@ page_styles:
 
 # MeshCore communities in Quebec
 
-Quebec has **5 active community listings**.
+Quebec has **6 active community listings**.
 
 All listings use the [Canada defaults](index.md#canada-baseline) unless a
 card lists different local settings.
@@ -29,6 +29,27 @@ card lists different local settings.
 ## Community listings
 
 <div class="mc-community-grid">
+<article class="mc-community-card mc-community-card--detail" id="community-charlevoix-yml">
+<div class="mc-community-card__header">
+<h3>Réseau MESH de Charlevoix (YML)</h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Charlevoix, including La Malbaie</p>
+<dl class="mc-community-facts">
+<div><dt>Settings</dt>
+<dd>Uses the Canada defaults</dd></div>
+<div><dt>Last verified</dt>
+<dd>2026-07-31</dd></div>
+</dl>
+<h4>Contacts</h4>
+<ul class="mc-community-contacts">
+<li><strong>Website:</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(external)</span></li>
+</ul>
+<p class="mc-community-contact-health">
+<strong>Contact check:</strong> Not yet verified
+</p>
+<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+</article>
 <article class="mc-community-card mc-community-card--detail" id="community-mesh-quebec">
 <div class="mc-community-card__header">
 <h3>Mesh Quebec</h3>
