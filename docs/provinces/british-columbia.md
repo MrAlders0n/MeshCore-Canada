@@ -6,6 +6,17 @@ If you know of a community that is missing or needs an update, open an update re
 
 ## Communities
 
+### BC Mesh
+
+| Field | Value |
+|-------|-------|
+| Region | Lower mainland and Vancouver Island |
+| Status | Active |
+| Radio preset | `Custom` |
+| Raw radio values | `910.425 MHz / 62.5 kHz / SF7 / CR5` |
+| Path hash mode | `3-byte` |
+| Website | <https://ridgeline.ve7kod.ca/about> |
+
 ### Salish Mesh
 
 | Field | Value |
