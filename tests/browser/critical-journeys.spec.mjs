@@ -262,6 +262,21 @@ test("community directory deep links use their dedicated query parameter", async
   expect(url.searchParams.has("q")).toBeFalsy();
 });
 
+test("BC Mesh's local frequency is searchable in both directories", async ({ page }) => {
+  for (const [route, count] of [
+    ["/provinces/", "Showing 1 community"],
+    ["/fr/provinces/", "1 communauté affichée"]
+  ]) {
+    await page.goto(siteRoute(route));
+    await page.locator("#community-search").fill("910.425");
+    await expect(page.locator("[data-community-count]")).toHaveText(count);
+    const result = page.locator("[data-community-card]:visible");
+    await expect(result).toHaveCount(1);
+    await expect(result).toContainText("BC Mesh");
+    await expect(result).toContainText("910.425 MHz / 62.5 kHz / SF7 / CR5");
+  }
+});
+
 test("region workbench remains readable after switching to the light palette", async ({ page }) => {
   await page.goto(siteRoute("/config/"));
   const contrast = await page.evaluate(() => {

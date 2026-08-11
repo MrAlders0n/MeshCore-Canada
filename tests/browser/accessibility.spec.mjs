@@ -94,18 +94,32 @@ test("mobile header drawer and search toggles support keyboard activation", asyn
   }
 });
 
-test("keyboard focus is visible on the primary Start action", async ({ page }) => {
+test("keyboard focus is visible on the theme switcher and primary Start action", async ({ page }) => {
   await page.goto(siteRoute("/"));
-  await page.keyboard.press("Tab");
-  const focused = page.locator(":focus");
-  await expect(focused).toBeVisible();
-  const outline = await focused.evaluate((element) => {
-    const style = window.getComputedStyle(element);
-    return {
-      style: style.outlineStyle,
-      width: Number.parseFloat(style.outlineWidth || "0")
-    };
-  });
-  expect(outline.style).not.toBe("none");
-  expect(outline.width).toBeGreaterThanOrEqual(2);
+  const controls = [
+    {
+      focus: page.locator("form[data-md-component='palette'] > .md-option").first(),
+      indicator: page.locator(
+        "form[data-md-component='palette'] > label.md-header__button:visible"
+      )
+    },
+    {
+      focus: page.getByRole("link", { name: "Start the guided setup" }),
+      indicator: page.getByRole("link", { name: "Start the guided setup" })
+    }
+  ];
+
+  for (const control of controls) {
+    await control.focus.focus();
+    await expect(control.indicator).toBeVisible();
+    const outline = await control.indicator.evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return {
+        style: style.outlineStyle,
+        width: Number.parseFloat(style.outlineWidth || "0")
+      };
+    });
+    expect(outline.style).not.toBe("none");
+    expect(outline.width).toBeGreaterThanOrEqual(2);
+  }
 });

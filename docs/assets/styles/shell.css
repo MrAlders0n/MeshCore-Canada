@@ -7,6 +7,11 @@
   font-weight: 720;
 }
 
+.md-header__option:focus-within .md-header__button {
+  outline: 3px solid var(--mc-color-focus);
+  outline-offset: 3px;
+}
+
 .md-search__icon[for="__search"] {
   display: inline-flex;
   width: 1.5rem;
