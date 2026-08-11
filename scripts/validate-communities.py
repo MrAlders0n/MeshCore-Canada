@@ -143,6 +143,27 @@ def validate_contact(contact: Any, label: str, check: Validation, *, with_identi
             check.error(f"{label}.province is not a Canadian province/territory code")
 
 
+def validate_raw_radio(value: Any, label: str, check: Validation) -> None:
+    if not isinstance(value, dict):
+        check.error(f"{label} must be an object")
+        return
+    required = {"frequency_mhz", "bandwidth_khz", "spreading_factor", "coding_rate"}
+    missing = sorted(required - value.keys())
+    unexpected = sorted(value.keys() - required)
+    if missing:
+        check.error(f"{label} is missing: {', '.join(missing)}")
+    if unexpected:
+        check.error(f"{label} has unsupported fields: {', '.join(unexpected)}")
+    for field in ("frequency_mhz", "bandwidth_khz"):
+        number = value.get(field)
+        if isinstance(number, bool) or not isinstance(number, (int, float)) or number <= 0:
+            check.error(f"{label}.{field} must be a positive number")
+    for field in ("spreading_factor", "coding_rate"):
+        number = value.get(field)
+        if isinstance(number, bool) or not isinstance(number, int) or number <= 0:
+            check.error(f"{label}.{field} must be a positive integer")
+
+
 def validate_data(data: dict[str, Any]) -> Validation:
     check = Validation()
     if data.get("schema") != SCHEMA_VERSION:
@@ -167,6 +188,7 @@ def validate_data(data: dict[str, Any]) -> Validation:
     for field in ("radio_preset", "raw_radio", "path_hash_mode", "cli_path_setting"):
         if field not in defaults:
             check.error(f"national_defaults.{field} is required")
+    validate_raw_radio(defaults.get("raw_radio"), "national_defaults.raw_radio", check)
 
     pages = data.get("directory_pages")
     if not isinstance(pages, list) or not pages:
@@ -287,8 +309,10 @@ def validate_data(data: dict[str, Any]) -> Validation:
             check.error(f"{label}.settings.overrides must be an object")
             overrides = {}
         for field, value in overrides.items():
-            if field not in {"radio_preset", "path_hash_mode"}:
+            if field not in {"radio_preset", "raw_radio", "path_hash_mode"}:
                 check.error(f"{label}.settings.overrides has unsupported field {field!r}")
+            if field == "raw_radio":
+                validate_raw_radio(value, f"{label}.settings.overrides.raw_radio", check)
             if value == defaults.get(field):
                 check.error(f"{label} repeats inherited national {field} as an override")
 
@@ -496,6 +520,14 @@ def verification_label(community: dict[str, Any]) -> str:
     return community["verified_at"]
 
 
+def format_raw_radio(raw_radio: dict[str, Any]) -> str:
+    return (
+        f'{raw_radio["frequency_mhz"]:g} MHz / '
+        f'{raw_radio["bandwidth_khz"]:g} kHz / '
+        f'SF{raw_radio["spreading_factor"]} / CR{raw_radio["coding_rate"]}'
+    )
+
+
 def search_text(community: dict[str, Any], page: dict[str, Any]) -> str:
     values = [
         community["name"],
@@ -508,6 +540,11 @@ def search_text(community: dict[str, Any], page: dict[str, Any]) -> str:
     ]
     if community.get("summary"):
         values.append(community["summary"])
+    overrides = community["settings"]["overrides"]
+    if "radio_preset" in overrides:
+        values.append(overrides["radio_preset"])
+    if "raw_radio" in overrides:
+        values.append(format_raw_radio(overrides["raw_radio"]))
     return " ".join(dict.fromkeys(normalized(value) for value in values))
 
 
@@ -557,6 +594,10 @@ def render_settings(community: dict[str, Any], *, compact: bool = False) -> str:
     if "radio_preset" in overrides:
         values.append(
             f"Radio preset: <code>{html.escape(overrides['radio_preset'])}</code>"
+        )
+    if "raw_radio" in overrides:
+        values.append(
+            f"Raw radio values: <code>{format_raw_radio(overrides['raw_radio'])}</code>"
         )
     if "path_hash_mode" in overrides:
         values.append(
@@ -1001,6 +1042,7 @@ def contact_type_label_fr(contact_type: str) -> str:
 def contact_label_fr(label: str) -> str:
     """Return a visitor-facing French label while preserving names and URLs."""
     return {
+        "Ridgeline network map and tools": "Carte et outils du réseau Ridgeline",
         "Salish Mesh website": "Site Web de Salish Mesh",
         "Alberta MeshCore Discord": "Discord d’Alberta MeshCore",
         "Airdrie regional page": "Page régionale d’Airdrie",
@@ -1069,6 +1111,11 @@ def search_text_fr(
     ]
     if community.get("summary"):
         values.extend([community["summary"], community_translation["summary"]])
+    overrides = community["settings"]["overrides"]
+    if "radio_preset" in overrides:
+        values.append(overrides["radio_preset"])
+    if "raw_radio" in overrides:
+        values.append(format_raw_radio(overrides["raw_radio"]))
     return " ".join(dict.fromkeys(normalized(value) for value in values))
 
 
@@ -1111,6 +1158,10 @@ def render_settings_fr(community: dict[str, Any], *, compact: bool = False) -> s
     if "radio_preset" in overrides:
         values.append(
             f"Préréglage radio : <code>{html.escape(overrides['radio_preset'])}</code>"
+        )
+    if "raw_radio" in overrides:
+        values.append(
+            f"Valeurs radio brutes : <code>{format_raw_radio(overrides['raw_radio'])}</code>"
         )
     if "path_hash_mode" in overrides:
         values.append(

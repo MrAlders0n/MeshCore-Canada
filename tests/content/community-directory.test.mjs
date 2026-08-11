@@ -12,6 +12,7 @@ const data = JSON.parse(
 const provinceDir = join(root, "docs", "provinces");
 
 const expectedCommunities = new Map([
+  ["bc-mesh", ["https://ridgeline.ve7kod.ca/about"]],
   ["salish-mesh", ["https://salishmesh.net/"]],
   [
     "alberta-meshcore-networks",
@@ -149,8 +150,8 @@ function idsMatching(query) {
     .map((community) => community.id);
 }
 
-test("all 23 structured listings and every curated contact URL are preserved", () => {
-  assert.equal(data.communities.length, 23);
+test("all 24 structured listings and every curated contact URL are preserved", () => {
+  assert.equal(data.communities.length, 24);
   assert.deepEqual(
     new Set(data.communities.map((community) => community.id)),
     new Set(expectedCommunities.keys()),
@@ -186,10 +187,12 @@ test("the generated directory cannot drift from structured data", () => {
       encoding: "utf8",
     },
   );
-  assert.match(output, /Community directory validated: 23 listings/);
+  assert.match(output, /Community directory validated: 24 listings/);
 });
 
 test("search covers reviewed place names and common aliases", () => {
+  assert.deepEqual(idsMatching("Ridgeline"), ["bc-mesh"]);
+  assert.deepEqual(idsMatching("Vancouver Island"), ["bc-mesh"]);
   assert.deepEqual(idsMatching("YQL"), ["yqlmesh"]);
   assert.deepEqual(idsMatching("Ottawa"), ["greater-ottawa-mesh-enthusiasts"]);
   assert.deepEqual(idsMatching("Western Quebec"), [
@@ -344,6 +347,35 @@ test("all listings inherit the three-byte Canada baseline", () => {
   );
 });
 
+test("BC Mesh documents the issue 79 frequency override in both languages", () => {
+  const bcMesh = data.communities.find((community) => community.id === "bc-mesh");
+  assert.deepEqual(bcMesh.settings.overrides, {
+    radio_preset: "Custom",
+    raw_radio: {
+      frequency_mhz: 910.425,
+      bandwidth_khz: 62.5,
+      spreading_factor: 7,
+      coding_rate: 5,
+    },
+  });
+  assert.equal(bcMesh.contacts[0].url, "https://ridgeline.ve7kod.ca/about");
+  assert.equal(bcMesh.contacts[0].health, "verified");
+
+  const britishColumbia = readFileSync(
+    join(provinceDir, "british-columbia.md"),
+    "utf8",
+  );
+  const britishColumbiaFr = readFileSync(
+    join(provinceDir, "british-columbia.fr.md"),
+    "utf8",
+  );
+  for (const markdown of [britishColumbia, britishColumbiaFr]) {
+    assert.match(markdown, /<h3>BC Mesh<\/h3>[\s\S]*?910\.425 MHz \/ 62\.5 kHz \/ SF7 \/ CR5/);
+    assert.match(markdown, /https:\/\/ridgeline\.ve7kod\.ca\/about/);
+    assert.doesNotMatch(markdown, /910\.525/);
+  }
+});
+
 test("summaries and added social contact types render from structured data", () => {
   const yqlmesh = data.communities.find(
     (community) => community.id === "yqlmesh",
@@ -368,7 +400,6 @@ test("detail cards do not duplicate national radio settings", () => {
   for (const page of data.directory_pages) {
     const markdown = readFileSync(join(provinceDir, `${page.slug}.md`), "utf8");
     assert.doesNotMatch(markdown, /910\.525/);
-    assert.doesNotMatch(markdown, /62\.5 kHz/);
     assert.doesNotMatch(markdown, /set path\.hash\.mode/);
     assert.match(markdown, /Send a community update/);
   }

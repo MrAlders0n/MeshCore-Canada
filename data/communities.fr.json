@@ -48,6 +48,9 @@
     }
   },
   "communities": {
+    "bc-mesh": {
+      "service_area": "Lower Mainland et île de Vancouver"
+    },
     "salish-mesh": {
       "service_area": "Mer des Salish et environs"
     },

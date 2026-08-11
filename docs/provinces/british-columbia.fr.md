@@ -21,14 +21,44 @@ page_styles:
 
 # Communautés MeshCore en Colombie-Britannique
 
-Il y a **1 fiche de communauté active** en Colombie-Britannique.
+Il y a **2 fiches de communauté actives** en Colombie-Britannique.
 
 Toutes les fiches utilisent les [réglages par défaut du Canada](index.md#canada-baseline),
 sauf si une fiche indique des réglages locaux différents.
 
+!!! warning "Cette communauté utilise des réglages différents"
+    Au moins une communauté sur cette page indique des réglages locaux différents.
+    Confirmez les réglages actuels auprès de son contact avant de configurer
+    ou de modifier un nœud.
+
 ## Fiches des communautés
 
 <div class="mc-community-grid">
+<article class="mc-community-card mc-community-card--detail" id="community-bc-mesh">
+<div class="mc-community-card__header">
+<h3>BC Mesh</h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Lower Mainland et île de Vancouver</p>
+<dl class="mc-community-facts">
+<div><dt>Réglages</dt>
+<dd>Préréglage radio : <code>Custom</code>; Valeurs radio brutes : <code>910.425 MHz / 62.5 kHz / SF7 / CR5</code></dd></div>
+<div><dt>Dernière vérification</dt>
+<dd>2026-08-11</dd></div>
+</dl>
+<div class="mc-community-override" role="note">
+<strong>Réglages locaux différents</strong>
+<p>Confirmez ces réglages auprès de la communauté avant de modifier un nœud.</p>
+</div>
+<h4>Coordonnées</h4>
+<ul class="mc-community-contacts">
+<li><strong>Site Web :</strong> <a href="https://ridgeline.ve7kod.ca/about" rel="noopener">Carte et outils du réseau Ridgeline</a> <span class="mc-community-external">(externe)</span></li>
+</ul>
+<p class="mc-community-contact-health">
+<strong>Vérification :</strong> Effectuée le 2026-08-11
+</p>
+<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+</article>
 <article class="mc-community-card mc-community-card--detail" id="community-salish-mesh">
 <div class="mc-community-card__header">
 <h3>Salish Mesh</h3>

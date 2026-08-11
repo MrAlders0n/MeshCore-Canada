@@ -27,14 +27,14 @@ Search by place, province, community name, or a common alias. The full list
 works without a map, location permission, or a GitHub account.
 
 !!! note "Community information can change"
-    22 of 23 listings do not have a recent contact check.
+    22 of 24 listings do not have a recent contact check.
     Confirm important settings and contacts before relying on them.
 
 <div class="mc-directory-summary" aria-label="Directory summary">
-<span><strong>23</strong> listings</span>
-<span><strong>22</strong> listed active</span>
+<span><strong>24</strong> listings</span>
+<span><strong>23</strong> listed active</span>
 <span><strong>1</strong> listed forming</span>
-<span><strong>0</strong> with different local settings</span>
+<span><strong>1</strong> with different local settings</span>
 </div>
 
 <div class="mc-directory-tools" data-community-directory>
@@ -56,7 +56,7 @@ works without a map, location permission, or a GitHub account.
   </label>
   <button class="md-button" type="button" data-community-clear>Clear</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    Showing 23 communities
+    Showing 24 communities
   </output>
 </div>
 
@@ -70,6 +70,20 @@ works without a map, location permission, or a GitHub account.
 ## Communities
 
 <div class="mc-community-grid" data-community-results>
+<article class="mc-community-card" id="directory-bc-mesh" data-community-card data-community-status="active" data-community-override="true" data-community-search="bc mesh lower mainland and vancouver island bc british columbia lower mainland vancouver island vancouver ridgeline custom 910.425 mhz / 62.5 khz / sf7 / cr5">
+<div class="mc-community-card__header">
+<h3><a href="british-columbia/#community-bc-mesh">BC Mesh</a></h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Lower Mainland and Vancouver Island</p>
+<p><strong>Province:</strong> <a href="british-columbia/">British Columbia</a></p>
+<p><strong>Settings:</strong> Different local settings — Radio preset: <code>Custom</code>; Raw radio values: <code>910.425 MHz / 62.5 kHz / SF7 / CR5</code></p>
+<p><strong>Last verified:</strong> 2026-08-11</p>
+<ul class="mc-community-contacts">
+<li><strong>Website:</strong> <a href="https://ridgeline.ve7kod.ca/about" rel="noopener">Ridgeline network map and tools</a> <span class="mc-community-external">(external)</span></li>
+</ul>
+<p class="mc-community-card__action"><a href="british-columbia/#community-bc-mesh">View listing details</a></p>
+</article>
 <article class="mc-community-card" id="directory-salish-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="salish mesh salish sea and surrounding area bc british columbia salish sea">
 <div class="mc-community-card__header">
 <h3><a href="british-columbia/#community-salish-mesh">Salish Mesh</a></h3>
@@ -456,7 +470,7 @@ Use these settings unless your local community lists different ones.
 <div class="mc-province-grid">
 <article class="mc-province-card">
 <h3><a href="british-columbia/">British Columbia</a></h3>
-<p>1 active</p>
+<p>2 active</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="alberta/">Alberta</a></h3>

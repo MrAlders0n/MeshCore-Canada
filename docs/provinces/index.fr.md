@@ -27,14 +27,14 @@ Recherchez par lieu, province, nom de communauté ou alias courant. La liste
 complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 
 !!! note "Les renseignements sur les communautés peuvent changer"
-    22 fiches sur 23 n’ont pas fait l’objet d’une vérification récente des coordonnées.
+    22 fiches sur 24 n’ont pas fait l’objet d’une vérification récente des coordonnées.
     Confirmez les réglages et les coordonnées importants avant de vous y fier.
 
 <div class="mc-directory-summary" aria-label="Résumé du répertoire">
-<span><strong>23</strong> fiches</span>
-<span><strong>22</strong> fiches actives</span>
+<span><strong>24</strong> fiches</span>
+<span><strong>23</strong> fiches actives</span>
 <span><strong>1</strong> fiche en formation</span>
-<span><strong>0</strong> fiches avec des réglages locaux différents</span>
+<span><strong>1</strong> fiche avec des réglages locaux différents</span>
 </div>
 
 <div class="mc-directory-tools" data-community-directory data-community-locale="fr">
@@ -56,7 +56,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
   </label>
   <button class="md-button" type="button" data-community-clear>Effacer</button>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
-    23 communautés affichées
+    24 communautés affichées
   </output>
 </div>
 
@@ -70,6 +70,20 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 ## Communautés
 
 <div class="mc-community-grid" data-community-results>
+<article class="mc-community-card" id="directory-bc-mesh" data-community-card data-community-status="active" data-community-override="true" data-community-search="bc mesh lower mainland and vancouver island lower mainland et ile de vancouver bc british columbia colombie-britannique lower mainland vancouver island vancouver ridgeline custom 910.425 mhz / 62.5 khz / sf7 / cr5">
+<div class="mc-community-card__header">
+<h3><a href="british-columbia/#community-bc-mesh">BC Mesh</a></h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Lower Mainland et île de Vancouver</p>
+<p><strong>Province ou territoire :</strong> <a href="british-columbia/">Colombie-Britannique</a></p>
+<p><strong>Réglages :</strong> Réglages locaux différents — Préréglage radio : <code>Custom</code>; Valeurs radio brutes : <code>910.425 MHz / 62.5 kHz / SF7 / CR5</code></p>
+<p><strong>Dernière vérification :</strong> 2026-08-11</p>
+<ul class="mc-community-contacts">
+<li><strong>Site Web :</strong> <a href="https://ridgeline.ve7kod.ca/about" rel="noopener">Carte et outils du réseau Ridgeline</a> <span class="mc-community-external">(externe)</span></li>
+</ul>
+<p class="mc-community-card__action"><a href="british-columbia/#community-bc-mesh">Voir les détails de la fiche</a></p>
+</article>
 <article class="mc-community-card" id="directory-salish-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="salish mesh salish sea and surrounding area mer des salish et environs bc british columbia colombie-britannique salish sea">
 <div class="mc-community-card__header">
 <h3><a href="british-columbia/#community-salish-mesh">Salish Mesh</a></h3>
@@ -456,7 +470,7 @@ Utilisez ces réglages sauf si votre communauté locale en indique d’autres.
 <div class="mc-province-grid">
 <article class="mc-province-card">
 <h3><a href="british-columbia/">Colombie-Britannique</a></h3>
-<p>1 active</p>
+<p>2 actives</p>
 </article>
 <article class="mc-province-card">
 <h3><a href="alberta/">Alberta</a></h3>

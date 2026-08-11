@@ -76,6 +76,34 @@
     }
   },
   "$defs": {
+    "rawRadio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frequency_mhz",
+        "bandwidth_khz",
+        "spreading_factor",
+        "coding_rate"
+      ],
+      "properties": {
+        "frequency_mhz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bandwidth_khz": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "spreading_factor": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "coding_rate": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
     "nullableDate": {
       "oneOf": [
         {
@@ -347,6 +375,9 @@
               "properties": {
                 "radio_preset": {
                   "type": "string"
+                },
+                "raw_radio": {
+                  "$ref": "#/$defs/rawRadio"
                 },
                 "path_hash_mode": {
                   "type": "string"

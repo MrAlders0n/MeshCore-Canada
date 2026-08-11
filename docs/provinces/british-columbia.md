@@ -21,14 +21,43 @@ page_styles:
 
 # MeshCore communities in British Columbia
 
-British Columbia has **1 active community listing**.
+British Columbia has **2 active community listings**.
 
 All listings use the [Canada defaults](index.md#canada-baseline) unless a
 card lists different local settings.
 
+!!! warning "This community uses different settings"
+    One community on this page lists different local settings. Confirm
+    the current setting with its contact before configuring or changing a node.
+
 ## Community listings
 
 <div class="mc-community-grid">
+<article class="mc-community-card mc-community-card--detail" id="community-bc-mesh">
+<div class="mc-community-card__header">
+<h3>BC Mesh</h3>
+<span class="mc-community-status" data-status="active">Active</span>
+</div>
+<p class="mc-community-area">Lower Mainland and Vancouver Island</p>
+<dl class="mc-community-facts">
+<div><dt>Settings</dt>
+<dd>Radio preset: <code>Custom</code>; Raw radio values: <code>910.425 MHz / 62.5 kHz / SF7 / CR5</code></dd></div>
+<div><dt>Last verified</dt>
+<dd>2026-08-11</dd></div>
+</dl>
+<div class="mc-community-override" role="note">
+<strong>Local settings override</strong>
+<p>Confirm this setting with the community before changing a node.</p>
+</div>
+<h4>Contacts</h4>
+<ul class="mc-community-contacts">
+<li><strong>Website:</strong> <a href="https://ridgeline.ve7kod.ca/about" rel="noopener">Ridgeline network map and tools</a> <span class="mc-community-external">(external)</span></li>
+</ul>
+<p class="mc-community-contact-health">
+<strong>Contact check:</strong> Verified on 2026-08-11
+</p>
+<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+</article>
 <article class="mc-community-card mc-community-card--detail" id="community-salish-mesh">
 <div class="mc-community-card__header">
 <h3>Salish Mesh</h3>
