@@ -27,18 +27,18 @@ Choisissez un outil selon votre tâche.
 
     ---
 
-    Trouvez la région canadienne d’un emplacement et générez les commandes du
-    répéteur. Relisez les commandes avant de les appliquer.
+    Générez les commandes régionales d’un répéteur après avoir choisi son
+    emplacement.
 
     [:octicons-arrow-right-24: Ouvrir le configurateur de répéteur](../config/index.md)
 
--   :material-map-search:{ .lg .middle } **Explorer les régions canadiennes**
+-   :material-map-search:{ .lg .middle } **Trouver votre région MeshCore**
 
     ---
 
-    Trouvez les régions canadiennes et les chemins voisins sur une carte.
+    Recherchez un lieu ou utilisez la carte pour voir sa région MeshCore.
 
-    [:octicons-arrow-right-24: Ouvrir la carte des régions](../config/map.md)
+    [:octicons-arrow-right-24: Trouver ma région](../config/map.md)
 
 -   :material-chart-timeline-variant:{ .lg .middle } **Voir le réseau en direct**
 

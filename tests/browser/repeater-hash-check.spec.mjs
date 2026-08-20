@@ -48,10 +48,22 @@ async function mockBeacon(page) {
   return nodeRequests;
 }
 
+async function openChecker(page, language = "en") {
+  const summary = language === "fr"
+    ? "Vérifier l’identifiant du répéteur (facultatif)"
+    : "Duplicate repeater ID check (optional)";
+  const details = page.locator(".mc-hash-disclosure");
+  await expect(details.getByText(summary, { exact: true })).toBeVisible();
+  if (!(await details.evaluate((element) => element.open))) {
+    await details.locator("summary").click();
+  }
+}
+
 async function runCheck(page, language = "en") {
   const keyLabel = language === "fr" ? "Clé publique du répéteur" : "Repeater public key";
   const regionLabel = language === "fr" ? "Région Beacon la plus proche" : "Closest Beacon region";
   const button = language === "fr" ? "Vérifier cet identifiant" : "Check this ID";
+  await openChecker(page, language);
   await page.getByLabel(keyLabel).fill(fullKey);
   await page.getByLabel(regionLabel).fill("YYZ");
   await page.getByRole("button", { name: button }).click();
@@ -60,8 +72,8 @@ async function runCheck(page, language = "en") {
 test("checks a repeater ID by first-byte Beacon lookup and separates local from network collisions", async ({ page }) => {
   const nodeRequests = await mockBeacon(page);
   await page.goto(siteRoute("/start/repeater/"));
-  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
   await runCheck(page);
+  await expect(page.getByRole("heading", { name: "Check for a duplicate repeater ID" })).toBeVisible();
 
   await expect(page.getByRole("status").filter({ hasText: "05DE00 is also used by 1 repeater in YYZ" })).toBeVisible();
   const selectedRow = page.locator(".mc-hash-comparison tr.is-selected");
@@ -82,24 +94,26 @@ test("checks a repeater ID by first-byte Beacon lookup and separates local from 
 test("French repeater pages render and report collisions in French", async ({ page }) => {
   await mockBeacon(page);
   await page.goto(siteRoute("/fr/start/repeater/"));
-  await expect(page.getByRole("heading", { name: "Vérifier l’identifiant du répéteur" })).toBeVisible();
   await runCheck(page, "fr");
+  await expect(page.getByRole("heading", { name: "Vérifier si l’identifiant est déjà utilisé" })).toBeVisible();
   await expect(page.getByRole("status").filter({ hasText: "1 autre répéteur utilise 05DE00 dans YYZ" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Comparer les tailles d’identifiant" })).toBeVisible();
 });
 
-test("the configurator defers Beacon region loading until the checker needs it", async ({ page }) => {
+test("the repeater checker defers Beacon region loading until it is used", async ({ page }) => {
   let iataRequests = 0;
   await page.route("https://dev.meshcore.ca/api/v1/iatas", async (route) => {
     iataRequests += 1;
     await route.fulfill({ contentType: "application/json", body: "[]" });
   });
-  await page.goto(siteRoute("/config/"));
-  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "What are you configuring?" })).toBeVisible();
+  await page.goto(siteRoute("/start/repeater/"));
+  const disclosure = page.locator(".mc-hash-disclosure");
+  await expect(disclosure.getByText("Duplicate repeater ID check (optional)", { exact: true })).toBeVisible();
+  await expect(disclosure).not.toHaveAttribute("open", "");
   await page.waitForTimeout(250);
   expect(iataRequests).toBe(0);
 
+  await openChecker(page);
   await page.getByLabel("Closest Beacon region").focus();
   await expect.poll(() => iataRequests).toBe(1);
 });
@@ -108,14 +122,14 @@ test("nested pages do not probe page-relative sitemaps or an absent GitHub relea
   const requests = [];
   page.on("request", (request) => requests.push(request.url()));
   await page.goto(siteRoute("/start/repeater/"));
-  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
+  await expect(page.getByText("Duplicate repeater ID check (optional)", { exact: true })).toBeVisible();
   await page.waitForTimeout(250);
 
   expect(requests.filter((url) => /\/start\/repeater\/sitemap\.xml$/.test(url))).toEqual([]);
   expect(requests.filter((url) => url.endsWith("/releases/latest"))).toEqual([]);
 });
 
-test("the configurator checker mounts without a disruptive layout shift", async ({ page }) => {
+test("the repeater checker mounts without a disruptive layout shift", async ({ page }) => {
   await page.addInitScript(() => {
     window.__mcLayoutShift = 0;
     new PerformanceObserver((list) => {
@@ -124,20 +138,22 @@ test("the configurator checker mounts without a disruptive layout shift", async 
       });
     }).observe({ type: "layout-shift", buffered: true });
   });
-  await page.goto(siteRoute("/config/"));
-  await expect(page.getByRole("heading", { name: "Check your repeater ID" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "What are you configuring?" })).toBeVisible();
+  await page.goto(siteRoute("/start/repeater/"));
+  await expect(page.getByText("Duplicate repeater ID check (optional)", { exact: true })).toBeVisible();
   await page.waitForTimeout(250);
   expect(await page.evaluate(() => window.__mcLayoutShift)).toBeLessThan(0.1);
 });
 
-test("the configurator selects the nearest Beacon region without sending the location to Beacon", async ({ page }) => {
-  const nodeRequests = await mockBeacon(page);
+test("the general region configurator does not show the optional ID checker", async ({ page }) => {
+  const beaconRequests = [];
+  page.on("request", (request) => {
+    if (request.url().startsWith("https://dev.meshcore.ca/")) beaconRequests.push(request.url());
+  });
   await page.goto(siteRoute("/config/?place=Ottawa"), { waitUntil: "domcontentloaded" });
   await expect(page.locator("[data-mcc-regions='config'] [data-role='status']")).toContainText("Region found.");
-  await expect(page.getByLabel("Closest Beacon region")).toHaveValue("YOW");
-  await expect(page.locator("[data-mc-repeater-hash-check] [data-role='hash-status']")).toContainText("Selected YOW");
-  expect(nodeRequests).toEqual([]);
+  await expect(page.locator("[data-mcc-regions='config']")).toBeVisible();
+  await expect(page.locator("[data-mc-repeater-hash-check]")).toHaveCount(0);
+  expect(beaconRequests).toEqual([]);
 });
 
 test("collision results become labelled cards without horizontal overflow on a phone", async ({ page }, testInfo) => {

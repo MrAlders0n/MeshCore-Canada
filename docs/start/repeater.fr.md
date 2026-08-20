@@ -19,9 +19,9 @@ requires:
   - supported-repeater
   - data-capable-usb-cable
 page_styles:
-  - assets/styles/repeater-hash-check.css?v=20260808-2
+  - assets/styles/repeater-hash-check.css?v=20260820-1
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260808-2
+  - assets/javascripts/repeater-hash-check.js?v=20260820-1
 ---
 
 # Commencer avec un répéteur

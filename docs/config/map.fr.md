@@ -1,10 +1,11 @@
 ---
-title: Carte des régions canadiennes
-description: Trouvez une région canadienne, examinez sa hiérarchie et planifiez les chemins d’un répéteur.
+title: Trouver votre région MeshCore au Canada
+description: Recherchez un lieu ou choisissez une zone sur la carte pour trouver sa région MeshCore.
 audience:
+  - meshcore-user
   - repeater-operator
   - region-maintainer
-task: explore-regions
+task: find-region
 scope: canada-baseline
 status: verified
 owner: region-maintainers
@@ -12,20 +13,19 @@ last_reviewed: 2026-07-19
 review_by: 2026-10-19
 tested_with:
   region_catalog: national-partition-2026-07-19
-difficulty: intermediate
+difficulty: beginner
 page_styles:
-  - assets/regions/regions.css?v=20260808-4
+  - assets/regions/regions.css?v=20260820-1
 page_scripts:
   - assets/regions/modules/configurator-support.js?v=20260722-2
-  - assets/regions/regions.js?v=20260722-3
+  - assets/regions/regions.js?v=20260820-1
 hide:
   - toc
 ---
 
-# Carte des régions canadiennes
+# Trouver votre région MeshCore au Canada
 
-Parcourez les limites des régions canadiennes et composez les chemins de votre
-répéteur.
+Recherchez un lieu ou choisissez une zone sur la carte.
 
 <div data-mcc-regions="map" data-mcc-root="../"></div>
 

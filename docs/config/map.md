@@ -1,10 +1,11 @@
 ---
-title: Canadian region map
-description: Find a Canadian region, inspect its hierarchy, and plan repeater paths.
+title: Find your Canadian MeshCore region
+description: Search for a place or choose an area on the map to find its MeshCore region.
 audience:
+  - meshcore-user
   - repeater-operator
   - region-maintainer
-task: explore-regions
+task: find-region
 scope: canada-baseline
 status: verified
 owner: region-maintainers
@@ -12,19 +13,19 @@ last_reviewed: 2026-07-19
 review_by: 2026-10-19
 tested_with:
   region_catalog: national-partition-2026-07-19
-difficulty: intermediate
+difficulty: beginner
 page_styles:
-  - assets/regions/regions.css?v=20260808-4
+  - assets/regions/regions.css?v=20260820-1
 page_scripts:
   - assets/regions/modules/configurator-support.js?v=20260722-2
-  - assets/regions/regions.js?v=20260722-3
+  - assets/regions/regions.js?v=20260820-1
 hide:
   - toc
 ---
 
-# Canadian region map
+# Find your Canadian MeshCore region
 
-Browse Canadian boundaries and build repeater paths.
+Search for a place or choose an area on the map.
 
 <div data-mcc-regions="map" data-mcc-root="../"></div>
 

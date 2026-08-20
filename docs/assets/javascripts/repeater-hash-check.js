@@ -14,9 +14,10 @@
 
   var copy = {
     en: {
-      eyebrow: "Live network check",
-      title: "Check your repeater ID",
-      intro: "Paste the public key shown by the repeater, choose the closest Beacon region, and check whether another repeater uses the same path ID.",
+      eyebrow: "Optional live check",
+      summary: "Duplicate repeater ID check (optional)",
+      title: "Check for a duplicate repeater ID",
+      intro: "Paste the repeater's public key and choose the closest Beacon region.",
       publicKey: "Repeater public key",
       keyHint: "Run get public.key in the repeater console. Never paste a private key or the result of get prv.key.",
       keyPlaceholder: "64 hexadecimal characters",
@@ -28,7 +29,7 @@
       threeBytes: "3 bytes (Canada default)",
       check: "Check this ID",
       checking: "Checking Beacon…",
-      privacy: "Beacon receives only the first byte of the public key. Region matching and the 1-, 2-, and 3-byte comparisons happen in this browser.",
+      privacy: "Beacon receives only the first byte of the public key. The full key stays in this browser.",
       loadingRegions: "Loading current region names…",
       regionsUnavailable: "Region names could not load. You can still enter a three-letter code.",
       invalidKey: "Enter only hexadecimal characters from the repeater's public key.",
@@ -41,7 +42,7 @@
       networkConflict: "No duplicate in {region}; {prefix} is used by {count} other repeater{s} elsewhere in Beacon",
       clearSeen: "No duplicate found for {prefix}. This repeater is already visible in Beacon.",
       clear: "No duplicate found for {prefix} in the current Beacon data.",
-      caveat: "Beacon only knows about repeaters heard by participating observers. A clear result is helpful, but it is not proof that an ID is unused. Confirm with your local operators before deployment.",
+      caveat: "Beacon only includes repeaters heard by participating observers. Confirm the ID with local operators before deployment.",
       comparison: "Compare path ID sizes",
       modeColumn: "Path ID size",
       idColumn: "Hash ID",
@@ -62,13 +63,13 @@
       noName: "Unnamed repeater",
       source: "Data from Beacon",
       openCoreScope: "Search this ID in CoreScope",
-      autoRegion: "Selected {code}, the closest Beacon region to {place}.",
       partialKey: "A partial public-key prefix is being checked. Paste all 64 characters to identify this repeater separately from other matches."
     },
     fr: {
-      eyebrow: "Vérification du réseau en direct",
-      title: "Vérifier l’identifiant du répéteur",
-      intro: "Collez la clé publique affichée par le répéteur, choisissez la région Beacon la plus proche et vérifiez si un autre répéteur utilise le même identifiant de parcours.",
+      eyebrow: "Vérification facultative",
+      summary: "Vérifier l’identifiant du répéteur (facultatif)",
+      title: "Vérifier si l’identifiant est déjà utilisé",
+      intro: "Collez la clé publique du répéteur et choisissez la région Beacon la plus proche.",
       publicKey: "Clé publique du répéteur",
       keyHint: "Exécutez get public.key dans la console du répéteur. Ne collez jamais une clé privée ni le résultat de get prv.key.",
       keyPlaceholder: "64 caractères hexadécimaux",
@@ -80,7 +81,7 @@
       threeBytes: "3 octets (réglage canadien)",
       check: "Vérifier cet identifiant",
       checking: "Vérification dans Beacon…",
-      privacy: "Beacon reçoit seulement le premier octet de la clé publique. La comparaison de la région et des identifiants sur 1, 2 et 3 octets se fait dans ce navigateur.",
+      privacy: "Beacon reçoit seulement le premier octet de la clé publique. La clé complète reste dans ce navigateur.",
       loadingRegions: "Chargement des noms de régions…",
       regionsUnavailable: "Impossible de charger les noms de régions. Vous pouvez tout de même saisir un code de trois lettres.",
       invalidKey: "Saisissez uniquement les caractères hexadécimaux de la clé publique du répéteur.",
@@ -93,7 +94,7 @@
       networkConflict: "Aucun doublon dans {region}; {count} autre{s} répéteur{s} utilise{nt} {prefix} ailleurs dans Beacon",
       clearSeen: "Aucun doublon trouvé pour {prefix}. Ce répéteur est déjà visible dans Beacon.",
       clear: "Aucun doublon trouvé pour {prefix} dans les données Beacon actuelles.",
-      caveat: "Beacon connaît seulement les répéteurs entendus par les observateurs participants. Un résultat sans doublon est utile, mais ne prouve pas que l’identifiant est libre. Confirmez-le auprès des responsables locaux avant l’installation.",
+      caveat: "Beacon connaît seulement les répéteurs entendus par ses observateurs. Confirmez l’identifiant auprès des responsables locaux avant l’installation.",
       comparison: "Comparer les tailles d’identifiant",
       modeColumn: "Taille",
       idColumn: "Identifiant",
@@ -114,7 +115,6 @@
       noName: "Répéteur sans nom",
       source: "Données fournies par Beacon",
       openCoreScope: "Rechercher cet identifiant dans CoreScope",
-      autoRegion: "{code}, la région Beacon la plus proche de {place}, a été sélectionnée.",
       partialKey: "Vous vérifiez un préfixe partiel. Collez les 64 caractères pour distinguer ce répéteur des autres résultats."
     }
   };
@@ -228,34 +228,6 @@
         networkCount: conflicts.length
       };
     });
-  }
-
-  function haversineKm(aLat, aLon, bLat, bLon) {
-    var radians = function (degrees) { return degrees * Math.PI / 180; };
-    var dLat = radians(bLat - aLat);
-    var dLon = radians(bLon - aLon);
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(radians(aLat)) * Math.cos(radians(bLat)) *
-      Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  }
-
-  function nearestIata(iatas, latitude, longitude) {
-    var lat = Number(latitude);
-    var lon = Number(longitude);
-    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
-    return (Array.isArray(iatas) ? iatas : []).map(function (item) {
-      var itemLat = Number(item && item.lat);
-      var itemLon = Number(item && (item.lon == null ? item.lng : item.lon));
-      return {
-        item: item,
-        distance: Number.isFinite(itemLat) && Number.isFinite(itemLon)
-          ? haversineKm(lat, lon, itemLat, itemLon)
-          : Infinity
-      };
-    }).filter(function (candidate) {
-      return Number.isFinite(candidate.distance);
-    }).sort(function (left, right) { return left.distance - right.distance; })[0] || null;
   }
 
   function nodesUrl(prefix, cursor) {
@@ -442,7 +414,8 @@
   function renderShell(host, language) {
     instanceCount += 1;
     var listId = "mc-hash-iatas-" + instanceCount;
-    host.innerHTML = '<section class="mc-hash-checker" aria-labelledby="mc-hash-title-' + instanceCount + '">' +
+    host.innerHTML = '<details class="mc-hash-disclosure"><summary>' + escapeHtml(message(language, "summary")) + '</summary>' +
+      '<section class="mc-hash-checker" aria-labelledby="mc-hash-title-' + instanceCount + '">' +
       '<p class="mc-eyebrow">' + escapeHtml(message(language, "eyebrow")) + '</p>' +
       '<h2 id="mc-hash-title-' + instanceCount + '">' + escapeHtml(message(language, "title")) + '</h2>' +
       '<p class="mc-hash-intro">' + escapeHtml(message(language, "intro")) + '</p>' +
@@ -463,7 +436,7 @@
       '<div class="mc-hash-actions"><button type="submit" class="md-button md-button--primary">' + escapeHtml(message(language, "check")) + '</button></div>' +
       '<p class="mc-hash-privacy">' + escapeHtml(message(language, "privacy")) + '</p>' +
       '<div class="mc-hash-status" data-role="hash-status" aria-live="polite"></div>' +
-      '</form><div data-role="result"></div></section>';
+      '</form><div data-role="result"></div></section></details>';
   }
 
   function storedIata() {
@@ -472,19 +445,6 @@
 
   function storeIata(iata) {
     try { window.localStorage.setItem(STORAGE_KEY, iata); } catch (error) { /* Storage is optional. */ }
-  }
-
-  function applyLocation(host, iatas, detail, language) {
-    if (!detail) return;
-    var nearest = nearestIata(iatas, detail.lat, detail.lon);
-    var code = nearest && normalizeIata(nearest.item && nearest.item.iata);
-    if (!code) return;
-    host.querySelector("[data-role='region']").value = code;
-    storeIata(code);
-    host.querySelector("[data-role='hash-status']").textContent = message(language, "autoRegion", {
-      code: code,
-      place: detail.label || detail.tag || code
-    });
   }
 
   function init(host) {
@@ -513,7 +473,6 @@
           return '<option value="' + escapeHtml(normalizeIata(item.iata)) + '">' + escapeHtml(item.displayName || "") + '</option>';
         }).join("");
         status.textContent = "";
-        if (host._mcSelectedRegion) applyLocation(host, loadedIatas, host._mcSelectedRegion, language);
         return loadedIatas;
       }).catch(function () {
         status.textContent = message(language, "regionsUnavailable");
@@ -522,11 +481,6 @@
     }
 
     regionInput.addEventListener("focus", loadIatas, { once: true });
-
-    document.addEventListener("meshcore:region-selected", function (event) {
-      host._mcSelectedRegion = event.detail || null;
-      loadIatas();
-    });
 
     regionInput.addEventListener("input", function () {
       regionInput.value = regionInput.value.toUpperCase();
@@ -585,7 +539,6 @@
     fetchMatchingNodes: fetchMatchingNodes,
     heardIn: heardIn,
     lastHeard: lastHeard,
-    nearestIata: nearestIata,
     nodesUrl: nodesUrl,
     normalizeIata: normalizeIata,
     normalizeKey: normalizeKey,

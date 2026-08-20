@@ -864,23 +864,6 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   gap: 1rem;
 }
 
-.mcc-map-product-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.mcc-map-product-header h2,
-.mcc-map-product-header p {
-  margin-block: 0;
-}
-
-.mcc-map-product-header h2 + p {
-  margin-top: 0.5rem;
-}
-
 .mcc-map-mode-switch {
   display: inline-flex;
   width: fit-content;
@@ -910,6 +893,17 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-map-mode-switch button[aria-pressed="true"] {
   color: #ffffff;
   background: var(--mcc-green);
+}
+
+.mcc-map-list-card > summary {
+  color: var(--mcc-text);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mcc-map-list-card[open] > summary {
+  margin-bottom: 0.75rem;
 }
 
 .mcc-map-panel {

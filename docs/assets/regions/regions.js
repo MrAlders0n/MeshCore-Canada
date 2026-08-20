@@ -228,15 +228,17 @@
     "Location was not available. Enter coordinates or browse regions.": "La position n’était pas disponible. Entrez des coordonnées ou parcourez les régions.",
     "Leaflet failed to load": "Leaflet n’a pas pu se charger",
     "MeshCore Canada regions": "Régions de MeshCore Canada",
-    "Explore or audit the region release": "Explorer ou vérifier la publication des régions",
-    "Find a home region on the interactive map, or inspect the published release evidence.": "Trouvez une région d’attache sur la carte interactive ou examinez les preuves de la publication.",
+    "Find a region": "Trouver une région",
+    "Region data": "Données régionales",
+    "Region map view": "Affichage de la carte des régions",
+    "Browse by province or territory": "Parcourir par province ou territoire",
+    "Can't use the map?": "La carte ne fonctionne pas?",
+    "Browse all regions": "Parcourir toutes les régions",
+    "Search the full region list.": "Recherchez dans la liste complète des régions.",
     "Set up a repeater": "Configurer un répéteur",
-    "Region map mode": "Mode de la carte des régions",
-    "Audit the release": "Vérifier la publication",
     "Region search and details": "Recherche et détails des régions",
     "Find a place": "Trouver un lieu",
     "Enter coordinates instead": "Entrer plutôt des coordonnées",
-    "Browse the hierarchy": "Parcourir la hiérarchie",
     "Selected region": "Région sélectionnée",
     "Skip the interactive map": "Passer la carte interactive",
     "Loading interactive map…": "Chargement de la carte interactive…",
@@ -246,9 +248,6 @@
     "Map legend": "Légende de la carte",
     "Selected boundary": "Limite sélectionnée",
     "Browsed group outline": "Contour du groupe parcouru",
-    "List alternative": "Option sous forme de liste",
-    "All regions": "Toutes les régions",
-    "If the map is unavailable, search and select a region from this list.": "Si la carte est indisponible, recherchez et sélectionnez une région dans cette liste.",
     "Audit data loads when this view is opened.": "Les données de vérification se chargent à l’ouverture de cette vue.",
     "Unable to load release QA": "Impossible de charger les contrôles de qualité de la publication",
     "Unable to load the source lock": "Impossible de charger le verrouillage des sources",
@@ -2482,14 +2481,9 @@
     el.innerHTML = '' +
       '<div class="mcc-map-experience">' +
       '<div class="mcc-visually-hidden" data-mcc-copy-status role="status" aria-live="polite" aria-atomic="true"></div>' +
-      '<header class="mcc-map-product-header">' +
-      '<div><p class="mcc-eyebrow">MeshCore Canada regions</p><h2>Explore or audit the region release</h2>' +
-      '<p>Find a home region on the interactive map, or inspect the published release evidence.</p></div>' +
-      '<a class="mcc-button" href="' + esc(regionPageHref("config")) + '">' + icon("list-checks") + 'Set up a repeater</a>' +
-      '</header>' +
-      '<div class="mcc-map-mode-switch" role="group" aria-label="Region map mode">' +
-      '<button type="button" data-map-mode="explore" aria-pressed="true" aria-controls="mcc-explore-panel">Explore regions</button>' +
-      '<button type="button" data-map-mode="audit" aria-pressed="false" aria-controls="mcc-audit-panel">Audit the release</button>' +
+      '<div class="mcc-map-mode-switch" role="group" aria-label="Region map view">' +
+      '<button type="button" data-map-mode="explore" aria-pressed="true" aria-controls="mcc-explore-panel">Find a region</button>' +
+      '<button type="button" data-map-mode="audit" aria-pressed="false" aria-controls="mcc-audit-panel">Region data</button>' +
       '</div>' +
       '<section id="mcc-explore-panel" data-map-panel="explore">' +
       '<div class="mcc-map-shell">' +
@@ -2509,7 +2503,7 @@
       '<div data-role="map-status"></div>' +
       '</section>' +
       '<section class="mcc-card mcc-card-compact">' +
-      '<h3>Browse the hierarchy</h3>' +
+      '<h3>Browse by province or territory</h3>' +
       '<div class="mcc-region-breadcrumbs" data-role="region-breadcrumbs"></div>' +
       '<div class="mcc-region-children" data-role="region-children"></div>' +
       '</section>' +
@@ -2531,10 +2525,11 @@
       '</div>' +
       '</div>' +
       '</div>' +
-      '<section class="mcc-card mcc-map-list-card" id="mcc-region-list">' +
-      '<div class="mcc-section-head"><div><p class="mcc-eyebrow">List alternative</p><h3>All regions</h3><p>If the map is unavailable, search and select a region from this list.</p></div></div>' +
+      '<details class="mcc-card mcc-map-list-card" id="mcc-region-list">' +
+      '<summary>Browse all regions</summary>' +
+      '<div class="mcc-section-head"><div><p class="mcc-eyebrow">Can\'t use the map?</p><p>Search the full region list.</p></div></div>' +
       '<div data-role="map-region-table"></div>' +
-      '</section>' +
+      '</details>' +
       '</section>' +
       '<section id="mcc-audit-panel" class="mcc-audit-panel" data-map-panel="audit" hidden>' +
       '<div class="mcc-status mcc-status-info" data-role="audit-status" role="status">Audit data loads when this view is opened.</div>' +

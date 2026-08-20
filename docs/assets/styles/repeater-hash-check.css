@@ -2,22 +2,40 @@
   margin: var(--mc-space-8) 0;
 }
 
-/* Reserve the form's space until its small progressive-enhancement script runs. */
+/* Reserve the disclosure's space until its small progressive-enhancement script runs. */
 [data-mc-repeater-hash-check]:empty {
   display: block;
-  min-height: 44.25rem;
+  min-height: 4rem;
 }
 
 [data-mc-repeater-hash-check][data-mc-hash-layout="wide"] {
-  min-height: 35.5rem;
+  min-height: 4rem;
 }
 
-.mc-hash-checker {
-  padding: clamp(1rem, 3vw, 1.6rem);
+.mc-hash-disclosure {
+  overflow: hidden;
   border: 1px solid var(--mc-color-border);
   border-radius: var(--mc-radius-lg);
   background: var(--mc-color-surface);
   box-shadow: var(--mc-shadow-1);
+}
+
+.mc-hash-disclosure > summary {
+  padding: 1rem 1.2rem;
+  color: var(--mc-color-text);
+  font-size: 1rem;
+  font-weight: 760;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.mc-hash-disclosure[open] > summary {
+  border-bottom: 1px solid var(--mc-color-border);
+}
+
+.mc-hash-checker {
+  padding: clamp(1rem, 3vw, 1.6rem);
+  background: var(--mc-color-surface);
 }
 
 .mc-hash-checker > :first-child,

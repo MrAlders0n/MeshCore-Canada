@@ -27,18 +27,17 @@ Choose the tool that matches your task.
 
     ---
 
-    Find a location's Canadian region and generate repeater commands. Review
-    the commands before applying them.
+    Build region commands for a repeater after choosing its location.
 
     [:octicons-arrow-right-24: Open the repeater configurator](../config/index.md)
 
--   :material-map-search:{ .lg .middle } **Explore Canadian regions**
+-   :material-map-search:{ .lg .middle } **Find your MeshCore region**
 
     ---
 
-    Find Canadian regions and neighbouring paths on a map.
+    Search a place or use the map to see its Canadian MeshCore region.
 
-    [:octicons-arrow-right-24: Open the region map](../config/map.md)
+    [:octicons-arrow-right-24: Find my region](../config/map.md)
 
 -   :material-chart-timeline-variant:{ .lg .middle } **View the live network**
 

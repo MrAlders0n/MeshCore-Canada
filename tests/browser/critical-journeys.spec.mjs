@@ -135,6 +135,24 @@ test("desktop navigation exposes the six task categories", async ({ page }, test
   ]);
 });
 
+test("English and French homepages link directly to the region finder", async ({ page }, testInfo) => {
+  for (const [home, linkName, destination, heading, finder, directory] of [
+    ["/", "Find my region", "/config/map/", "Find your Canadian MeshCore region", "Find a region", "Browse all regions"],
+    ["/fr/", "Trouver ma région", "/fr/config/map/", "Trouver votre région MeshCore au Canada", "Trouver une région", "Parcourir toutes les régions"]
+  ]) {
+    await page.goto(siteRoute(home));
+    const link = page.getByRole("link", { name: linkName, exact: true });
+    await expect(link).toBeVisible();
+    await link.click();
+    await expect(page).toHaveURL(resolveSiteRoute(testInfo.project.use.baseURL, destination));
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(heading);
+    await expect(page.getByRole("button", { name: finder, exact: true })).toHaveAttribute("aria-pressed", "true");
+    const regionDirectory = page.locator("#mcc-region-list");
+    await expect(regionDirectory.getByText(directory, { exact: true })).toBeVisible();
+    await expect(regionDirectory).not.toHaveAttribute("open", "");
+  }
+});
+
 test("hardware landing links directly to the experimental 1 W build", async ({ page }, testInfo) => {
   await page.goto(siteRoute("/hardware/"));
   const link = page.getByRole("link", { name: "Review the experimental 1 W build" });

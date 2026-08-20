@@ -53,17 +53,6 @@ test("compares 1-, 2-, and 3-byte IDs without counting the entered full key as i
   assert.equal(summaries[2].own.length, 1);
 });
 
-test("chooses the nearest Beacon region locally", () => {
-  const nearest = checker.nearestIata([
-    { iata: "BAD" },
-    { iata: "YVR", lat: 49.1967, lon: -123.1815 },
-    { iata: "YYZ", lat: 43.6777, lon: -79.6248 },
-    { iata: "YOW", lat: 45.3225, lon: -75.6692 }
-  ], 45.4215, -75.6972);
-  assert.equal(nearest.item.iata, "YOW");
-  assert.equal(checker.nearestIata([{ iata: "BAD" }], 45.4215, -75.6972), null);
-});
-
 test("paginates the Beacon prefix lookup and rejects an unfiltered response", async () => {
   const urls = [];
   const matching = node("05AA" + "55".repeat(30), [["YYZ", 1]]);
@@ -88,12 +77,10 @@ test("paginates the Beacon prefix lookup and rejects an unfiltered response", as
   }), /did not apply/);
 });
 
-test("loads one shared checker on the English and French repeater configuration pages", () => {
+test("loads one shared checker only on English and French repeater ID workflows", () => {
   const pages = [
     "docs/start/repeater.md",
     "docs/start/repeater.fr.md",
-    "docs/config/index.md",
-    "docs/config/index.fr.md",
     "docs/meshcore/flash-repeater.md",
     "docs/meshcore/flash-repeater.fr.md",
     "docs/meshcore/generate-repeater-id.md",
@@ -106,10 +93,17 @@ test("loads one shared checker on the English and French repeater configuration 
     assert.match(markdown, /data-mc-repeater-hash-check/);
   });
 
+  for (const path of ["docs/config/index.md", "docs/config/index.fr.md"]) {
+    const markdown = readFileSync(path, "utf8");
+    assert.doesNotMatch(markdown, /repeater-hash-check|data-mc-repeater-hash-check/);
+  }
+
   const css = readFileSync("docs/assets/styles/repeater-hash-check.css", "utf8");
   assert.match(css, /@media \(max-width: 46rem\)/);
   assert.match(css, /content: attr\(data-label\)/);
   assert.match(css, /\[data-mc-repeater-hash-check\]:empty[\s\S]*min-height/);
+  assert.match(script, /mc-hash-disclosure/);
+  assert.match(script, /Duplicate repeater ID check \(optional\)/);
   assert.match(script, /regionInput\.addEventListener\("focus", loadIatas/);
   assert.doesNotMatch(script, /privateKey|prv\.key[^"']*fetch/i);
 });

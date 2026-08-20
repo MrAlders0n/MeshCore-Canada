@@ -137,7 +137,7 @@ plugins:
             Network Tools: Outils réseau
             Choose a network tool: Choisir un outil réseau
             Configure a repeater: Configurer un répéteur
-            Explore the region map: Explorer la carte des régions
+            Find your region: Trouver votre région
             Set up an observer: Configurer un observateur
             Check an observer: Vérifier un observateur
             Troubleshoot network data: Dépanner les données du réseau
@@ -245,7 +245,7 @@ nav:
   - Network Tools:
       - Choose a network tool: tools/index.md
       - Configure a repeater: config/index.md
-      - Explore the region map: config/map.md
+      - Find your region: config/map.md
       - Set up an observer: analyzer/intro.md
       - Check an observer: analyzer/verify.md
       - Troubleshoot network data: analyzer/troubleshooting.md

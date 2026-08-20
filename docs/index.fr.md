@@ -45,6 +45,14 @@ de difficile à comprendre ou de désuet?
 
     [:octicons-arrow-right-24: Trouver une communauté](provinces/index.md)
 
+-   :material-map-search:{ .lg .middle } **Trouver votre région MeshCore**
+
+    ---
+
+    Voyez quelle région MeshCore canadienne couvre votre emplacement.
+
+    [:octicons-arrow-right-24: Trouver ma région](config/map.md)
+
 </div>
 
 ## Quel type d’appareil configurez-vous? { #choose-a-role }
