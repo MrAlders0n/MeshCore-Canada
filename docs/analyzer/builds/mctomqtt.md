@@ -56,7 +56,7 @@ On a serial host, the helper:
 
 - writes `/etc/mctomqtt/config.d/20-meshcore-ca.toml`;
 - makes a timestamped `.bak.<timestamp>` copy when that file exists;
-- adds the primary and backup MeshCore Canada endpoints and location code; and
+- adds the primary and backup MeshCore Canada addresses and location code; and
 - restarts `mctomqtt` unless `--no-restart` is used.
 
 For companion capture, it updates `~/.meshcore-packet-capture/.env.local`, makes a timestamped backup, configures slots 1 and 2, disables slots 3–6, and may restart the capture service.
@@ -73,7 +73,7 @@ curl -fsSLo "$workdir/add-meshcore-ca-broker.sh" https://meshcore.ca/analyzer/sc
 less "$workdir/add-meshcore-ca-broker.sh"
 ```
 
-Check the source URL, changed paths, endpoint hosts, backup behaviour, and restart behaviour. Keep the file for the rest of this setup.
+Check the source URL, changed paths, server addresses, backup behaviour, and restart behaviour. Keep the file for the rest of this setup.
 
 ### 2. Write without restarting
 
@@ -160,7 +160,7 @@ There is no documented `meshcoretomqtt` Windows installer for the packet-log ser
 
 ## What you should see
 
-The service stays active, the primary endpoint connects, and its packet count changes when the radio hears nearby traffic.
+The service stays active, connects to the primary server, and counts new packets when the radio hears nearby traffic.
 
 ## Verify in CoreScope
 

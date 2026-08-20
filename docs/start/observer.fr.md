@@ -77,7 +77,7 @@ d’autres paramètres.
     observateur peut être en ligne sans capter de trafic utile si ses paramètres
     radio diffèrent de ceux des appareils à proximité.
 
-## Vérifier que tout fonctionne
+## Tester l’observateur
 
 L’observateur fonctionne lorsque :
 

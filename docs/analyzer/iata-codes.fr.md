@@ -1,6 +1,6 @@
 ---
 title: Trouver le code d’emplacement d’un observateur
-description: Trouvez, dans notre liste canadienne, le code à trois lettres de l’aéroport le plus proche de votre observateur.
+description: Trouvez le code d’aéroport à trois lettres le plus proche de votre observateur.
 audience:
   - observer-operators
 task: choose-location-code

@@ -17,10 +17,9 @@ difficulty: advanced
 
 # Définition des régions et autorité de MeshCore Canada
 
-Cette norme définit un seul système de régions pour tout le Canada : comment
-les emplacements sont attribués, comment les limites sont générées, comment les
-régions sont divisées, qui approuve les changements et comment les conflits
-entre sources sont résolus.
+Cette norme définit les régions MeshCore du Canada. Elle explique comment les
+emplacements et les limites sont attribués, qui approuve les changements et
+comment les conflits entre sources sont résolus.
 
 | Norme | Valeur |
 | --- | --- |
@@ -273,10 +272,10 @@ d’influence incertaines — particulièrement en Alberta, en Saskatchewan, au
 Manitoba, à Terre-Neuve-et-Labrador, au Yukon et dans certaines parties du
 Québec — demeurent prioritaires pour l’examen local avant leur activation.
 
-### Vérification du système actuel
+### Vérification du prototype
 
-L’ancien prototype à chevauchements a confirmé pourquoi une seule couche
-d’autorité générée est nécessaire :
+Les essais du prototype ont montré pourquoi une seule couche d’autorité générée
+est nécessaire :
 
 - les enregistrements du catalogue doivent encore être examinés par les communautés avant leur activation;
 - les 192 zones à rayon autour des points d’origine et les 29 polygones MeshMapper bruts étaient affichés ensemble, mais ne formaient pas une partition;
@@ -285,10 +284,10 @@ d’autorité générée est nécessaire :
 - le polygone source actuel `YXX` est manifestement hors échelle et doit être actualisé ou expressément approuvé avant de pouvoir servir de point d’ancrage à Abbotsford;
 - six alias normalisés ont plus d’un propriétaire; une recherche ambiguë exige donc le contexte du champ de compétence ou un choix explicite.
 
-Il s’agit de constats de migration, et non de définitions régionales acceptées.
-La carte publique utilise maintenant uniquement la partition générée; les
-cercles sources et les polygones sources bruts demeurent des éléments de preuve
-pour le générateur et le rapport d’assurance qualité.
+Il s’agit de constats de conception, et non de définitions régionales acceptées.
+La carte publique utilise seulement la partition générée. Les cercles et
+polygones sources bruts restent des preuves pour le générateur et le rapport
+d’assurance qualité.
 
 ### Inventaire complet des garde-fous
 
@@ -484,34 +483,32 @@ réexaminés lorsque le millésime de recensement change.
 
 ### 8. Utiliser l’activité radio uniquement pour départager de façon confidentielle
 
-L’instantané verrouillé `radio-density.json` réunit les observations récentes et
-positionnées de `live.meshcore.ca` et les entrées positionnées actuellement
-retournées par `dev.meshcore.ca`, puis déduplique en mémoire les clés publiques
-identiques. Le point de terminaison de développement n’indique pas l’heure
-d’observation de chaque nœud; les entrées provenant uniquement de cet
-environnement fournissent donc une densité indicative, mais ne peuvent servir
-de preuve décisionnelle. Les observations récentes des répéteurs, serveurs de
-salon et capteurs en direct fournissent les nombres décisionnels; les
-emplacements des compagnons demeurent indicatifs. L’instantané est lié à une
-empreinte SHA-256 du DGUID et du propriétaire provisoire avant l’analyse radio.
-Les anciens noms candidats échouent donc de façon sûre, tandis qu’un critère
-radio valide peut encore modifier la propriété finale sans dépendance circulaire
-de l’empreinte.
+L’instantané verrouillé `radio-density.json` combine les observations récentes
+et positionnées de `live.meshcore.ca` avec les entrées positionnées de
+`dev.meshcore.ca`, puis déduplique les clés publiques identiques. Dev n’indique
+pas l’heure d’observation; ses entrées seules restent donc indicatives et ne
+peuvent décider d’une limite. Les répéteurs, serveurs de salon et capteurs
+récemment observés en direct fournissent les totaux utilisés pour les décisions.
+Les emplacements des appareils compagnons restent indicatifs.
 
-Les grappes ne s’étendent pas sur plus de 30 kilomètres. Chaque nombre
-géographique publié est d’au moins cinq. Les nombres par candidat sont publiés
-uniquement dans leur propre CSD, et toute la ventilation des candidats d’une CSD
-est masquée si l’une des catégories contient moins de cinq nœuds. Aucun
-identifiant de nœud, nom ou coordonnée exacte n’est conservé.
+L’instantané est lié à une empreinte SHA-256 de chaque DGUID et de son
+propriétaire provisoire avant l’analyse radio. Si le nom d’une région candidate
+est périmé, la validation s’arrête. Un critère radio valide peut encore changer
+la propriété finale.
 
-La preuve radio peut départager uniquement des candidates déjà présentes dans
-une CSD lorsque la marge provisoire ne dépasse pas 10 points de pourcentage et
-qu’au moins 60 % des preuves radio admissibles appuient une candidate. Elle ne
-peut pas créer une région, diviser une CSD, traverser une province ou un
-territoire ni remplacer une décision de recensement approuvée. Un instantané
-radio constitue une preuve reproductible pour une version, et non une autorité
-automatique en direct; tout changement passe par un nouvel instantané verrouillé
-et l’examen normal.
+Les grappes ne s’étendent pas sur plus de 30 kilomètres. Chaque total
+géographique publié est d’au moins cinq. Les totaux par région candidate sont
+publiés seulement dans leur propre CSD. Toute la ventilation d’une CSD est
+masquée si une catégorie contient moins de cinq nœuds. Aucun identifiant de
+nœud, nom ou coordonnée exacte n’est conservé.
+
+La preuve radio peut départager des régions candidates déjà présentes dans une
+CSD seulement si la marge provisoire ne dépasse pas 10 points et qu’au moins
+60 % des preuves admissibles appuient une région. Elle ne peut pas créer une
+région, diviser une CSD, traverser une province ou un territoire ni remplacer
+une décision approuvée. Un instantané est une preuve reproductible, pas une
+autorité automatique en direct. Tout changement exige un nouvel instantané
+verrouillé et l’examen normal.
 
 ### 9. Générer les deux produits de limites
 
@@ -620,57 +617,55 @@ provisoires au niveau des DA pour façonner une division exceptionnelle, mais
 l’enregistrement `splitExceptions` approuvé doit énumérer chaque DA de la CSD,
 sans DGUID en double ni manquant.
 
-L’éditeur est une page statique à `/config/editor/` et n’exige aucun compte de
-contribution. Il peut déplacer des cellules vers une région existante ou
-proposer une nouvelle région avec un nom unique, un identifiant court et une
-cellule d’ancrage modifiée. La nouvelle région terminale utilise le parent
-commun le plus proche de ses régions sources afin de conserver l’arbre actuel.
-Il crée une proposition versionnée avec l’empreinte d’appartenance de base et
-le propriétaire avant-après de chaque DGUID modifié. Lors de la soumission, un
-service exploité par MeshCore Canada répète les vérifications d’autorité et de
-proposition, valide le contrôle antipourriel et utilise une GitHub App limitée
-au dépôt pour ouvrir automatiquement le billet public. La page statique et le
-service de production sont tous deux exploités par MeshCore Canada; aucun
-identifiant GitHub ni secret de signature n’est placé dans le navigateur.
-L’App publique possède uniquement un accès en lecture-écriture aux billets et
-ne peut pas modifier la carte. La proposition de référence est signée par l’App
-et enregistrée dans des marqueurs lisibles par machine, tandis que le billet
-présente le résumé destiné aux personnes. Les responsables peuvent reproduire
-la vérification avec `scripts/validate-region-proposal.py`, qui ajoute le
-contexte CD/CSD et exige une raison avant l’examen; un auteur peut aussi être
-consigné.
+L’éditeur est une page statique à `/config/editor/`; aucun compte n’est requis.
+Il peut déplacer des cellules vers une région existante ou proposer une région
+avec un nom unique, un identifiant court et une cellule d’ancrage modifiée. Une
+nouvelle région garde le parent commun le plus proche de ses régions sources.
 
-Après l’examen local et public, une personne autorisée ferme le billet étiqueté
-comme **Completed**. L’Action du dépôt vérifie indépendamment l’auteur, la
-personne qui ferme, l’étiquette, la signature de l’App, l’empreinte de la
-proposition et le champ de compétence. Elle vérifie aussi le propriétaire
-actuel de chaque cellule demandée. Une proposition peut demeurer ouverte
-pendant que d’autres limites changent, mais elle échoue de façon sûre si l’une
-de ses cellules a changé durant l’examen. Une décision concernant une CSD
-entière devient une dérogation de cohorte; une décision partielle devient une
-division explicite qui énumère toutes les DA de cette CSD. Pour une nouvelle
-région approuvée, l’Action tire le point d’origine de la cellule d’ancrage
-officielle, ajoute l’entrée au catalogue et applique la même décision de
-propriété. Les points d’origine approuvés par la communauté ne participent pas
-à l’étape candidate avant l’analyse radio : la cohorte ou la division examinée
-possède les cellules approuvées. Cela protège la base de densité radio
-verrouillée et empêche une expansion non examinée. L’Action régénère ensuite
-les deux partitions nationales et les cellules de l’éditeur à partir des
-sources verrouillées, exécute les contrôles de publication et enregistre la
-décision source ainsi que les éléments générés dans `main`. Cette mise à jour déclenche le
-déploiement normal du site. Tout échec avant la publication rouvre le billet et
-laisse `main` inchangée. Une fermeture comme **Not planned** ne change aucune
-autorité. Les brouillons de l’éditeur, l’état local du navigateur et les billets
-soumis ne font jamais autorité avant la fin de l’approbation et de la
-validation.
+Chaque proposition consigne l’empreinte de base ainsi que le propriétaire avant
+et après chaque DGUID modifié. Lors de la soumission :
 
-La géométrie des cellules de recensement de l’éditeur
-(`docs/assets/regions/cells/`) a été générée pour la dernière fois avec
-`scripts/build-region-editor-data.py --retain 10%` plutôt qu’avec la valeur par
-défaut de 8 %, car 8 % réduit une aire de diffusion de la
-Colombie-Britannique à une forme dégénérée. La valeur retenue est consignée avec
-les autres entrées de construction dans
-`docs/assets/regions/cells/manifest.json`.
+- le service de MeshCore Canada refait les vérifications d’autorité et de
+  proposition;
+- il valide le contrôle antipourriel;
+- une application GitHub limitée au dépôt ouvre le billet public.
+
+Aucun identifiant GitHub ni secret de signature n’atteint le navigateur.
+L’application peut lire et modifier les billets, mais elle ne peut pas changer
+la carte. Elle signe la proposition de référence enregistrée dans les marqueurs
+du billet. Le billet présente un résumé en langage clair. Les responsables
+peuvent répéter la vérification avec `scripts/validate-region-proposal.py`, qui
+ajoute le contexte CD/CSD et exige une raison.
+
+Après l’examen, une personne autorisée ferme le billet avec l’état
+**Completed**. Le flux du dépôt :
+
+- vérifie l’auteur, la personne qui ferme le billet, l’étiquette, la signature
+  de l’application, l’empreinte de la proposition et le champ de compétence;
+- confirme que chaque cellule demandée a toujours le propriétaire prévu;
+- consigne une décision sur une CSD entière comme dérogation de cohorte, ou une
+  décision partielle comme division explicite de toutes les DA de cette CSD;
+- tire le point d’origine d’une nouvelle région approuvée de sa cellule
+  d’ancrage officielle;
+- régénère les deux partitions nationales et les cellules de l’éditeur à partir
+  des sources verrouillées, exécute les contrôles et enregistre le résultat dans
+  `main`.
+
+Les points d’origine approuvés par la communauté ne participent pas à l’étape
+candidate avant l’analyse radio. La cohorte ou la division examinée possède les
+cellules approuvées, ce qui protège la base de densité radio verrouillée et
+empêche une expansion non examinée.
+
+Si une cellule demandée change pendant l’examen, le flux s’arrête. Un échec de
+publication rouvre le billet et laisse la branche `main` inchangée. Fermer un
+billet avec l’état **Not planned** ne change rien. Les brouillons, l’état du
+navigateur et les billets ouverts ne font jamais autorité.
+
+La géométrie de l’éditeur dans `docs/assets/regions/cells/` utilise
+`scripts/build-region-editor-data.py --retain 10%`. La valeur par défaut de 8 %
+réduit une aire de diffusion de la Colombie-Britannique à une forme dégénérée.
+Le manifeste consigne donc la valeur de 10 % avec les autres données de
+construction.
 
 Règles de versionnement :
 
@@ -740,7 +735,7 @@ cartographique et ne sont pas résolus à partir d’un point. Le nom d’une zo
 répéteurs partagée n’entre jamais dans une commande; seuls les chemins de
 référence de ses membres y entrent.
 
-## Migration depuis la carte actuelle
+## Étapes de publication
 
 | Phase | Résultat | État des limites |
 | --- | --- | --- |
@@ -761,8 +756,8 @@ géométrie cartographique.
 ## Règles de configuration des répéteurs
 
 Les instructions générées doivent suivre la
-[documentation officielle actuelle de l’interface MeshCore](https://docs.meshcore.io/cli_commands/),
-et non des exemples copiés d’un ancien document de stratégie.
+[documentation officielle de l’interface MeshCore](https://docs.meshcore.io/cli_commands/).
+Les exemples des documents de stratégie peuvent être désuets.
 
 - Utilisez `region def` ou `region put` pour définir exactement l’arbre requis par ce répéteur.
 - `name|jump` crée `name` sous le curseur actuel, puis déplace le curseur vers `jump`; `jump` n’est pas le parent de `name`.
@@ -775,15 +770,16 @@ et non des exemples copiés d’un ancien document de stratégie.
 - Exécutez `region save` seulement après avoir confirmé l’arbre et les permissions d’inondation.
 
 L’outil de configuration doit générer et tester les commandes à partir des
-identifiants de parent du registre. Il ne doit jamais déduire l’ordre des
-commandes en divisant une chaîne d’identifiant. La carte peut entourer ensemble
-toutes les régions terminales canadiennes sélectionnées, mais chaque
-remplissage demeure sa région géographique d’origine sans chevauchement. Les
-chemins américains voisins apparaissent uniquement dans les commandes et les
-noms. L’éditeur de limites continue d’accepter une seule province ou un seul
-territoire par proposition; l’appartenance à une zone de répéteurs partagée et
-les métadonnées des chemins voisins sont modifiées dans le catalogue et
-examinées par chaque côté touché.
+identifiants de parent du registre. Il ne doit jamais déduire leur ordre en
+divisant une chaîne d’identifiant.
+
+La carte peut entourer plusieurs régions terminales canadiennes, mais chaque
+remplissage reste dans sa région d’origine sans chevauchement. Les chemins
+américains voisins apparaissent seulement dans les commandes et les noms.
+
+L’éditeur de limites accepte une seule province ou un seul territoire par
+proposition. Les changements aux zones de répéteurs partagées ou aux chemins
+voisins se font dans le catalogue et exigent l’examen de chaque côté touché.
 
 ## Registre des sources
 

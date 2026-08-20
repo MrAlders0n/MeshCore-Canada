@@ -27,7 +27,7 @@ Vérifiez les éléments suivants dans l’ordre :
 
 1. **Radio :** confirmez qu’elle est alimentée, connectée à la méthode d’observation et réglée selon le réseau maillé local.
 2. **Appareil ou service :** confirmez que le processus de l’observateur fonctionne.
-3. **Courtier :** confirmez que le point de terminaison principal indique une connexion avec validation TLS.
+3. **Courtier :** confirmez que l’observateur indique une connexion à l’adresse principale avec validation TLS.
 4. **Affichage :** attendez quelques minutes, actualisez [CoreScope Observers](https://live.meshcore.ca/#/observers), puis recherchez le nom exact de l’observateur.
 
 Ces commandes consultent seulement l’état des services :

@@ -37,7 +37,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Centre de la Saskatchewan</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -58,7 +58,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Regina et sud de la Saskatchewan</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>

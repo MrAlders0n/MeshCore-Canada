@@ -1,6 +1,6 @@
 ---
 title: Mettre à jour un répéteur ou un serveur de salon à distance
-description: Déterminez si une mise à jour OTA est sécuritaire, préparez la récupération physique, mettez à jour un appareil nRF52 et vérifiez tous les réglages conservés.
+description: Mettez à jour un répéteur ou un serveur de salon nRF52 en toute sécurité, puis vérifiez ses réglages.
 audience:
   - advanced-repeater-operator
   - room-server-operator
@@ -120,7 +120,7 @@ l’administration à distance se reconnecte et l’appareil indique la version 
 micrologiciel prévue. Tout autre résultat représente une mise à jour ratée ou
 incomplète.
 
-## 4. S’assurer que la mise à jour a fonctionné
+## 4. Tester la mise à jour
 
 1. Fermez la session et reconnectez-vous après le redémarrage de l’appareil.
 2. Exécutez `ver` et confirmez la version exacte du micrologiciel prévue.
@@ -140,7 +140,7 @@ Si le même fichier ZIP vérifié ne peut pas être installé sur l’appareil D
 attendu, cessez les tentatives à distance et récupérez par USB la carte et le
 rôle exacts. Restaurez l’identité et les réglages sauvegardés lorsque cette
 fonction est offerte, puis reprenez toute la vérification. N’essayez jamais
-l’artéfact d’une autre carte au hasard pour effectuer une récupération.
+l’artéfact d’une autre carte au hasard pour récupérer l’appareil.
 
 ## Après la mise à jour
 

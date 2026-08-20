@@ -444,7 +444,7 @@ import {
     if (tag && !/^[a-z0-9][a-z0-9-]{0,28}$/.test(tag)) {
       tagMessage = "Use lowercase letters, numbers and single hyphens; do not start with a hyphen.";
     } else if (tag && index.tags.has(tag)) {
-      tagMessage = "That canonical tag is already used or reserved.";
+      tagMessage = "That tag is already used or reserved.";
     }
     elements.newRegionNameError.textContent = nameMessage;
     elements.newRegionNameError.className = "field-message" + (nameMessage ? " error" : "");
@@ -1000,7 +1000,7 @@ import {
       return;
     }
     if (count) {
-      setValidation(exportReady ? "Client checks are ready." : "Complete the readiness checklist.", exportReady ? "success" : "");
+      setValidation(exportReady ? "Proposal checks passed." : "Complete the checklist.", exportReady ? "success" : "");
     } else {
       setValidation("", "");
     }

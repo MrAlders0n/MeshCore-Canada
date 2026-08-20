@@ -68,8 +68,8 @@
           ", reviewed " + config.last_reviewed + ".";
     } catch (_error) {
       status.textContent = tr(
-        "The generated broker table could not be loaded. Open the canonical JSON below.",
-        "Impossible de charger le tableau des serveurs MQTT. Ouvrez le fichier JSON de référence ci-dessous."
+        "The broker table could not be loaded. Open the official JSON below.",
+        "Impossible de charger le tableau. Ouvrez le fichier JSON officiel ci-dessous."
       );
     }
   }

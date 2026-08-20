@@ -1,6 +1,6 @@
 ---
-title: Effectuer les tâches courantes dans l’application MeshCore
-description: Partagez ou importez un contact, tracez un parcours et examinez les répétitions reçues dans l’application MeshCore.
+title: Tâches courantes dans l’application MeshCore
+description: Partagez ou importez un contact, tracez un parcours et vérifiez les répétitions reçues dans l’application MeshCore.
 audience:
   - companion-user
   - meshcore-user
@@ -15,11 +15,10 @@ estimated_time: 5-15 minutes
 destructive: false
 ---
 
-# Effectuer les tâches courantes dans l’application MeshCore
+# Tâches courantes dans l’application MeshCore
 
-Choisissez la tâche dont vous avez besoin. Ces captures d’écran montrent une
-version de l’interface de l’application mobile MeshCore; les noms et les
-emplacements peuvent changer dans une autre version.
+Choisissez une tâche. Les captures montrent une version de l’application mobile
+MeshCore; les libellés et leur emplacement peuvent différer.
 
 - [Partager votre lien de contact](#share-your-contact-link)
 - [Importer un lien de contact](#import-a-contact-link)

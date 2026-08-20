@@ -1,6 +1,6 @@
 ---
-title: Observer endpoint reference
-description: Find the broker, security, topic, and packet settings used by MeshCore Canada observers.
+title: Observer connection reference
+description: Find the broker address, security, topic, and packet settings used by MeshCore Canada observers.
 audience:
   - observer-operators
   - service-operators
@@ -19,9 +19,10 @@ page_scripts:
   - assets/javascripts/analyzer-broker-reference.js?v=20260722-2
 ---
 
-# Observer endpoint reference
+# Observer connection reference
 
-Use this reference after you have [chosen an observer setup](intro.md). Follow that setup's guide instead of copying fields from here on their own.
+Use this after you [choose an observer setup](intro.md). Follow that guide rather
+than copying these values without context.
 
 ## Broker settings
 
@@ -43,7 +44,7 @@ These values come from the shared [observer configuration](observer-config.json)
       <tbody id="broker-reference-body"></tbody>
     </table>
   </div>
-  <p class="mc-location-status" id="broker-reference-status" role="status">Loading canonical endpoint values…</p>
+  <p class="mc-location-status" id="broker-reference-status" role="status">Loading official connection settings…</p>
 </div>
 
 If the table does not load, open [observer-config.json](observer-config.json).
@@ -62,7 +63,7 @@ meshcore/{IATA}/{PUBLIC_KEY}/status
 - Use WebSockets on port `443`.
 - Require TLS and verify certificates.
 - Use the MeshCore JWT token option where available.
-- Match each token audience to its endpoint host.
+- Match each token audience to its server address.
 - Do not put a token or password into a URL, screenshot, issue, or diagnostic bundle.
 
 ## Packet mode by method
@@ -79,7 +80,7 @@ meshcore/{IATA}/{PUBLIC_KEY}/status
 
 | State | What it proves |
 |---|---|
-| DNS or port reachable | The host can reach the endpoint |
+| DNS or port reachable | The host can reach the server |
 | Broker connected | Transport and authentication succeeded |
 | Observer visible | Status reached the live service |
 | Recent packet visible | The radio-to-viewer path works end to end |

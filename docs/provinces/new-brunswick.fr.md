@@ -37,7 +37,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Sud du Nouveau-Brunswick, y compris Fredericton, Saint John, Moncton et les environs</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>

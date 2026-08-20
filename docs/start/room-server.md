@@ -66,7 +66,7 @@ community lists different settings.
 Keep administrator credentials private. Share only the guest access
 information intended for room users.
 
-## Make sure it works
+## Test it
 
 The room server is ready when:
 

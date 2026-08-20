@@ -1,6 +1,6 @@
 ---
 title: Partager une idée
-description: Envoyez une idée ou signalez un problème publiquement à MeshCore Canada, sans compte GitHub.
+description: Partagez une idée ou signalez un problème sans compte GitHub.
 audience:
   - community-member
 task: share-an-idea
@@ -32,7 +32,7 @@ hide:
     <span>1</span><strong>Relire</strong><small>Vérifier ce qui sera public</small>
   </li>
   <li data-submission-stage="verify">
-    <span>2</span><strong>Vérifier</strong><small>Effectuer la vérification antipourriel</small>
+    <span>2</span><strong>Vérifier</strong><small>Passer la vérification antipourriel</small>
   </li>
   <li data-submission-stage="submit">
     <span>3</span><strong>Soumettre</strong><small>Créer le billet public</small>

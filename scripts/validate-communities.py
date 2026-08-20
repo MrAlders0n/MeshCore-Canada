@@ -1153,7 +1153,7 @@ def contact_check_label_fr(contacts: list[dict[str, Any]]) -> str:
 def render_settings_fr(community: dict[str, Any], *, compact: bool = False) -> str:
     overrides = community["settings"]["overrides"]
     if not overrides:
-        return "Utilise les réglages par défaut du Canada"
+        return "Réglages par défaut du Canada"
     values = []
     if "radio_preset" in overrides:
         values.append(

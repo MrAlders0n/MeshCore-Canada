@@ -1,6 +1,6 @@
 ---
-title: Construire un observateur MQTT autonome
-description: Transformez une carte LoRa Wi-Fi compatible en observateur consacré à CoreScope.
+title: Configurer un observateur MQTT autonome
+description: Transformez une carte LoRa Wi-Fi compatible en observateur autonome pour CoreScope.
 audience:
   - observer-operators
 task: configure-standalone-observer
@@ -18,18 +18,17 @@ page_scripts:
   - assets/javascripts/analyzer-command-builder.js?v=20260722-2
 ---
 
-# Construire un observateur MQTT autonome
+# Configurer un observateur MQTT autonome
 
-Un micrologiciel d’observation spécialisé permet à une carte LoRa Wi-Fi
-compatible de transmettre la télémétrie des paquets à proximité sans ordinateur
-hôte distinct.
+Un micrologiciel dédié permet à une carte LoRa Wi-Fi compatible d’envoyer les
+paquets captés à proximité sans ordinateur séparé.
 
 ## Cette méthode vous convient-elle?
 
 <div class="mc-method-fit">
   <div><strong>Bon choix</strong>Vous pouvez consacrer une carte LoRa Wi-Fi compatible à l’observation.</div>
   <div><strong>Choisissez une autre méthode</strong>RemoteTerm, Home Assistant, PyMC ou un hôte USB à proximité gère déjà la radio.</div>
-  <div><strong>Gardez en fonction</strong>La carte, une alimentation stable, le Wi-Fi 2,4 GHz et l’accès Internet.</div>
+  <div><strong>À garder en ligne</strong>La carte, une alimentation stable, le Wi-Fi 2,4 GHz et l’accès Internet.</div>
 </div>
 
 Cette méthode utilise un micrologiciel tiers. Confirmez la carte et la version

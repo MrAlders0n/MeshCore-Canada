@@ -1,6 +1,6 @@
 ---
-title: Do common tasks in the MeshCore app
-description: Share a contact, import a contact, trace a path, and inspect heard repeats in the MeshCore app.
+title: Common tasks in the MeshCore app
+description: Share or import a contact, trace a path, and check heard repeats in the MeshCore app.
 audience:
   - companion-user
   - meshcore-user
@@ -15,10 +15,10 @@ estimated_time: 5-15 minutes
 destructive: false
 ---
 
-# Do common tasks in the MeshCore app
+# Common tasks in the MeshCore app
 
-Choose the task you need. These screenshots show one MeshCore mobile app
-layout; names and positions may move in another app version.
+Choose a task. The screenshots show one version of the MeshCore mobile app, so
+labels and positions may differ.
 
 - [Share your contact link](#share-your-contact-link)
 - [Import a contact link](#import-a-contact-link)
@@ -116,7 +116,7 @@ that later messages will use the same path.
 
 ### Trace one repeater
 
-1. Add one repeater and make sure its identifier is correct.
+1. Add one repeater and confirm its identifier.
 
     ![One repeater selected for a trace](images/MeshCore_TraceRoute1Hop1.png){ loading=lazy width="300" }
 

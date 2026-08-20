@@ -1,6 +1,6 @@
 ---
 title: Flash and configure a companion
-description: Back up, flash, configure, verify, and recover a supported MeshCore companion without losing important identity data.
+description: Safely flash and configure a supported MeshCore companion without losing its identity.
 audience:
   - first-time-user
   - companion-owner

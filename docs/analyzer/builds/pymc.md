@@ -19,7 +19,7 @@ page_styles:
 
 # Observe with PyMC
 
-Add MeshCore Canada's primary and backup endpoints to a PyMC repeater service you already operate.
+Add MeshCore Canada's primary and backup addresses to your PyMC repeater service.
 
 ## Is this method right for you?
 

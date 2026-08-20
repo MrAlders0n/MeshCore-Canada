@@ -1,6 +1,6 @@
 ---
 title: Choisir un type d’appareil MeshCore
-description: Comparez les appareils compagnons, les répéteurs, les serveurs de salon et les observateurs selon ce que vous voulez accomplir.
+description: Comparez les appareils compagnons, les répéteurs, les serveurs de salon et les observateurs selon leur rôle.
 audience:
   - newcomer
   - first-time-user

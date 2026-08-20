@@ -67,7 +67,7 @@ community lists different settings.
 
 Reboot after changing the radio settings, then send an advert.
 
-## Make sure it works
+## Test it
 
 The companion is ready when:
 

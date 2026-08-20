@@ -1,6 +1,6 @@
 ---
 title: Flash and configure a room server
-description: Back up, flash, secure, verify, and recover a supported MeshCore Room Server before deployment.
+description: Safely flash, secure, and test a supported MeshCore room server before deployment.
 audience:
   - room-server-operator
   - network-operator
@@ -76,7 +76,7 @@ The flasher reports completion, the device restarts as a Room Server, and **Conf
 5. Check the local community page for different settings. If none are listed, use the Canada defaults: **USA/Canada (Recommended)** (`910.525 MHz / 62.5 kHz / SF7 / CR5`).
 6. Save settings and reboot.
 
-## Make sure it works
+## Test the server
 
 1. Reconnect to the console after reboot and confirm the name, role, and radio settings.
 2. Send an advert.

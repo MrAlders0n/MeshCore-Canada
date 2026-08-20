@@ -29,11 +29,11 @@ le trafic.
 <ol class="mc-analyzer-flow">
   <li><strong>Radio</strong><span>capte les paquets MeshCore à proximité</span></li>
   <li><strong>Observateur</strong><span>transmet les données des paquets</span></li>
-  <li><strong>MeshCore Canada</strong><span>les reçoit par deux points de terminaison communs</span></li>
+  <li><strong>MeshCore Canada</strong><span>les reçoit par deux serveurs partagés</span></li>
   <li><strong>Outils en direct</strong><span>CoreScope affiche les observateurs et les paquets</span></li>
 </ol>
 
-Les points de terminaison communs utilisent MQTT, mais vous n’avez pas besoin
+Les serveurs partagés utilisent MQTT, mais vous n’avez pas besoin
 d’apprendre MQTT avant de choisir une méthode.
 
 !!! warning "Les observateurs partagent ce qu’ils captent"
@@ -78,17 +78,17 @@ Quelle que soit la méthode choisie, il vous faut :
 
 - une radio déjà configurée pour le réseau maillé local;
 - un véritable [code d’emplacement](iata-codes.md) à trois lettres;
-- les points de terminaison principal et de secours de MeshCore Canada;
+- les adresses principale et de secours de MeshCore Canada;
 - des connexions chiffrées avec validation des certificats;
 - la publication des paquets, et non seulement de l’état;
-- un hôte ou une carte qui reste en fonction.
+- un hôte ou une carte toujours en ligne.
 
 La configuration canadienne de départ est **USA/Canada (Recommended)**,
 `910.525 MHz / 62.5 kHz / SF7 / CR5`, avec le hachage des chemins sur
 3 octets. Une configuration locale publiée a priorité.
 
-Pour connaître les champs exacts du courtier, consultez la
-[référence des points de terminaison](broker-reference.md).
+Pour connaître les champs exacts du courtier, consultez les
+[paramètres de connexion des observateurs](broker-reference.md).
 
 ## Terminer la vérification
 

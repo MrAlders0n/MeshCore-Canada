@@ -1,6 +1,6 @@
 ---
 title: Outils réseau
-description: Choisissez l’outil MeshCore Canada adapté aux régions des répéteurs, au réseau en direct ou à la configuration et à la vérification d’un observateur.
+description: Trouvez les outils pour les régions des répéteurs, le réseau en direct et les observateurs.
 audience:
   - meshcore-user
   - repeater-operator
@@ -19,7 +19,7 @@ destructive: false
 
 # Outils réseau
 
-Choisissez l’outil qui correspond à ce que vous voulez faire.
+Choisissez un outil selon votre tâche.
 
 <div class="grid cards" markdown>
 

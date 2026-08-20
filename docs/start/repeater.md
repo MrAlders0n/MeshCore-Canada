@@ -78,7 +78,7 @@ settings and review its commands before applying them.
 
 <noscript>JavaScript is required for the live duplicate-ID check. You can also [search the public-key prefix in CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
-## Make sure it works
+## Test it
 
 The repeater is ready to install when:
 

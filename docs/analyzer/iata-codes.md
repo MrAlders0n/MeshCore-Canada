@@ -1,6 +1,6 @@
 ---
 title: Find an observer location code
-description: Search the Canadian quick list for the real three-letter airport code nearest to an observer.
+description: Find the three-letter airport code nearest an observer.
 audience:
   - observer-operators
 task: choose-location-code

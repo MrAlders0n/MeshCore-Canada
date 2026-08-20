@@ -32,6 +32,8 @@ test("manual coordinates fail closed", () => {
   );
   assert.equal(support.parseCoordinates("91", "-75"), null);
   assert.equal(support.parseCoordinates("45", "not-a-number"), null);
+  assert.equal(support.parseCoordinates("", "-75"), null);
+  assert.equal(support.parseCoordinates("45", "   "), null);
 });
 
 test("commissioning records omit sensitive and exact location fields", () => {

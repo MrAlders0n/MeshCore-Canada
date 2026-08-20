@@ -1,6 +1,6 @@
 ---
 title: Flash, configure, and bench-test a repeater
-description: Back up, flash by USB, configure, verify, and recover a MeshCore repeater before it leaves the bench.
+description: Safely flash, configure, and bench-test a MeshCore repeater with a recovery plan.
 audience:
   - repeater-builder
   - network-operator

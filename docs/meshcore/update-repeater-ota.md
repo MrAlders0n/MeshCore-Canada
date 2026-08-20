@@ -1,6 +1,6 @@
 ---
 title: Update a repeater or room server over the air
-description: Decide whether OTA is safe, prepare physical recovery, update an nRF52 device, and verify every retained setting.
+description: Update an nRF52 repeater or room server safely and verify its settings.
 audience:
   - advanced-repeater-operator
   - room-server-operator
@@ -102,7 +102,7 @@ If the app reports failure but a generic name such as `AdaDFU` or `RAK4631_DFU` 
 
 The DFU app reports completion, the device restarts, remote administration reconnects, and the device reports the intended firmware version. Anything less is a failed or incomplete update.
 
-## 4. Make sure the update worked
+## 4. Test the update
 
 1. Log out and reconnect after the device restarts.
 2. Run `ver` and confirm the exact intended firmware version.

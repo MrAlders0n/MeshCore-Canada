@@ -1,6 +1,6 @@
 ---
 title: Programmer et configurer un compagnon
-description: Sauvegardez, programmez, configurez, vérifiez et récupérez un compagnon MeshCore pris en charge sans perdre ses données d’identité importantes.
+description: Programmez et configurez un compagnon MeshCore pris en charge sans perdre son identité.
 audience:
   - first-time-user
   - companion-owner

@@ -91,7 +91,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Mer des Salish et environs</p>
 <p><strong>Province ou territoire :</strong> <a href="british-columbia/">Colombie-Britannique</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://salishmesh.net/" rel="noopener">Site Web de Salish Mesh</a> <span class="mc-community-external">(externe)</span></li>
@@ -106,7 +106,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Alberta</p>
 <p class="mc-community-summary">Développement du réseau maillé LoRa hors réseau de l’Alberta, exploité par la communauté</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/" rel="noopener">AlbertaMesh.ca</a> <span class="mc-community-external">(externe)</span></li>
@@ -128,7 +128,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Airdrie et Calgary</p>
 <p class="mc-community-summary">Utilise l’identifiant régional YYC partagé avec le réseau régional de Calgary</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/airdrie/" rel="noopener">Réseau MeshCore d’Airdrie</a> <span class="mc-community-external">(externe)</span></li>
@@ -146,7 +146,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Calgary et environs</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Telegram :</strong> <a href="https://t.me/meshtAlta" rel="noopener">Sujet sur Calgary dans Mesh Alberta</a> <span class="mc-community-external">(externe)</span></li>
@@ -162,7 +162,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Calgary</p>
 <p class="mc-community-summary">Première région lancée sur AlbertaMesh.ca</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://meshcorecalgary.ca/" rel="noopener">Réseau MeshCore de Calgary</a> <span class="mc-community-external">(externe)</span></li>
@@ -182,7 +182,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Edmonton</p>
 <p class="mc-community-summary">Communauté régionale d’Edmonton au sein d’Alberta MeshCore</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/edmonton/" rel="noopener">Edmonton sur AlbertaMesh.ca</a> <span class="mc-community-external">(externe)</span></li>
@@ -200,7 +200,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Edmonton</p>
 <p class="mc-community-summary">Communauté du réseau maillé d’Edmonton axée sur MeshCore</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://yegmesh.ca/p/getting-started" rel="noopener">Bien démarrer</a> <span class="mc-community-external">(externe)</span></li>
@@ -218,7 +218,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <p class="mc-community-area">Lethbridge</p>
 <p class="mc-community-summary">Relier Lethbridge, un nœud à la fois</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://www.yqlmesh.com/" rel="noopener">Site Web de YQLMesh</a> <span class="mc-community-external">(externe)</span></li>
@@ -239,7 +239,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Sud de l’Alberta, y compris Cardston, Magrath, Raymond et les environs</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> Canal régional Canada — Sud de l’Alberta sur le Discord de MeshCore</li>
@@ -254,7 +254,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Calgary</p>
 <p><strong>Province ou territoire :</strong> <a href="alberta/">Alberta</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/CznDhsRWnJ" rel="noopener">Discord de YYC MeshCore</a> <span class="mc-community-external">(externe)</span></li>
@@ -269,7 +269,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Centre de la Saskatchewan</p>
 <p><strong>Province ou territoire :</strong> <a href="saskatchewan/">Saskatchewan</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/7yGnJuMGkG" rel="noopener">Discord de StoonMesh</a> <span class="mc-community-external">(externe)</span></li>
@@ -283,7 +283,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Regina et sud de la Saskatchewan</p>
 <p><strong>Province ou territoire :</strong> <a href="saskatchewan/">Saskatchewan</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 </ul>
@@ -296,7 +296,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Est de l’Ontario et ouest du Québec</p>
 <p><strong>Province ou territoire :</strong> <a href="ontario/">Ontario</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/WSyNd8SfNr" rel="noopener">Discord de Greater Ottawa Mesh Enthusiasts</a> <span class="mc-community-external">(externe)</span></li>
@@ -311,7 +311,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Sud de l’Ontario</p>
 <p><strong>Province ou territoire :</strong> <a href="ontario/">Ontario</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/wSHbeb86r4" rel="noopener">Discord de GTA+-Lora-Meshes</a> <span class="mc-community-external">(externe)</span></li>
@@ -325,7 +325,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Région de Quinte, y compris Belleville, Trenton, le comté de Prince Edward et les environs</p>
 <p><strong>Province ou territoire :</strong> <a href="ontario/">Ontario</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/V5esJEP67X" rel="noopener">Discord de Quinte Mesh Network</a> <span class="mc-community-external">(externe)</span></li>
@@ -340,7 +340,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Charlevoix, y compris La Malbaie</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> 2026-07-31</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://chxmesh.ca/" rel="noopener">Réseau MESH de Charlevoix</a> <span class="mc-community-external">(externe)</span></li>
@@ -354,7 +354,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Québec</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://qcmesh.net" rel="noopener">Site Web de Mesh Québec</a> <span class="mc-community-external">(externe)</span></li>
@@ -368,7 +368,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Grand Montréal</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://www.montrealmesh.ca" rel="noopener">Site Web de Montreal Mesh</a> <span class="mc-community-external">(externe)</span></li>
@@ -382,7 +382,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Ville de Québec</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/UhGjTF2MfA" rel="noopener">Discord du Réseau Mesh de la Capitale YQB</a> <span class="mc-community-external">(externe)</span></li>
@@ -396,7 +396,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Saguenay–Lac-Saint-Jean (YTF)</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/wUR394yXt" rel="noopener">Discord du Réseau Mesh du Saguenay–Lac-Saint-Jean YTF</a> <span class="mc-community-external">(externe)</span></li>
@@ -412,7 +412,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Montréal</p>
 <p><strong>Province ou territoire :</strong> <a href="quebec/">Québec</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://lora.reseaulibre.ca/" rel="noopener">Site Web de Réseau Libre</a> <span class="mc-community-external">(externe)</span></li>
@@ -426,7 +426,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Sud du Nouveau-Brunswick, y compris Fredericton, Saint John, Moncton et les environs</p>
 <p><strong>Province ou territoire :</strong> <a href="new-brunswick/">Nouveau-Brunswick</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Facebook :</strong> <a href="https://www.facebook.com/groups/613466831163684" rel="noopener">MESHCORE Saint John, N.B.</a> <span class="mc-community-external">(externe)</span></li>
@@ -440,7 +440,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </div>
 <p class="mc-community-area">Comté de Lunenburg</p>
 <p><strong>Province ou territoire :</strong> <a href="nova-scotia/">Nouvelle-Écosse</a></p>
-<p><strong>Réglages :</strong> Utilise les réglages par défaut du Canada</p>
+<p><strong>Réglages :</strong> Réglages par défaut du Canada</p>
 <p><strong>Dernière vérification :</strong> Pas encore vérifiée</p>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="http://www.lunenburgcountymesh.ca" rel="noopener">Site Web de Lunenburg County Mesh</a> <span class="mc-community-external">(externe)</span></li>

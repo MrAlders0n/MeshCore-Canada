@@ -329,7 +329,7 @@
     elements.github.setAttribute("aria-disabled", "true");
     clearGithubNote();
     clearResult();
-    if (!submitting) elements.status.textContent = "Answers changed. Review them again before submitting.";
+    if (!submitting) elements.status.textContent = "Your answers changed. Review them before submitting.";
     updateActions();
   }
 
@@ -484,7 +484,7 @@
       if (!config || !token) void initialiseSubmission();
       elements.status.textContent = config && token
         ? "Preview ready. Nothing has been submitted. You can now submit."
-        : "Preview ready. Nothing has been submitted. Complete the verification next.";
+        : "Preview ready. Nothing has been submitted. Complete the check to continue.";
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       elements.preview.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "nearest" });
     } catch (error) {

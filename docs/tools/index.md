@@ -1,6 +1,6 @@
 ---
 title: Network tools
-description: Choose the MeshCore Canada tool for repeater regions, live network visibility, or observer setup and verification.
+description: Find tools for repeater regions, the live network, and observer setup.
 audience:
   - meshcore-user
   - repeater-operator

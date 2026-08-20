@@ -30,7 +30,7 @@ a real radio packet reaches CoreScope.
   </li>
   <li>
     <strong>Observer:</strong> check the method's service, integration, or device status.
-    <br>It should report an encrypted connection to at least the primary endpoint without repeating authentication errors.
+    <br>It should report an encrypted connection to the primary server without repeating authentication errors.
   </li>
   <li>
     <strong>Observer view:</strong> open <a href="https://live.meshcore.ca/#/observers">CoreScope Observers</a>.

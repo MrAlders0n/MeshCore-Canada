@@ -72,7 +72,7 @@ sur **3 octets**, sauf si votre communauté indique d’autres paramètres.
 Redémarrez l’appareil après avoir modifié les paramètres radio, puis envoyez
 une annonce.
 
-## Vérifier que tout fonctionne
+## Tester l’appareil
 
 Le compagnon est prêt lorsque :
 

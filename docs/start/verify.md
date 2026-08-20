@@ -1,6 +1,6 @@
 ---
 title: Check a MeshCore setup
-description: Check whether a companion, repeater, room server, or observer completed its first working task.
+description: Confirm that a companion, repeater, room server, or observer works after setup.
 audience:
   - first-time-user
   - meshcore-operator

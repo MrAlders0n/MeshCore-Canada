@@ -72,7 +72,7 @@ sur **3 octets**, sauf si votre communauté indique d’autres paramètres.
 Gardez les identifiants de l’administrateur confidentiels. Partagez uniquement
 les renseignements d’accès destinés aux personnes invitées dans le salon.
 
-## Vérifier que tout fonctionne
+## Tester le serveur
 
 Le serveur de salon est prêt lorsque :
 

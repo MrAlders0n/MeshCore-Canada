@@ -1,6 +1,6 @@
 ---
-title: Référence des points de terminaison pour observateurs
-description: Consultez les paramètres de courtier, de sécurité, de sujet et de paquets utilisés par les observateurs de MeshCore Canada.
+title: Paramètres de connexion des observateurs
+description: Trouvez l’adresse du courtier et les paramètres de sécurité, de sujet et de paquets des observateurs de MeshCore Canada.
 audience:
   - observer-operators
   - service-operators
@@ -19,11 +19,11 @@ page_scripts:
   - assets/javascripts/analyzer-broker-reference.js?v=20260722-2
 ---
 
-# Référence des points de terminaison pour observateurs
+# Paramètres de connexion des observateurs
 
-Utilisez cette référence après avoir [choisi une méthode d’observation](intro.md).
-Suivez le guide de cette méthode plutôt que de copier séparément les valeurs
-présentées ici.
+Consultez cette page après avoir [choisi une méthode d’observation](intro.md).
+Utilisez ensuite le guide de cette méthode; ne copiez pas ces valeurs sans leur
+contexte.
 
 ## Paramètres du courtier
 
@@ -45,7 +45,7 @@ Ces valeurs proviennent de la [configuration commune des observateurs](observer-
       <tbody id="broker-reference-body"></tbody>
     </table>
   </div>
-  <p class="mc-location-status" id="broker-reference-status" role="status">Chargement des valeurs officielles des points de terminaison…</p>
+  <p class="mc-location-status" id="broker-reference-status" role="status">Chargement des paramètres officiels de connexion…</p>
 </div>
 
 Si le tableau ne s’affiche pas, ouvrez [observer-config.json](observer-config.json).
@@ -66,7 +66,7 @@ par une clé privée.
 - Utilisez WebSockets sur le port `443`.
 - Exigez TLS et validez les certificats.
 - Utilisez l’option de jeton JWT de MeshCore lorsqu’elle est offerte.
-- Faites correspondre l’audience de chaque jeton à l’hôte de son point de terminaison.
+- Faites correspondre l’audience de chaque jeton à l’adresse de son serveur.
 - Ne mettez jamais un jeton ou un mot de passe dans une URL, une capture d’écran,
   un billet ou un ensemble de diagnostics.
 
@@ -84,7 +84,7 @@ par une clé privée.
 
 | État | Ce qu’il confirme |
 |---|---|
-| DNS ou port accessible | L’hôte peut joindre le point de terminaison |
+| DNS ou port accessible | L’hôte peut joindre le serveur |
 | Connexion au courtier | Le transport et l’authentification fonctionnent |
 | Observateur visible | Son état s’est rendu au service en direct |
 | Paquet récent visible | Le parcours complet de la radio jusqu’à l’affichage fonctionne |

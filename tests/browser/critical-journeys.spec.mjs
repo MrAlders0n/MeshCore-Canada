@@ -147,7 +147,7 @@ test("hardware landing links directly to the experimental 1 W build", async ({ p
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Experimental 1 W Solar Repeater");
 });
 
-test("home place search resolves a city to its region", async ({ page }) => {
+test("config place deep links resolve an online city search", async ({ page }) => {
   await page.route("https://nominatim.openstreetmap.org/search?**", async (route) => {
     await route.fulfill({
       contentType: "application/json",
@@ -164,16 +164,7 @@ test("home place search resolves a city to its region", async ({ page }) => {
       }])
     });
   });
-  await page.goto(siteRoute("/"));
-  await page.locator("#mc-home-place").fill("Guelph, Ontario");
-  await Promise.all([
-    page.waitForURL((url) =>
-      url.pathname.endsWith("/config/") &&
-      url.searchParams.get("place") === "Guelph, Ontario" &&
-      !url.searchParams.has("lookup")
-    ),
-    page.getByRole("button", { name: "Find my region" }).click()
-  ]);
+  await page.goto(siteRoute("/config/?place=Guelph%2C%20Ontario"));
   await expect(page.locator("#mcc-location-input")).toHaveValue("Guelph, Ontario");
   await expect(page.locator("[data-action='online-search-consent']")).toHaveCount(0);
   await expect(page.locator("[data-role='status']")).toContainText("Region found.");
@@ -401,27 +392,6 @@ test("mobile critical pages do not overflow the viewport", async ({ page }, test
       content: document.documentElement.scrollWidth
     }));
     expect(overflow.content, `${route} should fit its mobile viewport`).toBeLessThanOrEqual(overflow.viewport + 1);
-  }
-});
-
-test("mobile home region search stays compact in both languages", async ({ page }, testInfo) => {
-  test.skip(!testInfo.project.name.startsWith("mobile-"), "Mobile layout contract");
-  for (const route of ["/", "/fr/"]) {
-    await page.goto(siteRoute(route), { waitUntil: "domcontentloaded" });
-    const geometry = await page.locator(".mc-place-search").evaluate((form) => {
-      const input = form.querySelector("input[type='search']");
-      const inputRect = input.getBoundingClientRect();
-      const formRect = form.getBoundingClientRect();
-      return {
-        inputHeight: inputRect.height,
-        formHeight: formRect.height,
-        inputWidth: inputRect.width,
-        formWidth: formRect.width
-      };
-    });
-    expect(geometry.inputHeight, `${route} search field should be a single line`).toBeLessThan(64);
-    expect(geometry.formHeight, `${route} search form should stay compact`).toBeLessThan(260);
-    expect(geometry.inputWidth).toBeLessThanOrEqual(geometry.formWidth);
   }
 });
 

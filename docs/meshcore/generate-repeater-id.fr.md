@@ -1,6 +1,6 @@
 ---
-title: Changer l’identifiant d’un répéteur dans une ancienne région à identifiant sur 1 octet
-description: Coordonnez, sauvegardez, modifiez, vérifiez et restaurez l’identité d’un répéteur uniquement lorsqu’une ancienne région l’exige.
+title: Changer l’identifiant d’un répéteur en mode 1 octet
+description: Changez et vérifiez l’identité d’un répéteur seulement si votre région exige encore le mode 1 octet.
 audience:
   - legacy-region-operator
   - repeater-maintainer
@@ -24,7 +24,7 @@ page_styles:
 page_scripts:
   - assets/javascripts/repeater-hash-check.js?v=20260808-2
 ---
-# Changer l’identifiant d’un répéteur dans une ancienne région à identifiant sur 1 octet
+# Changer l’identifiant d’un répéteur en mode 1 octet
 
 !!! warning "Réservé aux anciennes régions à identifiant sur 1 octet"
     Au Canada, les hachages de parcours utilisent 3 octets par défaut. Continuez uniquement si la personne responsable de votre région a confirmé que ce répéteur doit rester en mode 1 octet et a approuvé le nouvel identifiant.

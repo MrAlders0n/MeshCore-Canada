@@ -1,6 +1,6 @@
 ---
 title: Programmer, configurer et tester un répéteur sur l’établi
-description: Sauvegardez, programmez par USB, configurez, vérifiez et récupérez un répéteur MeshCore avant qu’il quitte l’établi.
+description: Programmez, configurez et testez un répéteur MeshCore sur l’établi avec un plan de récupération.
 audience:
   - repeater-builder
   - network-operator

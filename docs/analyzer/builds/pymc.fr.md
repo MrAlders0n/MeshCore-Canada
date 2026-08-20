@@ -1,6 +1,6 @@
 ---
 title: Observer avec PyMC
-description: Transmettez à CoreScope les paquets d’un service de répéteur PyMC déjà en fonction.
+description: Transmettez à CoreScope les paquets d’un service de répéteur PyMC déjà actif.
 audience:
   - observer-operators
   - service-operators
@@ -19,15 +19,15 @@ page_styles:
 
 # Observer avec PyMC
 
-Ajoutez les points de terminaison principal et de secours de MeshCore Canada à
-un service de répéteur PyMC que vous exploitez déjà.
+Ajoutez les adresses principale et de secours de MeshCore Canada à votre service
+de répéteur PyMC.
 
 ## Cette méthode vous convient-elle?
 
 <div class="mc-method-fit">
   <div><strong>Utilisez PyMC si</strong>Un service de répéteur PyMC fonctionnel gère déjà la radio.</div>
   <div><strong>Choisissez autre chose si</strong>Vous installeriez Python et PyMC uniquement pour observer le trafic.</div>
-  <div><strong>Gardez en fonction</strong>L’hôte PyMC, le service, la connexion radio et l’accès Internet.</div>
+  <div><strong>À garder en ligne</strong>L’hôte PyMC, le service, la connexion radio et l’accès Internet.</div>
 </div>
 
 ## Vérifier votre installation

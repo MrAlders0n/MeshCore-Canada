@@ -1,6 +1,6 @@
 ---
 title: Contribuer à MeshCore Canada
-description: Choisissez la façon la plus simple de proposer une idée, de mettre à jour une communauté, de corriger une page ou de contribuer au code.
+description: Proposez une idée, mettez à jour une communauté, corrigez une page ou contribuez au code.
 audience:
   - community-member
   - documentation-contributor

@@ -82,7 +82,7 @@ paramètres régionaux. Relisez les commandes avant de les appliquer.
 
 <noscript>JavaScript est requis pour vérifier les identifiants en direct. Vous pouvez aussi [rechercher le préfixe de la clé publique dans CoreScope](https://live.meshcore.ca/#/nodes).</noscript>
 
-## Vérifier que tout fonctionne
+## Tester le répéteur
 
 Le répéteur est prêt à être installé lorsque :
 

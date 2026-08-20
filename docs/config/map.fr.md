@@ -1,6 +1,6 @@
 ---
 title: Carte des régions canadiennes
-description: Trouvez une région canadienne, examinez sa hiérarchie et planifiez les chemins d’un répéteur sans dépendre de la carte.
+description: Trouvez une région canadienne, examinez sa hiérarchie et planifiez les chemins d’un répéteur.
 audience:
   - repeater-operator
   - region-maintainer

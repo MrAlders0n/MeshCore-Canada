@@ -9,9 +9,10 @@ change without a source edit.
 - Repository: `MeshCore-ca/MeshCore-Canada`
 - Pull request: #66
 - Integration branch: `agent/ui-ux-overhaul`
-- Reconciled `main` commit: `99e8406fcc5d2d27ffbbcad54115e651917af371`
+- Reconciled `main` commit: `76a4262a354a111d19ddf8cc4abb25b1267fd9db`
 - Folded community-update source: PR #75 at `a47dfbc`
 - Folded community submission: issue #78
+- Folded BC radio-setting submission: issue #79
 - Production target after review and merge: `https://meshcore.ca/`
 - Isolated review target: `https://canadaverse.org/meshcore-canada/`
 - Review host: the existing Pi 5 `splashpage` service
@@ -33,10 +34,11 @@ both values. A reachable URL by itself is not deployment proof.
 | Area | Result |
 |---|---|
 | Information architecture | Task-oriented Start, About, Tools, community, configuration, hardware, and contribution journeys |
-| Homepage | Two primary goals, role routes, automatic local-first place lookup, and direct help/community paths |
-| Community directory | 23 validated structured listings; province pages generated from `data/communities.json` |
+| Homepage | Two primary goals, role routes, and direct help/community paths without dropping newcomers into advanced configuration |
+| Community directory | 24 structured listings (23 active and 1 forming); province pages generated from `data/communities.json` |
 | PR #75 | Five Alberta listings, refreshed YQL details, all 26 submitted URLs, and the national 3-byte StoonMesh baseline folded into the structured source |
 | Issue #78 | Active Charlevoix (YML) listing, La Malbaie search aliases, public contact, verified website, and matching French copy |
+| Issue #79 | Active BC Mesh listing, local 910.425 MHz setting, Ridgeline link, search aliases, and matching French copy |
 | Search and privacy | Place searches use local region data first, then external geocoders when needed; the region map loads OpenStreetMap tiles automatically and documents the request in the privacy guide |
 | Configuration tools | Accessible workbench, clearer editor containment, and preserved command/region semantics |
 | Operations content | Named service credits, repeater loop-detection guidance, and current SenseCAP cable paths restored |

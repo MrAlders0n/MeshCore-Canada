@@ -1,6 +1,6 @@
 ---
 title: Share an idea
-description: Send a public idea or problem to MeshCore Canada without needing a GitHub account.
+description: Share an idea or report a problem without a GitHub account.
 audience:
   - community-member
 task: share-an-idea

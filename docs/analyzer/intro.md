@@ -27,11 +27,11 @@ An observer forwards nearby MeshCore packet data to CoreScope. It does not decry
 <ol class="mc-analyzer-flow">
   <li><strong>Radio</strong><span>hears nearby MeshCore packets</span></li>
   <li><strong>Observer</strong><span>forwards the packet data</span></li>
-  <li><strong>MeshCore Canada</strong><span>receives it through two shared endpoints</span></li>
+  <li><strong>MeshCore Canada</strong><span>receives it through two shared servers</span></li>
   <li><strong>Live tools</strong><span>CoreScope shows observers and packets</span></li>
 </ol>
 
-The shared endpoints use MQTT, but you do not need to learn MQTT before choosing a setup.
+The shared servers use MQTT, but you do not need to learn MQTT before choosing a setup.
 
 !!! warning "Observers share what they hear"
     Observer details and heard packet data can appear in CoreScope. Do not transmit sensitive information. Read [Observer data and privacy](data-collection-access.md) before turning one on.
@@ -73,14 +73,14 @@ Whichever setup you choose, you need:
 
 - a radio already set for the local mesh;
 - a real three-letter [location code](iata-codes.md);
-- the MeshCore Canada primary and backup endpoints;
+- the MeshCore Canada primary and backup addresses;
 - encrypted connections with certificate checks;
 - packet publishing, not status-only publishing; and
 - an always-on host or board.
 
 The Canadian onboarding baseline is **USA/Canada (Recommended)**, `910.525 MHz / 62.5 kHz / SF7 / CR5`, with 3-byte path hashes. A published local setting takes priority.
 
-For exact broker fields, use the [observer endpoint reference](broker-reference.md).
+For exact broker fields, use the [observer connection reference](broker-reference.md).
 
 ## Finish the check
 

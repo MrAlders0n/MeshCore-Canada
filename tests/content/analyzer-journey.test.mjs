@@ -76,7 +76,7 @@ test("intro explains the path before MQTT details and recommends every method", 
   const viewer = source.indexOf("<strong>Live tools</strong>");
 
   assert.ok(radio >= 0 && radio < observer && observer < infrastructure && infrastructure < viewer);
-  assert.ok(source.indexOf("The shared endpoints use MQTT") > viewer);
+  assert.ok(source.indexOf("The shared servers use MQTT") > viewer);
   assert.match(source, /id="observer-method-chooser"/);
   assert.match(source, /assets\/javascripts\/analyzer-method-chooser\.js/);
   for (const method of ["RemoteTerm", "Home Assistant", "PyMC", "MCtoMQTT", "Standalone MQTT firmware"]) {

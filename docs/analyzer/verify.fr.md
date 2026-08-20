@@ -31,7 +31,7 @@ CoreScope.
   </li>
   <li>
     <strong>Observateur :</strong> vérifiez l’état du service, de l’intégration ou de l’appareil utilisé par votre méthode.
-    <br>Il devrait indiquer une connexion chiffrée à au moins un point de terminaison principal, sans erreurs d’authentification répétées.
+    <br>Il devrait indiquer une connexion chiffrée à l’adresse principale, sans erreurs d’authentification répétées.
   </li>
   <li>
     <strong>Vue des observateurs :</strong> ouvrez <a href="https://live.meshcore.ca/#/observers">CoreScope Observers</a>.

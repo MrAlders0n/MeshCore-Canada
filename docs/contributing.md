@@ -1,6 +1,6 @@
 ---
 title: Contribute to MeshCore Canada
-description: Choose the simplest way to share an idea, update a community, correct a page, or contribute code.
+description: Share an idea, update a community, correct a page, or contribute code.
 audience:
   - community-member
   - documentation-contributor

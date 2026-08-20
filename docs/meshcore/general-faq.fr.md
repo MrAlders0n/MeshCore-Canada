@@ -21,10 +21,9 @@ destructive: false
 
 # Questions et réponses sur MeshCore
 
-Utilisez la commande **Rechercher** de votre navigateur pour parcourir cette
-page, ou choisissez un sujet ci-dessous. Comme les réglages peuvent varier
-d’un endroit à l’autre, cette page renvoie à la source actuelle plutôt que de
-répéter des valeurs qui pourraient changer.
+Utilisez la commande **Rechercher** de votre navigateur ou choisissez un sujet.
+Les réglages varient parfois selon l’endroit; les réponses renvoient donc à leur
+source actuelle.
 
 - [Réglages et portée](#settings-and-range)
 - [Matériel](#hardware)

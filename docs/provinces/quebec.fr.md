@@ -37,7 +37,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Charlevoix, y compris La Malbaie</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>2026-07-31</dd></div>
 </dl>
@@ -59,7 +59,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Québec</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -80,7 +80,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Grand Montréal</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -101,7 +101,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Ville de Québec</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -122,7 +122,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Saguenay–Lac-Saint-Jean (YTF)</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -145,7 +145,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Montréal</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>

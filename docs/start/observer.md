@@ -73,7 +73,7 @@ community lists different settings.
     observer can be online while hearing no useful traffic if its radio
     settings do not match nearby devices.
 
-## Make sure it works
+## Test it
 
 The observer is working when:
 

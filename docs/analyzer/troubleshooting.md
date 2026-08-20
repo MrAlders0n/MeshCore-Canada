@@ -26,7 +26,7 @@ Check these in order:
 
 1. **Radio:** confirm it is powered, connected to the observer method, and on the local mesh settings.
 2. **Device or service:** confirm the observer process is running.
-3. **Broker:** confirm the primary endpoint reports connected with TLS verification.
+3. **Broker:** confirm that the observer reports a connection to the primary server with TLS verification.
 4. **Viewer:** wait a few minutes, refresh [CoreScope Observers](https://live.meshcore.ca/#/observers), and search the exact observer name.
 
 These commands only read service status:

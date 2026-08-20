@@ -5,7 +5,9 @@
   "use strict";
 
   function finiteCoordinate(value, minimum, maximum) {
-    var number = Number(String(value == null ? "" : value).trim());
+    var text = String(value == null ? "" : value).trim();
+    if (!text) return null;
+    var number = Number(text);
     return Number.isFinite(number) && number >= minimum && number <= maximum ? number : null;
   }
 

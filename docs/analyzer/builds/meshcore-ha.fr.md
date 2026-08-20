@@ -19,15 +19,15 @@ page_styles:
 
 # Observer avec Home Assistant
 
-Utilisez l’intégration MeshCore que vous exploitez déjà dans Home Assistant pour
-publier la télémétrie des paquets auprès de MeshCore Canada.
+Utilisez l’intégration MeshCore déjà configurée dans Home Assistant pour envoyer
+la télémétrie des paquets à MeshCore Canada.
 
 ## Cette méthode vous convient-elle?
 
 <div class="mc-method-fit">
   <div><strong>Utilisez Home Assistant si</strong>Une intégration MeshCore fonctionnelle et une radio connectée y sont déjà configurées.</div>
   <div><strong>Choisissez autre chose si</strong>Vous installeriez Home Assistant uniquement pour observer.</div>
-  <div><strong>Gardez en fonction</strong>Home Assistant, la connexion radio et l’accès Internet.</div>
+  <div><strong>À garder en ligne</strong>Home Assistant, la connexion radio et l’accès Internet.</div>
 </div>
 
 ## Vérifier votre écran

@@ -1,6 +1,6 @@
 ---
 title: MeshCore Canada
-description: Join, build, operate, and coordinate a local MeshCore network in Canada.
+description: Learn about MeshCore and join a local Canadian network.
 audience:
   - newcomer
   - meshcore-operator
@@ -92,31 +92,6 @@ Use these defaults unless your local community lists different settings.
 | Raw radio values | `910.525 MHz / 62.5 kHz / SF7 / CR5` |
 | Path setting | **3-byte** |
 | Command-line path setting | `set path.hash.mode 2` |
-
-## Find your region
-
-Search by city, airport code, or region.
-
-<form class="mc-place-search" action="config/" method="get" role="search">
-  <label for="mc-home-place">City, airport code, or region</label>
-  <div>
-    <input id="mc-home-place" name="place" type="search" autocomplete="address-level2" required>
-    <button type="submit">Find my region</button>
-  </div>
-</form>
-
-Or browse the [region map](config/map.md).
-
-Need local help? [Browse communities](provinces/index.md), ask on the
-[MeshCore Canada forum](https://forum.meshcore.ca/), or join
-[Discord](https://discord.gg/BESFVMt7yk).
-
-## Use network tools
-
-Configure a repeater, explore Canadian regions, view CoreScope, or set up an
-observer.
-
-[:octicons-arrow-right-24: **Choose a network tool**](tools/index.md){ .md-button }
 
 ## Improve MeshCore Canada
 

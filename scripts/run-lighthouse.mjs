@@ -104,6 +104,13 @@ async function run() {
 try {
   await run();
 } finally {
-  if (chrome) await chrome.kill();
+  if (chrome) {
+    try {
+      await chrome.kill();
+    } catch (error) {
+      if (process.platform !== "win32" || error?.code !== "EPERM") throw error;
+      console.warn("Chrome stopped, but Windows kept its temporary profile locked.");
+    }
+  }
   if (server) server.kill();
 }

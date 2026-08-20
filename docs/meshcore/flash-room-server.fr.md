@@ -1,6 +1,6 @@
 ---
 title: Programmer et configurer un serveur de salon
-description: Sauvegardez, programmez, sécurisez, vérifiez et récupérez un serveur de salon MeshCore pris en charge avant son déploiement.
+description: Programmez, sécurisez et testez un serveur de salon MeshCore pris en charge avant son déploiement.
 audience:
   - room-server-operator
   - network-operator
@@ -94,7 +94,7 @@ suivez le plan de récupération avant de configurer les accès.
 5. Vérifiez si la page de la communauté locale indique d’autres réglages. Si elle n’en indique aucun, utilisez les réglages par défaut du Canada : **USA/Canada (Recommended)** (`910.525 MHz / 62.5 kHz / SF7 / CR5`).
 6. Enregistrez les réglages et redémarrez l’appareil.
 
-## S’assurer que tout fonctionne
+## Tester le serveur
 
 1. Reconnectez-vous à la console après le redémarrage et confirmez le nom, le rôle et les réglages radio.
 2. Envoyez une annonce.

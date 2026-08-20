@@ -1,6 +1,6 @@
 ---
-title: Change a repeater ID for a legacy 1-byte region
-description: Coordinate, back up, change, verify, and restore a repeater identity only when a legacy region requires it.
+title: Change a repeater ID in 1-byte mode
+description: Change and verify a repeater identity only when a local operator still requires 1-byte mode.
 audience:
   - legacy-region-operator
   - repeater-maintainer
@@ -24,7 +24,7 @@ page_styles:
 page_scripts:
   - assets/javascripts/repeater-hash-check.js?v=20260808-2
 ---
-# Change a Repeater ID for a Legacy 1-Byte Region
+# Change a repeater ID in 1-byte mode
 
 !!! warning "Only for legacy 1-byte regions"
     Canada uses 3-byte path hashes by default. Continue only if your local region operator has confirmed this repeater must stay in 1-byte mode and approved the new ID.

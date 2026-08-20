@@ -1,6 +1,6 @@
 ---
 title: Canadian region map
-description: Find a Canadian region, inspect its hierarchy, and plan repeater paths without requiring the map.
+description: Find a Canadian region, inspect its hierarchy, and plan repeater paths.
 audience:
   - repeater-operator
   - region-maintainer

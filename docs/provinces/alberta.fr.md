@@ -38,7 +38,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Développement du réseau maillé LoRa hors réseau de l’Alberta, exploité par la communauté</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -67,7 +67,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Utilise l’identifiant régional YYC partagé avec le réseau régional de Calgary</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -92,7 +92,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Calgary et environs</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -115,7 +115,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Première région lancée sur AlbertaMesh.ca</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -142,7 +142,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Communauté régionale d’Edmonton au sein d’Alberta MeshCore</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -167,7 +167,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Communauté du réseau maillé d’Edmonton axée sur MeshCore</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -192,7 +192,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-summary">Relier Lethbridge, un nœud à la fois</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -220,7 +220,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Sud de l’Alberta, y compris Cardston, Magrath, Raymond et les environs</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>
@@ -242,7 +242,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-area">Calgary</p>
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
-<dd>Utilise les réglages par défaut du Canada</dd></div>
+<dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
 <dd>Pas encore vérifiée</dd></div>
 </dl>

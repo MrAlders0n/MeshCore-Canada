@@ -1,6 +1,6 @@
 ---
 title: Vérifier une configuration MeshCore
-description: Vérifiez si un appareil compagnon, un répéteur, un serveur de salon ou un observateur accomplit sa première tâche.
+description: Confirmez qu’un appareil compagnon, un répéteur, un serveur de salon ou un observateur fonctionne après sa configuration.
 audience:
   - first-time-user
   - meshcore-operator
@@ -20,8 +20,7 @@ destructive: false
 # Vérifier votre configuration
 
 Un appareil allumé ou un état « Connected » ne garantit pas que la
-configuration est terminée. Effectuez la vérification qui correspond à votre
-appareil.
+configuration est terminée. Choisissez le test qui correspond à votre appareil.
 
 Avant l’essai, confirmez que l’appareil affiche toujours les paramètres du
 Canada ou ceux de votre communauté.
@@ -75,8 +74,7 @@ l’établi soit réussi.
 2. Confirmez que la radio de l’observateur utilise les mêmes paramètres.
 3. Ouvrez [CoreScope Observers](https://live.meshcore.ca/#/observers).
 4. Trouvez votre observateur et vérifiez son activité récente.
-5. Consultez [Vérifier votre observateur](../analyzer/verify.md) pour effectuer
-   la vérification complète.
+5. Suivez [Vérifier votre observateur](../analyzer/verify.md) pour le test complet.
 
 !!! success "L’observateur fonctionne"
     Votre observateur apparaît dans CoreScope et affiche une activité récente

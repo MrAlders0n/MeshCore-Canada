@@ -27,7 +27,7 @@ déchiffre pas les messages privés.
 <div class="mc-method-fit">
   <div><strong>Utilisez RemoteTerm si</strong>Il se connecte déjà à la radio par liaison série, TCP ou BLE.</div>
   <div><strong>Choisissez autre chose si</strong>Vous installeriez RemoteTerm uniquement pour observer.</div>
-  <div><strong>Gardez en fonction</strong>L’hôte RemoteTerm, la connexion radio et l’accès Internet.</div>
+  <div><strong>À garder en ligne</strong>L’hôte RemoteTerm, la connexion radio et l’accès Internet.</div>
 </div>
 
 RemoteTerm évolue rapidement. Si les libellés ne correspondent pas, consultez

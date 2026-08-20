@@ -1,6 +1,6 @@
 ---
 title: Observer avec MCtoMQTT
-description: Transmettez les paquets d’une radio USB à partir d’un ordinateur Linux ou macOS qui reste en fonction.
+description: Envoyez les paquets d’une radio USB depuis un ordinateur Linux ou macOS toujours allumé.
 audience:
   - observer-operators
   - service-operators
@@ -19,15 +19,15 @@ page_styles:
 
 # Observer avec MCtoMQTT
 
-MCtoMQTT lit les paquets d’une radio MeshCore connectée par USB et les publie à
-partir d’un hôte Linux ou macOS qui reste en fonction.
+MCtoMQTT lit les paquets d’une radio MeshCore connectée par USB et les envoie
+depuis un ordinateur Linux ou macOS toujours allumé.
 
 ## Cette méthode vous convient-elle?
 
 <div class="mc-method-fit">
   <div><strong>Utilisez MCtoMQTT si</strong>Un ordinateur Linux ou macOS reste près d’une radio de journalisation des paquets connectée par USB.</div>
   <div><strong>Choisissez autre chose si</strong>RemoteTerm, Home Assistant ou PyMC gère déjà la radio.</div>
-  <div><strong>Gardez en fonction</strong>La radio, la connexion USB, le service de l’hôte et la connexion Internet.</div>
+  <div><strong>À garder en ligne</strong>La radio, la connexion USB, le service de l’hôte et la connexion Internet.</div>
 </div>
 
 L’outil d’assistance peut aussi configurer `meshcore-packet-capture` pour un
@@ -58,7 +58,7 @@ Sur un hôte à liaison série, l’outil :
 
 - écrit `/etc/mctomqtt/config.d/20-meshcore-ca.toml`;
 - crée une copie horodatée `.bak.<timestamp>` si ce fichier existe;
-- ajoute les points de terminaison principal et de secours de MeshCore Canada ainsi que le code d’emplacement;
+- ajoute les adresses principale et de secours de MeshCore Canada ainsi que le code d’emplacement;
 - redémarre `mctomqtt`, sauf si l’option `--no-restart` est utilisée.
 
 Pour la capture d’un compagnon, il met à jour
@@ -185,8 +185,8 @@ Il n’existe pas de programme d’installation Windows documenté pour
 
 ## Ce que vous devriez voir
 
-Le service demeure actif, le point de terminaison principal se connecte et son
-nombre de paquets change lorsque la radio capte du trafic à proximité.
+Le service demeure actif, se connecte à l’adresse principale et compte de
+nouveaux paquets lorsque la radio capte du trafic à proximité.
 
 ## Vérifier dans CoreScope { #check-in-corescope }
 
