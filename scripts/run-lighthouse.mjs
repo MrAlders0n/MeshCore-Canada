@@ -40,6 +40,7 @@ async function waitForServer(url, attempts = 50) {
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       const response = await fetch(url);
+      await response.arrayBuffer();
       if (response.ok) return;
     } catch (_error) {
       // The bounded retry below handles server startup.
