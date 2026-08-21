@@ -96,12 +96,16 @@ Besoin de parler à quelqu’un? Rejoignez le
 
 Utilisez ces paramètres, sauf si votre communauté en indique d’autres.
 
+<div class="mc-baseline-table" markdown>
+
 | Paramètre | Valeur par défaut au Canada |
 |---|---|
 | Préréglage radio | **USA/Canada (Recommended)** |
 | Valeurs radio détaillées | `910.525 MHz / 62.5 kHz / SF7 / CR5` |
 | Hachage des chemins | **3 octets** |
 | Commande correspondante | `set path.hash.mode 2` |
+
+</div>
 
 ## Améliorer MeshCore Canada
 

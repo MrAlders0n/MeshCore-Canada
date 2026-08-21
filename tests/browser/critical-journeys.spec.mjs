@@ -135,6 +135,27 @@ test("desktop navigation exposes the six task categories", async ({ page }, test
   ]);
 });
 
+test("repository stars and the human-review notice appear in both languages", async ({ page }) => {
+  await page.route("https://api.github.com/repos/MeshCore-ca/MeshCore-Canada", async (route) => {
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ stargazers_count: 23 })
+    });
+  });
+
+  await page.goto(siteRoute("/"));
+  await expect(page.locator("[data-mc-repo-star-count]")).toHaveText(["23", "23"]);
+  await expect(page.locator(".md-copyright__highlight")).toContainText(
+    "Only content reviewed and approved by people is published."
+  );
+
+  await page.goto(siteRoute("/fr/"));
+  await expect(page.locator("[data-mc-repo-stars]").first()).toHaveAttribute("aria-label", "23 étoiles GitHub");
+  await expect(page.locator(".md-copyright__highlight")).toContainText(
+    "Seul le contenu relu et approuvé par des personnes est publié."
+  );
+});
+
 test("English and French homepages link directly to the region finder", async ({ page }, testInfo) => {
   for (const [home, linkName, destination, heading, finder, directory] of [
     ["/", "Find my region", "/config/map/", "Find your Canadian MeshCore region", "Find a region", "Browse all regions"],

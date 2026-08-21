@@ -165,12 +165,68 @@
     });
   }
 
+  function initialiseRepoStars() {
+    var counters = Array.from(document.querySelectorAll("[data-mc-repo-stars]"));
+    if (!counters.length || counters.every(function (counter) {
+      return counter.dataset.mcRepoStarsReady === "true";
+    })) return;
+    counters.forEach(function (counter) {
+      counter.dataset.mcRepoStarsReady = "true";
+    });
+
+    var language = document.documentElement.lang || "en";
+
+    function showCount(value) {
+      var count = Number(value);
+      if (!Number.isFinite(count)) return;
+      var formatted = count.toLocaleString(language);
+      counters.forEach(function (counter) {
+        var countNode = counter.querySelector("[data-mc-repo-star-count]");
+        if (countNode) countNode.textContent = formatted;
+        counter.setAttribute(
+          "aria-label",
+          language.startsWith("fr") ? formatted + " étoiles GitHub" : formatted + " GitHub stars"
+        );
+      });
+    }
+
+    try {
+      var cached = window.sessionStorage.getItem("meshcore-canada:github-stars:v1");
+      if (cached !== null) {
+        showCount(cached);
+        return;
+      }
+    } catch (_error) {
+      // The build-time count remains visible when storage is unavailable.
+    }
+
+    window.fetch("https://api.github.com/repos/MeshCore-ca/MeshCore-Canada", {
+      cache: "force-cache",
+      referrerPolicy: "no-referrer"
+    }).then(function (response) {
+      if (!response.ok) throw new Error("GitHub repository request failed");
+      return response.json();
+    }).then(function (repository) {
+      var count = Number(repository.stargazers_count);
+      if (!Number.isFinite(count)) return;
+      showCount(count);
+      try {
+        window.sessionStorage.setItem("meshcore-canada:github-stars:v1", String(count));
+      } catch (_error) {
+        // The live count still works when storage is unavailable.
+      }
+    }).catch(function () {
+      // Keep the build-time count when GitHub is unavailable.
+    });
+  }
+
   function initialise() {
     initialiseProgress();
     labelExternalLinks();
     labelThemeControls();
     initialiseSearchInputs();
     initialiseResponsiveTables();
+    initialiseRepoStars();
   }
 
   if (window.document$ && typeof window.document$.subscribe === "function") {

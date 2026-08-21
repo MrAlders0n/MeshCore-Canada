@@ -27,6 +27,7 @@ You can read this site without a MeshCore Canada or GitHub account.
 | Search for a place in the region tools | The place, airport code, or postal code you enter | Checked locally first, then sent to OpenStreetMap or geocoder.ca if needed |
 | Open the interactive region map | Your IP address and the visible map area | OpenStreetMap |
 | Check a repeater path ID | The first byte of the public key | Beacon at dev.meshcore.ca; regional and longer-prefix comparisons stay in your browser |
+| Load the GitHub star count | Your IP address and standard web request information | GitHub |
 | Open an external link | Normal web request information | The named external service |
 | Submit an idea or region proposal | The text and proposal details shown at review, plus anti-spam verification | MeshCore Canada’s submission service, Cloudflare Turnstile, and a public GitHub issue |
 

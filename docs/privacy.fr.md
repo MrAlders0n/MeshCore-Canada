@@ -27,6 +27,7 @@ Vous pouvez consulter ce site sans compte MeshCore Canada ni compte GitHub.
 | Rechercher un lieu dans les outils de région | Le lieu, le code d’aéroport ou le code postal saisi | Vérification locale d’abord, puis OpenStreetMap ou geocoder.ca au besoin |
 | Ouvrir la carte interactive des régions | Votre adresse IP et la partie visible de la carte | OpenStreetMap |
 | Vérifier un identifiant de parcours de répéteur | Le premier octet de la clé publique | Beacon à dev.meshcore.ca; les comparaisons régionales et des préfixes plus longs restent dans votre navigateur |
+| Charger le nombre d’étoiles GitHub | Votre adresse IP et les renseignements habituels d’une requête Web | GitHub |
 | Ouvrir un lien externe | Les renseignements habituels d’une requête Web | Le service externe indiqué |
 | Soumettre une idée ou une proposition de région | Le texte et les détails affichés lors de la révision, ainsi que la vérification antipourriel | Le service de soumission de MeshCore Canada, Cloudflare Turnstile et un billet GitHub public |
 

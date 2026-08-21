@@ -95,6 +95,29 @@ a {
   color: var(--mc-color-text);
 }
 
+.mc-baseline-table .md-typeset__table {
+  width: 100%;
+}
+
+.mc-baseline-table table:not([class]) {
+  display: table;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.mc-baseline-table table:not([class]) :is(th, td) {
+  white-space: normal;
+}
+
+.mc-baseline-table table:not([class]) :is(th, td):first-child {
+  width: 38%;
+}
+
+.mc-baseline-table table:not([class]) code {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
 .md-typeset hr {
   border-color: var(--mc-color-border);
 }

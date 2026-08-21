@@ -5,7 +5,9 @@ repo_name: MeshCore Canada
 repo_url: https://github.com/MeshCore-ca/MeshCore-Canada
 edit_uri: edit/main/docs/
 use_directory_urls: true
-copyright: Community-run documentation for MeshCore users in Canada. Not affiliated with the upstream MeshCore project.
+copyright: >-
+  Community-run documentation for MeshCore users in Canada. Not affiliated with the upstream MeshCore project.<br>
+  Agentic tools help create and maintain this site. Only content reviewed and approved by people is published.
 
 theme:
   name: material
@@ -42,15 +44,16 @@ theme:
 
 extra_css:
   - assets/styles/tokens.css?v=20260722-2
-  - assets/styles/base.css?v=20260722-3
-  - assets/styles/shell.css?v=20260811-1
+  - assets/styles/base.css?v=20260821-1
+  - assets/styles/shell.css?v=20260821-1
   - assets/styles/components.css?v=20260728-1
 
 extra_javascript:
   - assets/javascripts/i18n-runtime.js?v=20260723-1
-  - assets/javascripts/bootstrap.js?v=20260728-1
+  - assets/javascripts/bootstrap.js?v=20260821-1
 
 extra:
+  github_stars: 19
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/BESFVMt7yk
@@ -81,7 +84,9 @@ plugins:
           name: Français
           build: true
           site_description: Des guides pratiques, relus par la communauté, pour rejoindre et exploiter les réseaux MeshCore au Canada.
-          copyright: Documentation communautaire pour les utilisateurs de MeshCore au Canada. Sans affiliation avec le projet MeshCore principal.
+          copyright: >-
+            Documentation communautaire pour les utilisateurs de MeshCore au Canada. Sans affiliation avec le projet MeshCore principal.<br>
+            Des agents d’IA contribuent à créer et à maintenir ce site. Seul le contenu relu et approuvé par des personnes est publié.
           theme:
             palette:
               - scheme: slate

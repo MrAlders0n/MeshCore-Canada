@@ -1,4 +1,4 @@
-{# The repository has no published releases, so avoid Material's release API probe. #}
+{# Keep the usual source summary without Material's absent-release API probe. #}
 <a href="{{ config.repo_url }}" title="{{ lang.t('source') }}" class="md-source">
   <div class="md-source__icon md-icon">
     {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}
@@ -6,5 +6,16 @@
   </div>
   <div class="md-source__repository">
     {{ config.repo_name }}
+    <span
+      class="mc-source__stars"
+      data-mc-repo-stars
+      {% if config.theme.language == "fr" %}
+        aria-label="{{ config.extra.github_stars }} étoiles GitHub"
+      {% else %}
+        aria-label="{{ config.extra.github_stars }} GitHub stars"
+      {% endif %}
+    >
+      <span aria-hidden="true">★ <span data-mc-repo-star-count>{{ config.extra.github_stars }}</span></span>
+    </span>
   </div>
 </a>

@@ -94,12 +94,16 @@ ask on the [community forum](https://forum.meshcore.ca/), or check the
 
 Use these defaults unless your local community lists different settings.
 
+<div class="mc-baseline-table" markdown>
+
 | Setting | Canada default |
 |---|---|
 | Radio preset | **USA/Canada (Recommended)** |
 | Raw radio values | `910.525 MHz / 62.5 kHz / SF7 / CR5` |
 | Path setting | **3-byte** |
 | Command-line path setting | `set path.hash.mode 2` |
+
+</div>
 
 ## Improve MeshCore Canada
 

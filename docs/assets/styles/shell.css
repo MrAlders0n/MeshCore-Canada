@@ -4,7 +4,17 @@
 }
 
 .md-header__title {
+  font-size: 0.95rem;
   font-weight: 720;
+}
+
+.md-header__button.md-logo :is(img, svg) {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.md-tabs__link {
+  font-size: 0.75rem;
 }
 
 .md-header__option:focus-within .md-header__button {
@@ -34,6 +44,10 @@
   font-size: 0.88rem;
 }
 
+.md-sidebar .md-nav {
+  font-size: 0.78rem;
+}
+
 .md-sidebar .md-nav__link {
   display: flex;
   min-height: 1.75rem;
@@ -49,6 +63,19 @@
 .md-path {
   color: var(--mc-color-text-muted);
   font-size: 0.78rem;
+}
+
+.md-source__repository {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.mc-source__stars {
+  display: block;
+  margin-top: 0.05rem;
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.66rem;
+  font-weight: 600;
 }
 
 .md-footer {
