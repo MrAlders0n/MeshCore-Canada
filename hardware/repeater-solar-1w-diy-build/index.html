@@ -6,30 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Evaluate an unverified high-power solar repeater design before deciding whether to reproduce it.">
+      
       
       
         <link rel="canonical" href="https://meshcore.ca/hardware/repeater-solar-1w-diy-build/">
       
       
-        <link rel="prev" href="../repeater-solar-300mw-diy-build/">
       
       
-        <link rel="next" href="../wire-connector-types/">
-      
-      
+        
+          
+        
+          
         
       
       
       <link rel="icon" href="../../assets/MeshCore-Canada-Favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>1W Solar Repeater Build Guide - MeshCore Canada</title>
+        <title>Experimental 1 W solar repeater - MeshCore Canada</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -43,17 +45,15 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/styles/tokens.css?v=20260722-2">
     
-      <link rel="stylesheet" href="../../assets/regions/regions.css">
+      <link rel="stylesheet" href="../../assets/styles/base.css?v=20260821-1">
+    
+      <link rel="stylesheet" href="../../assets/styles/shell.css?v=20260821-1">
+    
+      <link rel="stylesheet" href="../../assets/styles/components.css?v=20260728-1">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -61,15 +61,48 @@
 
     
     
+  
+  
+    <meta name="robots" content="noindex, nofollow">
+  
+  
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MeshCore Canada">
+    <meta property="og:title" content="Experimental 1 W solar repeater">
+    <meta property="og:description" content="Evaluate an unverified high-power solar repeater design before deciding whether to reproduce it.">
+    <meta property="og:url" content="https://meshcore.ca/hardware/repeater-solar-1w-diy-build/">
+    <meta property="og:image" content="https://meshcore.ca/assets/MeshCore-Canada-Logo.png">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Experimental 1 W solar repeater",
+        "description": "Evaluate an unverified high-power solar repeater design before deciding whether to reproduce it.",
+        "url": "https://meshcore.ca/hardware/repeater-solar-1w-diy-build/",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "MeshCore Canada",
+          "url": "https://meshcore.ca/"
+        }
+      }
+    </script>
+    
+      <link rel="stylesheet" href="../../assets/styles/devices-builds.css?v=20260728-1">
+    
+  
+
   </head>
   
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue">
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -78,7 +111,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-a-1w-solar-repeater-ikoka-stick" class="md-skip">
+        <a href="#experimental-1-w-solar-repeater" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +125,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="MeshCore Canada" class="md-header__button md-logo" aria-label="MeshCore Canada" data-md-component="logo">
       
@@ -113,7 +146,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1W Solar Repeater Build Guide
+              Experimental 1 W solar repeater
             
           </span>
         </div>
@@ -121,8 +154,76 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
     
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Use light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Use light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Use dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Use dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+<div class="md-header__option">
+  <div class="md-select">
+    
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a
+              href="./"
+              hreflang="en"
+              lang="en"
+              target="_self"
+              class="md-select__link"
+              aria-current="page"
+            >
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a
+              href="../../fr/hardware/repeater-solar-1w-diy-build/"
+              hreflang="fr"
+              lang="fr"
+              target="_self"
+              class="md-select__link"
+              
+            >
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -150,6 +251,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -167,26 +270,165 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/MeshCore-ca/MeshCore-Canada" title="Go to repository" class="md-source" data-md-component="source">
+        
+<a href="https://github.com/MeshCore-ca/MeshCore-Canada" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     MeshCore Canada
+    <span
+      class="mc-source__stars"
+      data-mc-repo-stars
+      
+        aria-label="19 GitHub stars"
+      
+    >
+      <span aria-hidden="true">★ <span data-mc-repo-star-count>19</span></span>
+    </span>
   </div>
 </a>
       </div>
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Start
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../provinces/" class="md-tabs__link">
+          
+  
+  
+  Communities
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Devices & Builds
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/" class="md-tabs__link">
+          
+  
+  
+  Network Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../meshcore/general-overview/" class="md-tabs__link">
+          
+  
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/" class="md-tabs__link">
+          
+  
+  
+  Contribute
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -200,8 +442,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="MeshCore Canada" class="md-nav__button md-logo" aria-label="MeshCore Canada" data-md-component="logo">
       
@@ -212,13 +456,23 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/MeshCore-ca/MeshCore-Canada" title="Go to repository" class="md-source" data-md-component="source">
+      
+<a href="https://github.com/MeshCore-ca/MeshCore-Canada" title="Go to repository" class="md-source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     MeshCore Canada
+    <span
+      class="mc-source__stars"
+      data-mc-repo-stars
+      
+        aria-label="19 GitHub stars"
+      
+    >
+      <span aria-hidden="true">★ <span data-mc-repo-star-count>19</span></span>
+    </span>
   </div>
 </a>
     </div>
@@ -227,6 +481,58 @@
     
       
       
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
@@ -246,8 +552,363 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/choose-a-goal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a role
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/companion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Companion
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/repeater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/room-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Room server
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/observer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_8" id="__nav_1_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Finish and support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Finish and support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/verify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check your setup
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start/get-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get help
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -261,6 +922,11 @@
     
     
     
+    
+      
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -277,7 +943,7 @@
   <span class="md-ellipsis">
     
   
-    Analyzer & MQTT
+    Communities
   
 
     
@@ -293,1530 +959,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Analyzer & MQTT
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/intro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/data-collection-access/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Data Collection & Access
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/verify/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Check Your Observer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/broker-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Broker Reference
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/iata-codes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IATA Region Codes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/remoteterm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RemoteTerm
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Build Guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Build Guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/builds/mctomqtt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MCtoMQTT Script
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/builds/meshcore-ha/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MeshCore-HA
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/builds/mqtt-firmware/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MQTT Firmware
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../analyzer/builds/pymc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PyMC
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Hardware
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Hardware
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recommended-antenna/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Antenna
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recommended-companions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Companion Nodes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Repeater Nodes
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Repeater Nodes
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recommended-repeaters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Repeater Nodes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../repeater-mounting-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Repeater Mounting Options
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../repeater-solar-batteries/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Repeater Solar Batteries
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../repeater-solar-300mw-diy-build/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    300mW Solar Repeater Build Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1W Solar Repeater Build Guide
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1W Solar Repeater Build Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parts-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parts List
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parts List">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#antenna" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Antenna
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Required
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloads
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assembly-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assembly Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Assembly Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enclosure-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enclosure Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mounting-the-solar-panel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mounting the Solar Panel
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mounting-plate-and-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mounting Plate and Filter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-and-radio-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter and Radio Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-mounting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Mounting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#battery-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Battery Installation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power-wiring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Wiring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#final-connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Connections
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ina3221-wiring-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INA3221 Wiring (Optional)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wiring-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wiring Diagram
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wire-connector-types/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wire Connector Types
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MeshCore
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    MeshCore
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    General
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    General
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/general-overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/general-faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MeshCore FAQ
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/general-howto/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MeshCore How-To
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/general-meshcore-roles/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MeshCore Roles
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/config/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Repeater Configurator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Firmware Guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Firmware Guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/flash-companion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Flashing a Companion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/flash-repeater/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Flashing a Repeater
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/update-repeater-ota/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Updating a Repeater (OTA)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/generate-repeater-id/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Generating a Repeater ID
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/flash-room-server/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Flashing a Room Server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/firmware-rak-custom-display/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RAK4631 Custom Display Firmware
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../meshcore/firmware-heltec-v3-wifi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Heltec V3 Wi-Fi Firmware
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mesh Directory
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Mesh Directory
+    Communities
   
 
           </label>
@@ -1836,12 +979,19 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Find a community
   
 
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -1849,6 +999,58 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Western Canada
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Western Canada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1870,6 +1072,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -1899,6 +1108,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
@@ -1926,6 +1142,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -1955,12 +1178,79 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Central Canada
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Central Canada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1982,6 +1272,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -2011,12 +1308,79 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlantic Canada
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atlantic Canada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -2038,6 +1402,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -2067,6 +1438,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2094,6 +1472,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -2123,8 +1508,23 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2144,12 +1544,19 @@
   <span class="md-ellipsis">
     
   
-    Territories (YT / NT / NU)
+    Territories
   
 
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -2175,22 +1582,27 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Resources
+    Devices & Builds
   
 
     
@@ -2201,12 +1613,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Resources
+    Devices & Builds
   
 
           </label>
@@ -2219,19 +1631,26 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/getting-started/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Choose hardware
   
 
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
   
 
       </a>
@@ -2247,19 +1666,1319 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/links/" class="md-nav__link">
+      <a href="../recommended-companions/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Useful Links
+    Companion devices
   
 
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommended-repeaters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Repeater devices
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommended-antenna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antennas
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solar repeater build
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Solar repeater build
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeater-solar-300mw-diy-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a 300 mW repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install a repeater
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install a repeater
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeater-mounting-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting options
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firmware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/flash-companion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flash a companion
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/flash-repeater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flash a repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/flash-room-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flash a room server
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/update-repeater-ota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update a repeater over the air
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--experimental"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a network tool
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure a repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find your region
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up an observer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/verify/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check an observer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshoot network data
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer methods
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Observer methods
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/data-collection-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer data and privacy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/remoteterm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RemoteTerm
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/builds/mctomqtt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCtoMQTT
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/builds/meshcore-ha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home Assistant
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/builds/mqtt-firmware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MQTT firmware
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/builds/pymc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyMC
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    References
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/broker-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broker reference
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyzer/iata-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Location codes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learn
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learn
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/general-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What MeshCore is
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/general-howto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use MeshCore
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meshcore/general-faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently asked questions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
   
 
       </a>
@@ -2289,6 +3008,48 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Useful links
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2309,15 +3070,31 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../submit-idea/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    Share an Idea
+    Contribute
   
 
     
@@ -2325,40 +3102,57 @@
   
   
 
-      </a>
-    </li>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribute
   
 
-    
-      
-      
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="https://forum.meshcore.ca/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Forum
+    About MeshCore Canada
   
 
     
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
 
       </a>
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
@@ -2371,15 +3165,100 @@
   <span class="md-ellipsis">
     
   
-    Contributing
+    Ways to contribute
   
 
     
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submit-idea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share an idea
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site privacy
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2411,38 +3290,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parts-list" class="md-nav__link">
+  <a href="#is-this-build-appropriate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parts List
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parts List">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#antenna" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Antenna
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tools Required
+        Is this build appropriate?
       
     </span>
   </a>
@@ -2450,143 +3301,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#before-you-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloads
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assembly-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assembly Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Assembly Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enclosure-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enclosure Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mounting-the-solar-panel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mounting the Solar Panel
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mounting-plate-and-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mounting Plate and Filter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-and-radio-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter and Radio Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-mounting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Mounting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#battery-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Battery Installation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#power-wiring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Wiring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#final-connections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Connections
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ina3221-wiring-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        INA3221 Wiring (Optional)
+        Before you start
       
     </span>
   </a>
@@ -2594,10 +3312,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wiring-diagram" class="md-nav__link">
+  <a href="#what-this-build-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wiring Diagram
+        What this build changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bill-of-materials-to-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bill of materials to verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-and-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools and downloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assembly-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assembly stages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-the-readings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the readings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-it-on-the-bench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test it on the bench
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovery-and-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery and undo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source
       
     </span>
   </a>
@@ -2615,424 +3421,348 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
 
   
+    <a href="https://github.com/MeshCore-ca/MeshCore-Canada/edit/main/docs/hardware/repeater-solar-1w-diy-build.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
   
 
 
-<h1 id="building-a-1w-solar-repeater-ikoka-stick">Building a 1W Solar Repeater – Ikoka Stick<a class="headerlink" href="#building-a-1w-solar-repeater-ikoka-stick" title="Permanent link">&para;</a></h1>
-<p>Authored By: MrAlders0n (Ottawa)
-Date: 2026-01-01</p>
-<div class="admonition warning">
-<p class="admonition-title">No warranty</p>
-<p>This is to help the community understand how to make a repeater, and I by no means provide any warranty for anyone following this guide. Please test everything first with a multimeter and other tools before powering anything on.</p>
+
+  
+  <h1 id="experimental-1-w-solar-repeater">Experimental 1 W Solar Repeater<a class="headerlink" href="#experimental-1-w-solar-repeater" title="Permanent link">&para;</a></h1>
+  
+  
+  
+  
+
+  
+
+  
+
+  
+<p>This unverified design combines an Ikoka Stick 0.4.0, a solar power manager,
+a filtered RF path, and a fabricated enclosure.</p>
+<div class="mc-guide-status" data-status="experimental">
+<p><strong>Do not build or deploy this design without electrical, RF, and site review.</strong>
+Its firmware target, electrical design, optional telemetry, measurements, and
+climate limits have not been reproduced.</p>
 </div>
-<p><strong>Board:</strong> GOME Ikoka Stick (HW v0.4.0)<br />
-<strong>Power:</strong> Waveshare Solar Power Manager (standard)<br />
-<strong>Firmware:</strong> MeshCore  </p>
-<p>This guide walks through assembling a solar-powered MeshCore repeater using the GOME Ikoka Stick, a junction box enclosure, and an epoxied solar panel. Follow each step carefully for a reliable and weatherproof build.</p>
-<div class="admonition info">
-<p class="admonition-title">When to use a 1W repeater</p>
-<p>1W repeaters should typically be used for backbone links and for locations that are struggling to connect to the mesh. They are not necessary for every deployment.</p>
-</div>
+<dl class="mc-guide-facts">
+  <div><dt>Radio</dt><dd>GOME Ikoka Stick 0.4.0</dd></div>
+  <div><dt>Power</dt><dd>Waveshare Solar Power Manager</dd></div>
+  <div><dt>Firmware</dt><dd>Not pinned or reproduced</dd></div>
+  <div><dt>Maintenance</dt><dd>Set during the site review</dd></div>
+</dl>
+
+<h2 id="is-this-build-appropriate">Is this build appropriate?<a class="headerlink" href="#is-this-build-appropriate" title="Permanent link">&para;</a></h2>
+<p>This is a specialized backbone or long-range experiment, not a default
+upgrade. Coordinate with nearby communities and show that the site needs it
+before changing coverage or traffic patterns.</p>
+<p>Use the <a href="../repeater-solar-300mw-diy-build/">300 mW draft build</a> or a reviewed pre-built path unless a network operator and hardware/RF reviewer agree that this experiment addresses a measured need.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <div class="admonition danger">
-<p class="admonition-title">Antenna Required</p>
-<p><strong>Always ensure a LoRa antenna is attached to the Ikoka Stick before powering it on. Transmitting without an antenna can permanently damage the radio module.</strong></p>
+<p class="admonition-title">This combines high-power RF, lithium batteries, charging, soldering, cutting, and an outdoor elevated installation</p>
+<p>Verify every component and limit from current manufacturer documentation. Keep an antenna and reviewed RF path attached before any transmit test. Do not energize a battery or charger path when polarity, protection, wiring, temperature, or expected readings are unknown.</p>
 </div>
-<hr />
-<h2 id="parts-list">Parts List<a class="headerlink" href="#parts-list" title="Permanent link">&para;</a></h2>
+<ul class="mc-checklist">
+  <li>The local network need and cross-region effects are documented.</li>
+  <li>The exact Ikoka hardware and repeater firmware target are confirmed and recoverable by USB.</li>
+  <li>A hardware/electrical reviewer approves the battery, charger, panel, wiring, protection, optional telemetry, and enclosure thermal plan.</li>
+  <li>An RF reviewer approves the radio, filter, feed line, antenna, connectors, and site.</li>
+  <li>A structural/site review covers the finished mass, panel area, mount, wind, ice, snow, cable route, and access.</li>
+  <li>The build will remain supervised on the bench until its test record is approved.</li>
+</ul>
+
+<h2 id="what-this-build-changes">What this build changes<a class="headerlink" href="#what-this-build-changes" title="Permanent link">&para;</a></h2>
+<p>The procedure cuts and drills an enclosure, bonds a solar panel with epoxy and sealant, modifies the mounting system, connects a high-power RF path and filter, assembles a lithium power system, and may remove display pins for optional telemetry. Several changes are difficult or impossible to undo without replacing parts.</p>
+<h2 id="bill-of-materials-to-verify">Bill of materials to verify<a class="headerlink" href="#bill-of-materials-to-verify" title="Permanent link">&para;</a></h2>
+<div class="mc-table-wrap">
 <table>
 <thead>
 <tr>
-<th>#</th>
+<th style="text-align: right;">#</th>
 <th>Part</th>
-<th>Qty</th>
-<th>Price</th>
+<th style="text-align: right;">Qty</th>
+<th>Detail to verify</th>
 <th>Source</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>GOME Ikoka Stick (HW v0.4.0)</td>
-<td>1</td>
-<td>$55</td>
-<td><a href="https://github.com/ndoo/ikoka-stick-meshtastic-device">GitHub</a> (group buy)</td>
+<td style="text-align: right;">1</td>
+<td>GOME Ikoka Stick 0.4.0</td>
+<td style="text-align: right;">1</td>
+<td>Hardware revision, Canadian band, RF output, firmware target, recovery</td>
+<td><a href="https://github.com/ndoo/ikoka-stick-meshtastic-device">Project page</a></td>
 </tr>
 <tr>
-<td>2</td>
-<td>Waveshare Solar Power Manager (standard)</td>
-<td>1</td>
-<td>$15</td>
+<td style="text-align: right;">2</td>
+<td>Waveshare Solar Power Manager</td>
+<td style="text-align: right;">1</td>
+<td>Exact model, panel, battery and output limits, startup behaviour, temperature</td>
 <td><a href="https://www.waveshare.com/wiki/Solar_Power_Manager">Waveshare</a></td>
 </tr>
 <tr>
-<td>3</td>
-<td>IP65 Junction Box, 220x170x110mm, Gray</td>
-<td>1</td>
-<td>$30</td>
+<td style="text-align: right;">3</td>
+<td>IP65 junction box, 220×170×110 mm</td>
+<td style="text-align: right;">1</td>
+<td>Material, ingress rating after modification, temperature, vent</td>
 <td><a href="https://www.aliexpress.com/item/1005007587120013.html">AliExpress</a></td>
 </tr>
 <tr>
-<td>4</td>
-<td>Solar panel, 10W/18V, 250x340mm</td>
-<td>1</td>
-<td>$35</td>
+<td style="text-align: right;">4</td>
+<td>10 W / 18 V panel, 250×340 mm</td>
+<td style="text-align: right;">1</td>
+<td>Electrical limits, dimensions, mass, weather and load suitability</td>
 <td><a href="https://a.co/d/0eJo5GCr">Amazon</a></td>
 </tr>
 <tr>
-<td>5</td>
-<td>3P1S 18650 battery pack (or 4P1S)</td>
-<td>1</td>
-<td>$25-35</td>
+<td style="text-align: right;">5</td>
+<td>3P1S or 4P1S 18650 pack</td>
+<td style="text-align: right;">1</td>
+<td>Chemistry, matched cells, protection, construction, charger, temperature</td>
 <td><a href="https://mpandw.ca/">MP&amp;W Supply</a></td>
 </tr>
 <tr>
-<td>6</td>
-<td>Battery protection board (high/low voltage cutoff)</td>
-<td>1</td>
-<td>$8</td>
+<td style="text-align: right;">6</td>
+<td>Battery protection board</td>
+<td style="text-align: right;">1</td>
+<td>Thresholds, current, temperature, wiring, compatibility</td>
 <td><a href="https://space-hedgehog.com/products/battery-protection-with-low-voltage-cut-off">Space Hedgehog</a></td>
 </tr>
 <tr>
-<td>7</td>
-<td>890-960MHz 4-cavity bandpass filter, 50W (recommended)</td>
-<td>1</td>
-<td>$65</td>
+<td style="text-align: right;">7</td>
+<td>890–960 MHz four-cavity band-pass filter, 50 W</td>
+<td style="text-align: right;">1</td>
+<td>Response at 902–928 MHz, insertion loss, connectors, weather, temperature</td>
 <td><a href="https://www.alibaba.com/product-detail/50W-890-960MHz-4-Cavity-Filter_1601399651944.html">Alibaba</a></td>
 </tr>
 <tr>
-<td>8</td>
-<td>10-15cm SMA right angle to N-Type female O-ring nut cable</td>
-<td>1</td>
-<td>$6</td>
+<td style="text-align: right;">8</td>
+<td>10–15 cm SMA right-angle to N-type female bulkhead cable</td>
+<td style="text-align: right;">1</td>
+<td>Connector gender and polarity, loss, bend, seal</td>
 <td><a href="https://www.aliexpress.com/item/1005008569444661.html">AliExpress</a></td>
 </tr>
 <tr>
-<td>9</td>
-<td>7.5cm SMA Male 90° to SMA Male 90° cable</td>
-<td>1</td>
-<td>$7</td>
+<td style="text-align: right;">9</td>
+<td>7.5 cm SMA male right-angle cable</td>
+<td style="text-align: right;">1</td>
+<td>Connector match, loss, bend, power handling</td>
 <td><a href="https://www.aliexpress.com/item/1005006702037541.html">AliExpress</a></td>
 </tr>
 <tr>
-<td>10</td>
-<td>0.5ft USB-A to USB-C right angle cable</td>
-<td>1</td>
-<td>$7</td>
+<td style="text-align: right;">10</td>
+<td>0.5 ft USB-A to USB-C right-angle cable</td>
+<td style="text-align: right;">1</td>
+<td>Data and power needs, current, fit, strain</td>
 <td><a href="https://a.co/d/045htrEG">Amazon</a></td>
 </tr>
 <tr>
-<td>11</td>
-<td>M3x35 spacers</td>
-<td>4</td>
-<td></td>
-<td></td>
+<td style="text-align: right;">11–12</td>
+<td>M3×35 spacers and M3×5 screws</td>
+<td style="text-align: right;">as needed</td>
+<td>Material, strength, fit, corrosion</td>
+<td>Local source</td>
 </tr>
 <tr>
-<td>12</td>
-<td>M3x5 screws</td>
-<td>8</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>Gorilla Epoxy Syringe, 25ml</td>
-<td>1</td>
-<td>$15</td>
+<td style="text-align: right;">13</td>
+<td>Gorilla Epoxy, 25 ml</td>
+<td style="text-align: right;">1</td>
+<td>Material compatibility, cure, outdoor and temperature limits</td>
 <td><a href="https://www.homedepot.ca/product/gorilla-epoxy-syringe-25ml/1000778451">Home Depot</a></td>
 </tr>
 <tr>
-<td>14</td>
-<td>Waterproof vent plug (breather valve)</td>
-<td>1</td>
-<td>$2</td>
+<td style="text-align: right;">14</td>
+<td>Waterproof vent plug</td>
+<td style="text-align: right;">1</td>
+<td>Thread, airflow, ingress performance after install</td>
 <td><a href="https://www.aliexpress.com/item/1005006370919409.html">AliExpress</a></td>
 </tr>
 <tr>
-<td>15</td>
-<td>Outdoor silicone caulk (clear)</td>
-<td>1</td>
-<td>$10</td>
-<td>Any hardware store</td>
+<td style="text-align: right;">15</td>
+<td>Clear outdoor silicone sealant</td>
+<td style="text-align: right;">1</td>
+<td>Material compatibility, cure, UV and temperature limits</td>
+<td>Local hardware source</td>
 </tr>
 <tr>
-<td>16</td>
-<td>Adafruit INA3221 (optional)</td>
-<td>1</td>
-<td>$15-20</td>
+<td style="text-align: right;">16</td>
+<td>Adafruit INA3221, optional</td>
+<td style="text-align: right;">1</td>
+<td>Electrical interface, address, firmware support, isolation, calibration</td>
 <td><a href="https://www.digikey.ca/en/products/detail/adafruit-industries-llc/6062/25660599">DigiKey</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Estimated total cost:</strong> ~$280-290 without the INA3221, ~$300-310 with it. This does not include the antenna, 3D-printed parts, or mounting hardware (M3 spacers/screws).</p>
-<p><strong>Alternative filter option (minimal):</strong> Callboost 915MHz cavity filter, 26M BW, $82. <a href="https://www.aliexpress.com/item/1005004468960058.html">AliExpress</a></p>
-<h3 id="antenna">Antenna<a class="headerlink" href="#antenna" title="Permanent link">&para;</a></h3>
-<p>An antenna is not included in this parts list as selection will vary by deployment. It is highly recommended to use a higher dBi antenna such as a 6-8 dBi or higher with 1W builds. We have found that the Ikoka Stick does not pair well with the Alfa 5.8 dBi antenna for some reason, with several folks in Ottawa observing noticeably worse signal quality when using them together. This is not a definitive statement, just a pattern observed across multiple deployments.</p>
-<p>For recommended antenna options, see the <a href="../recommended-antenna/#repeater-omni-antennas">GOME Repeater Omni Antennas</a> page.</p>
-<hr />
-<h2 id="tools-required">Tools Required<a class="headerlink" href="#tools-required" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Soldering iron</td>
-<td>Fine tip recommended for I2C wiring</td>
-</tr>
-<tr>
-<td>Solder + flux</td>
-<td></td>
-</tr>
-<tr>
-<td>Multimeter</td>
-<td>For continuity and voltage checks</td>
-</tr>
-<tr>
-<td>Step drill bit</td>
-<td>For drilling clean holes in the junction box</td>
-</tr>
-<tr>
-<td>Jigsaw or rotary tool</td>
-<td>For cutting the solar panel opening</td>
-</tr>
-<tr>
-<td>1/8" drill bit</td>
-<td>For opening up mounting holes</td>
-</tr>
-<tr>
-<td>Pencil</td>
-<td>For marking the cutout</td>
-</tr>
-<tr>
-<td>Clamps + flat piece of wood</td>
-<td>For clamping solar panel during epoxy cure</td>
-</tr>
-<tr>
-<td>Wire strippers</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Before starting assembly, you will need the following 3D-printed parts. Both are available for download below:</p>
+</div>
+<p class="mc-table-note">These parts are unverified leads. Check current specifications, availability, shipping, and total cost before buying.</p>
+
+<h2 id="tools-and-downloads">Tools and downloads<a class="headerlink" href="#tools-and-downloads" title="Permanent link">&para;</a></h2>
+<p>Plan for soldering and wire tools, a multimeter, suitable drills and cutting
+tools, clamps, eye protection, and a safe work area.</p>
+<p>Printable files to verify:</p>
 <ul>
-<li><strong>Mounting plate</strong> for the junction box (holds the filter, Ikoka, and Waveshare board)</li>
-<li><strong>3P1S 18650 battery holder</strong> (or sized to match your chosen battery configuration)</li>
-</ul>
-<h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="../files/repeater-solar-1w-diy-build-plate-and-battery-holder.3mf">Mounting plate + 3P1S 18650 battery holder (combined .3mf)</a></li>
+<li><a href="../files/repeater-solar-1w-diy-build-plate-and-battery-holder.3mf">Mounting plate and battery holder (.3mf)</a></li>
 <li><a href="../files/repeater-solar-1w-diy-build-plate.stl">Mounting plate (.stl)</a></li>
 <li><a href="../files/repeater-solar-1w-diy-build-3x18650-battery-holder.stl">3P1S 18650 battery holder (.stl)</a></li>
 </ul>
-<hr />
-<h2 id="assembly-steps">Assembly Steps<a class="headerlink" href="#assembly-steps" title="Permanent link">&para;</a></h2>
-<h3 id="enclosure-preparation">Enclosure Preparation<a class="headerlink" href="#enclosure-preparation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Flip the solar panel face-down. On the back, locate the black junction box where the red and black power wires exit. Measure this junction box with calipers or a ruler.</p>
-</li>
-<li>
-<p>On the <strong>front face</strong> of the gray junction box, use a pencil to trace a rectangle matching the solar panel junction box dimensions. Center it near the top of the panel.</p>
-</li>
-<li>
-<p>Using a step drill bit, drill a large starter hole in the center of the traced rectangle.</p>
-</li>
-<li>
-<p>Using a jigsaw or rotary tool, cut along the traced lines to remove the rectangular section. Clean up any rough edges.</p>
-</li>
-</ol>
-<h3 id="mounting-the-solar-panel">Mounting the Solar Panel<a class="headerlink" href="#mounting-the-solar-panel" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Mix a batch of Gorilla Epoxy and apply it generously across the entire front face of the junction box, covering the area where the solar panel will sit.</p>
-</li>
-<li>
-<p>Route the solar panel's power cable through the rectangular cutout from the outside into the box.</p>
-<p><img alt="Solar panel wires routed through junction box" src="../images/repeater-solar-1w-diy-build-1.jpg" width="300" /></p>
-</li>
-<li>
-<p>Press the solar panel onto the epoxied face of the junction box. Place a flat piece of wood across the front of the panel and use clamps on all four corners to apply even pressure. Be careful not to over-tighten, as this can crack the panel. Alternatively, lay the assembly flat on the ground with weights on the back of the box.</p>
-</li>
-<li>
-<p>Allow the epoxy to fully cure according to the manufacturer's instructions before removing the clamps.</p>
-</li>
-<li>
-<p>Using clear outdoor silicone caulk, apply a bead around all four edges where the solar panel meets the junction box. Smooth the caulk to create a weatherproof seal.</p>
-</li>
-</ol>
-<h3 id="mounting-plate-and-filter">Mounting Plate and Filter<a class="headerlink" href="#mounting-plate-and-filter" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Attach the four M3x35 spacers to the corners of the junction box mounting plate. You may need to use a 1/8" drill bit to open the holes slightly to fit M3 screws through the plate. Use the 3D-printed mount plate as a reference for hole placement.</p>
-<p><img alt="Mounting plate with spacers and filter assembled" src="../images/repeater-solar-1w-diy-build-2.jpg" width="300" /></p>
-</li>
-<li>
-<p>Mount the RF bandpass filter to the mounting plate, positioning it roughly in the center.</p>
-</li>
-<li>
-<p>Connect the N-Type to SMA cable to the filter's <strong>output</strong> port. This cable will pass through the box wall to the external antenna.</p>
-</li>
-<li>
-<p>Determine where the N-Type connector should exit the junction box. Using a step drill bit, drill the hole, stepping up one size at a time and test-fitting after each step until the connector fits snugly.</p>
-</li>
-<li>
-<p>Feed the N-Type connector through the box wall from the inside out and tighten the O-ring nut to secure it.</p>
-</li>
-<li>
-<p>On the <strong>bottom</strong> of the junction box, drill a hole for the waterproof vent plug using the step drill bit.</p>
-</li>
-<li>
-<p>Install the vent plug and tighten it.</p>
-<p><img alt="Filter mounted in box with N-Type, SMA cables, and vent plug installed" src="../images/repeater-solar-1w-diy-build-3.jpg" width="300" /></p>
-</li>
-</ol>
-<h3 id="filter-and-radio-preparation">Filter and Radio Preparation<a class="headerlink" href="#filter-and-radio-preparation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Connect the SMA-to-SMA cable to the filter's <strong>input</strong> port. Finger-tighten for now.</p>
-</li>
-<li>
-<p><strong>Waveshare Solar Power Manager prep (standard model):</strong> On the back of the board, solder a wire across the boot button pads to short it permanently. Without this modification, the board will not automatically resume power output after a power loss, meaning your repeater would stay offline until you physically press the button.</p>
-<p><img alt="Boot button shorted on Waveshare Solar Power Manager" src="../images/repeater-solar-1w-diy-build-4.jpg" width="300" /></p>
-</li>
-</ol>
-<h3 id="component-mounting">Component Mounting<a class="headerlink" href="#component-mounting" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Outside the box (for easier access), mount the Ikoka Stick and the Waveshare Solar Power Manager to the 3D-printed mounting plate. If using the optional INA3221, mount it as well.</p>
-</li>
-<li>
-<p><strong>(Optional, Adafruit INA3221)</strong> Using a soldering iron, carefully remove the Ikoka Stick's OLED display header pins. Work slowly and gently to avoid damaging nearby components.</p>
-</li>
-<li>
-<p><strong>(Optional, Adafruit INA3221)</strong> Solder the INA3221 to the Ikoka's I2C bus using the display header pads. See the <a href="#ina3221-wiring-optional">INA3221 Wiring</a> section below for the pin connections.</p>
-<p><img alt="INA3221 wired to Ikoka Stick I2C with Waveshare Solar Power Manager" src="../images/repeater-solar-1w-diy-build-5.jpg" width="300" /></p>
-</li>
-<li>
-<p>Install the mounting plate assembly into the junction box and secure it with M3x5 screws into the M3x35 spacers.</p>
-</li>
-</ol>
-<h3 id="battery-installation">Battery Installation<a class="headerlink" href="#battery-installation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Attach the 3D-printed battery holder to the inside front of the case, below where the solar panel wires enter. Use double-sided tape or epoxy to secure it.</p>
-</li>
-<li>
-<p>If your 18650 battery pack does not have a built-in PCM (protection circuit module), wire the battery protection board between the battery and the Waveshare. Follow the polarity markings carefully.</p>
-</li>
-</ol>
-<h3 id="power-wiring">Power Wiring<a class="headerlink" href="#power-wiring" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>(Optional, Adafruit INA3221) Solar wiring:</strong> Connect the solar panel positive wire to INA3221 <strong>CH3+</strong>. Connect CH3- to the Waveshare solar input positive. Connect the solar panel negative wire directly to the Waveshare solar input negative.</p>
-</li>
-<li>
-<p><strong>(Optional, Adafruit INA3221) Battery wiring:</strong> Connect the battery (or the PCM) positive wire to INA3221 <strong>CH1+</strong>. Connect CH1- to the positive pin on the Waveshare battery JST PH2.0 connector. Connect the battery negative wire directly to the negative pin on the JST PH2.0 connector. Plug the connector into the Waveshare board.</p>
-<p><code>Note: If you are not using the INA3221, wire the solar panel and battery directly to the Waveshare board's solar and battery inputs.</code></p>
-</li>
-</ol>
-<h3 id="final-connections">Final Connections<a class="headerlink" href="#final-connections" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Connect the SMA cable from the filter's input to the Ikoka Stick's SMA connector. Tighten both ends firmly with a wrench or pliers. A loose RF connection will cause signal loss.</p>
-</li>
-<li>
-<p>Run the USB-A to USB-C cable from the Waveshare Solar Power Manager's USB output to the Ikoka Stick's USB-C input.</p>
-<p><em>If using the Adafruit INA3221, your completed assembly should look similar to this:</em></p>
-<p><img alt="Completed build with INA3221, Waveshare, and Ikoka Stick" src="../images/repeater-solar-1w-diy-build-6.jpg" width="300" /></p>
-<p><em>Without the INA3221:</em></p>
-<p><img alt="Completed build without INA3221" src="../images/repeater-solar-1w-diy-build-7.jpg" width="300" /></p>
-<p><em>Full interior view with INA3221, battery pack, and all wiring complete:</em></p>
-<p><img alt="Full interior view of completed build with INA3221" src="../images/repeater-solar-1w-diy-build-8.jpg" width="300" /></p>
-</li>
-</ol>
-<hr />
-<h2 id="ina3221-wiring-optional">INA3221 Wiring (Optional)<a class="headerlink" href="#ina3221-wiring-optional" title="Permanent link">&para;</a></h2>
-<p>The Adafruit INA3221 connects to the Ikoka Stick via I2C using the <strong>OLED display header</strong> pads. Remove the display header pins and solder wires directly to the pads.</p>
-<p><strong>I2C connection (Ikoka display header to INA3221):</strong></p>
+<p>Confirm dimensions, material, temperature performance, fasteners, battery restraint, and print quality before use.</p>
+<h2 id="assembly-stages">Assembly stages<a class="headerlink" href="#assembly-stages" title="Permanent link">&para;</a></h2>
+<div class="mc-stage-list">
+  <section class="mc-build-stage" data-stage="stop">
+    <h3>Stage 1 — Review and dry-fit</h3>
+    <p>Confirm all revisions, dimensions, electrical limits, connector paths, filter orientation, clearances, printed parts, cable bends, vent location, panel location, and service access before cutting or bonding.</p>
+    <p><strong>Checkpoint:</strong> the reviewed schematic, RF path, and mechanical layout agree with the exact parts in hand.</p>
+  </section>
+  <section class="mc-build-stage">
+    <h3>Stage 2 — Prepare the enclosure and panel</h3>
+    <ol>
+      <li>Measure the panel junction box and mark the enclosure cutout from the actual parts.</li>
+      <li>Use an appropriate pilot opening and cutting tool with the enclosure empty and safely supported.</li>
+      <li>Deburr and clean the cutout, then dry-fit the panel and cable route.</li>
+      <li>Bond and clamp only with a reviewed material-compatible process. Let it cure for the full manufacturer time.</li>
+      <li>Apply the reviewed weather seal without blocking drainage or venting.</li>
+    </ol>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-1.jpg" alt="Solar-panel wires routed through the enclosure cutout" loading="lazy"><figcaption>Example only. Measure the actual parts.</figcaption></figure>
+  </section>
+  <section class="mc-build-stage">
+    <h3>Stage 3 — Install the mounting plate, filter, bulkhead, and vent</h3>
+    <ol>
+      <li>Fit the reviewed spacers and mounting plate without stressing the enclosure.</li>
+      <li>Mount the filter with identified input and output ports and adequate cable bend radius.</li>
+      <li>Drill and deburr the bulkhead and vent holes by test-fitting the actual hardware.</li>
+      <li>Install seals, bulkhead, and vent according to their documentation.</li>
+      <li>Leave RF connections unpowered and accessible for inspection.</li>
+    </ol>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-2.jpg" alt="Mounting plate with spacers and RF filter" loading="lazy"><figcaption>Example plate and filter layout.</figcaption></figure>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-3.jpg" alt="Enclosure with filter, RF bulkhead cables, and vent plug" loading="lazy"><figcaption>Check connector direction and every seal.</figcaption></figure>
+  </section>
+  <section class="mc-build-stage" data-stage="stop">
+    <h3>Stage 4 — Review the power-manager startup modification</h3>
+    <p><strong>Do not bridge the power manager's boot-button pads.</strong> That modification has not been reproduced or reviewed.</p>
+    <p>Before considering any change, require the exact schematic, failure modes, warranty impact, soldering method, startup test, and rollback to be approved by a hardware reviewer.</p>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-4.jpg" alt="Unverified wire bridge across solar-manager boot-button pads" loading="lazy"><figcaption>Unverified modification. Do not reproduce it from this photograph.</figcaption></figure>
+  </section>
+  <section class="mc-build-stage" data-stage="stop">
+    <h3>Stage 5 — Mount the radio and decide on optional telemetry</h3>
+    <p>Dry-fit the Ikoka Stick and power manager. The optional INA3221 branch removes the display header and solders to I2C pads, so it must remain separate from the base build.</p>
+    <p>The telemetry pinout, measurement path, calibration, current range, I2C address, and firmware support are not verified.</p>
+    <p><strong>Default:</strong> omit optional telemetry. Do not remove display pins or add firmware flags until the exact hardware and current MeshCore target are reproduced.</p>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-5.jpg" alt="Unverified optional INA3221 connection to the Ikoka display-header area" loading="lazy"><figcaption>Unverified optional telemetry. Do not reproduce it from this photograph.</figcaption></figure>
+  </section>
+  <section class="mc-build-stage" data-stage="stop">
+    <h3>Stage 6 — Assemble the battery and charging path</h3>
+    <ol>
+      <li>Keep solar, battery, USB, and radio disconnected.</li>
+      <li>Confirm the battery pack construction, cell matching, protection, restraint, insulation, and temperature limits.</li>
+      <li>Confirm every power-manager and protection-board terminal from current manufacturer documentation.</li>
+      <li>Measure and record polarity; do not rely on wire colour.</li>
+      <li>Connect one reviewed branch at a time and inspect before proceeding.</li>
+    </ol>
+    <p><strong>Checkpoint:</strong> no unknown terminal, limit, expected value, exposed conductor, or unsupported battery condition remains.</p>
+  </section>
+  <section class="mc-build-stage">
+    <h3>Stage 7 — Complete the RF and USB paths</h3>
+    <ol>
+      <li>Verify filter input/output direction and every SMA/N-type connector.</li>
+      <li>Attach the complete reviewed antenna path before the radio can transmit.</li>
+      <li>Route the USB power cable without sharp bends, abrasion, or strain.</li>
+      <li>Keep the enclosure open for supervised first power and checks.</li>
+    </ol>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-6.jpg" alt="Completed interior with optional INA3221 telemetry" loading="lazy"><figcaption>Unverified optional-telemetry layout.</figcaption></figure>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-7.jpg" alt="Completed interior without optional INA3221 telemetry" loading="lazy"><figcaption>Example base layout.</figcaption></figure>
+    <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-8.jpg" alt="Full enclosure interior with radio, filter, power manager, and battery" loading="lazy"><figcaption>Example interior. A photograph is not electrical approval.</figcaption></figure>
+  </section>
+</div>
+
+<h2 id="check-the-readings">Check the readings<a class="headerlink" href="#check-the-readings" title="Permanent link">&para;</a></h2>
+<p>No numeric acceptance range has been peer-reviewed for this page. Do not substitute guessed voltages or currents.</p>
+<div class="mc-table-wrap">
 <table>
 <thead>
 <tr>
-<th>Ikoka Display Header</th>
-<th>INA3221 Pin</th>
-<th>Wire</th>
+<th>Check</th>
+<th>Acceptable result</th>
+<th>Stop condition</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pin 1 - GND</td>
-<td>GND</td>
-<td>Ground</td>
+<td>Disconnected continuity</td>
+<td>No unintended short on the documented supply or RF paths</td>
+<td>Unexpected continuity or uncertain meter setup</td>
 </tr>
 <tr>
-<td>Pin 2 - VCC (3.3V)</td>
-<td>VCC</td>
-<td>Power</td>
+<td>Connector polarity</td>
+<td>Measurements match the reviewed schematic and manufacturer pinout</td>
+<td>Any disagreement or unknown pin</td>
 </tr>
 <tr>
-<td>Pin 3 - SCL</td>
-<td>SCL</td>
-<td>Clock</td>
+<td>Solar, battery, and output values</td>
+<td>Each measured value is within every connected component's current documentation</td>
+<td>Missing limit or out-of-range value</td>
 </tr>
 <tr>
-<td>Pin 4 - SDA</td>
-<td>SDA</td>
-<td>Data</td>
+<td>First power</td>
+<td>Stable expected startup with no heat, odour, swelling, smoke, noise, or cycling</td>
+<td>Any abnormal physical or electrical behaviour</td>
+</tr>
+<tr>
+<td>RF path</td>
+<td>Correct band, filter direction, connections, and attached antenna before transmit</td>
+<td>Missing antenna, loose/forced connector, unknown filter response</td>
+</tr>
+<tr>
+<td>Optional telemetry</td>
+<td>Independently reproduced measurement and firmware behaviour</td>
+<td>Unverified wiring, address, calibration, or build target</td>
 </tr>
 </tbody>
 </table>
-<p><strong>INA3221 channel assignments:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Channel</th>
-<th>Connected To</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CH1</td>
-<td>Battery</td>
-<td>Monitor battery voltage and current draw</td>
-</tr>
-<tr>
-<td>CH2</td>
-<td>(unused)</td>
-<td>Available for future use</td>
-</tr>
-<tr>
-<td>CH3</td>
-<td>Solar</td>
-<td>Monitor solar input voltage and charging current</td>
-</tr>
-</tbody>
-</table>
-<p><code>Note: VCC on the INA3221 is the board power pin (3.3V from the Ikoka). VIN1/VIN2/VIN3 are the measurement channel inputs, not the power pin.</code></p>
-<p><strong>Firmware build flags:</strong> MeshCore does not auto-detect the Adafruit INA3221 at its default address. Add these flags to your build configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[env:ikoka_stick_nrf_30dbm_repeater]</span>
-<span class="na">build_flags</span><span class="w"> </span><span class="o">=</span>
-<span class="w">  </span><span class="na">${ikoka_stick_nrf_repeater.build_flags}</span>
-<span class="w">  </span><span class="na">${ikoka_stick_nrf_e22_30dbm.build_flags}</span>
-<span class="w">  </span><span class="na">-D TELEM_INA3221_ADDRESS</span><span class="o">=</span><span class="s">0x40</span>
-<span class="w">  </span><span class="na">-UENV_INCLUDE_INA219</span>
-</code></pre></div>
-<p>The Adafruit INA3221 sits at I2C address <code>0x40</code>, but MeshCore expects <code>0x42</code>. The <code>-D TELEM_INA3221_ADDRESS=0x40</code> flag corrects this. The <code>-UENV_INCLUDE_INA219</code> flag disables INA219 support to prevent conflicts.</p>
-<hr />
-<h2 id="wiring-diagram">Wiring Diagram<a class="headerlink" href="#wiring-diagram" title="Permanent link">&para;</a></h2>
-<p><img alt="Wiring diagram" src="../images/repeater-solar-1w-diy-build-9.svg" width="600" /></p>
+</div>
+<h2 id="test-it-on-the-bench">Test it on the bench<a class="headerlink" href="#test-it-on-the-bench" title="Permanent link">&para;</a></h2>
+<ul class="mc-checklist">
+  <li>Record exact parts, revisions, source documents, schematic, photographs, polarity, and measured values.</li>
+  <li>Use supervised and current-limited first-power methods appropriate to the reviewed hardware.</li>
+  <li>Confirm the unit starts after each intended power source is applied and after a controlled power interruption.</li>
+  <li>Confirm the repeater's identity, firmware, radio, region, path, advert, and access settings survive reboot.</li>
+  <li>Confirm a nearby companion receives an advert and the planned local routing test succeeds.</li>
+  <li>Measure the RF/power behaviour using the reviewer's approved method; do not infer output from a firmware setting alone.</li>
+  <li>Run a supervised charge/load test that covers the reviewed conditions without exceeding component limits.</li>
+  <li>Inspect cable strain and seals, then complete an enclosure-appropriate water-resistance test.</li>
+  <li>Prove USB recovery and document the removal/access plan.</li>
+</ul>
+
+<p>Do not deploy until a hardware/electrical reviewer, RF reviewer, and site owner approve the completed test record.</p>
+<h2 id="recovery-and-undo">Recovery and undo<a class="headerlink" href="#recovery-and-undo" title="Permanent link">&para;</a></h2>
+<p>If a check fails, stop transmitting and disconnect solar, USB, and battery power using the reviewed safe sequence. Move the equipment to a suitable supervised work area. Do not reconnect a warm, swollen, damaged, leaking, or otherwise questionable lithium battery. Restore firmware by USB only after the electrical/RF fault is understood.</p>
+<p>Cutouts, epoxy, removed pins, and solder bridges may be irreversible. Replace uncertain components rather than improvising a repair. The safe rollback from the optional telemetry branch is to omit it before modification, not to assume removed hardware can be restored.</p>
+<h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
+<p>No interval is approved. The site record must define inspections for mounting, panel/bond, water entry, vent, seals, corrosion, cables/connectors, filter, battery condition, charge behaviour, measured values, firmware/configuration, radio verification, and physical recovery. Reinspect after any severe event or unexplained behaviour defined by the site reviewer.</p>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">&para;</a></h2>
+<p>Based on experimental community notes contributed by MrAlders0n in 2026. No
+hardware or firmware claim on this page is verified.</p>
+<p>Prefer a reviewed option from the <a href="../recommended-repeaters/">repeater selection guide</a>.
+If this experiment is approved and commissioned, complete the
+<a href="../repeater-mounting-options/">mounting plan</a> and
+<a href="../../config/">repeater configuration</a>.</p>
 
 
 
@@ -3040,6 +3770,20 @@ Date: 2026-01-01</p>
 
 
 
+
+
+  
+  
+
+
+
+  
+  <aside class="mc-page-feedback" aria-label="Page feedback">
+    
+      <p>Was this page useful?</p>
+      <a class="md-button" href="../../submit-idea/">Suggest a change</a>
+    
+  </aside>
 
 
 
@@ -3063,14 +3807,57 @@ Date: 2026-01-01</p>
       
         <footer class="md-footer">
   
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Community-run documentation for MeshCore users in Canada. Not affiliated with the upstream MeshCore project.<br> Agentic tools help create and maintain this site. Only content reviewed and approved by people is published.
+    </div>
   
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discord.gg/BESFVMt7yk" target="_blank" rel="noopener" title="MeshCore Canada Discord" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://forum.meshcore.ca/" target="_blank" rel="noopener" title="MeshCore Canada forum" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 144c0 97.2-86 176-192 176-26.7 0-52.1-5-75.2-14l-81.6 43.2c-9.3 4.9-20.7 3.2-28.2-4.2s-9.2-18.9-4.2-28.2l35.6-67.2C14.3 220.2 0 183.6 0 144 0 46.8 86-32 192-32s192 78.8 192 176m0 368c-94.1 0-172.4-62.1-188.8-144 120-1.5 224.3-86.9 235.8-202.7 83.3 19.2 145 88.3 145 170.7 0 39.6-14.3 76.2-38.4 105.6l35.6 67.2c4.9 9.3 3.2 20.7-4.2 28.2s-18.9 9.2-28.2 4.2L459.2 498c-23.1 9-48.5 14-75.2 14"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://live.meshcore.ca/" target="_blank" rel="noopener" title="Live MeshCore Canada network tools" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 3.93A9.97 9.97 0 0 0 2 11c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.94 7.94 0 0 1 4 11c0-2.21.89-4.22 2.34-5.66zm14.14 0-1.41 1.41A7.96 7.96 0 0 1 20 11c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.97 9.97 0 0 0 22 11c0-2.76-1.12-5.26-2.93-7.07M7.76 6.76A5.98 5.98 0 0 0 6 11c0 1.65.67 3.15 1.76 4.24l1.41-1.41A4 4 0 0 1 8 11c0-1.11.45-2.11 1.17-2.83zm8.48 0-1.41 1.41A4 4 0 0 1 16 11c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 11c0-1.65-.67-3.15-1.76-4.24M12 9a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-1 6v4h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7a1 1 0 0 0-1-1h-1v-4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/MeshCore-ca/MeshCore-Canada" target="_blank" rel="noopener" title="MeshCore Canada on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -3088,15 +3875,21 @@ Date: 2026-01-01</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+  
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../assets/regions/regions.js"></script>
+        <script src="../../assets/javascripts/i18n-runtime.js?v=20260723-1"></script>
       
-        <script src="../../javascripts/submission-form.js"></script>
+        <script src="../../assets/javascripts/bootstrap.js?v=20260821-1"></script>
       
     
+  
+    
+    
+  
+
   </body>
 </html>
