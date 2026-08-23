@@ -1,10 +1,25 @@
 ---
 title: Region definition and authority
+description: The public rules, sources, authority, and change process for Canadian MeshCore regions.
+audience:
+  - repeater-operator
+  - region-maintainer
+task: understand-region-standard
+scope: canada-baseline
+status: verified
+owner: region-maintainers
+last_reviewed: 2026-07-19
+review_by: 2026-10-19
+tested_with:
+  region_schema: meshcore-canada-regions-v2
+difficulty: advanced
 ---
 
 # MeshCore Canada region definition and authority
 
-This standard defines one Canada-wide region system: how every location is assigned, how boundaries are generated, how large regions split, who may approve changes, and which source wins when sources disagree.
+This standard defines Canada's MeshCore regions. It explains how locations and
+boundaries are assigned, who approves changes, and how source conflicts are
+resolved.
 
 | Standard | Value |
 | --- | --- |
@@ -25,7 +40,10 @@ MeshCore Canada maintains **one geographic partition**. Every part of Canada bel
 
 The published MeshCore Canada registry is the single source of truth. A boundary is not stored as a hand-drawn polygon. It is stored as ownership of official Statistics Canada geographic cells, then regenerated from those cells. Census Subdivisions keep a municipality or municipal equivalent together by default; Dissemination Areas remain the exact geometry used to publish the shared edge.
 
-Only leaves own land. Provinces, territories, and larger region records are grouping nodes derived from their children. Raw MeshMapper polygons, strategy circles, and event areas are never published as regions. A shared repeater area is configuration metadata, not another map layer.
+Only leaves own land. Provinces, territories, and larger region records are
+grouping nodes built from their children. Raw MeshMapper polygons, strategy
+circles, and event areas are not published as regions. A shared repeater area
+is configuration metadata, not another map layer.
 
 ## Canonical model
 
@@ -38,7 +56,10 @@ Only leaves own land. Provinces, territories, and larger region records are grou
 | Region | Stable operating area | Exhaustive within its jurisdiction |
 | Subregion | Optional split of a region | Exhaustive within its parent; never overlaps a sibling |
 
-A region with no children is a geographic leaf. When it is split, all of its cells move to subregions and the former leaf becomes a grouping node. It has no independent fill, resolver ownership, or additional command scope. A location resolves to one and only one leaf.
+A region with no children is a geographic leaf. When split, its cells move to
+subregions and the former leaf becomes a grouping node. It has no independent
+fill, resolver ownership, or extra command scope. A location resolves to one
+leaf.
 
 Every record has separate fields for:
 
@@ -149,9 +170,9 @@ The current strategy contributes 192 candidate geographic seeds. The generator c
 
 The candidate leaf catalog remains machine-readable in [`canada-regions.json`](../assets/regions/canada-regions.json). The table above does not ratify every candidate name or grouping. Fuzzy hub areas—especially in Alberta, Saskatchewan, Manitoba, Newfoundland and Labrador, Yukon, and parts of Québec—remain priorities for local review before activation.
 
-### Current-system audit
+### Prototype audit
 
-The retired overlapping prototype confirmed why one generated authority layer is needed:
+Prototype testing showed why one generated authority layer is needed:
 
 - the catalog records still require community review before activation;
 - 192 overlapping seed-radius areas and 29 raw MeshMapper polygons were displayed together, but did not form a partition;
@@ -160,7 +181,9 @@ The retired overlapping prototype confirmed why one generated authority layer is
 - the current `YXX` source polygon is an obvious area outlier and must be refreshed or explicitly approved before it can anchor Abbotsford;
 - six normalized aliases have more than one owner, so ambiguous searches require jurisdiction context or an explicit choice.
 
-These are migration findings, not accepted region definitions. The public map now consumes only the generated partition; source circles and raw source polygons remain evidence for the generator and QA report.
+These are design findings, not accepted region definitions. The public map uses
+only the generated partition. Source circles and raw source polygons remain
+evidence for the generator and QA report.
 
 ### Complete guardrail inventory
 
@@ -286,11 +309,25 @@ The Kitchener-Waterloo fixture is release-blocking: all 189 DAs in Cambridge CSD
 
 ### 8. Use radio activity only as a privacy-safe tie-break
 
-The locked `radio-density.json` snapshot joins fresh positioned observations from `live.meshcore.ca` with positioned entries currently returned by `dev.meshcore.ca`, then deduplicates matching public keys in memory. The dev endpoint does not provide a per-node observation time, so dev-only entries contribute advisory density but cannot become boundary-decision evidence. Fresh live repeater, room, and sensor observations supply the decision counts; companion locations remain advisory. The snapshot is bound to a SHA-256 digest of each DGUID and its pre-radio provisional owner, so stale candidate labels fail closed while a valid radio tie-break can still change final ownership without a circular hash dependency.
+The locked `radio-density.json` snapshot combines fresh positioned observations
+from `live.meshcore.ca` with positioned entries from `dev.meshcore.ca`, then
+deduplicates matching public keys. Dev does not provide observation times, so
+dev-only entries are advisory and cannot decide a boundary. Fresh live
+repeater, room, and sensor observations provide the counts used for decisions;
+companion locations remain advisory.
+
+The snapshot is bound to a SHA-256 digest of each DGUID and its provisional
+owner before the radio pass. If candidate labels are stale, validation stops.
+A valid radio tie-break can still change final ownership.
 
 Clusters span no more than 30 kilometres. Every published geographic count is at least five. Candidate counts are published only inside their own CSD, and the complete CSD candidate breakdown is suppressed if any candidate bucket contains fewer than five nodes. Raw node identifiers, names, and exact coordinates are never persisted.
 
-Radio evidence may choose between candidates already present in a CSD only when the provisional margin is at most 10 percentage points and at least 60% of eligible radio evidence supports one candidate. It cannot create a region, split a CSD, cross a province or territory, or override an approved census decision. A radio snapshot is reproducible evidence for a release, not a live automatic authority; changes enter only through a newly locked snapshot and normal review.
+Radio evidence may choose between candidates already present in a CSD only when
+the provisional margin is at most 10 percentage points and at least 60% of
+eligible evidence supports one candidate. It cannot create a region, split a
+CSD, cross a province or territory, or override an approved census decision.
+A snapshot is reproducible release evidence, not live automatic authority.
+Changes require a new locked snapshot and normal review.
 
 ### 9. Generate both boundary products
 
@@ -367,11 +404,50 @@ The national maintainers enforce the data model; they do not invent local identi
 
 The boundary editor works on the same census cells as the generator. Its normal action reassigns a whole CSD, with its containing CD shown as review context. It never saves a freehand polygon as operational geometry. A reviewer may use DA-level draft edits to shape an exceptional split, but the approved `splitExceptions` record must expand that draft to list every DA in the CSD, with no duplicate or missing DGUID.
 
-The editor is a static page at `/config/editor/` and requires no contributor account. It can move cells to an existing region or propose one new region with a unique name, short tag, and changed anchor cell. The new leaf uses the nearest shared parent of its source regions, preserving the existing region/subregion tree. It builds a versioned proposal with the base membership hash and before/after owner for each changed DGUID. On submission, a MeshCore Canada-hosted proposal service repeats the authority and proposal checks, verifies the anti-spam challenge, and uses a repository-restricted GitHub App to open the public review issue automatically. The static page and production service are both operated by MeshCore Canada; no GitHub credential or signing secret is placed in the browser. The public App has Issues read/write only and cannot change the map. The canonical proposal is signed by the App and stored in machine-readable issue markers while the issue shows the human review summary. Maintainers may reproduce the proposal check with `scripts/validate-region-proposal.py`, which adds CD/CSD context and requires a reason before review; an author may also be recorded.
+The editor is a static page at `/config/editor/`; no contributor account is
+required. It can move cells to an existing region or propose one new region
+with a unique name, short tag, and changed anchor cell. A new leaf keeps the
+nearest shared parent of its source regions.
 
-After local and public review, an allowlisted maintainer closes the labelled issue as **Completed**. The repository-owned Action independently verifies the issue author, closer, label, App signature, proposal hash, and jurisdiction. It also checks the current owner of every requested cell. A proposal can remain open while unrelated boundaries change, but it fails closed if one of its requested cells changed during review. A whole-CSD decision becomes a cohort override; a partial-CSD decision becomes an explicit split listing every DA in that CSD. For an approved new region, the Action derives its seed from the official anchor cell, adds the catalogue entry, and applies the same ownership decision. Community-approved seeds do not participate in the pre-radio candidate pass: the reviewed cohort or split owns the approved cells, which preserves the locked radio-density basis and prevents unreviewed expansion. The Action then regenerates both national partitions and editor cells from locked sources, runs the release checks, and commits the source decision and generated artifacts to `main`. That push starts the normal site deployment. Any failure before publication reopens the issue and leaves `main` unchanged. Closing as **Not planned** makes no authority change. Editor drafts, browser-local state, and submitted issues are never operational authority until this approval and validation complete.
+Each proposal records the base membership hash and the owner before and after
+each changed DGUID. On submission:
 
-The editor's own census-cell geometry (`docs/assets/regions/cells/`) was last regenerated with `scripts/build-region-editor-data.py --retain 10%` rather than the script's 8% default, because 8% collapses a BC dissemination area to a degenerate shape; the retained value is recorded alongside the rest of the build inputs in `docs/assets/regions/cells/manifest.json`.
+- the MeshCore Canada service reruns the authority and proposal checks;
+- it verifies the anti-spam challenge; and
+- a repository-restricted GitHub App opens the public review issue.
+
+No GitHub credential or signing secret reaches the browser. The App can read
+and write issues, but it cannot change the map. It signs the canonical proposal
+stored in the issue's machine-readable markers. The issue shows a plain-language
+summary. Maintainers can repeat the check with
+`scripts/validate-region-proposal.py`, which adds CD/CSD context and requires a
+reason.
+
+After review, an allowlisted maintainer closes the issue as **Completed**. The
+repository workflow then:
+
+- verifies the author, closer, label, App signature, proposal hash, and
+  jurisdiction;
+- confirms that every requested cell still has the expected owner;
+- records a whole-CSD decision as a cohort override or a partial decision as an
+  explicit split listing every DA in that CSD;
+- derives an approved new region's seed from its official anchor cell; and
+- regenerates both national partitions and the editor cells from locked
+  sources, runs the release checks, and commits the result to `main`.
+
+Community-approved seeds do not take part in the pre-radio candidate pass. The
+reviewed cohort or split owns the approved cells, preserving the locked
+radio-density basis and preventing unreviewed expansion.
+
+If a requested cell changed during review, the workflow stops. A failed
+publication reopens the issue and leaves `main` unchanged. Closing an issue as
+**Not planned** changes nothing. Drafts, browser state, and open issues never
+become operational authority.
+
+The editor geometry in `docs/assets/regions/cells/` uses
+`scripts/build-region-editor-data.py --retain 10%`. The 8% default collapses one
+BC dissemination area. The manifest records the retained value with the other
+build inputs.
 
 Versioning rules:
 
@@ -397,7 +473,7 @@ A geographic release fails unless all of these are true:
 - shared-area names never enter the on-air tree; the complete member paths fit every firmware and serial-line budget;
 - every neighbouring path is non-geographic, optional, backed by aggregate route evidence, and uses a documented or explicitly provisional external hierarchy;
 - neighbouring paths never own Canadian cells, resolve from a map point, or appear as U.S. boundary geometry;
-- every resolver test point returns exactly one leaf;
+- every resolver test point returns one and only one leaf;
 - every active region is contiguous by shared land edge, or has a documented island/MultiPolygon exception;
 - every active tag is globally unique and within the firmware byte limit;
 - every old tag resolves to an active record, a deprecated record, or a tombstone;
@@ -431,7 +507,7 @@ Before the first MCC-REG-1 geographic release is marked active, the repository m
 
 Generated GeoJSON is a build output. The catalog, membership table, generator configuration, and source lock are the authority inputs. Non-geographic search groups never own cells, appear in the map layer, or resolve from a point. A shared repeater area's group name never enters a command; only the canonical paths of its member leaves do.
 
-## Migration from the current map
+## Release stages
 
 | Phase | Result | Boundary status |
 | --- | --- | --- |
@@ -445,7 +521,8 @@ MeshMapper remains the main community assignment source where it has a region. C
 
 ## Repeater configuration rules
 
-Generated instructions must follow the current [official MeshCore CLI documentation](https://docs.meshcore.io/cli_commands/), not copied examples from an older strategy document.
+Generated instructions must follow the [official MeshCore CLI documentation](https://docs.meshcore.io/cli_commands/).
+Examples in strategy documents may be out of date.
 
 - Use `region def` or `region put` to define the exact tree required by that repeater.
 - `name|jump` creates `name` under the current cursor and then moves the cursor to `jump`; `jump` is not the parent of `name`.
@@ -457,7 +534,16 @@ Generated instructions must follow the current [official MeshCore CLI documentat
 - Run bare `region` to inspect the result.
 - Run `region save` only after the tree and flood permissions are correct.
 
-The setup tool must generate and test commands from registry parent IDs. It must never infer command order by splitting a tag string. The map may outline all selected Canadian leaves together, but each fill remains its original non-overlapping geographic region. Neighbouring U.S. paths appear in commands and labels only. The boundary editor continues to accept one province or territory per proposal; shared repeater membership and neighbouring path metadata are changed in the catalog and reviewed by every affected side.
+The setup tool must generate and test commands from registry parent IDs. It must
+never infer command order by splitting a tag string.
+
+The map may outline selected Canadian leaves together, but each fill remains
+its original non-overlapping region. Neighbouring U.S. paths appear only in
+commands and labels.
+
+The boundary editor accepts one province or territory per proposal. Changes to
+shared repeater membership or neighbouring path metadata belong in the catalog
+and require review from every affected side.
 
 ## Source record
 
