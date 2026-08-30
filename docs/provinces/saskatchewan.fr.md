@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -39,14 +39,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
-<li><strong>Discord :</strong> <a href="https://discord.gg/7yGnJuMGkG" rel="noopener">Discord de StoonMesh</a> <span class="mc-community-external">(externe)</span></li>
+<li><strong>Telegram :</strong> <a href="https://t.me/MeshtSaska" rel="noopener">Mesh Saskatchewan Telegram</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -60,7 +60,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <p class="mc-community-no-contact">Aucune coordonnée publique n’a encore été fournie.</p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>

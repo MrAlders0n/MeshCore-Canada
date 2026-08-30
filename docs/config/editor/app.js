@@ -164,6 +164,7 @@ import {
     after: document.getElementById("after-view"),
     changeCount: document.getElementById("change-count"),
     textSummary: document.getElementById("text-summary"),
+    reviewPanel: document.getElementById("review-panel"),
     changesTableBody: document.getElementById("changes-table-body"),
     changesTableNote: document.getElementById("changes-table-note"),
     readinessList: document.getElementById("readiness-list"),
@@ -187,7 +188,6 @@ import {
 
   var state = {
     catalog: null,
-    partition: null,
     membership: new Map(),
     baseMembershipSha256: "",
     features: [],
@@ -235,12 +235,6 @@ import {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  var partitionLayer = L.geoJSON(null, {
-    interactive: false,
-    style: function () {
-      return { color: "#8d93ae", weight: 1, opacity: 0.4, fillOpacity: 0.025 };
-    }
-  }).addTo(map);
   var cellLayer = L.geoJSON(null, {
     style: styleFeature,
     onEachFeature: wireCell
@@ -1271,7 +1265,7 @@ import {
 
   async function loadProvince(pruid) {
     if (!pruid) {
-      return;
+      return false;
     }
     if (state.loadController) {
       state.loadController.abort();
@@ -1318,15 +1312,15 @@ import {
       if (cellLayer.getBounds().isValid()) {
         map.fitBounds(cellLayer.getBounds(), { padding: [18, 18] });
       }
-      partitionLayer.bringToBack();
       setStatus(
         state.features.length.toLocaleString() + " census cells loaded.",
         "success"
       );
+      return true;
     } catch (error) {
       if (error.name === "AbortError") {
         state.restoringDraft = false;
-        return;
+        return false;
       }
       state.membership.clear();
       state.features = [];
@@ -1335,6 +1329,7 @@ import {
       cellLayer.clearLayers();
       state.restoringDraft = false;
       setStatus(error.message, "error");
+      return false;
     }
   }
 
@@ -1519,7 +1514,7 @@ import {
   }
 
   async function initialiseSubmission() {
-    if (state.submissionInitialising) return;
+    if (state.submissionInitialising || state.turnstileWidgetId !== null) return;
     state.submissionInitialising = true;
     elements.antiSpamRetry.hidden = true;
     setAntiSpamStatus("Loading check…", "");
@@ -1703,28 +1698,67 @@ import {
     await loadProvince(nextProvince);
   }
 
-  async function initialise() {
+  var editorInitialisePromise = null;
+
+  async function loadEditor() {
+    document.documentElement.dataset.editorState = "loading";
     setStatus("Loading editor…", "");
+    elements.proposalTypes.forEach(function (input) { input.disabled = true; });
     try {
       state.catalog = await (await fetchOk("canada-regions.json")).json();
       await loadMembershipCsv();
       var manifest = null;
       try { manifest = await (await fetchOk("cells/manifest.json")).json(); } catch (_e) {}
       populateProvinceOptions(manifest);
-      try {
-        var partition = await (await fetchOk("canada-region-partition.geojson")).json();
-        partitionLayer.clearLayers();
-        partitionLayer.addData(partition);
-      } catch (_e) {}
-      await loadProvince(elements.province.value);
+      if (!await loadProvince(elements.province.value)) {
+        document.documentElement.dataset.editorState = "error";
+        editorInitialisePromise = null;
+        return false;
+      }
+      document.documentElement.dataset.editorState = "ready";
+      return true;
     } catch (error) {
       setStatus(error.message, "error");
+      document.documentElement.dataset.editorState = "error";
+      editorInitialisePromise = null;
+      return false;
+    } finally {
+      elements.proposalTypes.forEach(function (input) { input.disabled = false; });
+    }
+  }
+
+  function initialise() {
+    if (!editorInitialisePromise) editorInitialisePromise = loadEditor();
+    return editorInitialisePromise;
+  }
+
+  var submissionTriggersReady = false;
+
+  function prepareSubmissionWhenNeeded() {
+    if (submissionTriggersReady) return;
+    submissionTriggersReady = true;
+    var start = function () { void initialiseSubmission(); };
+    elements.reviewPanel.addEventListener("focusin", start, { once: true });
+    elements.reviewPanel.addEventListener("pointerdown", start, { once: true });
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+        observer.disconnect();
+        start();
+      }, { rootMargin: "200px" });
+      observer.observe(elements.reviewPanel);
     }
   }
 
   elements.proposalTypes.forEach(function (input) {
-    input.addEventListener("change", function () {
-      if (input.checked) changeProposalType(input.value);
+    input.addEventListener("change", async function () {
+      if (!input.checked) return;
+      if (!await initialise()) {
+        input.checked = false;
+        return;
+      }
+      await changeProposalType(input.value);
+      prepareSubmissionWhenNeeded();
     });
   });
   elements.province.addEventListener("change", function () {
@@ -1863,6 +1897,4 @@ import {
   });
   window.addEventListener("beforeunload", flushDraftSave);
 
-  initialise();
-  initialiseSubmission();
 }());

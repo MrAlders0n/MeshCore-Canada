@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -39,14 +39,14 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
 <li><strong>Website:</strong> <a href="http://www.lunenburgcountymesh.ca" rel="noopener">Lunenburg County Mesh website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>

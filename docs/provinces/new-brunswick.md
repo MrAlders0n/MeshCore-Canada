@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -39,7 +39,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <p class="mc-community-forming">
 This group is forming. Contact it to learn what is working and where help is needed.

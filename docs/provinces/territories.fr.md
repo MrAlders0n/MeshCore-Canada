@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false

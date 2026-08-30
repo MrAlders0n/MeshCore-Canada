@@ -41,7 +41,6 @@ const expectedCommunities = new Map([
   [
     "calgary-meshcore-network",
     [
-      "https://meshcorecalgary.ca/",
       "https://albertamesh.ca/calgary/",
       "https://discord.gg/CznDhsRWnJ",
       "https://yyc.meshmapper.net/?lat=51.01674&lon=-114.00149&zoom=11.00",
@@ -85,7 +84,7 @@ const expectedCommunities = new Map([
     "yyc-meshcore-discord",
     ["https://discord.gg/CznDhsRWnJ", "https://meshmonitoring.com/"],
   ],
-  ["stoonmesh", ["https://discord.gg/7yGnJuMGkG"]],
+  ["stoonmesh", ["https://t.me/MeshtSaska"]],
   ["yqrmesh", []],
   [
     "greater-ottawa-mesh-enthusiasts",
@@ -97,13 +96,12 @@ const expectedCommunities = new Map([
     ["https://discord.gg/V5esJEP67X", "https://quintemesh.ca/"],
   ],
   ["charlevoix-yml", ["https://chxmesh.ca/"]],
-  ["mesh-quebec", ["https://qcmesh.net"]],
+  ["mesh-quebec", ["https://t.me/meshtQuebec"]],
   ["montreal-mesh", ["https://www.montrealmesh.ca"]],
   ["reseau-mesh-capitale-yqb", ["https://discord.gg/UhGjTF2MfA"]],
   [
     "reseau-mesh-saguenay-lac-saint-jean-ytf",
     [
-      "https://discord.gg/wUR394yXt",
       "https://www.facebook.com/share/g/1GjkHAyZAM/",
       "https://ytf.meshmapper.net/",
     ],
@@ -150,7 +148,7 @@ function idsMatching(query) {
     .map((community) => community.id);
 }
 
-test("all 24 structured listings and every curated contact URL are preserved", () => {
+test("all 24 structured listings match the reviewed contact fixture", () => {
   assert.equal(data.communities.length, 24);
   assert.deepEqual(
     new Set(data.communities.map((community) => community.id)),
@@ -172,8 +170,8 @@ test("all 24 structured listings and every curated contact URL are preserved", (
       type: "telegram",
       label: "Alberta topic in MeshCore Canada",
       url: "https://t.me/MeshCoreCAN",
-      health: "needs-review",
-      last_checked: null,
+      health: "verified",
+      last_checked: "2026-08-29",
     },
   ]);
 });
@@ -269,8 +267,11 @@ test("overview counts, empty states, and page metadata are generated", () => {
     assert.match(markdown, /\ntitle: .+\n/);
     assert.match(markdown, /\ndescription: .+\n/);
     assert.match(markdown, /\nowner: directory-stewards\n/);
-    assert.match(markdown, /\nlast_reviewed: 2026-07-19\n/);
-    assert.match(markdown, /\nreview_by: 2027-01-15\n/);
+    assert.match(
+      markdown,
+      new RegExp(`\\nlast_reviewed: ${data.metadata.last_reviewed}\\n`),
+    );
+    assert.match(markdown, new RegExp(`\\nreview_by: ${data.metadata.review_by}\\n`));
     assert.match(markdown, /\npage_styles:\n  - assets\/styles\/communities\.css(?:\?v=\d{8}-\d+)?\n/);
 
     const communities = data.communities.filter((community) =>
@@ -314,12 +315,12 @@ test("all listings inherit the three-byte Canada baseline", () => {
   const quebec = readFileSync(join(provinceDir, "quebec.md"), "utf8");
   assert.match(
     quebec,
-    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Listing contact:<\/strong> pifane[\s\S]*?<strong>Contact check:<\/strong> Verified on 2026-08-08/,
+    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Listing contact:<\/strong> pifane[\s\S]*?<strong>Contact check:<\/strong> Verified on 2026-08-29/,
   );
   const quebecFr = readFileSync(join(provinceDir, "quebec.fr.md"), "utf8");
   assert.match(
     quebecFr,
-    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Contact pour cette fiche :<\/strong> pifane[\s\S]*?<strong>Vérification :<\/strong> Effectuée le 2026-08-08/,
+    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Contact pour cette fiche :<\/strong> pifane[\s\S]*?<strong>Vérification :<\/strong> Effectuée le 2026-08-29/,
   );
 
   const saskatchewan = readFileSync(

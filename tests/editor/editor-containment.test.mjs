@@ -19,6 +19,17 @@ test("proposal type is explicit before geography and new-region eligibility is v
   assert.match(html, /does not change\s+the map/);
 });
 
+test("heavy editor data and anti-spam load only after the visitor starts", async () => {
+  const [html, app] = await Promise.all([source("index.html"), source("app.js")]);
+  assert.match(html, /data-editor-state="waiting"/);
+  assert.match(html, /id="review-panel"/);
+  assert.match(app, /if \(!await initialise\(\)\)/);
+  assert.match(app, /IntersectionObserver/);
+  assert.doesNotMatch(app, /canada-region-partition\.geojson/);
+  assert.doesNotMatch(app, /\n  initialise\(\);\n/);
+  assert.doesNotMatch(app, /\n  initialiseSubmission\(\);\n/);
+});
+
 test("editor exposes a complete structured alternative to the optional map", async () => {
   const html = await source("index.html");
   assert.match(html, /id="municipality-select"/);
