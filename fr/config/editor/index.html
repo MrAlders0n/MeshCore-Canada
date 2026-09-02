@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en" data-editor-state="waiting">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="../../../assets/regions/vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="./editor.css?v=20260722-2">
   <script defer src="../../../assets/regions/vendor/leaflet/leaflet.js"></script>
-  <script defer src="../../../assets/javascripts/i18n-runtime.js?v=20260723-1"></script>
-  <script type="module" src="./app.js?v=20260722-2"></script>
+  <script defer src="../../../assets/javascripts/i18n-runtime.js?v=20260829-1"></script>
+  <script type="module" src="./app.js?v=20260829-1"></script>
 </head>
 <body class="editor-page">
   <a class="skip-link" href="#geography-list">Skip the map and choose a municipality</a>
@@ -64,7 +64,7 @@
         <h2>2. Choose an area</h2>
         <label for="province-select">Province or territory</label>
         <select id="province-select" disabled></select>
-        <p id="load-status" class="status-line" role="status" aria-live="polite">Loading editor…</p>
+        <p id="load-status" class="status-line" role="status" aria-live="polite">Choose a proposal type to load the editor.</p>
         <p id="draft-status" class="draft-status" role="status" aria-live="polite">Choose a proposal type to begin.</p>
         <button id="discard-draft-button" class="inline-retry" type="button" hidden>Discard saved draft</button>
       </section>
@@ -134,7 +134,7 @@
         </div>
       </section>
 
-      <section class="panel">
+      <section class="panel" id="review-panel">
         <div class="panel-title-row">
           <h2>4. Review</h2>
           <span id="change-count" class="count-badge">0 changes</span>
@@ -179,7 +179,7 @@
           <input id="website" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div id="turnstile-container" class="turnstile-container" role="group" aria-label="Anti-spam check"></div>
-        <p id="anti-spam-status" class="anti-spam-status" role="status" aria-live="polite">Loading check…</p>
+        <p id="anti-spam-status" class="anti-spam-status" role="status" aria-live="polite">The anti-spam check loads when you reach this step.</p>
         <button id="anti-spam-retry" class="inline-retry" type="button" hidden>Retry check</button>
         <div id="validation-message" class="validation-message" role="status" aria-live="polite"></div>
         <div id="submission-result" class="submission-result" role="status" aria-live="polite"></div>

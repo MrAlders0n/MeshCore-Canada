@@ -26,7 +26,7 @@
         
       
       
-      <link rel="icon" href="../../assets/MeshCore-Canada-Favicon.png">
+      <link rel="icon" href="../../assets/MeshCore-Canada-Favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
@@ -131,7 +131,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="MeshCore Canada" class="md-header__button md-logo" aria-label="MeshCore Canada" data-md-component="logo">
       
-  <img src="../../assets/MeshCore-Canada-Favicon.png" alt="logo">
+  <img src="../../assets/MeshCore-Canada-Mark.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -453,7 +453,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="MeshCore Canada" class="md-nav__button md-logo" aria-label="MeshCore Canada" data-md-component="logo">
       
-  <img src="../../assets/MeshCore-Canada-Favicon.png" alt="logo">
+  <img src="../../assets/MeshCore-Canada-Mark.svg" alt="logo">
 
     </a>
     MeshCore Canada
@@ -2603,6 +2603,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#read-only-mqtt-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only MQTT accounts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-it-appears" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3449,6 +3460,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#read-only-mqtt-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only MQTT accounts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-it-appears" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3673,6 +3695,30 @@
 </tbody>
 </table>
 <p>MeshCore Canada does not offer general direct broker subscriptions. Direct access is limited to CoreScope, local mesh administrators, and people approved by the infrastructure administrators.</p>
+<h2 id="read-only-mqtt-accounts">Read-only MQTT accounts<a class="headerlink" href="#read-only-mqtt-accounts" title="Permanent link">&para;</a></h2>
+<p>This public inventory lists services with a read-only account on the MeshCore Canada brokers. It identifies the service and operator, but never publishes broker usernames, passwords, or tokens.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beacon (<code>dev.meshcore.ca</code>)</td>
+<td>MeshCore Canada operators</td>
+<td>Public packet viewer and repeater ID checks</td>
+</tr>
+<tr>
+<td>CoreScope (<code>live.meshcore.ca</code>)</td>
+<td>MeshCore Canada operators</td>
+<td>Public observer, packet, node, and map tools</td>
+</tr>
+</tbody>
+</table>
+<p>Infrastructure administrators must update this table whenever they create or remove a read-only account. <a href="https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose">Report a missing or outdated entry</a>.</p>
 <h2 id="where-it-appears">Where it appears<a class="headerlink" href="#where-it-appears" title="Permanent link">&para;</a></h2>
 <p><a href="https://live.meshcore.ca/">CoreScope</a> shows observer, packet, and map information. Other approved MeshCore Canada services may use the same feed.</p>
 <p>Broker access controls do not make information private once CoreScope displays it.</p>
@@ -3841,7 +3887,7 @@
   
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../assets/javascripts/i18n-runtime.js?v=20260723-1"></script>
+        <script src="../../assets/javascripts/i18n-runtime.js?v=20260829-1"></script>
       
         <script src="../../assets/javascripts/bootstrap.js?v=20260821-1"></script>
       
