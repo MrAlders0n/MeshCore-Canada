@@ -8,8 +8,8 @@ task: reference-observer-endpoints
 scope: canada-baseline
 status: draft
 owner: meshcore-canada
-last_reviewed: 2026-07-22
-review_by: 2026-10-19
+last_reviewed: 2026-09-02
+review_by: 2026-12-01
 difficulty: advanced
 estimated_time: 8 minutes
 destructive: false
@@ -49,6 +49,17 @@ Ces valeurs proviennent de la [configuration commune des observateurs](observer-
 </div>
 
 Si le tableau ne s’affiche pas, ouvrez [observer-config.json](observer-config.json).
+
+## Administrateurs des courtiers
+
+Communiquez avec un administrateur pour demander un accès en lecture seule ou signaler un problème de compte. N’envoyez jamais de mot de passe ni de jeton.
+
+| Administrateur | Contact |
+|---|---|
+| n30nex | [GitHub : @n30nex](https://github.com/n30nex) |
+| Mr. Alderson | [GitHub : @MrAlders0n](https://github.com/MrAlders0n) |
+| Ded | [GitHub : @446564](https://github.com/446564) |
+| Kranic | [Forum MeshCore : @djkranic](https://forum.meshcore.ca/u/djkranic) |
 
 ## Modèles de sujets
 
