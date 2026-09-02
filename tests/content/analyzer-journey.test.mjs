@@ -134,6 +134,24 @@ test("privacy pages state ownership, access, the account inventory, and the unkn
   assert.match(french, /mettre ce tableau à jour chaque\s+fois qu’ils créent ou retirent un compte en lecture seule/i);
 });
 
+test("broker reference lists every administrator and public contact in both languages", () => {
+  const english = read("docs/analyzer/broker-reference.md");
+  const french = read("docs/analyzer/broker-reference.fr.md");
+  const contacts = [
+    ["n30nex", "https://github.com/n30nex"],
+    ["Mr. Alderson", "https://github.com/MrAlders0n"],
+    ["Ded", "https://github.com/446564"],
+    ["Kranic", "https://forum.meshcore.ca/u/djkranic"],
+  ];
+
+  for (const [administrator, contact] of contacts) {
+    for (const page of [english, french]) {
+      assert.ok(page.includes(administrator), `missing administrator ${administrator}`);
+      assert.ok(page.includes(contact), `missing contact ${contact}`);
+    }
+  }
+});
+
 test("verification distinguishes connectivity from an observed packet", () => {
   const source = read("docs/analyzer/verify.md");
   assert.match(source, /broker connection proves only/i);
