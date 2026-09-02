@@ -113,17 +113,25 @@ test("all observer method guides follow one lifecycle and end in live verificati
   }
 });
 
-test("privacy page states ownership, access, and the unknown retention boundary", () => {
+test("privacy pages state ownership, access, the account inventory, and the unknown retention boundary", () => {
   const source = read("docs/analyzer/data-collection-access.md");
+  const french = read("docs/analyzer/data-collection-access.fr.md");
   for (const phrase of [
     "Policy summary",
     "MeshCore Canada infrastructure administrators",
     "Collection, access, and retention",
+    "Read-only MQTT accounts",
     "public retention period has not yet been published",
     "Never include in public diagnostics",
   ]) {
     assert.match(source, new RegExp(phrase, "i"));
   }
+  for (const service of ["Beacon (`dev.meshcore.ca`)", "CoreScope (`live.meshcore.ca`)"]) {
+    assert.ok(source.includes(service), `English inventory missing ${service}`);
+    assert.ok(french.includes(service), `French inventory missing ${service}`);
+  }
+  assert.match(source, /update this table whenever they create or remove a read-only account/i);
+  assert.match(french, /mettre ce tableau à jour chaque\s+fois qu’ils créent ou retirent un compte en lecture seule/i);
 });
 
 test("verification distinguishes connectivity from an observed packet", () => {

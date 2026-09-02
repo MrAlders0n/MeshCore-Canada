@@ -8,8 +8,8 @@ task: understand-observer-data
 scope: canada-baseline
 status: draft
 owner: meshcore-canada
-last_reviewed: 2026-07-22
-review_by: 2026-10-19
+last_reviewed: 2026-09-02
+review_by: 2026-12-01
 difficulty: beginner
 estimated_time: 6 minutes
 destructive: false
@@ -69,6 +69,21 @@ paquets.
 MeshCore Canada n’offre pas d’abonnement direct général au courtier. L’accès
 direct est limité à CoreScope, aux administrateurs des réseaux maillés locaux
 et aux personnes autorisées par les administrateurs de l’infrastructure.
+
+## Comptes MQTT en lecture seule
+
+Cet inventaire public répertorie les services qui utilisent un compte en lecture
+seule sur les courtiers MQTT de MeshCore Canada. Il indique le service et
+l’exploitant, mais jamais le nom d’utilisateur MQTT, le mot de passe ni le jeton.
+
+| Service | Exploitant | Utilisation |
+|---|---|---|
+| Beacon (`dev.meshcore.ca`) | Exploitants de MeshCore Canada | Visualisation publique des paquets et vérification des identifiants de répéteur |
+| CoreScope (`live.meshcore.ca`) | Exploitants de MeshCore Canada | Outils publics pour les observateurs, les paquets, les nœuds et la carte |
+
+Les administrateurs de l’infrastructure doivent mettre ce tableau à jour chaque
+fois qu’ils créent ou retirent un compte en lecture seule. [Signalez une entrée
+manquante ou périmée](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).
 
 ## Où les données apparaissent
 

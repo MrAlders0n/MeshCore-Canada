@@ -69,6 +69,17 @@ async function run() {
     chromeFlags: ["--headless=new", "--no-sandbox", "--disable-dev-shm-usage"]
   });
 
+  // A fresh Chrome process can make the first CI audit a cold-start outlier.
+  // Warm it once, then enforce the unchanged budgets on every measured route.
+  const warmupUrl = resolveSiteRoute(baseUrl, routes[0][1]);
+  const warmup = await lighthouse(warmupUrl, {
+    port: chrome.port,
+    output: "json",
+    logLevel: "error",
+    onlyCategories: ["performance"]
+  }, desktopConfig);
+  if (!warmup) throw new Error(`Lighthouse warm-up returned no result for ${warmupUrl}`);
+
   const failures = [];
   for (const [name, route] of routes) {
     const url = resolveSiteRoute(baseUrl, route);
