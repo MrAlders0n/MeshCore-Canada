@@ -4,8 +4,9 @@
   "metadata": {
     "owner": "directory-stewards",
     "migrated_at": "2026-07-19",
+    "last_reviewed": "2026-08-29",
     "source_revision": "a47dfbc",
-    "review_by": "2027-01-15",
+    "review_by": "2027-02-28",
     "update_route": "../submit-idea.md"
   },
   "national_defaults": {
@@ -149,8 +150,8 @@
       "type": "telegram",
       "label": "Alberta topic in MeshCore Canada",
       "url": "https://t.me/MeshCoreCAN",
-      "health": "needs-review",
-      "last_checked": null
+      "health": "verified",
+      "last_checked": "2026-08-29"
     }
   ],
   "communities": [
@@ -192,12 +193,12 @@
           "label": "Ridgeline network map and tools",
           "url": "https://ridgeline.ve7kod.ca/about",
           "health": "verified",
-          "last_checked": "2026-08-11"
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": "2026-08-11",
-      "verify_by": "2027-02-11",
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/british-columbia/#community-bc-mesh"
     },
     {
@@ -227,13 +228,13 @@
           "type": "website",
           "label": "Salish Mesh website",
           "url": "https://salishmesh.net/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/british-columbia/#community-salish-mesh"
     },
     {
@@ -269,62 +270,62 @@
           "type": "website",
           "label": "AlbertaMesh.ca",
           "url": "https://albertamesh.ca/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Alberta MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Airdrie regional page",
           "url": "https://albertamesh.ca/airdrie/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Calgary regional page",
           "url": "https://albertamesh.ca/calgary/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Edmonton regional page",
           "url": "https://albertamesh.ca/edmonton/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Lethbridge regional page",
           "url": "https://albertamesh.ca/lethbridge/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Why MeshCore?",
           "url": "https://albertamesh.ca/why-meshcore/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Monitoring tools",
           "url": "https://albertamesh.ca/monitoring-tools/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-alberta-meshcore-networks"
     },
     {
@@ -357,41 +358,41 @@
           "type": "website",
           "label": "Airdrie MeshCore Network",
           "url": "https://albertamesh.ca/airdrie/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Airdrie configuration guide",
           "url": "https://albertamesh.ca/airdrie/configuration/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Alberta MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Airdrie network map",
           "url": "https://yyc.meshmapper.net/?lat=51.28120&lon=-113.99718&zoom=13.43",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "WAeV live map",
           "url": "https://waev.app/#/live-map/@51.28107,-113.99966,14.47z",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-airdrie-meshcore-network"
     },
     {
@@ -422,20 +423,20 @@
           "type": "telegram",
           "label": "Calgary topic in Mesh Alberta",
           "url": "https://t.me/meshtAlta",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Canada - Calgary, Alberta & Area regional channel in the MeshCore Discord",
           "url": null,
           "health": "needs-review",
-          "last_checked": null
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-calgary-area-meshcore"
     },
     {
@@ -450,7 +451,7 @@
       "aliases": [
         "AlbertaMesh Calgary",
         "YYC",
-        "meshcorecalgary.ca"
+        "Calgary MeshCore"
       ],
       "status": "active",
       "languages": [],
@@ -466,50 +467,43 @@
       "contacts": [
         {
           "type": "website",
-          "label": "Calgary MeshCore Network",
-          "url": "https://meshcorecalgary.ca/",
-          "health": "needs-review",
-          "last_checked": null
-        },
-        {
-          "type": "website",
           "label": "Calgary community guide",
           "url": "https://albertamesh.ca/calgary/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Alberta MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Calgary network map",
           "url": "https://yyc.meshmapper.net/?lat=51.01674&lon=-114.00149&zoom=11.00",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "CoreScope YYC",
           "url": "https://corescopeyyc.meshmonitoring.com/#/live",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Recommended Calgary RX channels",
           "url": "https://albertamesh.ca/calgary/#rx-channels",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-calgary-meshcore-network"
     },
     {
@@ -541,34 +535,34 @@
           "type": "website",
           "label": "Edmonton on AlbertaMesh.ca",
           "url": "https://albertamesh.ca/edmonton/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Edmonton configuration guide",
           "url": "https://albertamesh.ca/edmonton/configuration/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Alberta MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Edmonton network map",
           "url": "https://yeg.meshmapper.net/?lat=53.45752&lon=-113.58320&zoom=10.03",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-edmonton-meshcore-network"
     },
     {
@@ -601,34 +595,34 @@
           "type": "website",
           "label": "Getting started",
           "url": "https://yegmesh.ca/p/getting-started",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "MeshCore defaults",
           "url": "https://yegmesh.ca/p/meshcore-defaults",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "Alberta MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Edmonton network map",
           "url": "https://yeg.meshmapper.net/?lat=53.45752&lon=-113.58320&zoom=10.03",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-yegmesh-ca"
     },
     {
@@ -659,62 +653,62 @@
           "type": "website",
           "label": "YQLMesh website",
           "url": "https://www.yqlmesh.com/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Lethbridge regional page",
           "url": "https://albertamesh.ca/lethbridge/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "discord",
           "label": "YQLMesh Discord",
           "url": "https://discord.gg/cFY9GSR37W",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Lethbridge network map",
           "url": "https://yql.meshmapper.net/?lat=49.69091&lon=-112.86356&zoom=12.14",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "facebook",
           "label": "YQLMesh Facebook",
           "url": "https://facebook.com/groups/YQLMesh",
           "health": "needs-review",
-          "last_checked": null
+          "last_checked": "2026-08-29"
         },
         {
           "type": "instagram",
           "label": "YQLMesh Instagram",
           "url": "https://instagram.com/YQLMesh",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "x",
           "label": "YQLMesh on X",
           "url": "https://x.com/YQLMesh",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "reddit",
           "label": "YQLMesh subreddit",
           "url": "https://www.reddit.com/r/YQLMesh",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-yqlmesh"
     },
     {
@@ -747,19 +741,19 @@
           "label": "Canada - Southern Alberta regional channel in the MeshCore Discord",
           "url": null,
           "health": "needs-review",
-          "last_checked": null
+          "last_checked": "2026-08-29"
         },
         {
           "type": "telegram",
           "label": "Cardston topic in Mesh Alberta",
           "url": "https://t.me/meshtAlta",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-southern-alberta"
     },
     {
@@ -789,20 +783,20 @@
           "type": "discord",
           "label": "YYC MeshCore Discord",
           "url": "https://discord.gg/CznDhsRWnJ",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "MeshMonitoring",
           "url": "https://meshmonitoring.com/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/alberta/#community-yyc-meshcore-discord"
     },
     {
@@ -827,16 +821,16 @@
       },
       "contacts": [
         {
-          "type": "discord",
-          "label": "StoonMesh Discord",
-          "url": "https://discord.gg/7yGnJuMGkG",
-          "health": "needs-review",
-          "last_checked": null
+          "type": "telegram",
+          "label": "Mesh Saskatchewan Telegram",
+          "url": "https://t.me/MeshtSaska",
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/saskatchewan/#community-stoonmesh"
     },
     {
@@ -864,8 +858,8 @@
       },
       "contacts": [],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/saskatchewan/#community-yqrmesh"
     },
     {
@@ -896,20 +890,20 @@
           "type": "discord",
           "label": "Greater Ottawa Mesh Enthusiasts Discord",
           "url": "https://discord.gg/WSyNd8SfNr",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Ottawa Mesh website",
           "url": "https://ottawamesh.ca/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/ontario/#community-greater-ottawa-mesh-enthusiasts"
     },
     {
@@ -938,13 +932,13 @@
           "type": "discord",
           "label": "GTA+-Lora-Meshes Discord",
           "url": "https://discord.gg/wSHbeb86r4",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/ontario/#community-gta-lora-meshes"
     },
     {
@@ -976,20 +970,20 @@
           "type": "discord",
           "label": "Quinte Mesh Network Discord",
           "url": "https://discord.gg/V5esJEP67X",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         },
         {
           "type": "website",
           "label": "Quinte Mesh Network website",
           "url": "https://quintemesh.ca/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/ontario/#community-quinte-mesh-network"
     },
     {
@@ -1023,12 +1017,12 @@
           "label": "Réseau MESH de Charlevoix",
           "url": "https://chxmesh.ca/",
           "health": "verified",
-          "last_checked": "2026-08-08"
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": "pifane",
-      "verified_at": "2026-07-31",
-      "verify_by": "2027-01-31",
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-charlevoix-yml"
     },
     {
@@ -1053,16 +1047,16 @@
       },
       "contacts": [
         {
-          "type": "website",
-          "label": "Mesh Quebec website",
-          "url": "https://qcmesh.net",
-          "health": "needs-review",
-          "last_checked": null
+          "type": "telegram",
+          "label": "Mesh Quebec Telegram",
+          "url": "https://t.me/meshtQuebec",
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-mesh-quebec"
     },
     {
@@ -1093,13 +1087,13 @@
           "type": "website",
           "label": "Montreal Mesh website",
           "url": "https://www.montrealmesh.ca",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-montreal-mesh"
     },
     {
@@ -1130,13 +1124,13 @@
           "type": "discord",
           "label": "Réseau Mesh de la Capitale YQB Discord",
           "url": "https://discord.gg/UhGjTF2MfA",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-reseau-mesh-capitale-yqb"
     },
     {
@@ -1165,30 +1159,23 @@
       },
       "contacts": [
         {
-          "type": "discord",
-          "label": "Réseau Mesh du Saguenay Lac st-Jean YTF Discord",
-          "url": "https://discord.gg/wUR394yXt",
-          "health": "needs-review",
-          "last_checked": null
-        },
-        {
           "type": "facebook",
           "label": "Réseau Mesh du Saguenay Lac st-Jean YTF Facebook",
           "url": "https://www.facebook.com/share/g/1GjkHAyZAM/",
           "health": "needs-review",
-          "last_checked": null
+          "last_checked": "2026-08-29"
         },
         {
           "type": "meshmapper",
           "label": "Réseau Mesh du Saguenay Lac st-Jean YTF MeshMapper",
           "url": "https://ytf.meshmapper.net/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-reseau-mesh-saguenay-lac-saint-jean-ytf"
     },
     {
@@ -1218,13 +1205,13 @@
           "type": "website",
           "label": "Réseau Libre website",
           "url": "https://lora.reseaulibre.ca/",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/quebec/#community-reseau-libre"
     },
     {
@@ -1257,12 +1244,12 @@
           "label": "MESHCORE Saint John, N.B.",
           "url": "https://www.facebook.com/groups/613466831163684",
           "health": "needs-review",
-          "last_checked": null
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/new-brunswick/#community-southern-new-brunswick"
     },
     {
@@ -1290,13 +1277,13 @@
           "type": "website",
           "label": "Lunenburg County Mesh website",
           "url": "http://www.lunenburgcountymesh.ca",
-          "health": "needs-review",
-          "last_checked": null
+          "health": "verified",
+          "last_checked": "2026-08-29"
         }
       ],
       "owner": null,
-      "verified_at": null,
-      "verify_by": null,
+      "verified_at": "2026-08-29",
+      "verify_by": "2027-02-28",
       "canonical_route": "/provinces/nova-scotia/#community-lunenburg-county-mesh"
     }
   ]

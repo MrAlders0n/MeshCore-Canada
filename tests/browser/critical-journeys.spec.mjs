@@ -396,6 +396,26 @@ test("boundary editor makes both proposal paths and review-only behavior explici
   await expect(page.getByText(/does not change the map/i)).toBeVisible();
 });
 
+test("boundary editor waits to load editing data and anti-spam", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "chromium", "One browser proves the shared startup contract");
+  const requests = [];
+  page.on("request", (request) => requests.push(request.url()));
+
+  await page.goto(siteRoute("/config/editor/"), { waitUntil: "networkidle" });
+
+  await expect(page.locator("html")).toHaveAttribute("data-editor-state", "waiting");
+  expect(requests.some((url) => url.includes("canada-region-membership.csv"))).toBeFalsy();
+  expect(requests.some((url) => url.includes("canada-region-partition.geojson"))).toBeFalsy();
+  expect(requests.some((url) => url.startsWith("https://challenges.cloudflare.com/"))).toBeFalsy();
+
+  await page.getByLabel("Adjust an existing boundary").check();
+  await expect(page.locator("html")).toHaveAttribute("data-editor-state", "ready");
+  expect(requests.some((url) => url.includes("canada-region-membership.csv"))).toBeTruthy();
+  expect(requests.some((url) => url.includes("cells-35.topo.json"))).toBeTruthy();
+  expect(requests.some((url) => url.includes("canada-region-partition.geojson"))).toBeFalsy();
+  expect(requests.some((url) => url.startsWith("https://challenges.cloudflare.com/"))).toBeFalsy();
+});
+
 test("idea form exposes review, verification, and final submission", async ({ page }) => {
   await page.goto(siteRoute("/submit-idea/"));
   await expect(page.getByRole("button", { name: "Review idea" })).toBeVisible();

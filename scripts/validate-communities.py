@@ -132,10 +132,12 @@ def validate_contact(contact: Any, label: str, check: Validation, *, with_identi
     if contact["health"] not in VALID_CONTACT_HEALTH:
         check.error(f"{label}.health is not allowed: {contact['health']!r}")
     checked = parse_date(contact["last_checked"], f"{label}.last_checked", check, nullable=True)
-    if contact["health"] == "verified" and checked is None:
-        check.error(f"{label} marked verified must have last_checked")
-    if contact["health"] == "expired" and url is None:
-        check.error(f"{label} marked expired must retain the expired URL for review")
+    if checked is None:
+        check.error(f"{label} must record when the contact was last checked")
+    elif checked > date.today():
+        check.error(f"{label}.last_checked cannot be in the future")
+    if contact["health"] == "expired":
+        check.error(f"{label} is expired; replace or remove it before publishing")
     if with_identity:
         if not isinstance(contact["id"], str) or not ID_PATTERN.fullmatch(contact["id"]):
             check.error(f"{label}.id must be a stable kebab-case ID")
@@ -179,7 +181,12 @@ def validate_data(data: dict[str, Any]) -> Validation:
         if not isinstance(metadata.get(field), str) or not metadata[field].strip():
             check.error(f"metadata.{field} must be non-empty")
     parse_date(metadata.get("migrated_at"), "metadata.migrated_at", check)
-    parse_date(metadata.get("review_by"), "metadata.review_by", check)
+    last_reviewed = parse_date(metadata.get("last_reviewed"), "metadata.last_reviewed", check)
+    if last_reviewed is not None and last_reviewed > date.today():
+        check.error("metadata.last_reviewed cannot be in the future")
+    review_by = parse_date(metadata.get("review_by"), "metadata.review_by", check)
+    if review_by is not None and review_by < date.today():
+        check.error("metadata.review_by has passed; audit the directory before publishing")
 
     defaults = data.get("national_defaults")
     if not isinstance(defaults, dict):
@@ -339,10 +346,14 @@ def validate_data(data: dict[str, Any]) -> Validation:
         verify_by = parse_date(community.get("verify_by"), f"{label}.verify_by", check, nullable=True)
         if (verified is None) != (verify_by is None):
             check.error(f"{label} must set verified_at and verify_by together")
+        if verified is not None and verified > date.today():
+            check.error(f"{label}.verified_at cannot be in the future")
         if verified is not None and verify_by is not None and verify_by < verified:
             check.error(f"{label}.verify_by cannot precede verified_at")
         if verified is None:
-            check.warn(f"{community.get('name', community_id)} needs a community verification date")
+            check.error(f"{community.get('name', community_id)} needs a community verification date")
+        elif verify_by is not None and verify_by < date.today():
+            check.error(f"{community.get('name', community_id)} is overdue for verification")
 
         expected_route = ""
         if province in code_pages:
@@ -486,7 +497,7 @@ def front_matter(*, title: str, description: str, task: str, metadata: dict[str,
         "scope: canada-baseline",
         "status: draft",
         f"owner: {metadata['owner']}",
-        f"last_reviewed: {metadata['migrated_at']}",
+        f"last_reviewed: {metadata['last_reviewed']}",
         f"review_by: {metadata['review_by']}",
         "difficulty: beginner",
         "estimated_time: 2-5 minutes",

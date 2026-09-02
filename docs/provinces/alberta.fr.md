@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -40,7 +40,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -54,7 +54,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/monitoring-tools/" rel="noopener">Outils de surveillance</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -69,7 +69,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -80,7 +80,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://waev.app/#/live-map/@51.28107,-113.99966,14.47z" rel="noopener">Carte en direct de WAeV</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -94,7 +94,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -102,7 +102,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Discord :</strong> Canal régional Canada — Calgary, Alberta et environs sur le Discord de MeshCore</li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -117,11 +117,10 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
-<li><strong>Site Web :</strong> <a href="https://meshcorecalgary.ca/" rel="noopener">Réseau MeshCore de Calgary</a> <span class="mc-community-external">(externe)</span></li>
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/calgary/" rel="noopener">Guide de la communauté de Calgary</a> <span class="mc-community-external">(externe)</span></li>
 <li><strong>Discord :</strong> <a href="https://discord.gg/CznDhsRWnJ" rel="noopener">Discord d’Alberta MeshCore</a> <span class="mc-community-external">(externe)</span></li>
 <li><strong>MeshMapper :</strong> <a href="https://yyc.meshmapper.net/?lat=51.01674&amp;lon=-114.00149&amp;zoom=11.00" rel="noopener">Carte du réseau de Calgary</a> <span class="mc-community-external">(externe)</span></li>
@@ -129,7 +128,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://albertamesh.ca/calgary/#rx-channels" rel="noopener">Canaux RX recommandés à Calgary</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -144,7 +143,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -154,7 +153,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>MeshMapper :</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Carte du réseau d’Edmonton</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -169,7 +168,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -179,7 +178,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>MeshMapper :</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Carte du réseau d’Edmonton</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -194,7 +193,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -208,7 +207,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Reddit :</strong> <a href="https://www.reddit.com/r/YQLMesh" rel="noopener">Communauté Reddit de YQLMesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -222,7 +221,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -230,7 +229,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Telegram :</strong> <a href="https://t.me/meshtAlta" rel="noopener">Sujet sur Cardston dans Mesh Alberta</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -244,7 +243,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -252,7 +251,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://meshmonitoring.com/" rel="noopener">MeshMonitoring</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -262,7 +261,7 @@ sauf si une fiche indique des réglages locaux différents.
 
 <div class="mc-community-card">
 <p><strong>Telegram :</strong> <a href="https://t.me/MeshCoreCAN" rel="noopener">Sujet sur l’Alberta dans MeshCore Canada</a> <span class="mc-community-external">(externe)</span></p>
-<p><strong>Vérification :</strong> Pas encore effectuée</p>
+<p><strong>Vérification :</strong> Effectuée le 2026-08-29</p>
 </div>
 
 ## Ajouter ou mettre à jour une fiche

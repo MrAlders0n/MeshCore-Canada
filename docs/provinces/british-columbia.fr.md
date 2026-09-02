@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -44,7 +44,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Préréglage radio : <code>Custom</code>; Valeurs radio brutes : <code>910.425 MHz / 62.5 kHz / SF7 / CR5</code></dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>2026-08-11</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <div class="mc-community-override" role="note">
 <strong>Réglages locaux différents</strong>
@@ -55,7 +55,7 @@ sauf si une fiche indique des réglages locaux différents.
 <li><strong>Site Web :</strong> <a href="https://ridgeline.ve7kod.ca/about" rel="noopener">Carte et outils du réseau Ridgeline</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Effectuée le 2026-08-11
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -69,14 +69,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://salishmesh.net/" rel="noopener">Site Web de Salish Mesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>

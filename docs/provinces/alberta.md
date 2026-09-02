@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -40,7 +40,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -54,7 +54,7 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://albertamesh.ca/monitoring-tools/" rel="noopener">Monitoring tools</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -69,7 +69,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -80,7 +80,7 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://waev.app/#/live-map/@51.28107,-113.99966,14.47z" rel="noopener">WAeV live map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -94,7 +94,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -102,7 +102,7 @@ card lists different local settings.
 <li><strong>Discord:</strong> Canada - Calgary, Alberta &amp; Area regional channel in the MeshCore Discord</li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Some links still need review
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -117,11 +117,10 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
-<li><strong>Website:</strong> <a href="https://meshcorecalgary.ca/" rel="noopener">Calgary MeshCore Network</a> <span class="mc-community-external">(external)</span></li>
 <li><strong>Website:</strong> <a href="https://albertamesh.ca/calgary/" rel="noopener">Calgary community guide</a> <span class="mc-community-external">(external)</span></li>
 <li><strong>Discord:</strong> <a href="https://discord.gg/CznDhsRWnJ" rel="noopener">Alberta MeshCore Discord</a> <span class="mc-community-external">(external)</span></li>
 <li><strong>MeshMapper:</strong> <a href="https://yyc.meshmapper.net/?lat=51.01674&amp;lon=-114.00149&amp;zoom=11.00" rel="noopener">Calgary network map</a> <span class="mc-community-external">(external)</span></li>
@@ -129,7 +128,7 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://albertamesh.ca/calgary/#rx-channels" rel="noopener">Recommended Calgary RX channels</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -144,7 +143,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -154,7 +153,7 @@ card lists different local settings.
 <li><strong>MeshMapper:</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Edmonton network map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -169,7 +168,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -179,7 +178,7 @@ card lists different local settings.
 <li><strong>MeshMapper:</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Edmonton network map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -194,7 +193,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -208,7 +207,7 @@ card lists different local settings.
 <li><strong>Reddit:</strong> <a href="https://www.reddit.com/r/YQLMesh" rel="noopener">YQLMesh subreddit</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Some links still need review
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -222,7 +221,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -230,7 +229,7 @@ card lists different local settings.
 <li><strong>Telegram:</strong> <a href="https://t.me/meshtAlta" rel="noopener">Cardston topic in Mesh Alberta</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Some links still need review
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -244,7 +243,7 @@ card lists different local settings.
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
 <div><dt>Last verified</dt>
-<dd>Not yet verified</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
 <ul class="mc-community-contacts">
@@ -252,7 +251,7 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://meshmonitoring.com/" rel="noopener">MeshMonitoring</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Not yet verified
+<strong>Contact check:</strong> Verified on 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
 </article>
@@ -262,7 +261,7 @@ card lists different local settings.
 
 <div class="mc-community-card">
 <p><strong>Telegram:</strong> <a href="https://t.me/MeshCoreCAN" rel="noopener">Alberta topic in MeshCore Canada</a> <span class="mc-community-external">(external)</span></p>
-<p><strong>Contact check:</strong> Not yet verified</p>
+<p><strong>Contact check:</strong> Verified on 2026-08-29</p>
 </div>
 
 ## Add or update a listing

@@ -25,6 +25,7 @@
       "required": [
         "owner",
         "migrated_at",
+        "last_reviewed",
         "source_revision",
         "review_by",
         "update_route"
@@ -35,6 +36,10 @@
           "minLength": 1
         },
         "migrated_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_reviewed": {
           "type": "string",
           "format": "date"
         },

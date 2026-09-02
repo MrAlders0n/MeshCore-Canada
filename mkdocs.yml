@@ -13,8 +13,8 @@ theme:
   name: material
   custom_dir: overrides
   language: en
-  favicon: assets/MeshCore-Canada-Favicon.png
-  logo: assets/MeshCore-Canada-Favicon.png
+  favicon: assets/MeshCore-Canada-Favicon.svg
+  logo: assets/MeshCore-Canada-Mark.svg
   font: false
   palette:
     - scheme: slate
@@ -49,7 +49,7 @@ extra_css:
   - assets/styles/components.css?v=20260728-1
 
 extra_javascript:
-  - assets/javascripts/i18n-runtime.js?v=20260723-1
+  - assets/javascripts/i18n-runtime.js?v=20260829-1
   - assets/javascripts/bootstrap.js?v=20260821-1
 
 extra:

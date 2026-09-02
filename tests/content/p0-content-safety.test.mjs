@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
@@ -63,6 +63,21 @@ test("unsafe and incomplete legacy pages are removed from the content tree", () 
     "docs/hardware/wire-connector-types.md",
   ]) {
     assert.equal(existsSync(resolve(root, path)), false, `${path} must not remain searchable`);
+  }
+});
+
+test("header and favicon use small, separate vector assets", () => {
+  const config = read("mkdocs.yml");
+  const assets = [
+    "docs/assets/MeshCore-Canada-Mark.svg",
+    "docs/assets/MeshCore-Canada-Favicon.svg",
+  ];
+
+  assert.match(config, /logo: assets\/MeshCore-Canada-Mark\.svg/);
+  assert.match(config, /favicon: assets\/MeshCore-Canada-Favicon\.svg/);
+  assert.doesNotMatch(config, /MeshCore-Canada-Favicon\.png/);
+  for (const asset of assets) {
+    assert.ok(statSync(resolve(root, asset)).size < 3_000, `${asset} should stay lightweight`);
   }
 });
 

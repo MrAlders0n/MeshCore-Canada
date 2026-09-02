@@ -8,8 +8,8 @@ task: browse-community-directory
 scope: canada-baseline
 status: draft
 owner: directory-stewards
-last_reviewed: 2026-07-19
-review_by: 2027-01-15
+last_reviewed: 2026-08-29
+review_by: 2027-02-28
 difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
@@ -39,7 +39,7 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>2026-07-31</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
@@ -47,7 +47,7 @@ sauf si une fiche indique des réglages locaux différents.
 </ul>
 <p class="mc-community-owner"><strong>Contact pour cette fiche :</strong> pifane</p>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Effectuée le 2026-08-08
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -61,14 +61,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
-<li><strong>Site Web :</strong> <a href="https://qcmesh.net" rel="noopener">Site Web de Mesh Québec</a> <span class="mc-community-external">(externe)</span></li>
+<li><strong>Telegram :</strong> <a href="https://t.me/meshtQuebec" rel="noopener">Mesh Quebec Telegram</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -82,14 +82,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://www.montrealmesh.ca" rel="noopener">Site Web de Montreal Mesh</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -103,14 +103,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
 <li><strong>Discord :</strong> <a href="https://discord.gg/UhGjTF2MfA" rel="noopener">Discord du Réseau Mesh de la Capitale YQB</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -124,16 +124,15 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
-<li><strong>Discord :</strong> <a href="https://discord.gg/wUR394yXt" rel="noopener">Discord du Réseau Mesh du Saguenay–Lac-Saint-Jean YTF</a> <span class="mc-community-external">(externe)</span></li>
 <li><strong>Facebook :</strong> <a href="https://www.facebook.com/share/g/1GjkHAyZAM/" rel="noopener">Facebook du Réseau Mesh du Saguenay–Lac-Saint-Jean YTF</a> <span class="mc-community-external">(externe)</span></li>
 <li><strong>MeshMapper :</strong> <a href="https://ytf.meshmapper.net/" rel="noopener">Carte MeshMapper du Réseau Mesh du Saguenay–Lac-Saint-Jean YTF</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
@@ -147,14 +146,14 @@ sauf si une fiche indique des réglages locaux différents.
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
 <div><dt>Dernière vérification</dt>
-<dd>Pas encore vérifiée</dd></div>
+<dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
 <ul class="mc-community-contacts">
 <li><strong>Site Web :</strong> <a href="https://lora.reseaulibre.ca/" rel="noopener">Site Web de Réseau Libre</a> <span class="mc-community-external">(externe)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Vérification :</strong> Pas encore effectuée
+<strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
 <p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
 </article>
