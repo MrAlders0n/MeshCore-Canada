@@ -8,8 +8,8 @@ task: understand-observer-data
 scope: canada-baseline
 status: draft
 owner: meshcore-canada
-last_reviewed: 2026-07-22
-review_by: 2026-10-19
+last_reviewed: 2026-09-02
+review_by: 2026-12-01
 difficulty: beginner
 estimated_time: 6 minutes
 destructive: false
@@ -59,6 +59,17 @@ Changing the radio preset changes what the observer can hear. Public and private
 | Broker credentials | Authenticate the observer | Should remain only in the local integration | Local operator and authentication service | Never include in public diagnostics |
 
 MeshCore Canada does not offer general direct broker subscriptions. Direct access is limited to CoreScope, local mesh administrators, and people approved by the infrastructure administrators.
+
+## Read-only MQTT accounts
+
+This public inventory lists services with a read-only account on the MeshCore Canada brokers. It identifies the service and operator, but never publishes broker usernames, passwords, or tokens.
+
+| Service | Operator | Purpose |
+|---|---|---|
+| Beacon (`dev.meshcore.ca`) | MeshCore Canada operators | Public packet viewer and repeater ID checks |
+| CoreScope (`live.meshcore.ca`) | MeshCore Canada operators | Public observer, packet, node, and map tools |
+
+Infrastructure administrators must update this table whenever they create or remove a read-only account. [Report a missing or outdated entry](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).
 
 ## Where it appears
 
