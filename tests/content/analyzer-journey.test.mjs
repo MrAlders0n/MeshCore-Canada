@@ -126,10 +126,16 @@ test("privacy pages state ownership, access, the account inventory, and the unkn
   ]) {
     assert.match(source, new RegExp(phrase, "i"));
   }
-  for (const service of ["Beacon (`dev.meshcore.ca`)", "CoreScope (`live.meshcore.ca`)"]) {
+  for (const service of [
+    "Beacon (`dev.meshcore.ca`)",
+    "CoreScope (`live.meshcore.ca`)",
+    "[Quinte Mesh](https://quintemesh.ca/)",
+  ]) {
     assert.ok(source.includes(service), `English inventory missing ${service}`);
     assert.ok(french.includes(service), `French inventory missing ${service}`);
   }
+  assert.ok(source.includes("hansimgamr"), "English inventory missing the Quinte Mesh operator");
+  assert.ok(french.includes("hansimgamr"), "French inventory missing the Quinte Mesh operator");
   assert.match(source, /update this table whenever they create or remove a read-only account/i);
   assert.match(french, /mettre ce tableau à jour chaque\s+fois qu’ils créent ou retirent un compte en lecture seule/i);
 });

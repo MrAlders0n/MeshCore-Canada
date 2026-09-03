@@ -8,7 +8,7 @@ task: understand-observer-data
 scope: canada-baseline
 status: draft
 owner: meshcore-canada
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2026-12-01
 difficulty: beginner
 estimated_time: 6 minutes
@@ -62,12 +62,13 @@ MeshCore Canada does not offer general direct broker subscriptions. Direct acces
 
 ## Read-only MQTT accounts
 
-This public inventory lists services with a read-only account on the MeshCore Canada brokers. It identifies the service and operator, but never publishes broker usernames, passwords, or tokens.
+This public inventory lists services with read-only access to the MeshCore Canada brokers. It identifies the service and operator, but never publishes passwords or tokens.
 
 | Service | Operator | Purpose |
 |---|---|---|
 | Beacon (`dev.meshcore.ca`) | MeshCore Canada operators | Public packet viewer and repeater ID checks |
 | CoreScope (`live.meshcore.ca`) | MeshCore Canada operators | Public observer, packet, node, and map tools |
+| [Quinte Mesh](https://quintemesh.ca/) | hansimgamr | Quinte-region community network services |
 
 Infrastructure administrators must update this table whenever they create or remove a read-only account. [Report a missing or outdated entry](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).
 
