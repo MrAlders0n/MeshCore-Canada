@@ -120,10 +120,14 @@ test("build guides provide staged, printable safety checks and records", () => {
   }
 });
 
-test("experimental and legacy workflows stay outside primary navigation", () => {
+test("the 1 W build is listed in navigation while legacy workflows stay outside it", () => {
   const config = read("mkdocs.yml");
 
-  assert.doesNotMatch(config, /repeater-solar-1w-diy-build\.md/);
+  assert.match(
+    config,
+    /Build a 1 W repeater \(experimental\): hardware\/repeater-solar-1w-diy-build\.md/,
+  );
+  assert.match(config, /Wire connector types: hardware\/wire-connector-types\.md/);
   assert.doesNotMatch(config, /generate-repeater-id\.md/);
   assert.ok(existsSync(resolve(root, "docs/hardware/repeater-solar-1w-diy-build.md")));
   assert.ok(existsSync(resolve(root, "docs/meshcore/generate-repeater-id.md")));

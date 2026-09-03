@@ -8,7 +8,7 @@ task: understand-meshcore-roles
 scope: canada-baseline
 status: draft
 owner: docs-ux
-last_reviewed: 2026-07-22
+last_reviewed: 2026-09-02
 review_by: 2026-10-17
 difficulty: beginner
 estimated_time: 5-10 minutes
@@ -19,6 +19,15 @@ page_styles:
 # What is MeshCore?
 
 MeshCore is a LoRa mesh network. A device's firmware gives it a specific job.
+
+!!! warning "MeshCore project split, use the official links"
+    Due to recent events in the MeshCore development team, the project has split. To stay on the official track, please only use:
+
+    - **Flashing tool and blog:** [meshcore.io](https://meshcore.io/){ target="_blank" rel="noopener" }
+    - **Source code:** [github.com/meshcore-dev/MeshCore](https://github.com/meshcore-dev/MeshCore){ target="_blank" rel="noopener" }
+    - **Discord (named "MeshCore.io"):** [discord.com/invite/fUfWevRXAg](https://discord.com/invite/fUfWevRXAg){ target="_blank" rel="noopener" }
+
+    Read more about the split: [The Split, blog.meshcore.io](https://blog.meshcore.io/2026/04/23/the-split){ target="_blank" rel="noopener" }.
 
 ## Device roles
 

@@ -9,8 +9,8 @@ scope: canada-baseline
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-07-22
-review_by: 2026-10-17
+last_reviewed: 2026-09-03
+review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 10-15 minutes
 destructive: false
@@ -23,16 +23,16 @@ page_styles:
 
 # Choose an antenna and feed line
 
-Start with the radio, connector, and installation. Then compare antennas that cover the Canadian 902–928 MHz band.
+Many LoRa devices with removable antennas ship with a basic factory antenna. The Ottawa mesh community has had good results with the 902–928 MHz options below.
 
 <div class="mc-guide-status" data-status="draft" markdown>
 
-**Check before buying.** The products below are examples to compare, not verified performance recommendations. Confirm the current datasheet, connector, dimensions, mounting needs, and radio compatibility.
+**Check before buying.** These antennas have worked well in Ottawa and other meshes, but product revisions change. Confirm the current datasheet, connector, dimensions, mounting needs, and radio compatibility with the manufacturer before ordering.
 
 </div>
 
 !!! danger "Disconnect power before changing an antenna"
-    Do not power or transmit from a radio without the correct antenna attached. Disconnect USB and battery power before connecting or removing an antenna, and follow the radio manufacturer's instructions.
+    Make sure your device is disconnected from power and battery when swapping an antenna. Since these devices can transmit radio signals, turning on a device without an antenna can damage it. [See more information here](https://electronics.stackexchange.com/questions/335912/can-i-break-a-radio-tranceiving-device-by-operating-it-with-no-antenna-connected){ target="_blank" rel="noopener" }.
 
 ## Check compatibility first
 
@@ -45,36 +45,68 @@ Start with the radio, connector, and installation. Then compare antennas that co
   <li>The current product page and datasheet support the details used in your decision.</li>
 </ul>
 
-## Portable antennas to compare
+## Companion antennas
 
-Confirm whether the radio uses SMA, RP-SMA, or an internal connector before ordering.
+These are SMA antennas and are more compact, yet they've consistently shown excellent performance in Ottawa and other meshes. We recommend any of the options listed here.
+
+!!! warning "SMA vs. RP-SMA"
+    Pay close attention to what connection type a companion or repeater has, since some come with Reverse Polarity SMA (RP-SMA). You will need an adapter to connect your SMA antenna, or you will need to buy an RP-SMA antenna. [More information on the differences between these connectors](https://blog.linitx.com/what-are-sma-rp-sma-connectors-and-whats-the-difference/){ target="_blank" rel="noopener" }.
 
 <div class="mc-table-wrap" markdown>
 
-| Product | Listed connector | Check | Source |
+| Product | Connector | Cost (CAD) | Link |
 |---|---|---|---|
-| LINX ANT-916-CW-HW-SMA | SMA | Frequency range, mating connector, dimensions, and device support | [DigiKey](https://www.digikey.ca/en/products/detail/te-connectivity-linx/ANT-916-CW-HW-SMA/2694126?s=N4IgTCBcDaIDIEkByANABAQSQFQLQE4BGANlwGEB1XACSoGUBZDEAXQF8g) |
-| Taoglas TI.09.A.0111 | SMA | Frequency range, mating connector, dimensions, and device support | [DigiKey](https://www.digikey.ca/en/products/detail/taoglas-limited/TI-09-A-0111/2332695?s=N4IgTCBcDaICoEMD2BzANggzgAjgSQDoAGATgIEFiBGGkAXQF8g) |
-| Seeed Studio LoRa Antenna Kit | SMA | Frequency range, exact kit contents, mating connector, and device support | [Seeed Studio](https://www.seeedstudio.com/LoRa-Antenna-Kit-for-reTerminal-DM-p-5714.html) |
+| Gizont 167CM 915MHz SMA M | SMA | $12 | [Space Hedgehog (local store)](https://space-hedgehog.com/products/gizont-915mhz-antenna?variant=51602989711416) |
+| Gizont 167CM 915MHz SMA M | SMA | $10.53 | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) |
+| Gizont 167CM 915MHz RP-SMA M | RP-SMA | $10.53 | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) |
+| LINX ANT-916-CW-HW-SMA | SMA | $14.65 | [DigiKey](https://www.digikey.ca/en/products/detail/te-connectivity-linx/ANT-916-CW-HW-SMA/2694126?s=N4IgTCBcDaIDIEkByANABAQSQFQLQE4BGANlwGEB1XACSoGUBZDEAXQF8g) |
+| Taoglas TI.09.A.0111 | SMA | $17.47 | [DigiKey](https://www.digikey.ca/en/products/detail/taoglas-limited/TI-09-A-0111/2332695?s=N4IgTCBcDaICoEMD2BzANggzgAjgSQDoAGATgIEFiBGGkAXQF8g) |
+| Seeed Studio LoRa Antenna Kit | SMA | $6.79 | [Seeed Studio](https://www.seeedstudio.com/LoRa-Antenna-Kit-for-reTerminal-DM-p-5714.html) |
 
 </div>
 
-## Fixed antennas to compare
+## Repeater omni antennas
 
-A permanent repeater antenna is a complete installation decision, not just a gain number. Include feed-line loss, connector count, pattern, local RF conditions, structure, lightning/grounding review, weather, and safe access.
+These N-type antennas are intended for repeaters. The Alfa is Ottawa's common starting point, but antenna height, feed-line loss, terrain, and local RF conditions also affect coverage.
+
+If you want something larger and higher-performing, we have tested the Seeed 1300 mm fiberglass antenna with excellent results. Please note that it is 1.3 metres long. We only recommend this antenna for repeaters installed at significant height (around 30 m AGL or higher) and intended for long-distance links or backbone use.
 
 <div class="mc-table-wrap" markdown>
 
-| Product | Type | Listed connector | Check | Source |
-|---|---|---|---|---|
-| Seeed Studio 318020693 | Fiberglass omnidirectional | N-type | Frequency range, pattern, dimensions, wind load, mount, and cable path | [Mouser](https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D) |
-| L-com HG913Y-NF | Directional | N-type | Frequency range, pattern, aiming, wind load, mount, and cable path | [DigiKey](https://www.digikey.ca/en/products/detail/l-com/HG913Y-NF/21289980) |
+| Product | Connector | Cost (CAD) | Link |
+|---|---|---|---|
+| Alfa AOA-915-5ACM | N-type | $34.99 | [Amazon](https://a.co/d/ieEIQpy) |
+| Seeed Studio RF Explorer 902-928MHz 8dBi, 1300mm (318020693) | N-type | $110 | [Mouser](https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D) |
 
 </div>
 
-## Choose the feed line
+## Repeater directional antennas
 
-Use the shortest practical cable with acceptable loss. Confirm both connectors, cable type, length, loss at the operating frequency, outdoor rating, bend radius, strain relief, and weather sealing. [Infinite Cables](https://www.infinitecables.com/) is one Canadian source for assembled RF cables; its [LMR-240 Ultra Flex N-type example](https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465) may not match your required connectors.
+Directional antennas are intended for fixed repeaters and long-distance point-to-point or point-to-multipoint links. All antennas listed here use N-type connectors and are suitable for permanent outdoor installations.
+
+<div class="mc-table-wrap" markdown>
+
+| Product | Connector | Cost (CAD) | Link |
+|---|---|---|---|
+| L-com HG913Y-NF | N-type | $237.17 | [DigiKey](https://www.digikey.ca/en/products/detail/l-com/HG913Y-NF/21289980) |
+
+</div>
+
+A permanent repeater antenna is a complete installation decision, not just a gain number. Include feed-line loss, connector count, pattern, local RF conditions, structure, lightning and grounding review, weather, and safe access.
+
+*Prices were recorded when this list was compiled (check the linked page for the current price and date). They will vary by supplier and may not include shipping.*
+
+## Antenna cables
+
+For short, high-quality LMR-240 cables, [Infinite Cables](https://www.infinitecables.com/) in Toronto is the best source we've found. Their cables are on the expensive side, but the build quality is excellent and they offer a wide variety of lengths and connector combinations to suit any installation. Use the shortest practical cable with acceptable loss, and confirm both connectors, cable type, length, outdoor rating, bend radius, strain relief, and weather sealing.
+
+<div class="mc-table-wrap" markdown>
+
+| Product | Connector | Link |
+|---|---|---|
+| LMR-240 Ultra Flex N-Type Male to N-Type Female | N-type M to N-type F | [Infinite Cables](https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465) |
+
+</div>
 
 ## Record the decision
 

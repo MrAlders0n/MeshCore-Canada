@@ -8,7 +8,7 @@ task: understand-meshcore-roles
 scope: canada-baseline
 status: draft
 owner: docs-ux
-last_reviewed: 2026-07-22
+last_reviewed: 2026-09-02
 review_by: 2026-10-17
 difficulty: beginner
 estimated_time: 5-10 minutes
@@ -19,6 +19,15 @@ page_styles:
 # Qu’est-ce que MeshCore?
 
 MeshCore est un réseau maillé LoRa. Le micrologiciel d’un appareil lui attribue un rôle précis.
+
+!!! warning "Scission du projet MeshCore : utilisez les liens officiels"
+    À la suite d’événements récents au sein de l’équipe de développement de MeshCore, le projet s’est scindé. Pour rester sur la voie officielle, utilisez uniquement :
+
+    - **Outil de programmation et blogue :** [meshcore.io](https://meshcore.io/){ target="_blank" rel="noopener" }
+    - **Code source :** [github.com/meshcore-dev/MeshCore](https://github.com/meshcore-dev/MeshCore){ target="_blank" rel="noopener" }
+    - **Discord (nommé « MeshCore.io ») :** [discord.com/invite/fUfWevRXAg](https://discord.com/invite/fUfWevRXAg){ target="_blank" rel="noopener" }
+
+    Pour en savoir plus sur la scission : [The Split, blog.meshcore.io](https://blog.meshcore.io/2026/04/23/the-split){ target="_blank" rel="noopener" } (en anglais).
 
 ## Rôles des appareils
 
