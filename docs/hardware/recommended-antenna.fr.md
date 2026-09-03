@@ -9,7 +9,7 @@ scope: canada-baseline
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 10-15 minutes
@@ -23,7 +23,7 @@ page_styles:
 
 # Choisir une antenne et une ligne d’alimentation
 
-La plupart des appareils LoRa sont livrés avec une antenne d’usine très rudimentaire qui offre un rendement médiocre. La communauté du réseau maillé d’Ottawa a mis à l’essai de nombreuses antennes de remplacement, et celles ci-dessous sont fortement recommandées comme mises à niveau fiables pour la bande canadienne de 902–928 MHz.
+De nombreux appareils LoRa à antenne amovible sont livrés avec une antenne d’usine rudimentaire. La communauté d’Ottawa a obtenu de bons résultats avec les options de 902–928 MHz ci-dessous.
 
 <div class="mc-guide-status" data-status="draft" markdown>
 
@@ -67,7 +67,7 @@ Ce sont des antennes SMA, plus compactes, qui ont pourtant constamment offert un
 
 ## Antennes omnidirectionnelles pour répéteurs
 
-Ce sont des antennes de type N, les mieux adaptées aux répéteurs. Au strict minimum, tous les répéteurs devraient utiliser l’antenne Alfa. C’est une des grandes raisons du bon rendement du réseau d’Ottawa. MrAlders0n a établi une liaison de 110 km entre un répéteur et un compagnon avec une Alfa à chaque extrémité.
+Ces antennes de type N sont destinées aux répéteurs. L’Alfa est le choix de départ courant à Ottawa, mais la hauteur, la perte du câble, le terrain et les conditions RF locales influencent aussi la couverture.
 
 Si vous voulez une antenne plus grande et plus performante, nous avons mis à l’essai l’antenne en fibre de verre Seeed de 1300 mm avec d’excellents résultats. Notez qu’elle mesure 1,3 mètre. Nous ne la recommandons que pour les répéteurs installés à une hauteur importante (environ 30 m au-dessus du sol ou plus) et destinés aux liaisons longue distance ou à la dorsale.
 

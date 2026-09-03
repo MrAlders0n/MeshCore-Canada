@@ -9,7 +9,7 @@ scope: canada-baseline
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 10-15 minutes
@@ -23,7 +23,7 @@ page_styles:
 
 # Choose an antenna and feed line
 
-Most LoRa devices ship with a very basic factory antenna that performs poorly. The Ottawa mesh community has tested many replacements, and the antennas below are highly recommended as reliable upgrades for the Canadian 902–928 MHz band.
+Many LoRa devices with removable antennas ship with a basic factory antenna. The Ottawa mesh community has had good results with the 902–928 MHz options below.
 
 <div class="mc-guide-status" data-status="draft" markdown>
 
@@ -67,7 +67,7 @@ These are SMA antennas and are more compact, yet they've consistently shown exce
 
 ## Repeater omni antennas
 
-These are N-type antennas and are best suited for repeaters. At an absolute minimum, all repeaters should use the Alfa antenna. It is a major reason the Ottawa mesh performs as well as it does. MrAlders0n has made a link between a repeater and a companion at 110 km distance with an Alfa on both ends.
+These N-type antennas are intended for repeaters. The Alfa is Ottawa's common starting point, but antenna height, feed-line loss, terrain, and local RF conditions also affect coverage.
 
 If you want something larger and higher-performing, we have tested the Seeed 1300 mm fiberglass antenna with excellent results. Please note that it is 1.3 metres long. We only recommend this antenna for repeaters installed at significant height (around 30 m AGL or higher) and intended for long-distance links or backbone use.
 

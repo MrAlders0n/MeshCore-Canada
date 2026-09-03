@@ -8,7 +8,7 @@ scope: ottawa-field-practice
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 3-5 minutes
@@ -19,13 +19,11 @@ page_styles:
 
 # Wire connector types
 
-*Page in progress.*
-
 Here are some wire connectors used across our repeater builds. Confirm the pitch and polarity against the device documentation before ordering or crimping a mating cable.
 
 <div class="mc-table-wrap" markdown>
 
-| Connector name | Size | Devices that use it |
+| Connector name | Pitch | Devices that use it |
 |----------------|------|---------------------|
 | Molex PicoBlade 1x02P | 1.25 mm | Ikoka Stick |
 | JST ZHR-2 | 1.5 mm | RAK19007 solar connector |

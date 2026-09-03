@@ -8,7 +8,7 @@ task: choose-device-role
 scope: upstream-meshcore
 status: verified
 owner: docs-ux
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-07-19
 tested_with:
   content_baseline: f608cfe
@@ -23,9 +23,9 @@ Choisissez l’appareil selon ce qu’il doit faire.
 
 | Type | À quoi sert-il? | Relaie le trafic du réseau? | Utilisation habituelle | Configuration |
 |---|---|---:|---|---|
-| Appareil compagnon | Envoyer et recevoir des messages | Non | Mobile; souvent jumelé à un téléphone | [Configurer un compagnon](companion.md) |
+| Appareil compagnon | Envoyer et recevoir des messages | Normalement non | Mobile; souvent jumelé à un téléphone | [Configurer un compagnon](companion.md) |
 | Répéteur | Améliorer la couverture locale | Oui | Fixe et alimenté en continu | [Configurer un répéteur](repeater.md) |
-| Serveur de salon | Garder un salon partagé accessible | Non | Fixe et alimenté en continu | [Configurer un serveur de salon](room-server.md) |
+| Serveur de salon | Garder un salon partagé accessible | Possible, mais déconseillé | Fixe et alimenté en continu | [Configurer un serveur de salon](room-server.md) |
 | Observateur | Transmettre à CoreScope les données radio captées | Non | Fixe; les besoins varient selon la méthode | [Configurer un observateur](observer.md) |
 
 ## Détails des rôles
@@ -35,20 +35,18 @@ Choisissez l’appareil selon ce qu’il doit faire.
 - Fonctionnent sur pile ou par USB.
 - Se jumellent habituellement à un téléphone intelligent par Bluetooth pour la messagerie.
 - Les appareils autonomes comme le T-Deck ont un écran et un clavier, mais nous ne les recommandons pas aux débutants, car leur micrologiciel est encore rudimentaire.
-- Les compagnons ne routent **pas** les paquets. Ils peuvent communiquer directement entre eux, mais **seuls les répéteurs** assurent le routage dans le réseau MeshCore.
+- Ne routent normalement pas les paquets. Le mode de répétition des compagnons est réservé à certains usages hors réseau; laissez-le désactivé sur un réseau public établi, sauf indication locale contraire.
 
 **Les répéteurs** sont des installations fixes, généralement montées en hauteur (toit, tour, mât), qui étendent la portée et relient les segments du réseau.
 
 - Fonctionnent en continu sur le secteur ou à l’énergie solaire. La plupart des répéteurs d’Ottawa sont solaires.
-- Forment la **dorsale** stable du réseau.
-- Sont les **seuls appareils** qui routent les paquets.
+- Forment la **dorsale** de routage recommandée pour un réseau établi.
 
 **Les serveurs de salon** utilisent un micrologiciel spécialisé qui fonctionne comme un salon de clavardage persistant ou un mini-BBS.
 
-- Conservent les **32 derniers messages** qui leur ont été envoyés.
-- Lorsqu’un compagnon se connecte, il récupère les messages conservés, un peu comme on consulte une boîte de réception.
-- Ils peuvent techniquement répéter, mais c’est fortement déconseillé. Ottawa désactive la répétition sur les serveurs de salon, et les développeurs ont envisagé de retirer complètement cette option.
-- Les serveurs de salon ne sont **pas de vrais répéteurs** et n’offrent pas plusieurs de leurs fonctions. Utilisez-les comme babillards ou nœuds de clavardage partagés, et non comme répéteurs.
+- Lorsqu’un compagnon se connecte, il peut récupérer jusqu’à **32 messages non lus**, un peu comme dans une boîte de réception.
+- Peuvent répéter, mais ce n’est pas recommandé. À Ottawa, cette fonction est désactivée et des répéteurs distincts sont utilisés.
+- N’offrent pas toutes les fonctions de répétition et d’administration à distance. Utilisez-les comme salons de messages partagés, et non comme répéteurs du réseau.
 
 Vous découvrez MeshCore? Commencez par un
 [appareil compagnon](companion.md). Avant d’acheter du matériel ou d’installer

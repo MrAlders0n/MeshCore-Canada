@@ -8,7 +8,7 @@ scope: ottawa-field-practice
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 3-5 minutes
@@ -18,8 +18,6 @@ page_styles:
 ---
 
 # Types de connecteurs de fils
-
-*Page en cours de rédaction.*
 
 Voici quelques connecteurs de fils utilisés dans nos projets de répéteurs. Confirmez le pas et la polarité dans la documentation de l’appareil avant de commander ou de sertir un câble correspondant.
 

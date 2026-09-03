@@ -9,7 +9,7 @@ scope: canada-baseline
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 review_by: 2027-03-02
 difficulty: beginner
 estimated_time: 10-15 minutes
@@ -26,12 +26,12 @@ Il existe aussi des compagnons autonomes avec écran et commandes intégrés. Il
 
 <div class="mc-guide-status" data-status="draft" markdown>
 
-**Vérifiez avant d’acheter.** Ces appareils ont été essayés et éprouvés par la communauté d’Ottawa et d’autres réseaux, mais les révisions de produits et la prise en charge du micrologiciel changent. Confirmez le modèle exact, la bande radio canadienne, la cible de micrologiciel du compagnon, le connecteur et les accessoires inclus dans le [programme officiel de mise à jour MeshCore](https://meshcore.io/flasher) et dans l’information à jour du fabricant.
+**Vérifiez avant d’acheter.** Ces appareils ont été essayés et éprouvés par la communauté d’Ottawa et d’autres réseaux, mais les révisions de produits et la prise en charge du micrologiciel changent. Confirmez le modèle exact, la bande radio canadienne, la cible de micrologiciel du compagnon, le connecteur et les accessoires inclus dans le [programme officiel de mise à jour MeshCore](https://flasher.meshcore.io/) et dans l’information à jour du fabricant.
 
 </div>
 
-!!! warning "Remplacez l’antenne du compagnon"
-    L’antenne incluse offre un rendement médiocre sur tous ces modèles. Prévoyez la remplacer, au minimum par une Gizont, sur les compagnons qui permettent de changer d’antenne.
+!!! warning "Remplacez seulement une antenne amovible"
+    Les compagnons à antenne amovible peuvent profiter d’une des antennes testées ci-dessous. N’ouvrez pas et ne modifiez pas un appareil scellé à antenne interne, comme le T1000-E ou le WisMesh Tag.
 
     Voir : [Antennes recommandées](recommended-antenna.md)
 
@@ -60,9 +60,9 @@ Les compagnons préassemblés suivants sont populaires et largement offerts :
 | Produit | Notes | Lien |
 |---|---|---|
 | **ThinkNode M1** | Appareil compact basé sur le nRF52840, avec écran de 1,54 po et GPS. Conçu comme compagnon prêt à l’emploi pour une messagerie et un suivi fiables. **Note :** connecteur RP-SMA. Voir l’avertissement SMA c. RP-SMA ci-dessus. | [Elecrow](https://www.elecrow.com/thinknode-m1-meshtastic-lora-signal-transceiver-powered-by-nrf52840-with-154-screen-support-gps.html) |
-| **LilyGO T-Echo** | Appareil compact avec écran et GPS intégrés. Une option solide, prête à l’emploi, qui exige peu de configuration. **Note :** achetez la version sans micrologiciel préinstallé; elle est moins chère et facile à programmer avec le programme de mise à jour Web. | [Boutique LilyGO](https://lilygo.cc/products/t-echo-lilygo) |
+| **LilyGO T-Echo** | Appareil compact avec écran et GPS intégrés. Choisissez la version 915 MHz pour le Canada, puis installez le micrologiciel compagnon MeshCore actuel. | [Boutique LilyGO](https://lilygo.cc/products/t-echo-lilygo) |
 | **SenseCAP T1000-E** | Traceur mince en format carte de Seeed Studio. Portatif et certifié IP65. **Note :** portée plus limitée en raison des antennes internes. | [Seeed Studio](https://www.seeedstudio.com/SenseCAP-Card-Tracker-T1000-E-for-Meshtastic-p-5913.html) |
-| **RAK WisMesh Tag** | Appareil robuste avec GPS, antennes intégrées, pile de 1000 mAh et boîtier IP66. Micrologiciel préinstallé pour une utilisation immédiate. **Note :** portée plus limitée en raison des antennes internes. | [AliExpress](https://www.aliexpress.com/item/1005009754254701.html) |
+| **RAK WisMesh Tag** | Appareil robuste avec GPS, antennes intégrées, pile de 1000 mAh et boîtier IP66. Il est livré avec Meshtastic; installez le micrologiciel compagnon MeshCore actuel avant de l’utiliser. **Note :** portée plus limitée en raison des antennes internes. | [RAKwireless](https://store.rakwireless.com/products/wismesh-tag-meshtastic-gps-lora-tracker-ip66) |
 
 </div>
 
@@ -87,7 +87,7 @@ Il s’agit d’un rôle de **compagnon** et il exige un téléphone intelligent
 
 *Coût total approximatif :* **95,68 $ CAD**
 
-*Les prix ont été relevés au moment de la rédaction de cette liste (consultez la page liée pour le prix et la date à jour). Ils varient et peuvent inclure les frais d’expédition; confirmez-les à partir des liens. Les piles MakerFocus sont expédiées de Chine sans droits de douane.*
+*Les prix ont été relevés au moment de la rédaction. Consultez les pages liées pour vérifier les prix, l’expédition, les droits de douane et la disponibilité.*
 
 !!! warning "Boîtier pour l’exemple de montage"
     Cet exemple de montage ne comprend pas de boîtier. Pour des boîtiers à imprimer en 3D, consultez les **[modèles d’Alley Cat](https://www.printables.com/@AlleyCat/models)**. Ils conviennent très bien aux compagnons faits maison. Assurez-vous que le boîtier choisi peut recevoir la pile de 3000 mAh et le connecteur IPEX à SMA à angle droit.
@@ -105,7 +105,7 @@ Il existe des appareils autonomes comme le **T-Deck**, mais nous recommandons de
 | Produit | Notes | Lien |
 |---|---|---|
 | **LilyGO T-LORA Pager** | Appareil de messagerie LoRa autonome et compact, au style d’un téléavertisseur classique. Utile pour des communications hors réseau simples, sans téléphone intelligent. | [Boutique LilyGO](https://lilygo.cc/en-ca/products/t-lora-pager) |
-| **LilyGO T-Deck Plus** | Version mise à jour du T-Deck, avec de meilleures caractéristiques et des raffinements. Conçu en pensant à MeshCore. **Toutefois :** la boule de commande intégrée est un inconvénient majeur que beaucoup d’utilisateurs n’aiment pas. | [Boutique LilyGO](https://lilygo.cc/products/t-deck-plus-meshtastic) |
+| **LilyGO T-Deck Plus** | Appareil autonome pris en charge par le micrologiciel Ripple de MeshCore. La boule de commande peut être moins pratique; tenez compte des commandes avant de choisir cet appareil. | [Boutique LilyGO](https://lilygo.cc/products/t-deck-plus-meshtastic) |
 
 </div>
 
