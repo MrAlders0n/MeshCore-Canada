@@ -624,6 +624,31 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a role
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -647,6 +672,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role details
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1851,6 +1906,76 @@
     
   
     Build a 300 mW repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/repeater-solar-1w-diy-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a 1 W repeater (experimental)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--experimental"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/wire-connector-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wire connector types
   
 
     
@@ -3303,6 +3428,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role details
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3402,7 +3546,7 @@
 <tr>
 <td>Companion</td>
 <td>Send and receive messages</td>
-<td style="text-align: right;">No</td>
+<td style="text-align: right;">Normally no</td>
 <td>Mobile; often pairs with a phone</td>
 <td><a href="../companion/">Set up a companion</a></td>
 </tr>
@@ -3416,7 +3560,7 @@
 <tr>
 <td>Room server</td>
 <td>Keep a shared room available</td>
-<td style="text-align: right;">No</td>
+<td style="text-align: right;">Can, but not recommended</td>
 <td>Fixed with continuous power</td>
 <td><a href="../room-server/">Set up a room server</a></td>
 </tr>
@@ -3429,6 +3573,25 @@
 </tr>
 </tbody>
 </table>
+<h2 id="role-details">Role details<a class="headerlink" href="#role-details" title="Permanent link">&para;</a></h2>
+<p><strong>Companion nodes</strong> are the small personal devices (handheld or portable) that let a user connect to the mesh.</p>
+<ul>
+<li>Run on battery or USB power.</li>
+<li>Usually pair with a smartphone over Bluetooth for messaging.</li>
+<li>Standalone options like the T-Deck include a screen and keyboard, but we don't recommend them for beginners since the firmware is still rough.</li>
+<li>Normally do not route packets. Client repeat is a limited off-grid feature; leave it off on an established public mesh unless local guidance says otherwise.</li>
+</ul>
+<p><strong>Repeaters</strong> are fixed installations, typically mounted at elevation (rooftop, tower, mast), that extend range and link mesh segments.</p>
+<ul>
+<li>Run continuously on mains or solar power. Most Ottawa repeaters operate on solar.</li>
+<li>Form the recommended routing <strong>backbone</strong> for an established mesh.</li>
+</ul>
+<p><strong>Room servers</strong> run specialized firmware that functions like a persistent chat room or mini-BBS.</p>
+<ul>
+<li>When a companion connects, it can retrieve up to <strong>32 unseen messages</strong>, similar to checking an inbox.</li>
+<li>Can repeat, but this is not recommended. Ottawa keeps repeat disabled on room servers and uses separate repeaters.</li>
+<li>Lack several repeater and remote-administration features. Use them as shared message rooms, not as network repeaters.</li>
+</ul>
 <p>New to MeshCore? Start with a <a href="../companion/">companion</a>. Before buying or
 flashing, confirm that the setup guide supports your device.</p>
 <p>If none of these roles fits, <a href="../get-help/">ask the community</a> before buying

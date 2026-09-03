@@ -1830,10 +1830,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#portable-antennas-to-compare" class="md-nav__link">
+  <a href="#companion-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Portable antennas to compare
+        Companion antennas
       
     </span>
   </a>
@@ -1841,10 +1841,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-antennas-to-compare" class="md-nav__link">
+  <a href="#repeater-omni-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed antennas to compare
+        Repeater omni antennas
       
     </span>
   </a>
@@ -1852,10 +1852,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choose-the-feed-line" class="md-nav__link">
+  <a href="#repeater-directional-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose the feed line
+        Repeater directional antennas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antenna-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna cables
       
     </span>
   </a>
@@ -1974,6 +1985,76 @@
     
   
     Build a 300 mW repeater
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeater-solar-1w-diy-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a 1 W repeater (experimental)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--experimental"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wire-connector-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wire connector types
   
 
     
@@ -3450,10 +3531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#portable-antennas-to-compare" class="md-nav__link">
+  <a href="#companion-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Portable antennas to compare
+        Companion antennas
       
     </span>
   </a>
@@ -3461,10 +3542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-antennas-to-compare" class="md-nav__link">
+  <a href="#repeater-omni-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed antennas to compare
+        Repeater omni antennas
       
     </span>
   </a>
@@ -3472,10 +3553,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choose-the-feed-line" class="md-nav__link">
+  <a href="#repeater-directional-antennas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choose the feed line
+        Repeater directional antennas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antenna-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antenna cables
       
     </span>
   </a>
@@ -3601,13 +3693,13 @@
   
 
   
-<p>Start with the radio, connector, and installation. Then compare antennas that cover the Canadian 902–928 MHz band.</p>
+<p>Many LoRa devices with removable antennas ship with a basic factory antenna. The Ottawa mesh community has had good results with the 902–928 MHz options below.</p>
 <div class="mc-guide-status" data-status="draft">
-<p><strong>Check before buying.</strong> The products below are examples to compare, not verified performance recommendations. Confirm the current datasheet, connector, dimensions, mounting needs, and radio compatibility.</p>
+<p><strong>Check before buying.</strong> These antennas have worked well in Ottawa and other meshes, but product revisions change. Confirm the current datasheet, connector, dimensions, mounting needs, and radio compatibility with the manufacturer before ordering.</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Disconnect power before changing an antenna</p>
-<p>Do not power or transmit from a radio without the correct antenna attached. Disconnect USB and battery power before connecting or removing an antenna, and follow the radio manufacturer's instructions.</p>
+<p>Make sure your device is disconnected from power and battery when swapping an antenna. Since these devices can transmit radio signals, turning on a device without an antenna can damage it. <a href="https://electronics.stackexchange.com/questions/335912/can-i-break-a-radio-tranceiving-device-by-operating-it-with-no-antenna-connected" rel="noopener" target="_blank">See more information here</a>.</p>
 </div>
 <h2 id="check-compatibility-first">Check compatibility first<a class="headerlink" href="#check-compatibility-first" title="Permanent link">&para;</a></h2>
 <ul class="mc-checklist">
@@ -3619,73 +3711,135 @@
   <li>The current product page and datasheet support the details used in your decision.</li>
 </ul>
 
-<h2 id="portable-antennas-to-compare">Portable antennas to compare<a class="headerlink" href="#portable-antennas-to-compare" title="Permanent link">&para;</a></h2>
-<p>Confirm whether the radio uses SMA, RP-SMA, or an internal connector before ordering.</p>
+<h2 id="companion-antennas">Companion antennas<a class="headerlink" href="#companion-antennas" title="Permanent link">&para;</a></h2>
+<p>These are SMA antennas and are more compact, yet they've consistently shown excellent performance in Ottawa and other meshes. We recommend any of the options listed here.</p>
+<div class="admonition warning">
+<p class="admonition-title">SMA vs. RP-SMA</p>
+<p>Pay close attention to what connection type a companion or repeater has, since some come with Reverse Polarity SMA (RP-SMA). You will need an adapter to connect your SMA antenna, or you will need to buy an RP-SMA antenna. <a href="https://blog.linitx.com/what-are-sma-rp-sma-connectors-and-whats-the-difference/" rel="noopener" target="_blank">More information on the differences between these connectors</a>.</p>
+</div>
 <div class="mc-table-wrap">
 <table>
 <thead>
 <tr>
 <th>Product</th>
-<th>Listed connector</th>
-<th>Check</th>
-<th>Source</th>
+<th>Connector</th>
+<th>Cost (CAD)</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Gizont 167CM 915MHz SMA M</td>
+<td>SMA</td>
+<td>$12</td>
+<td><a href="https://space-hedgehog.com/products/gizont-915mhz-antenna?variant=51602989711416">Space Hedgehog (local store)</a></td>
+</tr>
+<tr>
+<td>Gizont 167CM 915MHz SMA M</td>
+<td>SMA</td>
+<td>$10.53</td>
+<td><a href="https://www.aliexpress.com/item/1005004607615001.html">AliExpress</a></td>
+</tr>
+<tr>
+<td>Gizont 167CM 915MHz RP-SMA M</td>
+<td>RP-SMA</td>
+<td>$10.53</td>
+<td><a href="https://www.aliexpress.com/item/1005004607615001.html">AliExpress</a></td>
+</tr>
+<tr>
 <td>LINX ANT-916-CW-HW-SMA</td>
 <td>SMA</td>
-<td>Frequency range, mating connector, dimensions, and device support</td>
+<td>$14.65</td>
 <td><a href="https://www.digikey.ca/en/products/detail/te-connectivity-linx/ANT-916-CW-HW-SMA/2694126?s=N4IgTCBcDaIDIEkByANABAQSQFQLQE4BGANlwGEB1XACSoGUBZDEAXQF8g">DigiKey</a></td>
 </tr>
 <tr>
 <td>Taoglas TI.09.A.0111</td>
 <td>SMA</td>
-<td>Frequency range, mating connector, dimensions, and device support</td>
+<td>$17.47</td>
 <td><a href="https://www.digikey.ca/en/products/detail/taoglas-limited/TI-09-A-0111/2332695?s=N4IgTCBcDaICoEMD2BzANggzgAjgSQDoAGATgIEFiBGGkAXQF8g">DigiKey</a></td>
 </tr>
 <tr>
 <td>Seeed Studio LoRa Antenna Kit</td>
 <td>SMA</td>
-<td>Frequency range, exact kit contents, mating connector, and device support</td>
+<td>$6.79</td>
 <td><a href="https://www.seeedstudio.com/LoRa-Antenna-Kit-for-reTerminal-DM-p-5714.html">Seeed Studio</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="fixed-antennas-to-compare">Fixed antennas to compare<a class="headerlink" href="#fixed-antennas-to-compare" title="Permanent link">&para;</a></h2>
-<p>A permanent repeater antenna is a complete installation decision, not just a gain number. Include feed-line loss, connector count, pattern, local RF conditions, structure, lightning/grounding review, weather, and safe access.</p>
+<h2 id="repeater-omni-antennas">Repeater omni antennas<a class="headerlink" href="#repeater-omni-antennas" title="Permanent link">&para;</a></h2>
+<p>These N-type antennas are intended for repeaters. The Alfa is Ottawa's common starting point, but antenna height, feed-line loss, terrain, and local RF conditions also affect coverage.</p>
+<p>If you want something larger and higher-performing, we have tested the Seeed 1300 mm fiberglass antenna with excellent results. Please note that it is 1.3 metres long. We only recommend this antenna for repeaters installed at significant height (around 30 m AGL or higher) and intended for long-distance links or backbone use.</p>
 <div class="mc-table-wrap">
 <table>
 <thead>
 <tr>
 <th>Product</th>
-<th>Type</th>
-<th>Listed connector</th>
-<th>Check</th>
-<th>Source</th>
+<th>Connector</th>
+<th>Cost (CAD)</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Seeed Studio 318020693</td>
-<td>Fiberglass omnidirectional</td>
+<td>Alfa AOA-915-5ACM</td>
 <td>N-type</td>
-<td>Frequency range, pattern, dimensions, wind load, mount, and cable path</td>
-<td><a href="https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D">Mouser</a></td>
+<td>$34.99</td>
+<td><a href="https://a.co/d/ieEIQpy">Amazon</a></td>
 </tr>
 <tr>
-<td>L-com HG913Y-NF</td>
-<td>Directional</td>
+<td>Seeed Studio RF Explorer 902-928MHz 8dBi, 1300mm (318020693)</td>
 <td>N-type</td>
-<td>Frequency range, pattern, aiming, wind load, mount, and cable path</td>
+<td>$110</td>
+<td><a href="https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D">Mouser</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="repeater-directional-antennas">Repeater directional antennas<a class="headerlink" href="#repeater-directional-antennas" title="Permanent link">&para;</a></h2>
+<p>Directional antennas are intended for fixed repeaters and long-distance point-to-point or point-to-multipoint links. All antennas listed here use N-type connectors and are suitable for permanent outdoor installations.</p>
+<div class="mc-table-wrap">
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Connector</th>
+<th>Cost (CAD)</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L-com HG913Y-NF</td>
+<td>N-type</td>
+<td>$237.17</td>
 <td><a href="https://www.digikey.ca/en/products/detail/l-com/HG913Y-NF/21289980">DigiKey</a></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="choose-the-feed-line">Choose the feed line<a class="headerlink" href="#choose-the-feed-line" title="Permanent link">&para;</a></h2>
-<p>Use the shortest practical cable with acceptable loss. Confirm both connectors, cable type, length, loss at the operating frequency, outdoor rating, bend radius, strain relief, and weather sealing. <a href="https://www.infinitecables.com/">Infinite Cables</a> is one Canadian source for assembled RF cables; its <a href="https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465">LMR-240 Ultra Flex N-type example</a> may not match your required connectors.</p>
+<p>A permanent repeater antenna is a complete installation decision, not just a gain number. Include feed-line loss, connector count, pattern, local RF conditions, structure, lightning and grounding review, weather, and safe access.</p>
+<p><em>Prices were recorded when this list was compiled (check the linked page for the current price and date). They will vary by supplier and may not include shipping.</em></p>
+<h2 id="antenna-cables">Antenna cables<a class="headerlink" href="#antenna-cables" title="Permanent link">&para;</a></h2>
+<p>For short, high-quality LMR-240 cables, <a href="https://www.infinitecables.com/">Infinite Cables</a> in Toronto is the best source we've found. Their cables are on the expensive side, but the build quality is excellent and they offer a wide variety of lengths and connector combinations to suit any installation. Use the shortest practical cable with acceptable loss, and confirm both connectors, cable type, length, outdoor rating, bend radius, strain relief, and weather sealing.</p>
+<div class="mc-table-wrap">
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Connector</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LMR-240 Ultra Flex N-Type Male to N-Type Female</td>
+<td>N-type M to N-type F</td>
+<td><a href="https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465">Infinite Cables</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="record-the-decision">Record the decision<a class="headerlink" href="#record-the-decision" title="Permanent link">&para;</a></h2>
 <p>Before installation, record:</p>
 <ul>

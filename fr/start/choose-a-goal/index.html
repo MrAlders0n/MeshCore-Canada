@@ -624,6 +624,31 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choisir un type d'appareil
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -647,6 +672,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#details-des-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détails des rôles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1851,6 +1906,76 @@
     
   
     Monter un répéteur de 300 mW
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/repeater-solar-1w-diy-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monter un répéteur de 1 W (expérimental)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--experimental"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/wire-connector-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types de connecteurs de fils
   
 
     
@@ -3303,6 +3428,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#details-des-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Détails des rôles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3402,7 +3546,7 @@
 <tr>
 <td>Appareil compagnon</td>
 <td>Envoyer et recevoir des messages</td>
-<td style="text-align: right;">Non</td>
+<td style="text-align: right;">Normalement non</td>
 <td>Mobile; souvent jumelé à un téléphone</td>
 <td><a href="../companion/">Configurer un compagnon</a></td>
 </tr>
@@ -3416,7 +3560,7 @@
 <tr>
 <td>Serveur de salon</td>
 <td>Garder un salon partagé accessible</td>
-<td style="text-align: right;">Non</td>
+<td style="text-align: right;">Possible, mais déconseillé</td>
 <td>Fixe et alimenté en continu</td>
 <td><a href="../room-server/">Configurer un serveur de salon</a></td>
 </tr>
@@ -3429,6 +3573,25 @@
 </tr>
 </tbody>
 </table>
+<h2 id="details-des-roles">Détails des rôles<a class="headerlink" href="#details-des-roles" title="Permanent link">&para;</a></h2>
+<p><strong>Les appareils compagnons</strong> sont les petits appareils personnels (portatifs ou mobiles) qui permettent à un utilisateur de se connecter au réseau maillé.</p>
+<ul>
+<li>Fonctionnent sur pile ou par USB.</li>
+<li>Se jumellent habituellement à un téléphone intelligent par Bluetooth pour la messagerie.</li>
+<li>Les appareils autonomes comme le T-Deck ont un écran et un clavier, mais nous ne les recommandons pas aux débutants, car leur micrologiciel est encore rudimentaire.</li>
+<li>Ne routent normalement pas les paquets. Le mode de répétition des compagnons est réservé à certains usages hors réseau; laissez-le désactivé sur un réseau public établi, sauf indication locale contraire.</li>
+</ul>
+<p><strong>Les répéteurs</strong> sont des installations fixes, généralement montées en hauteur (toit, tour, mât), qui étendent la portée et relient les segments du réseau.</p>
+<ul>
+<li>Fonctionnent en continu sur le secteur ou à l’énergie solaire. La plupart des répéteurs d’Ottawa sont solaires.</li>
+<li>Forment la <strong>dorsale</strong> de routage recommandée pour un réseau établi.</li>
+</ul>
+<p><strong>Les serveurs de salon</strong> utilisent un micrologiciel spécialisé qui fonctionne comme un salon de clavardage persistant ou un mini-BBS.</p>
+<ul>
+<li>Lorsqu’un compagnon se connecte, il peut récupérer jusqu’à <strong>32 messages non lus</strong>, un peu comme dans une boîte de réception.</li>
+<li>Peuvent répéter, mais ce n’est pas recommandé. À Ottawa, cette fonction est désactivée et des répéteurs distincts sont utilisés.</li>
+<li>N’offrent pas toutes les fonctions de répétition et d’administration à distance. Utilisez-les comme salons de messages partagés, et non comme répéteurs du réseau.</li>
+</ul>
 <p>Vous découvrez MeshCore? Commencez par un
 <a href="../companion/">appareil compagnon</a>. Avant d’acheter du matériel ou d’installer
 un micrologiciel, vérifiez que le guide de configuration prend votre appareil
