@@ -166,7 +166,6 @@ test("retired visitor pages use canonical redirects instead of searchable bridge
     ["resources/getting-started.md", "start/index.md"],
     ["meshcore/firmware-rak-custom-display.md", "meshcore/flash-companion.md"],
     ["meshcore/firmware-heltec-v3-wifi.md", "meshcore/flash-companion.md"],
-    ["hardware/wire-connector-types.md", "hardware/recommended-repeaters.md"],
     ["hardware/repeater-solar-batteries.md", "hardware/recommended-repeaters.md"],
   ]) {
     assert.match(config, new RegExp(`${oldPath.replaceAll("/", "\\/")}: ${currentPath.replaceAll("/", "\\/")}`));

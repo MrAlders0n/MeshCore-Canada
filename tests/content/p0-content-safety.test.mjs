@@ -60,7 +60,6 @@ test("unsafe and incomplete legacy pages are removed from the content tree", () 
     "docs/meshcore/firmware-rak-custom-display.md",
     "docs/meshcore/firmware-heltec-v3-wifi.md",
     "docs/hardware/repeater-solar-batteries.md",
-    "docs/hardware/wire-connector-types.md",
   ]) {
     assert.equal(existsSync(resolve(root, path)), false, `${path} must not remain searchable`);
   }

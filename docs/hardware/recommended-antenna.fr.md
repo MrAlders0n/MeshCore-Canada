@@ -9,8 +9,8 @@ scope: canada-baseline
 status: draft
 status_notice: false
 owner: docs-hardware
-last_reviewed: 2026-07-22
-review_by: 2026-10-17
+last_reviewed: 2026-09-02
+review_by: 2027-03-02
 difficulty: intermediate
 estimated_time: 10-15 minutes
 destructive: false
@@ -23,20 +23,16 @@ page_styles:
 
 # Choisir une antenne et une ligne d’alimentation
 
-Commencez par la radio, le connecteur et l’installation. Comparez ensuite les
-antennes qui couvrent la bande canadienne de 902–928 MHz.
+La plupart des appareils LoRa sont livrés avec une antenne d’usine très rudimentaire qui offre un rendement médiocre. La communauté du réseau maillé d’Ottawa a mis à l’essai de nombreuses antennes de remplacement, et celles ci-dessous sont fortement recommandées comme mises à niveau fiables pour la bande canadienne de 902–928 MHz.
 
 <div class="mc-guide-status" data-status="draft" markdown>
 
-**Vérifiez avant d’acheter.** Les produits ci-dessous sont des exemples à
-comparer, et non des recommandations de rendement vérifiées. Confirmez la fiche
-technique actuelle, le connecteur, les dimensions, les besoins de montage et la
-compatibilité avec la radio.
+**Vérifiez avant d’acheter.** Ces antennes ont bien fonctionné à Ottawa et dans d’autres réseaux, mais les révisions de produits changent. Confirmez auprès du fabricant la fiche technique actuelle, le connecteur, les dimensions, les besoins de montage et la compatibilité avec la radio avant de commander.
 
 </div>
 
 !!! danger "Coupez l’alimentation avant de changer une antenne"
-    N’alimentez pas une radio et ne transmettez pas sans que la bonne antenne soit branchée. Débranchez l’alimentation USB et la pile avant de brancher ou de retirer une antenne, puis suivez les instructions du fabricant de la radio.
+    Assurez-vous que l’appareil est débranché de l’alimentation et de la pile avant de changer d’antenne. Comme ces appareils peuvent émettre des signaux radio, allumer un appareil sans antenne peut l’endommager. [Plus d’information ici](https://electronics.stackexchange.com/questions/335912/can-i-break-a-radio-tranceiving-device-by-operating-it-with-no-antenna-connected){ target="_blank" rel="noopener" } (en anglais).
 
 ## Vérifier d’abord la compatibilité
 
@@ -49,47 +45,68 @@ compatibilité avec la radio.
   <li>La page du produit et la fiche technique actuelles confirment les renseignements utilisés pour votre choix.</li>
 </ul>
 
-## Antennes portatives à comparer
+## Antennes pour compagnons
 
-Avant de commander, confirmez si la radio utilise un connecteur SMA, RP-SMA ou
-interne.
+Ce sont des antennes SMA, plus compactes, qui ont pourtant constamment offert un excellent rendement à Ottawa et dans d’autres réseaux. Nous recommandons n’importe laquelle des options ci-dessous.
+
+!!! warning "SMA c. RP-SMA"
+    Portez une attention particulière au type de connecteur de votre compagnon ou répéteur, car certains sont livrés avec un connecteur SMA à polarité inversée (RP-SMA). Vous aurez besoin d’un adaptateur pour brancher une antenne SMA, ou d’acheter une antenne RP-SMA. [Plus d’information sur les différences entre ces connecteurs](https://blog.linitx.com/what-are-sma-rp-sma-connectors-and-whats-the-difference/){ target="_blank" rel="noopener" } (en anglais).
 
 <div class="mc-table-wrap" markdown>
 
-| Produit | Connecteur indiqué | À vérifier | Source |
+| Produit | Connecteur | Coût (CAD) | Lien |
 |---|---|---|---|
-| LINX ANT-916-CW-HW-SMA | SMA | Plage de fréquences, connecteur correspondant, dimensions et prise en charge de l’appareil | [DigiKey](https://www.digikey.ca/en/products/detail/te-connectivity-linx/ANT-916-CW-HW-SMA/2694126?s=N4IgTCBcDaIDIEkByANABAQSQFQLQE4BGANlwGEB1XACSoGUBZDEAXQF8g) |
-| Taoglas TI.09.A.0111 | SMA | Plage de fréquences, connecteur correspondant, dimensions et prise en charge de l’appareil | [DigiKey](https://www.digikey.ca/en/products/detail/taoglas-limited/TI-09-A-0111/2332695?s=N4IgTCBcDaICoEMD2BzANggzgAjgSQDoAGATgIEFiBGGkAXQF8g) |
-| Seeed Studio LoRa Antenna Kit | SMA | Plage de fréquences, contenu exact de la trousse, connecteur correspondant et prise en charge de l’appareil | [Seeed Studio](https://www.seeedstudio.com/LoRa-Antenna-Kit-for-reTerminal-DM-p-5714.html) |
+| Gizont 167CM 915MHz SMA M | SMA | 12 $ | [Space Hedgehog (boutique locale)](https://space-hedgehog.com/products/gizont-915mhz-antenna?variant=51602989711416) |
+| Gizont 167CM 915MHz SMA M | SMA | 10,53 $ | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) |
+| Gizont 167CM 915MHz RP-SMA M | RP-SMA | 10,53 $ | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) |
+| LINX ANT-916-CW-HW-SMA | SMA | 14,65 $ | [DigiKey](https://www.digikey.ca/en/products/detail/te-connectivity-linx/ANT-916-CW-HW-SMA/2694126?s=N4IgTCBcDaIDIEkByANABAQSQFQLQE4BGANlwGEB1XACSoGUBZDEAXQF8g) |
+| Taoglas TI.09.A.0111 | SMA | 17,47 $ | [DigiKey](https://www.digikey.ca/en/products/detail/taoglas-limited/TI-09-A-0111/2332695?s=N4IgTCBcDaICoEMD2BzANggzgAjgSQDoAGATgIEFiBGGkAXQF8g) |
+| Seeed Studio LoRa Antenna Kit | SMA | 6,79 $ | [Seeed Studio](https://www.seeedstudio.com/LoRa-Antenna-Kit-for-reTerminal-DM-p-5714.html) |
 
 </div>
 
-## Antennes fixes à comparer
+## Antennes omnidirectionnelles pour répéteurs
 
-Une antenne permanente de répéteur représente une décision d’installation
-complète, et non seulement un chiffre de gain. Tenez compte de la perte du
-câble, du nombre de connecteurs, du diagramme de rayonnement, des conditions RF
-locales, de la structure, de l’examen de la protection contre la foudre et de
-la mise à la terre, des intempéries et de l’accès sécuritaire.
+Ce sont des antennes de type N, les mieux adaptées aux répéteurs. Au strict minimum, tous les répéteurs devraient utiliser l’antenne Alfa. C’est une des grandes raisons du bon rendement du réseau d’Ottawa. MrAlders0n a établi une liaison de 110 km entre un répéteur et un compagnon avec une Alfa à chaque extrémité.
+
+Si vous voulez une antenne plus grande et plus performante, nous avons mis à l’essai l’antenne en fibre de verre Seeed de 1300 mm avec d’excellents résultats. Notez qu’elle mesure 1,3 mètre. Nous ne la recommandons que pour les répéteurs installés à une hauteur importante (environ 30 m au-dessus du sol ou plus) et destinés aux liaisons longue distance ou à la dorsale.
 
 <div class="mc-table-wrap" markdown>
 
-| Produit | Type | Connecteur indiqué | À vérifier | Source |
-|---|---|---|---|---|
-| Seeed Studio 318020693 | Omnidirectionnelle en fibre de verre | Type N | Plage de fréquences, diagramme, dimensions, charge au vent, montage et parcours du câble | [Mouser](https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D) |
-| L-com HG913Y-NF | Directionnelle | Type N | Plage de fréquences, diagramme, orientation, charge au vent, montage et parcours du câble | [DigiKey](https://www.digikey.ca/en/products/detail/l-com/HG913Y-NF/21289980) |
+| Produit | Connecteur | Coût (CAD) | Lien |
+|---|---|---|---|
+| Alfa AOA-915-5ACM | Type N | 34,99 $ | [Amazon](https://a.co/d/ieEIQpy) |
+| Seeed Studio RF Explorer 902-928MHz 8dBi, 1300 mm (318020693) | Type N | 110 $ | [Mouser](https://www.mouser.ca/ProductDetail/Seeed-Studio/318020693?qs=By6Nw2ByBD0kjpJjgHd0aQ%3D%3D) |
 
 </div>
 
-## Choisir la ligne d’alimentation
+## Antennes directionnelles pour répéteurs
 
-Utilisez le câble pratique le plus court dont la perte est acceptable.
-Confirmez les deux connecteurs, le type et la longueur du câble, sa perte à la
-fréquence d’utilisation, son indice pour l’extérieur, son rayon de courbure,
-son serre-câble et son étanchéité. [Infinite Cables](https://www.infinitecables.com/)
-est une source canadienne de câbles RF assemblés; son
-[exemple LMR-240 Ultra Flex de type N](https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465)
-pourrait ne pas avoir les connecteurs dont vous avez besoin.
+Les antennes directionnelles sont destinées aux répéteurs fixes et aux liaisons longue distance point à point ou point à multipoint. Toutes les antennes ci-dessous utilisent un connecteur de type N et conviennent aux installations extérieures permanentes.
+
+<div class="mc-table-wrap" markdown>
+
+| Produit | Connecteur | Coût (CAD) | Lien |
+|---|---|---|---|
+| L-com HG913Y-NF | Type N | 237,17 $ | [DigiKey](https://www.digikey.ca/en/products/detail/l-com/HG913Y-NF/21289980) |
+
+</div>
+
+Une antenne permanente de répéteur représente une décision d’installation complète, et non seulement un chiffre de gain. Tenez compte de la perte du câble, du nombre de connecteurs, du diagramme de rayonnement, des conditions RF locales, de la structure, de la protection contre la foudre et de la mise à la terre, des intempéries et de l’accès sécuritaire.
+
+*Les prix ont été relevés au moment de la rédaction de cette liste (consultez la page liée pour le prix et la date à jour). Ils varient selon le fournisseur et peuvent exclure l’expédition.*
+
+## Câbles d’antenne
+
+Pour des câbles LMR-240 courts et de grande qualité, [Infinite Cables](https://www.infinitecables.com/), à Toronto, est la meilleure source que nous ayons trouvée. Leurs câbles sont plutôt chers, mais la qualité de fabrication est excellente et ils offrent une grande variété de longueurs et de combinaisons de connecteurs pour toute installation. Utilisez le câble pratique le plus court dont la perte est acceptable, et confirmez les deux connecteurs, le type et la longueur du câble, son indice pour l’extérieur, son rayon de courbure, son serre-câble et son étanchéité.
+
+<div class="mc-table-wrap" markdown>
+
+| Produit | Connecteur | Lien |
+|---|---|---|
+| LMR-240 Ultra Flex N-Type Male to N-Type Female | Type N mâle à type N femelle | [Infinite Cables](https://www.infinitecables.com/products/lmr-240-ultra-flex-n-type-male-to-n-type-female-cable?variant=42809804980465) |
+
+</div>
 
 ## Consigner le choix
 

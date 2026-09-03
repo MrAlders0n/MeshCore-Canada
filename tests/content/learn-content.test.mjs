@@ -58,7 +58,9 @@ test("MeshCore overview explains all four roles and routes users forward", () =>
   }
   assert.match(markdown, /\[Compare device roles\]\(\.\.\/start\/choose-a-goal\.md\)/);
   assert.match(markdown, /\[Choose a role and start setup\]\(\.\.\/start\/index\.md\)/);
-  assert.doesNotMatch(markdown, /project has split|legacy|Ottawa/i);
+  assert.match(markdown, /MeshCore project split, use the official links/);
+  assert.match(markdown, /https:\/\/blog\.meshcore\.io\/2026\/04\/23\/the-split/);
+  assert.doesNotMatch(markdown, /legacy|Ottawa/i);
 });
 
 test("FAQ is deep-linkable and refers changing settings to canonical sources", () => {

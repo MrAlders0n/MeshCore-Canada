@@ -29,10 +29,10 @@ changes navigation and canonical journeys before moving source files.
 | `/hardware/recommended-repeaters/` | Repeater recommendations | Preserve |
 | `/hardware/recommended-antenna/` | Antenna recommendations | Preserve |
 | `/hardware/repeater-solar-300mw-diy-build/` | 300 mW build | Preserve |
-| `/hardware/repeater-solar-1w-diy-build/` | 1 W build | Preserve |
+| `/hardware/repeater-solar-1w-diy-build/` | 1 W build | Preserve; listed in navigation as experimental (2026-09-02) |
 | `/hardware/repeater-mounting-options/` | Mounting guide | Preserve after repair |
 | `/hardware/repeater-solar-batteries/` | Power guide | Remove from nav until reviewed; URL retained |
-| `/hardware/wire-connector-types/` | Connector reference | Remove from nav until reviewed; URL retained |
+| `/hardware/wire-connector-types/` | Connector reference | Restored as a page and nav entry (2026-09-02) |
 | `/meshcore/flash-companion/` | Companion flash journey | Preserve and rebuild safely |
 | `/meshcore/flash-repeater/` | Repeater flash journey | Preserve and rebuild safely |
 | `/meshcore/flash-room-server/` | Room server journey | Preserve and rebuild safely |
