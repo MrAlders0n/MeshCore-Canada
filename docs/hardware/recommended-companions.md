@@ -87,7 +87,7 @@ This is a **companion node** role and requires a smartphone. The MeshCore app co
 
 *Approximate total cost:* **$95.68 CAD**
 
-*Prices were recorded when this list was compiled. Check the linked pages for current prices, shipping, duties, and availability.*
+*Prices are dated September 2, 2026. Check the linked pages for current prices, shipping, duties, and availability.*
 
 !!! warning "Case for the example DIY build"
     This DIY build example does not include a case. For 3D-printable cases, check out **[Alley Cat's models](https://www.printables.com/@AlleyCat/models)**. They are excellent for custom companion node builds. Make sure the case you choose will fit the 3000 mAh battery and the right-angle IPEX to SMA connector.

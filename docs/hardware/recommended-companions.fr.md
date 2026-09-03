@@ -87,7 +87,7 @@ Il s’agit d’un rôle de **compagnon** et il exige un téléphone intelligent
 
 *Coût total approximatif :* **95,68 $ CAD**
 
-*Les prix ont été relevés au moment de la rédaction. Consultez les pages liées pour vérifier les prix, l’expédition, les droits de douane et la disponibilité.*
+*Les prix datent du 2 septembre 2026. Consultez les pages liées pour vérifier les prix, l’expédition, les droits de douane et la disponibilité.*
 
 !!! warning "Boîtier pour l’exemple de montage"
     Cet exemple de montage ne comprend pas de boîtier. Pour des boîtiers à imprimer en 3D, consultez les **[modèles d’Alley Cat](https://www.printables.com/@AlleyCat/models)**. Ils conviennent très bien aux compagnons faits maison. Assurez-vous que le boîtier choisi peut recevoir la pile de 3000 mAh et le connecteur IPEX à SMA à angle droit.
