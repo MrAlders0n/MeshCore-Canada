@@ -9,9 +9,7 @@
   var displayPartitionPromise = null;
   var resolverPartitionPromise = null;
   var leafletPromise = null;
-  var lucidePromise = null;
   var activeMaps = [];
-  var LUCIDE_SRC = new URL("vendor/lucide.js", assetBase).href;
   var configuratorSupport = window.MeshCoreRegionConfiguratorSupport || {};
   var radioProfiles = window.MeshCoreRadioProfiles;
   var REQUEST_TIMEOUT_MS = 12000;
@@ -20,6 +18,7 @@
   );
 
   var FRENCH_RUNTIME_TEXT = {
+    "Loading regional boundaries…": "Chargement des limites régionales…",
     "Radio network": "Réseau radio",
     "Advert ID size": "Taille de l’identifiant d’annonce",
     "Keep current settings": "Conserver les réglages actuels",
@@ -737,40 +736,30 @@
       .replace(/"/g, "&quot;");
   }
 
+  // Lucide 0.547.0 SVG paths; ISC/Feather MIT notices are in vendor/lucide-LICENSE.
+  // Include only the 17 icons used here, without downloading the full icon library.
+  var ICONS = {
+    "arrow-left": "<path d=\"m12 19-7-7 7-7\" /><path d=\"M19 12H5\" />",
+    "arrow-right": "<path d=\"M5 12h14\" /><path d=\"m12 5 7 7-7 7\" />",
+    "book-open-check": "<path d=\"M12 21V7\" /><path d=\"m16 12 2 2 4-4\" /><path d=\"M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3\" />",
+    "clipboard": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\" /><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />",
+    "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />",
+    "download": "<path d=\"M12 15V3\" /><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /><path d=\"m7 10 5 5 5-5\" />",
+    "external-link": "<path d=\"M15 3h6v6\" /><path d=\"M10 14 21 3\" /><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\" />",
+    "link": "<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\" /><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\" />",
+    "list-checks": "<path d=\"M13 5h8\" /><path d=\"M13 12h8\" /><path d=\"M13 19h8\" /><path d=\"m3 17 2 2 4-4\" /><path d=\"m3 7 2 2 4-4\" />",
+    "locate-fixed": "<line x1=\"2\" x2=\"5\" y1=\"12\" y2=\"12\" /><line x1=\"19\" x2=\"22\" y1=\"12\" y2=\"12\" /><line x1=\"12\" x2=\"12\" y1=\"2\" y2=\"5\" /><line x1=\"12\" x2=\"12\" y1=\"19\" y2=\"22\" /><circle cx=\"12\" cy=\"12\" r=\"7\" /><circle cx=\"12\" cy=\"12\" r=\"3\" />",
+    "map": "<path d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z\" /><path d=\"M15 5.764v15\" /><path d=\"M9 3.236v15\" />",
+    "printer": "<path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\" /><path d=\"M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6\" /><rect x=\"6\" y=\"14\" width=\"12\" height=\"8\" rx=\"1\" />",
+    "radio-tower": "<path d=\"M4.9 16.1C1 12.2 1 5.8 4.9 1.9\" /><path d=\"M7.8 4.7a6.14 6.14 0 0 0-.8 7.5\" /><circle cx=\"12\" cy=\"9\" r=\"2\" /><path d=\"M16.2 4.8c2 2 2.26 5.11.8 7.47\" /><path d=\"M19.1 1.9a9.96 9.96 0 0 1 0 14.1\" /><path d=\"M9.5 18h5\" /><path d=\"m8 22 4-11 4 11\" />",
+    "search": "<path d=\"m21 21-4.34-4.34\" /><circle cx=\"11\" cy=\"11\" r=\"8\" />",
+    "terminal": "<path d=\"M12 19h8\" /><path d=\"m4 17 6-6-6-6\" />",
+    "triangle-alert": "<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\" /><path d=\"M12 9v4\" /><path d=\"M12 17h.01\" />",
+    "usb": "<circle cx=\"10\" cy=\"7\" r=\"1\" /><circle cx=\"4\" cy=\"20\" r=\"1\" /><path d=\"M4.7 19.3 19 5\" /><path d=\"m21 3-3 1 2 2Z\" /><path d=\"M9.26 7.68 5 12l2 5\" /><path d=\"m10 14 5 2 3.5-3.5\" /><path d=\"m18 12 1-1 1 1-1 1Z\" />"
+  };
+
   function icon(name) {
-    return '<i class="mcc-icon" data-lucide="' + esc(name) + '" aria-hidden="true"></i>';
-  }
-
-  function loadLucide() {
-    if (window.lucide && typeof window.lucide.createIcons === "function") {
-      return Promise.resolve(window.lucide);
-    }
-    if (lucidePromise) return lucidePromise;
-    lucidePromise = new Promise(function (resolve) {
-      var script = document.createElement("script");
-      script.src = LUCIDE_SRC;
-      script.defer = true;
-      script.onload = function () { resolve(window.lucide || null); };
-      script.onerror = function () { resolve(null); };
-      document.head.appendChild(script);
-    });
-    return lucidePromise;
-  }
-
-  function refreshIcons(root) {
-    loadLucide().then(function (lucide) {
-      if (!lucide || typeof lucide.createIcons !== "function") return;
-      try {
-        lucide.createIcons({
-          attrs: {
-            "stroke-width": 2,
-            "aria-hidden": "true"
-          }
-        });
-      } catch (err) {
-        // Icons are progressive enhancement; text labels remain usable.
-      }
-    });
+    return '<svg class="mcc-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || "") + '</svg>';
   }
 
   function copyText(text, button, resetLabel) {
@@ -791,7 +780,6 @@
       window.setTimeout(function () {
         button.classList.remove("is-copied");
         button.innerHTML = button.dataset.originalHtml || resetLabel || "Copy";
-        refreshIcons(button);
       }, 1400);
     };
     var fallback = function () {
@@ -1660,14 +1648,12 @@
         '<strong>No region yet</strong>' +
         '<span>Choose a location first.</span>' +
         '</div>';
-      refreshIcons(target);
       return;
     }
 
     var rec = recommend(data, state.resolution, state.type, state.selectedMetros, state.selectedExternalPaths);
     if (!rec) {
       target.innerHTML = '<div class="mcc-empty-state">' + icon("radio-tower") + '<strong>No region yet</strong></div>';
-      refreshIcons(target);
       return;
     }
     if (rec.budget.tagCount > 32 || rec.budget.responseBytes > 172) {
@@ -1676,7 +1662,6 @@
         '<strong>Too many regions selected</strong>' +
         '<span>This selection uses ' + esc(rec.budget.tagCount) + ' tags and ' + esc(rec.budget.responseBytes) + ' bytes. Remove regions until it fits the 32-tag and 172-byte limits.</span>' +
         '</div>';
-      refreshIcons(target);
       return;
     }
     var firmware = state.firmware || data.meta.defaultFirmware || "1.16";
@@ -1826,7 +1811,6 @@
         printCommissioningSummary(data, state, printSummary);
       });
     }
-    refreshIcons(target);
   }
 
   function seedForTag(data, tag) {
@@ -1988,7 +1972,6 @@
         copyText(commands.join("\n"), copyCommands, "Copy commands");
       });
     }
-    refreshIcons(target);
   }
 
   function refreshTool(data, els, state, afterRefresh) {
@@ -2126,7 +2109,6 @@
 
   function initConfig(el, data) {
     el.innerHTML = toolUi();
-    refreshIcons(el);
     var state = {
       lat: null,
       lon: null,
@@ -2243,7 +2225,6 @@
         }
       }
       updateMapLinks();
-      refreshIcons(el);
     }
 
     function selectFinishPath(path) {
@@ -2404,7 +2385,6 @@
         if (activeGeocodeController !== thisController) return;
         els.locate.disabled = false;
         els.locate.innerHTML = icon("search") + "Find";
-        refreshIcons(els.locate);
       });
     }
 
@@ -2618,6 +2598,7 @@
       '<div class="mcc-map-stage">' +
       '<a class="mcc-skip-map" href="#mcc-region-list">Skip the interactive map</a>' +
       '<div class="mcc-visually-hidden" data-role="map-ready-status" role="status" aria-live="polite" aria-atomic="true"></div>' +
+      '<p class="mcc-map-progress" data-role="map-boundary-status" role="status" hidden>Loading regional boundaries…</p>' +
       '<div class="mcc-map-loading" data-role="map-loading">' +
       '<div>' + icon("map") + '<h3>Loading interactive map…</h3>' +
       '<p data-role="map-load-status" role="status" aria-live="polite">Loading Canadian boundaries and OpenStreetMap tiles.</p>' +
@@ -2640,7 +2621,6 @@
       '<div data-role="audit-content"></div>' +
       '</section>' +
       '</div>';
-    refreshIcons(el);
 
     var mapParams = new URLSearchParams(window.location.search);
     var requestedLargeCoverage = mapParams.get("type") === "large";
@@ -2688,6 +2668,7 @@
       mapLoading: el.querySelector("[data-role='map-loading']"),
       mapLoadStatus: el.querySelector("[data-role='map-load-status']"),
       mapReadyStatus: el.querySelector("[data-role='map-ready-status']"),
+      boundaryStatus: el.querySelector("[data-role='map-boundary-status']"),
       mapArea: el.querySelector("[data-role='map-area']"),
       canvas: el.querySelector("[data-role='map-canvas']"),
       auditStatus: el.querySelector("[data-role='audit-status']"),
@@ -2753,7 +2734,6 @@
           '<a class="mcc-button mcc-button-secondary" href="' + esc(new URL("canada-regions.json", assetBase).href) + '" download>Download catalog</a>' +
           '<a class="mcc-button mcc-button-secondary" href="' + esc(regionPageHref("standard")) + '">Open standard and change process</a>' +
           '</div></section>';
-        refreshIcons(els.auditContent);
         auditLoaded = true;
       }).catch(function (error) {
         els.auditStatus.hidden = false;
@@ -2855,7 +2835,6 @@
       if (copyLink) copyLink.addEventListener("click", function () {
         copyText(mapHrefForState(state), copyLink, "Copy link");
       });
-      refreshIcons(els.textResult);
     }
 
     function finishGeo(geo, forcedTag, recenter, requestId) {
@@ -2928,7 +2907,6 @@
           if (activeGeocodeController !== thisController) return;
           els.locate.disabled = false;
           els.locate.innerHTML = icon("search") + "Find";
-          refreshIcons(els.locate);
         });
     }
 
@@ -2953,34 +2931,47 @@
       mapIsLoading = true;
       els.loadMap.hidden = true;
       els.mapStage.setAttribute("aria-busy", "true");
+      els.boundaryStatus.hidden = false;
       els.mapLoadStatus.textContent = "Loading Canadian boundaries and map tools…";
       els.mapReadyStatus.textContent = "Loading the interactive region map.";
-      Promise.all([loadDisplayPartition(), loadLeaflet()]).then(function (loaded) {
-        applyGeneratedPartition(data, loaded[0], null);
-        var L = loaded[1];
+      loadLeaflet().then(function (L) {
         L.Icon.Default.imagePath = new URL("vendor/leaflet/images/", assetBase).href;
         els.mapArea.hidden = false;
         map = L.map(els.canvas, { minZoom: 3, maxZoom: 13 });
+        var loadingMap = map;
         activeMaps.push({ container: el, map: map });
-        map.fitBounds(data.meta.map.bounds || [[41.5, -141.5], [83.5, -52]], { padding: [24, 24], maxZoom: 4 });
+        var initialRec = state.canGenerate && recommend(data, state.resolution, state.type, state.selectedMetros, state.selectedExternalPaths);
+        var initialFeatures = initialRec && data.resolverByTag
+          ? initialRec.leaves.map(function (tag) { return data.resolverByTag[tag]; }).filter(Boolean) : [];
+        var initialBounds = initialFeatures.length ? L.geoJSON(initialFeatures).getBounds() : null;
+        map.fitBounds(initialBounds && initialBounds.isValid() ? initialBounds : data.meta.map.bounds || [[41.5, -141.5], [83.5, -52]],
+          { padding: [28, 28], maxZoom: initialFeatures.length ? 9 : 4, animate: false });
         var tileLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer">OpenStreetMap</a> contributors'
         }).addTo(map);
-        L.geoJSON(data.partitionRegions, {
-          style: function (feature) {
-            return { color: "#aeb8ff", opacity: 0.8, weight: 1, fillColor: colorForTag(feature.properties.tag), fillOpacity: 0.2 };
-          },
-          onEachFeature: function (feature, layer) {
-            layer.bindTooltip('<strong>' + esc(feature.properties.tag.toUpperCase()) + '</strong> - ' + esc(feature.properties.label));
-            layer.on("click", function (event) {
-              if (event.originalEvent) L.DomEvent.stopPropagation(event.originalEvent);
-              useGeo({ lat: event.latlng.lat, lon: event.latlng.lng, name: feature.properties.label, countryCode: "ca", tag: feature.properties.tag }, false, feature.properties.tag);
-            });
-          }
-        }).addTo(map);
         browseLayer = L.geoJSON(null, { interactive: false, style: { color: "#ffd166", opacity: 1, weight: 3, fillOpacity: 0 } }).addTo(map);
         selectedLayer = L.geoJSON(null, { interactive: false, style: { color: "#ffffff", opacity: 1, weight: 4, dashArray: "8 5", fillColor: "#4287ff", fillOpacity: 0.34 } }).addTo(map);
+        updateMapVisuals(false);
+        // Paint tiles first; the much larger boundary overlay can arrive independently.
+        var boundariesReady = loadDisplayPartition().then(function (partition) {
+          if (map !== loadingMap) return;
+          applyGeneratedPartition(data, partition, null);
+          L.geoJSON(data.partitionRegions, {
+            style: function (feature) {
+              return { color: "#aeb8ff", opacity: 0.8, weight: 1, fillColor: colorForTag(feature.properties.tag), fillOpacity: 0.2 };
+            },
+            onEachFeature: function (feature, layer) {
+              layer.bindTooltip('<strong>' + esc(feature.properties.tag.toUpperCase()) + '</strong> - ' + esc(feature.properties.label));
+              layer.on("click", function (event) {
+                if (event.originalEvent) L.DomEvent.stopPropagation(event.originalEvent);
+                useGeo({ lat: event.latlng.lat, lon: event.latlng.lng, name: feature.properties.label, countryCode: "ca", tag: feature.properties.tag }, false, feature.properties.tag);
+              });
+            }
+          }).addTo(map);
+          renderRegionBrowser(state.browseTag, false);
+          updateMapVisuals(false);
+        });
         map.on("click", function (event) {
           useGeo({
             lat: event.latlng.lat,
@@ -2989,10 +2980,8 @@
             countryCode: "ca"
           }, false, null);
         });
-        renderRegionBrowser(state.browseTag, false);
-        updateMapVisuals(Boolean(state.canGenerate));
-        window.setTimeout(function () { map.invalidateSize(); }, 0);
-        return new Promise(function (resolve, reject) {
+        window.setTimeout(function () { if (map === loadingMap) map.invalidateSize(); }, 0);
+        var tilesReady = new Promise(function (resolve, reject) {
           var settled = false;
           var timeout = window.setTimeout(function () {
             if (settled) return;
@@ -3003,6 +2992,7 @@
             if (settled) return;
             settled = true;
             window.clearTimeout(timeout);
+            if (map === loadingMap) els.mapLoading.hidden = true;
             resolve();
           });
           tileLayer.once("load", function () {
@@ -3012,8 +3002,10 @@
             reject(new Error("OpenStreetMap tiles could not load. Search and the region list still work."));
           });
         });
+        return Promise.all([tilesReady, boundariesReady]);
       }).then(function () {
         els.mapLoading.hidden = true;
+        els.boundaryStatus.hidden = true;
         els.mapLoadStatus.textContent = "";
         els.mapStage.setAttribute("aria-busy", "false");
         els.mapReadyStatus.textContent = "Interactive region map loaded.";
@@ -3024,9 +3016,13 @@
           try { map.remove(); } catch (cleanupError) { /* Leaflet may have failed during setup. */ }
           activeMaps = activeMaps.filter(function (entry) { return entry.map !== failedMap; });
           map = null;
+          marker = null;
+          browseLayer = null;
+          selectedLayer = null;
         }
         els.mapArea.hidden = true;
         els.mapLoading.hidden = false;
+        els.boundaryStatus.hidden = true;
         els.loadMap.hidden = false;
         mapIsLoading = false;
         els.mapLoadStatus.textContent = error.message || "The map could not load. Search and the region list still work.";
@@ -3169,7 +3165,6 @@
           "<td>" + (row.basis === "established" ? "Established" : "Proposed") + "</td>" +
           "</tr>";
       }).join("");
-      refreshIcons(el);
     }
     input.addEventListener("input", draw);
     province.addEventListener("change", draw);
@@ -3198,7 +3193,6 @@
       '</section>' +
       '</div>';
     renderRegionTable(el.querySelector("[data-role='dashboard-table']"), data);
-    refreshIcons(el);
   }
 
   function initRegions() {

@@ -36,7 +36,7 @@ function startServer() {
   const command = process.platform === "win32" ? "python.exe" : "python3";
   return spawn(
     command,
-    ["-m", "http.server", "4174", "--bind", "127.0.0.1", "--directory", ".tmp/site"],
+    ["scripts/serve-audit-site.py", "--port", "4174", "--directory", ".tmp/site"],
     { stdio: "ignore", windowsHide: true }
   );
 }

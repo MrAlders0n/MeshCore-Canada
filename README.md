@@ -15,7 +15,7 @@ python -m http.server 4173 --bind 127.0.0.1 --directory .tmp/site
 ```
 
 Open `http://127.0.0.1:4173/`. Rebuild after editing. Build output belongs in
-`.tmp/`, not in a commit. `npm run docs:build:preview` also checks subpath hosting.
+`.tmp/`, not in a commit. `npm run docs:build:preview` builds for subpath hosting.
 
 ## Where to make changes
 

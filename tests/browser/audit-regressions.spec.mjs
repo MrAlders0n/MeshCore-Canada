@@ -119,6 +119,46 @@ test("language switch keeps selected region, firmware, radio, and review step", 
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");
 });
 
+test("map tiles appear while a slow boundary overlay is still loading", async ({ page }) => {
+  let releaseBoundary;
+  const boundaryGate = new Promise(resolve => { releaseBoundary = resolve; });
+  await page.route("**/canada-region-partition.geojson", async route => {
+    await boundaryGate;
+    await route.continue();
+  });
+  await page.route("https://tile.openstreetmap.org/**", route => route.fulfill({
+    contentType: "image/png",
+    body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64")
+  }));
+  try {
+    await page.goto(siteRoute("/config/map/?tag=ott"));
+    await page.locator(".mcc-map-stage").scrollIntoViewIfNeeded();
+    await expect(page.locator(".leaflet-tile-loaded").first()).toBeVisible();
+    await expect(page.locator('[data-role="map-loading"]')).toBeHidden();
+    await expect(page.locator('[data-role="map-boundary-status"]')).toBeVisible();
+    releaseBoundary();
+    await expect(page.locator(".mcc-map-stage")).toHaveAttribute("aria-busy", "false");
+    await expect(page.locator('[data-role="map-boundary-status"]')).toBeHidden();
+  } finally { releaseBoundary(); }
+});
+
+test("map retry restores the selected marker after a tile failure", async ({ page }) => {
+  let tilesAvailable = false;
+  await page.route("https://tile.openstreetmap.org/**", route => tilesAvailable ? route.fulfill({
+    contentType: "image/png",
+    body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64")
+  }) : route.abort());
+  await page.goto(siteRoute("/config/map/?tag=ott"));
+  await page.locator(".mcc-map-stage").scrollIntoViewIfNeeded();
+  const retry = page.locator('[data-action="load-map"]');
+  await expect(retry).toBeVisible();
+  tilesAvailable = true;
+  await retry.click();
+  await expect(page.locator(".mcc-map-stage")).toHaveAttribute("aria-busy", "false");
+  await expect(page.locator(".leaflet-marker-icon")).toBeVisible();
+  await expect(page.locator('[data-role="map-text-result"]')).toContainText("Ottawa");
+});
+
 test("Québec partial matches reach city search and true ambiguity offers buttons", async ({ page }) => {
   let lookedUp = false;
   await page.route("https://nominatim.openstreetmap.org/**", async (route) => {

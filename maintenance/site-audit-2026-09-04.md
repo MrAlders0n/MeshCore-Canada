@@ -24,7 +24,7 @@ problems without changing region boundaries, broker accounts, or deployment targ
 | A14 — Flashing | Erase and DFU steps are conditional; bootloader verification refers to the selected release, not a contradictory fixed version. | Content safety tests; no hardware was flashed. |
 | A15 — Hardware wording | Removed an unverified antenna-length claim; distinguished shopping-basket costs from per-device cost; shortened French and maintenance prose. | Content review; experimental-build warnings remain. |
 | A16 — Broker reference | Broker table is generated into HTML and works without JavaScript. Access inventory and existing admins remain linked. | Static-table and no-JavaScript browser tests. |
-| A17 — Contributor/testing gaps | Added a contributor README, safety regressions, and mobile map/editor performance coverage. The interactive map loads automatically when visible, keeping its large display layer out of text-only lookups. | Existing quality workflow with downloadable Lighthouse reports; budgets are unchanged. |
+| A17 — Contributor/testing gaps | Added a contributor README, safety regressions, and mobile map/editor performance coverage. The map and region table load when visible. Tiles appear before the boundary overlay, and 17 inline icons replace the full icon-library download. Page scripts no longer block the initial render. | Quality workflow with downloadable Lighthouse reports; budgets and throttling profiles are unchanged. The audit server uses HTTP gzip, matching the live GitHub Pages responses. |
 
 The wording pass is targeted, not a claim that every sentence needed rewriting.
 Existing URLs, community contributions, downloadable build files, and unresolved

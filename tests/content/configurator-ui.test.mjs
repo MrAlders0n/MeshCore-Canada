@@ -64,3 +64,19 @@ test("place searches run on submission and visible maps load without consent", (
   assert.match(regionsSource, /tile\.openstreetmap\.org/);
   assert.match(regionsSource, /Browse regions without search or a map/);
 });
+
+test("region icons are inline SVGs matching the vendored source", () => {
+  const names = [...new Set([...regionsSource.matchAll(/icon\("([^"]+)"\)/g)].map(match => match[1]))].sort();
+  const icons = JSON.parse(regionsSource.match(/var ICONS = (\{[\s\S]*?\n  \});/)[1]);
+  assert.deepEqual(Object.keys(icons).sort(), names);
+  const context = vm.createContext({});
+  vm.runInContext(read("docs/assets/regions/vendor/lucide.js"), context);
+  for (const name of names) {
+    const key = name.replace(/(^|-)([a-z])/g, (_, dash, letter) => letter.toUpperCase());
+    const expected = context.lucide.icons[key].map(([tag, attrs]) =>
+      '<' + tag + ' ' + Object.entries(attrs).map(([key, value]) => key + '=' + JSON.stringify(value)).join(' ') + ' />'
+    ).join('');
+    assert.equal(icons[name], expected);
+  }
+  assert.doesNotMatch(regionsSource, /loadLucide|refreshIcons|data-lucide/);
+});

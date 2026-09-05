@@ -970,6 +970,19 @@ body:has([data-mcc-regions]) .md-typeset h3 {
   text-align: center;
 }
 
+.md-typeset .mcc-map-progress {
+  position: absolute;
+  top: 0.5rem;
+  left: 3rem;
+  z-index: 1001;
+  margin: 0;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  color: var(--mcc-text);
+  background: var(--mcc-surface);
+  font-size: 0.8rem;
+}
+
 .mcc-map-loading > div {
   display: grid;
   max-width: 28rem;
