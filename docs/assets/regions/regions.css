@@ -2,6 +2,14 @@ body:has([data-mcc-regions="map"]) [data-mcc-regions="map"] {
   margin: 0;
 }
 
+/* Reserve space before any scripts run, without adding a gap for no-JavaScript readers. */
+@media (scripting: enabled) {
+  [data-mcc-regions="map"]:empty,
+  [data-mcc-regions="map"][data-mcc-loading="1"] {
+    min-height: 60rem;
+  }
+}
+
 body:has([data-mcc-regions]) {
   background: var(--md-default-bg-color, #ffffff);
 }
@@ -23,10 +31,6 @@ body:has([data-mcc-regions]) .md-typeset h1,
 body:has([data-mcc-regions]) .md-typeset h2,
 body:has([data-mcc-regions]) .md-typeset h3 {
   color: var(--md-default-fg-color);
-}
-
-body:has([data-mcc-regions]) .md-main .md-typeset a {
-  color: var(--md-typeset-a-color, #5488e8);
 }
 
 .mcc-visually-hidden {
@@ -264,7 +268,8 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   outline: 0.12rem solid color-mix(in srgb, var(--mcc-green), transparent 76%);
 }
 
-.mcc-button {
+.mcc-button,
+.md-typeset a.mcc-button {
   display: inline-flex;
   gap: 0.35rem;
   align-items: center;
@@ -288,7 +293,9 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-button:hover,
-.mcc-button:focus {
+.mcc-button:focus,
+.md-typeset a.mcc-button:hover,
+.md-typeset a.mcc-button:focus {
   color: var(--mcc-action-text);
   background: var(--mcc-green-dark);
   border-color: var(--mcc-green-dark);
@@ -299,14 +306,17 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   cursor: not-allowed;
 }
 
-.mcc-button-secondary {
+.mcc-button-secondary,
+.md-typeset a.mcc-button-secondary {
   color: var(--mcc-text);
   background: transparent;
   border-color: var(--mcc-border);
 }
 
 .mcc-button-secondary:hover,
-.mcc-button-secondary:focus {
+.mcc-button-secondary:focus,
+.md-typeset a.mcc-button-secondary:hover,
+.md-typeset a.mcc-button-secondary:focus {
   color: var(--mcc-text);
   background: var(--mcc-soft);
   border-color: var(--mcc-green);
@@ -855,7 +865,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-map-shell {
   display: grid;
   grid-template-columns: minmax(23rem, 27.5rem) minmax(0, 1fr);
-  height: clamp(30rem, calc(100vh - 8rem), 40rem);
+  height: auto;
   min-height: 30rem;
   border: 1px solid var(--mcc-border);
   border-radius: 0.45rem;
@@ -916,7 +926,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   gap: 0.75rem;
   padding: 1rem;
   background: var(--mcc-panel);
-  overflow: auto;
+  overflow: visible;
 }
 
 .mcc-map-stage {
@@ -925,7 +935,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   min-height: 30rem;
 }
 
-.mcc-skip-map {
+.md-typeset .mcc-skip-map {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
@@ -934,11 +944,15 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   border-radius: 0.3rem;
   color: var(--mcc-action-text);
   background: var(--mcc-green-dark);
-  transform: translateY(calc(-100% - 1rem));
+  clip-path: inset(50%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.mcc-skip-map:focus {
-  transform: none;
+.md-typeset .mcc-skip-map:focus {
+  clip-path: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .mcc-map-loading {
@@ -1103,9 +1117,9 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 
 .mcc-map-canvas .leaflet-bar a,
 .mcc-map-canvas .leaflet-bar a:hover {
-  border-color: rgba(133, 179, 174, 0.24);
-  color: var(--mc-color-text);
-  background: rgba(11, 20, 27, 0.92);
+  border-color: var(--mcc-border);
+  color: var(--mcc-text);
+  background: var(--mcc-surface);
 }
 
 .mcc-region-borders {

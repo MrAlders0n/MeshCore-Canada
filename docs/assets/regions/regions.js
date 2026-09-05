@@ -394,9 +394,6 @@
     [/^(.+) resolves to (.+)$/, function (match, place, region) {
       return place + " correspond à " + region;
     }],
-    [/^Text result: (.+)\.$/, function (match, path) {
-      return "Résultat textuel : " + path + ".";
-    }],
     [/^(\d+) leaf regions$/, function (match, count) {
       return count + " régions terminales";
     }],
@@ -2883,8 +2880,7 @@
       if (!state.canGenerate) {
         setStatus(els.status, "No Canadian region contains that point. Browse the list instead.", "warning");
       } else {
-        var path = labelledPath(data, ancestryFor(data, state.detailTag));
-        setStatus(els.status, "Text result: " + esc(path) + ".", "info");
+        setStatus(els.status, "Region found.", "info");
         renderRegionBrowser(state.detailTag, false);
       }
       renderTextResult();
@@ -2962,6 +2958,7 @@
       Promise.all([loadDisplayPartition(), loadLeaflet()]).then(function (loaded) {
         applyGeneratedPartition(data, loaded[0], null);
         var L = loaded[1];
+        L.Icon.Default.imagePath = new URL("vendor/leaflet/images/", assetBase).href;
         els.mapArea.hidden = false;
         map = L.map(els.canvas, { minZoom: 3, maxZoom: 13 });
         activeMaps.push({ container: el, map: map });
@@ -3054,8 +3051,31 @@
     els.coordinates.addEventListener("click", useCoordinates);
     els.loadMap.addEventListener("click", loadInteractiveMap);
     renderRegionBrowser(state.browseTag, false);
-    renderRegionTable(els.table, data, function (tag) { chooseRegionNode(tag); });
-    window.setTimeout(loadInteractiveMap, 0);
+    var regionList = el.querySelector("#mcc-region-list");
+    function ensureRegionTable() {
+      if (!els.table.firstChild) renderRegionTable(els.table, data);
+    }
+    regionList.addEventListener("toggle", function () {
+      if (regionList.open) ensureRegionTable();
+    });
+    el.querySelector(".mcc-skip-map").addEventListener("click", function () {
+      regionList.open = true;
+      ensureRegionTable();
+    });
+    function observeInteractiveMap() {
+      // Text lookup is useful on its own; download the display layer only when it is visible.
+      if ("IntersectionObserver" in window) {
+        var mapObserver = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) {
+            mapObserver.disconnect();
+            loadInteractiveMap();
+          }
+        });
+        mapObserver.observe(els.mapStage);
+      } else {
+        window.setTimeout(loadInteractiveMap, 0);
+      }
+    }
 
     keepLanguageSelection(state);
     // Load the same validated profile list used by the configurator before carrying a choice back.
@@ -3072,9 +3092,13 @@
     var initialGeo = initialLocation(data, mapParams);
     if (initialGeo) {
       els.input.value = initialGeo.name;
-      useGeo(initialGeo, false, initialGeo.tag);
-    } else if (mapParams.has("tag") || mapParams.has("lat") || mapParams.has("lon")) {
-      setStatus(els.status, "This saved location is invalid or no longer available. Choose a region again.", "warning");
+      // Let the result card settle before measuring whether the map is on screen.
+      useGeo(initialGeo, false, initialGeo.tag).then(observeInteractiveMap);
+    } else {
+      if (mapParams.has("tag") || mapParams.has("lat") || mapParams.has("lon")) {
+        setStatus(els.status, "This saved location is invalid or no longer available. Choose a region again.", "warning");
+      }
+      observeInteractiveMap();
     }
     setMapMode(mapParams.get("view") === "audit" ? "audit" : "explore");
   }

@@ -44,6 +44,43 @@ for (const locale of ["", "fr/"]) {
     await expect(page.locator('[data-go-step="4"]')).toBeDisabled();
   });
 
+  test(`${locale || "en/"} map loads when visible and its keyboard shortcut stays out of the way`, async ({ page }, testInfo) => {
+    const displayRequests = [];
+    page.on("request", (request) => {
+      if (request.url().endsWith("/canada-region-partition.geojson")) displayRequests.push(request.url());
+    });
+    await page.route("https://tile.openstreetmap.org/**", (route) => route.fulfill({
+      contentType: "image/png",
+      body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64")
+    }));
+    await page.goto(siteRoute(`/${locale}config/map/?tag=ott`));
+    await expect(page.locator('[data-role="map-status"]')).toHaveText(locale ? "Région trouvée." : "Region found.");
+    const shortcut = page.locator(".mcc-skip-map");
+    await expect(shortcut).toHaveCSS("pointer-events", "none");
+    await expect(page.locator('[data-role="map-region-table"]')).toBeEmpty();
+    const panel = page.locator(".mcc-map-panel");
+    expect(await panel.evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBeTruthy();
+    if (testInfo.project.name.startsWith("mobile-")) {
+      await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+      expect(displayRequests).toHaveLength(0);
+    }
+    await page.locator(".mcc-map-stage").scrollIntoViewIfNeeded();
+    await expect(page.locator('[data-role="map-loading"]')).toBeHidden();
+    expect(displayRequests).toHaveLength(1);
+    const marker = page.locator(".leaflet-marker-icon");
+    await expect(marker).toBeVisible();
+    await expect(marker).toHaveAttribute("src", /\/vendor\/leaflet\/images\/marker-icon(?:-2x)?\.png$/);
+    await expect.poll(() => marker.evaluate((image) => image.naturalWidth)).toBeGreaterThan(0);
+    await shortcut.focus();
+    await expect(shortcut).toHaveCSS("opacity", "1");
+    await expect(shortcut).toHaveCSS("pointer-events", "auto");
+    const contrast = await new AxeBuilder({ page }).include(".mcc-map-stage").withRules(["color-contrast"]).analyze();
+    expect(contrast.violations).toEqual([]);
+    await shortcut.press("Enter");
+    await expect(page.locator("#mcc-region-list")).toHaveAttribute("open", "");
+    await expect(page.locator('[data-role="table-filter"]')).toBeVisible();
+  });
+
   for (const scheme of ["default", "slate"]) {
     test(`${locale || "en/"} ${scheme} focused map controls remain readable`, async ({ page }) => {
       await page.goto(siteRoute(`/${locale}config/map/?tag=ott`));
