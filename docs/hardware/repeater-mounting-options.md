@@ -110,7 +110,7 @@ If anything moves, leaks, loosens, corrodes, changes electrically, or fails its 
 
 <div class="mc-maintenance-record" markdown>
 
-No Canada-wide inspection interval has been approved. Before deployment, record a site-specific interval and the conditions that trigger an extra inspection, such as severe weather, nearby work, water entry, or changed radio behaviour.
+Set an inspection schedule for the site. Inspect again after severe weather, nearby work, water entry, or changed radio behaviour.
 
 Record each inspection date, inspector, photographs, hardware/cable condition, enclosure condition, radio verification, corrective work, and next due date.
 

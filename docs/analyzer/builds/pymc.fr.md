@@ -50,7 +50,9 @@ Notez l’état actuel du service :
 
 ```bash
 sudo systemctl status pymc-repeater --no-pager
-sudo cp -- /etc/pymc_repeater/config.yaml /etc/pymc_repeater/config.yaml.pre-meshcore-ca
+backup="/etc/pymc_repeater/config.yaml.pre-meshcore-ca.$(date -u +%Y%m%dT%H%M%S).$"
+sudo cp --no-clobber -- /etc/pymc_repeater/config.yaml "$backup"
+printf 'Backup: %s\n' "$backup"
 ```
 
 ## Ce qui sera modifié
@@ -140,7 +142,7 @@ bon état ne confirme pas que les paquets se sont rendus à CoreScope.
 Restaurez exactement la sauvegarde créée avant la modification :
 
 ```bash
-sudo cp -- /etc/pymc_repeater/config.yaml.pre-meshcore-ca /etc/pymc_repeater/config.yaml
+sudo cp -- "${backup:?Set backup to the saved backup path first}" /etc/pymc_repeater/config.yaml
 sudo systemctl restart pymc-repeater
 sudo systemctl status pymc-repeater --no-pager
 ```

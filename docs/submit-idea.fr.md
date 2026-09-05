@@ -16,7 +16,7 @@ estimated_time: 3-5 minutes
 page_styles:
   - stylesheets/extra.css?v=20260722-2
 page_scripts:
-  - javascripts/submission-form.js?v=20260722-2
+  - javascripts/submission-form.js?v=20260904-1
 hide:
   - toc
 ---
@@ -54,13 +54,33 @@ hide:
 
   <div class="submission-form__header">
     <h2>Décrivez votre idée</h2>
-    <p>Remplissez les cinq champs obligatoires.</p>
+    <p>Ajoutez un titre et décrivez le problème ou l’idée. Le reste est facultatif.</p>
   </div>
 
+  <div class="submission-field">
+    <label for="submission-summary">Titre court</label>
+    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Exemple : Ajouter une liste de vérification pour les répéteurs" required>
+  </div>
+
+  <div class="submission-form__grid submission-form__grid--ideas">
+    <div class="submission-field">
+      <label for="submission-need">Problème ou idée</label>
+      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Expliquez-nous ce qui vous a bloqué." required></textarea>
+    </div>
+
+    <div class="submission-field">
+      <label for="submission-idea">Changement proposé (facultatif)</label>
+      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Indiquez le changement qui vous aiderait le plus."></textarea>
+    </div>
+  </div>
+
+  <details class="submission-optional">
+    <summary>Ajouter des précisions <span>Facultatif</span></summary>
+    <div class="submission-optional__body">
   <div class="submission-form__grid">
     <div class="submission-field">
       <label for="submission-category">Type d’idée</label>
-      <select id="submission-category" name="category" required>
+      <select id="submission-category" name="category">
         <option value="">Choisissez la meilleure option</option>
         <option value="Newcomer or accessibility improvement">Amélioration pour les personnes qui débutent ou en matière d’accessibilité</option>
         <option value="Documentation correction">Correction de la documentation</option>
@@ -74,7 +94,7 @@ hide:
 
     <div class="submission-field">
       <label for="submission-experience">Votre expérience avec MeshCore</label>
-      <select id="submission-experience" name="experience" required>
+      <select id="submission-experience" name="experience">
         <option value="">Choisissez une option</option>
         <option value="Brand new / researching">Je découvre MeshCore ou je me renseigne</option>
         <option value="Setting up my first node">Je configure mon premier nœud</option>
@@ -85,26 +105,7 @@ hide:
     </div>
   </div>
 
-  <div class="submission-field">
-    <label for="submission-summary">Titre court</label>
-    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Exemple : Ajouter une liste de vérification pour les répéteurs" required>
-  </div>
 
-  <div class="submission-form__grid submission-form__grid--ideas">
-    <div class="submission-field">
-      <label for="submission-need">Qu’est-ce qui est difficile en ce moment?</label>
-      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Expliquez-nous ce qui vous a bloqué." required></textarea>
-    </div>
-
-    <div class="submission-field">
-      <label for="submission-idea">Qu’est-ce qui devrait être amélioré?</label>
-      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Indiquez le changement qui vous aiderait le plus." required></textarea>
-    </div>
-  </div>
-
-  <details class="submission-optional">
-    <summary>Ajouter des précisions <span>Facultatif</span></summary>
-    <div class="submission-optional__body">
       <div class="submission-form__grid">
         <div class="submission-field">
           <label for="submission-region">Ville ou grande région</label>

@@ -59,7 +59,7 @@ On a serial host, the helper:
 - adds the primary and backup MeshCore Canada addresses and location code; and
 - restarts `mctomqtt` unless `--no-restart` is used.
 
-For companion capture, it updates `~/.meshcore-packet-capture/.env.local`, makes a timestamped backup, configures slots 1 and 2, disables slots 3–6, and may restart the capture service.
+For companion capture, it updates `~/.meshcore-packet-capture/.env.local`, makes a timestamped backup, updates existing Canada broker slots or uses empty slots, and may restart the capture service.
 
 Install flags download and run separate upstream installers. Do not use them until you have reviewed the named upstream installer too.
 
@@ -114,7 +114,7 @@ The service should stay active without repeated TLS or authentication errors.
 After reviewing the current published helper, you can run that same file directly:
 
 ```bash
-bash <(curl -fsSL https://meshcore.ca/analyzer/scripts/add-meshcore-ca-broker.sh) --device serial-host --iata YOW
+bash add-meshcore-ca-broker.sh --device serial-host --iata YOW
 ```
 
 The downloaded-file method above is easier to review and recover.

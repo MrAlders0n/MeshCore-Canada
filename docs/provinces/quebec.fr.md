@@ -38,7 +38,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -49,7 +49,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=charlevoix-yml&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-charlevoix-yml">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-mesh-quebec">
 <div class="mc-community-card__header">
@@ -60,7 +60,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -70,7 +70,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=mesh-quebec&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-mesh-quebec">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-montreal-mesh">
 <div class="mc-community-card__header">
@@ -81,7 +81,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -91,7 +91,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=montreal-mesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-montreal-mesh">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-mesh-capitale-yqb">
 <div class="mc-community-card__header">
@@ -102,7 +102,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -112,7 +112,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-mesh-capitale-yqb&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-reseau-mesh-capitale-yqb">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-mesh-saguenay-lac-saint-jean-ytf">
 <div class="mc-community-card__header">
@@ -123,7 +123,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -134,7 +134,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-mesh-saguenay-lac-saint-jean-ytf&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-reseau-mesh-saguenay-lac-saint-jean-ytf">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-libre">
 <div class="mc-community-card__header">
@@ -145,7 +145,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -155,7 +155,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-libre&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fquebec%2F%23community-reseau-libre">Mettre cette fiche à jour</a></p>
 </article>
 </div>
 

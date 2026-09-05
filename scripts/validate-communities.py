@@ -13,7 +13,7 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -590,8 +590,8 @@ def contact_check_label(contacts: list[dict[str, Any]]) -> str:
     if health == {"verified"}:
         checked_dates = {contact["last_checked"] for contact in contacts}
         if len(checked_dates) == 1:
-            return f"Verified on {checked_dates.pop()}"
-        return "All links verified"
+            return f"Links checked on {checked_dates.pop()}"
+        return "All links checked"
     if "verified" in health:
         return "Some links still need review"
     return "Not yet verified"
@@ -648,7 +648,7 @@ def render_directory_card(community: dict[str, Any], page: dict[str, Any]) -> st
             f'{html.escape(page["title"].title())}</a></p>'
         ),
         f"<p><strong>Settings:</strong> {render_settings(community, compact=True)}</p>",
-        f"<p><strong>Last verified:</strong> {verification_label(community)}</p>",
+        f"<p><strong>Listing reviewed:</strong> {verification_label(community)}</p>",
         '<ul class="mc-community-contacts">',
         *render_contacts(community),
         "</ul>",
@@ -826,7 +826,7 @@ def render_community_card(community: dict[str, Any], metadata: dict[str, Any]) -
         "<dl class=\"mc-community-facts\">",
         "<div><dt>Settings</dt>",
         f"<dd>{render_settings(community)}</dd></div>",
-        "<div><dt>Last verified</dt>",
+        "<div><dt>Listing reviewed</dt>",
         f"<dd>{verification_label(community)}</dd></div>",
         "</dl>",
         ]
@@ -876,7 +876,7 @@ def render_community_card(community: dict[str, Any], metadata: dict[str, Any]) -
     lines.extend(
         [
             (
-                '<p class="mc-community-card__action"><a href="../../submit-idea/">'
+                f'<p class="mc-community-card__action"><a href="../../submit-idea/?community={community["id"]}&amp;source_page={quote("https://meshcore.ca" + community["canonical_route"], safe="")}">'
                 "Update this listing</a></p>"
             ),
             "</article>",
@@ -1155,7 +1155,7 @@ def contact_check_label_fr(contacts: list[dict[str, Any]]) -> str:
         checked_dates = {contact["last_checked"] for contact in contacts}
         if len(checked_dates) == 1:
             return f"Effectuée le {checked_dates.pop()}"
-        return "Tous les liens sont vérifiés"
+        return "Tous les liens ont été vérifiés"
     if "verified" in health:
         return "Certains liens restent à vérifier"
     return "Pas encore effectuée"
@@ -1219,7 +1219,7 @@ def render_directory_card_fr(
                 f'{html.escape(page_translation["title"])}</a></p>'
             ),
             f"<p><strong>Réglages :</strong> {render_settings_fr(community, compact=True)}</p>",
-            f"<p><strong>Dernière vérification :</strong> {verification_label_fr(community)}</p>",
+            f"<p><strong>Fiche révisée :</strong> {verification_label_fr(community)}</p>",
             '<ul class="mc-community-contacts">',
             *render_contacts_fr(community),
             "</ul>",
@@ -1435,7 +1435,7 @@ def render_community_card_fr(
             '<dl class="mc-community-facts">',
             "<div><dt>Réglages</dt>",
             f"<dd>{render_settings_fr(community)}</dd></div>",
-            "<div><dt>Dernière vérification</dt>",
+            "<div><dt>Fiche révisée</dt>",
             f"<dd>{verification_label_fr(community)}</dd></div>",
             "</dl>",
         ]
@@ -1491,7 +1491,7 @@ def render_community_card_fr(
     lines.extend(
         [
             (
-                '<p class="mc-community-card__action"><a href="../../submit-idea/">'
+                f'<p class="mc-community-card__action"><a href="../../submit-idea/?community={community["id"]}&amp;source_page={quote("https://meshcore.ca/fr" + community["canonical_route"], safe="")}">'
                 "Mettre cette fiche à jour</a></p>"
             ),
             "</article>",
@@ -1645,6 +1645,16 @@ def render_province_page_fr(
 
 def generated_pages(data: dict[str, Any], french: dict[str, Any]) -> dict[Path, str]:
     pages = {PROVINCES_DIR / "index.md": render_index(data)}
+    profiles = [{"id": "canada", "name": "Canada default", "name_fr": "Réglages canadiens par défaut",
+                 "radio": data["national_defaults"]["raw_radio"], "route": "provinces/#canada-baseline"}]
+    for community in data["communities"]:
+        radio = community["settings"]["overrides"].get("raw_radio")
+        if radio and community.get("verified_at"):
+            profiles.append({"id": community["id"], "name": community["name"],
+                             "name_fr": community["name"], "radio": radio,
+                             "route": community["canonical_route"].lstrip("/"),
+                             "reviewed": community["verified_at"]})
+    pages[ROOT / "docs/assets/radio-profiles.json"] = json.dumps(profiles, ensure_ascii=False, indent=2)
     for page in data["directory_pages"]:
         pages[PROVINCES_DIR / f"{page['slug']}.md"] = render_province_page(data, page)
     pages[PROVINCES_DIR / "index.fr.md"] = render_index_fr(data, french)

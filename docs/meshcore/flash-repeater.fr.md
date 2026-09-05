@@ -21,7 +21,7 @@ page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
   - assets/styles/repeater-hash-check.css?v=20260820-1
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260820-1
+  - assets/javascripts/repeater-hash-check.js?v=20260904-1
 ---
 # Programmer, configurer et tester un répéteur sur l’établi
 
@@ -89,7 +89,7 @@ guide ou d’une capture d’écran.
 3. Activez son mode de chargeur d’amorçage UF2. Sur une RAK4631, il faut normalement appuyer deux fois sur le bouton près du port USB; pour les autres cartes, utilisez la méthode de réinitialisation documentée.
 4. Confirmez qu’un lecteur USB apparaît et examinez `INFO.TXT` pour vérifier l’identité de la carte.
 5. Copiez le fichier UF2 correspondant sur ce lecteur. Le lecteur peut se déconnecter pendant le redémarrage de la carte.
-6. Revenez au mode de chargeur d’amorçage et confirmez que `INFO.TXT` indique la version `0.9.2` avant de continuer.
+6. Revenez au mode de chargeur d’amorçage et confirmez que `INFO.TXT` indique la carte et la version du chargeur d’amorçage correspondant à la version choisie avant de continuer.
 
 Si l’identité de la carte ou la version attendue ne correspond pas, arrêtez et
 récupérez l’appareil par USB avant de programmer MeshCore.
@@ -103,9 +103,9 @@ officiel dans un navigateur compatible avec
 1. Branchez le répéteur par USB.
 2. Sélectionnez le modèle exact du matériel.
 3. Sélectionnez **Repeater** comme rôle et choisissez la version destinée à cette carte.
-4. Cliquez sur **Enter DFU Mode** et attendez que le programme trouve la carte.
+4. Suivez les étapes de connexion propres à votre carte. Utilisez **Enter DFU Mode** seulement si cette cible le demande.
 5. Vérifiez de nouveau la carte et le rôle sélectionnés.
-6. Cliquez sur **Erase Flash** et attendez le message confirmant la réussite de l’effacement.
+6. Pour une première installation ou une réinitialisation, sauvegardez d’abord. Cliquez sur **Erase Flash** seulement si les instructions de la carte le demandent. Pour une mise à jour, laissez l’effacement désactivé sauf indication contraire dans les notes de version.
 7. Cliquez sur **Flash** et attendez la fin de l’opération avant de débrancher l’appareil.
 
 Si la programmation échoue après l’effacement, n’effacez pas l’appareil à

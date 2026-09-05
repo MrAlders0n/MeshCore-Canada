@@ -63,8 +63,8 @@ Sur un hôte à liaison série, l’outil :
 
 Pour la capture d’un compagnon, il met à jour
 `~/.meshcore-packet-capture/.env.local`, crée une sauvegarde horodatée,
-configure les emplacements 1 et 2, désactive les emplacements 3 à 6 et peut
-redémarrer le service de capture.
+met à jour les emplacements MeshCore Canada existants ou utilise des emplacements
+vides. Les autres connexions sont conservées. Il peut redémarrer le service de capture.
 
 Les options d’installation téléchargent et exécutent des programmes
 d’installation distincts provenant des projets d’origine. Ne les utilisez pas
@@ -128,7 +128,7 @@ Après avoir examiné la version actuellement publiée de l’outil, vous pouvez
 exécuter directement ce même fichier :
 
 ```bash
-bash <(curl -fsSL https://meshcore.ca/analyzer/scripts/add-meshcore-ca-broker.sh) --device serial-host --iata YOW
+bash add-meshcore-ca-broker.sh --device serial-host --iata YOW
 ```
 
 La méthode de téléchargement présentée plus haut facilite l’examen et la

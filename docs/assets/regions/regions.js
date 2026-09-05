@@ -13,12 +13,24 @@
   var activeMaps = [];
   var LUCIDE_SRC = new URL("vendor/lucide.js", assetBase).href;
   var configuratorSupport = window.MeshCoreRegionConfiguratorSupport || {};
+  var radioProfiles = window.MeshCoreRadioProfiles;
   var REQUEST_TIMEOUT_MS = 12000;
   var frenchRuntime = /^fr(?:-|$)/i.test(
     document.documentElement ? document.documentElement.lang || "" : ""
   );
 
   var FRENCH_RUNTIME_TEXT = {
+    "Radio network": "Réseau radio",
+    "Advert ID size": "Taille de l’identifiant d’annonce",
+    "Keep current settings": "Conserver les réglages actuels",
+    "Choose a profile only after checking with your community. A region does not select a radio network.": "Confirmez le profil auprès de votre communauté. Une région ne détermine pas les réglages radio.",
+    "Radio changes take effect after reboot.": "Les changements radio prennent effet après le redémarrage.",
+    "Choose the region you mean:": "Choisissez la région recherchée :",
+    "This saved location is invalid or no longer available. Choose a region again.": "Cet emplacement est invalide ou n’est plus disponible. Choisissez une région à nouveau.",
+    "Setup summary": "Résumé de configuration",
+    "3 bytes": "3 octets",
+    "2 bytes": "2 octets",
+    "1 byte": "1 octet",
     "Unable to load MeshCore Canada region data": "Impossible de charger les données régionales de MeshCore Canada",
     "Unable to load the Canadian map layer": "Impossible de charger la couche cartographique canadienne",
     "Unable to load the Canadian location layer": "Impossible de charger la couche canadienne de localisation",
@@ -271,12 +283,15 @@
     "Open standard and change process": "Ouvrir la norme et le processus de modification",
     "Try again": "Réessayer",
     "Loading release evidence…": "Chargement des preuves de publication…",
-    "Select this leaf to see its full path.": "Sélectionnez cette région terminale pour voir son chemin complet.",
+    "Select this region to see its full path.": "Sélectionnez cette région pour voir son chemin complet.",
     "Province or territory": "Province ou territoire",
     "resolves to": "correspond à",
     "Aliases": "Alias",
     "None recorded": "Aucun",
-    "Planned paths": "Chemins prévus",
+    "Repeater paths": "Chemins du répéteur",
+    "Region details": "Détails de la région",
+    "Find a community": "Trouver une communauté",
+    "These are routing regions, not radio coverage boundaries.": "Ces régions servent au routage; elles ne représentent pas la portée radio.",
     "Configure this region": "Configurer cette région",
     "Copy link": "Copier le lien",
     "This location is outside Canada.": "Cet emplacement se trouve à l’extérieur du Canada.",
@@ -990,7 +1005,36 @@
     if (state.selectedExternalPaths && state.selectedExternalPaths.length) {
       params.set("external", state.selectedExternalPaths.join(","));
     }
+    if (state.firmware) params.set("firmware", state.firmware);
+    if (state.radioProfile) params.set("radio", state.radioProfile);
+    if (state.hashMode) params.set("hash", state.hashMode);
+    if (state.deviceRole) params.set("role", state.deviceRole);
+    if (state.wizardStep) params.set("step", state.wizardStep);
+    if (state.finishPath) params.set("instructions", state.finishPath);
     return regionPageHref("map") + (params.toString() ? "?" + params.toString() : "");
+  }
+
+  function keepLanguageSelection(state) {
+    document.querySelectorAll(".md-select__link[hreflang]").forEach(function (link) {
+      // Transfer only the tool's public selections, never arbitrary URL fields or secrets.
+      link.addEventListener("click", function () {
+        var target = new URL(link.href);
+        target.search = new URL(mapHrefForState(state)).search;
+        link.href = target.href;
+      });
+    });
+  }
+
+  function initialLocation(data, params) {
+    var tag = params.get("tag");
+    var seed = tag && seedForTag(data, tag);
+    if (tag && (!seed || statusFor(data, tag).state === "retired")) return null;
+    var point = params.has("lat") || params.has("lon")
+      ? configuratorSupport.parseCoordinates(params.get("lat"), params.get("lon"))
+      : seed;
+    if (!point) return null;
+    return { lat: point.lat, lon: point.lon, tag: tag || null, countryCode: "ca",
+      name: String(params.get("name") || (tag && labelFor(data, tag)) || "").slice(0, 160) };
   }
 
   function configHrefForState(state) {
@@ -1199,11 +1243,8 @@
     });
   }
 
-  function buildCommands(data, tags, firmware, includeBaseline, parentOverrides) {
-    var lines = [];
-    if (includeBaseline) {
-      lines = lines.concat(data.meta.baselineCommands || []);
-    }
+  function buildCommands(data, tags, firmware, settings, parentOverrides) {
+    var lines = radioProfiles ? radioProfiles.commands(settings.radioProfile, settings.hashMode) : [];
 
     if (firmware === "1.16") {
       var regionDefLine = "region def " + regionDefTokens(data, tags, parentOverrides).join(" ");
@@ -1342,12 +1383,14 @@
     if (!matches.length) return null;
     var best = matches[0];
     var tied = matches.filter(function (item) { return item.score === best.score; });
+    if (tied.length > 1 && best.score > 1) return null;
     if (tied.length > 1) {
       return {
         ambiguous: true,
         choices: tied.map(function (item) {
           var province = provinceTagFor(data, item.seed.tag);
-          return labelFor(data, item.seed.tag) + (province ? ", " + province.toUpperCase() : "");
+          return { tag: item.seed.tag, lat: item.seed.lat, lon: item.seed.lon, countryCode: "ca",
+            name: labelFor(data, item.seed.tag) + (province ? ", " + province.toUpperCase() : "") };
         })
       };
     }
@@ -1424,10 +1467,24 @@
     });
   }
 
+  function showLocationChoices(target, choices, choose) {
+    if (!choices) return;
+    choices.forEach(function (geo) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "mcc-button mcc-button-secondary";
+      button.textContent = geo.name + " (" + geo.tag + ")";
+      button.addEventListener("click", function () { choose(geo); });
+      target.appendChild(button);
+    });
+  }
+
   function geocode(data, query, signal) {
     var localMatch = localGeocode(data, query);
     if (localMatch && localMatch.ambiguous) {
-      return Promise.reject(new Error("That name matches more than one region (" + localMatch.choices.join("; ") + "). Add a province or postal code."));
+      var error = new Error("Choose the region you mean:");
+      error.choices = localMatch.choices;
+      return Promise.reject(error);
     }
     if (localMatch && localMatch.exactLocalMatch) return Promise.resolve(localMatch);
     var postal = parseCanadianPostalCode(query);
@@ -1626,7 +1683,7 @@
       return;
     }
     var firmware = state.firmware || data.meta.defaultFirmware || "1.16";
-    var commands = buildCommands(data, rec.tags, firmware, state.includeBaseline, rec.parentOverrides);
+    var commands = buildCommands(data, rec.tags, firmware, state, rec.parentOverrides);
     var technicalCommands = commands.concat(["region", "region save", "region"]);
     var titleTag = state.resolution.primary.seed.tag;
     var statusNotes = rec.notes.map(function (note) {
@@ -1638,7 +1695,8 @@
     var firmwareLabel = firmware === "1.16" ? "v1.16+" : firmware === "1.15" ? "v1.15.x" : "v1.14.x";
     var guided = state.finishPath === "guided";
     var verificationCommands = ["region"];
-    if (state.includeBaseline) verificationCommands.push("get radio");
+    if (state.radioProfile !== "keep") verificationCommands.push("get radio");
+    if (state.hashMode !== "keep") verificationCommands.push("get path.hash.mode");
     var expectedPaths = rec.paths.map(function (path) { return labelledPath(data, path); });
     var expectedPathMarkup = '<div class="mcc-region-path-list">' + expectedPaths.map(function (path) {
       return "<span>" + esc(path) + "</span>";
@@ -1687,7 +1745,7 @@
         '<div class="mcc-guide-command-list"><button type="button" class="mcc-command-line" data-cmd="region"><span>region</span><em>' + icon("copy") + 'Copy</em></button></div>' +
         '<p>Save:</p>' +
         '<div class="mcc-guide-command-list"><button type="button" class="mcc-command-line" data-cmd="region save"><span>region save</span><em>' + icon("copy") + 'Copy</em></button></div>' +
-        '<p>' + (state.includeBaseline
+        '<p>' + (state.radioProfile !== "keep"
           ? 'Restart the device, reconnect, then run these final checks:'
           : 'Run this once more to confirm the saved region:') + '</p>' +
         '<div class="mcc-guide-command-list">' + verificationCommands.map(function (line) {
@@ -1736,10 +1794,12 @@
       (!guided ? '<button type="button" class="mcc-button mcc-copy-all">' + icon("copy") + 'Copy commands</button>' : '') +
       '</div>' +
       scopeNotice +
+      '<p class="mcc-note">' + esc(radioProfiles ? radioProfiles.label(state.radioProfile) : "Keep current settings") +
+      (state.radioProfile !== "keep" ? ' — <span>Radio changes take effect after reboot.</span>' : '') + '</p>' +
       technicalDetails +
       resultBody +
       '<section class="mcc-record-actions" aria-labelledby="mcc-record-heading">' +
-      '<div><h4 id="mcc-record-heading">Commissioning record</h4><p>Download or print a summary without exact coordinates, credentials, or device identifiers.</p></div>' +
+      '<div><h4 id="mcc-record-heading">Setup summary</h4><p>Download or print a summary without exact coordinates, credentials, or device identifiers.</p></div>' +
       '<div><button type="button" class="mcc-button mcc-button-secondary" data-action="download-commissioning">' + icon("download") + 'Download</button>' +
       '<button type="button" class="mcc-button mcc-button-secondary" data-action="print-commissioning">' + icon("printer") + 'Print</button></div>' +
       '</section>' +
@@ -1795,7 +1855,7 @@
     if (!rec) return null;
     if (rec.budget.tagCount > 32 || rec.budget.responseBytes > 172) return null;
     var firmware = state.firmware || data.meta.defaultFirmware || "1.16";
-    return buildCommands(data, rec.tags, firmware, state.includeBaseline, rec.parentOverrides)
+    return buildCommands(data, rec.tags, firmware, state, rec.parentOverrides)
       .concat(["region", "region save", "region"]);
   }
 
@@ -1811,6 +1871,8 @@
       homeRegion: labelledPath(data, ancestryFor(data, homeTag)),
       firmware: state.firmware === "1.16" ? "v1.16+" : "v" + state.firmware + ".x",
       budget: rec.budget.tagCount + " / 32 tags, " + rec.budget.responseBytes + " / 172 bytes",
+      radio: radioProfiles ? radioProfiles.label(state.radioProfile) : "Keep current settings",
+      hashMode: state.hashMode === "keep" ? "Keep current settings" : (state.hashMode === "0" ? "1 byte" : String(Number(state.hashMode) + 1) + " bytes"),
       paths: rec.paths.map(function (path) { return labelledPath(data, path); }),
       commands: commands
     });
@@ -2035,12 +2097,13 @@
       '<label class="mcc-choice"><input type="radio" name="mcc-type" value="high-site"><span><strong>Add nearby or cross-border paths</strong><small>For bridge, wide-coverage, mountain, or water-path repeaters</small></span></label>' +
       '</div>' +
       '<div data-role="metro"></div>' +
+      '<label class="mcc-label" for="mcc-radio-profile">Radio network</label>' +
+      '<select class="mcc-select" id="mcc-radio-profile"><option value="keep">Keep current settings</option></select>' +
+      '<p class="mcc-hint">Choose a profile only after checking with your community. A region does not select a radio network.</p>' +
+      '<label class="mcc-label" for="mcc-hash-mode">Advert ID size</label>' +
+      '<select class="mcc-select" id="mcc-hash-mode"><option value="keep">Keep current settings</option><option value="2">3 bytes</option><option value="1">2 bytes</option><option value="0">1 byte</option></select>' +
       '<details class="mcc-advanced-options" data-role="technical-settings">' +
-      '<summary>Radio and firmware options</summary>' +
-      '<div class="mcc-choice-list" data-role="device-path" role="radiogroup" aria-label="Recommended radio settings">' +
-      '<label class="mcc-choice"><input type="radio" name="mcc-device-path" value="new" checked><span><strong>Include recommended radio defaults</strong><small>For a new setup</small></span></label>' +
-      '<label class="mcc-choice"><input type="radio" name="mcc-device-path" value="existing"><span><strong>Keep current radio settings</strong><small>For an existing coordinated network</small></span></label>' +
-      '</div>' +
+      '<summary>Firmware version</summary>' +
       '<p class="mcc-label">Firmware version</p>' +
       '<div class="mcc-choice-list" data-role="firmware" role="radiogroup" aria-label="Firmware version">' +
       '<label class="mcc-choice"><input type="radio" name="mcc-firmware" value="1.16" checked><span><strong>v1.16+</strong></span></label>' +
@@ -2077,7 +2140,8 @@
       deviceRole: "repeater",
       type: "residential",
       firmware: data.meta.defaultFirmware || "1.16",
-      includeBaseline: true,
+      radioProfile: "keep",
+      hashMode: "keep",
       selectedMetros: [],
       selectedExternalPaths: [],
       canGenerate: false,
@@ -2141,6 +2205,8 @@
         '<div><dt>Node</dt><dd>' + esc(deviceLabels[state.deviceRole] || deviceLabels.repeater) + '</dd></div>' +
         '<div><dt>Place</dt><dd>' + esc(state.name || labelFor(data, state.resolution.primary.seed.tag)) + '</dd></div>' +
         '<div><dt>Home region</dt><dd>' + esc(labelledPath(data, ancestryFor(data, state.resolution.primary.seed.tag))) + '</dd></div>' +
+        '<div><dt>Radio network</dt><dd>' + esc(radioProfiles ? radioProfiles.label(state.radioProfile) : "Keep current settings") + '</dd></div>' +
+        '<div><dt>Advert ID size</dt><dd>' + (state.hashMode === "keep" ? 'Keep current settings' : state.hashMode === "0" ? '1 byte' : esc(Number(state.hashMode) + 1) + ' bytes') + '</dd></div>' +
         '<div><dt>Budget</dt><dd>' + esc(rec.budget.tagCount) + ' / 32 tags · ' + esc(rec.budget.responseBytes) + ' / 172 bytes</dd></div>' +
         '</dl>' +
         '<h3>Forwarding paths</h3><ul class="mcc-review-paths">' + paths + '</ul>' +
@@ -2179,6 +2245,7 @@
           heading.focus({ preventScroll: true });
         }
       }
+      updateMapLinks();
       refreshIcons(el);
     }
 
@@ -2190,6 +2257,7 @@
         button.setAttribute("aria-pressed", active ? "true" : "false");
       });
       renderResult(data, els.result, state);
+      updateMapLinks();
     }
 
     function advanceStep() {
@@ -2333,6 +2401,7 @@
         if (err && err.name === "AbortError") return;
         state.canGenerate = false;
         setStatus(els.status, esc(err.message || "Location lookup failed"), "error");
+        showLocationChoices(els.status, err.choices, useGeo);
         refreshTool(data, els, state, updateMapLinks);
       }).finally(function () {
         if (activeGeocodeController !== thisController) return;
@@ -2419,14 +2488,13 @@
       input.addEventListener("change", function () {
         state.deviceRole = input.value;
         if (state.deviceRole === "advanced" && els.technicalSettings) els.technicalSettings.open = true;
+        updateMapLinks();
       });
     });
-    el.querySelectorAll("input[name='mcc-device-path']").forEach(function (input) {
-      input.addEventListener("change", function () {
-        state.includeBaseline = input.value === "new";
-        renderResult(data, els.result, state);
-      });
-    });
+    var profileSelect = el.querySelector("#mcc-radio-profile");
+    var hashSelect = el.querySelector("#mcc-hash-mode");
+    profileSelect.addEventListener("change", function () { state.radioProfile = profileSelect.value; updateMapLinks(); });
+    hashSelect.addEventListener("change", function () { state.hashMode = hashSelect.value; updateMapLinks(); });
     el.querySelectorAll("input[name='mcc-type']").forEach(function (input) {
       input.addEventListener("change", function () {
         state.type = input.value;
@@ -2440,13 +2508,52 @@
       input.addEventListener("change", function () {
         state.firmware = input.value;
         renderResult(data, els.result, state);
+        updateMapLinks();
       });
     });
     renderConfigRegionBrowser(state.browseTag);
     updateMapLinks();
     var initialParams = new URLSearchParams(window.location.search);
+    keepLanguageSelection(state);
+    var profileReady = radioProfiles ? radioProfiles.populate(profileSelect) : Promise.resolve();
+    profileReady.then(function () {
+      if (Array.from(profileSelect.options).some(function (option) { return option.value === initialParams.get("radio"); })) {
+        state.radioProfile = profileSelect.value = initialParams.get("radio");
+        updateMapLinks();
+        if (state.wizardStep === 4) showStep(4);
+      }
+    });
+    [["firmware", "mcc-firmware", ["1.14", "1.15", "1.16"]],
+      ["deviceRole", "mcc-device-role", ["repeater", "room", "advanced"]]].forEach(function (entry) {
+      var value = initialParams.get(entry[0] === "deviceRole" ? "role" : entry[0]);
+      if (entry[2].indexOf(value) !== -1) {
+        state[entry[0]] = value;
+        el.querySelector("input[name='" + entry[1] + "'][value='" + value + "']").checked = true;
+      }
+    });
+    if (["0", "1", "2"].indexOf(initialParams.get("hash")) !== -1) state.hashMode = hashSelect.value = initialParams.get("hash");
+    if (initialParams.get("instructions") === "technical") selectFinishPath("technical");
+    var location = initialLocation(data, initialParams);
     var initialQuery = (initialParams.get("place") || "").trim();
-    if (initialQuery) {
+    if (location) {
+      els.input.value = location.name;
+      useGeo(location).then(function () {
+        if (!state.canGenerate) return;
+        if (initialParams.get("type") === "large") {
+          state.type = "high-site";
+          el.querySelector("input[name='mcc-type'][value='high-site']").checked = true;
+          state.selectedMetros = String(initialParams.get("regions") || "").split(",").filter(function (tag) { return Boolean(seedForTag(data, tag)); });
+          state.selectedExternalPaths = selectedExternalRegionPaths(data, String(initialParams.get("external") || "").split(",")).map(function (record) { return record.id; });
+        }
+        state.maxStep = 4;
+        refreshTool(data, els, state, updateMapLinks);
+        showStep(/^[1-4]$/.test(initialParams.get("step")) ? Number(initialParams.get("step")) : 3);
+      });
+    } else if (initialParams.has("tag") || initialParams.has("lat") || initialParams.has("lon")) {
+      state.maxStep = 2;
+      showStep(2);
+      setStatus(els.status, "This saved location is invalid or no longer available. Choose a region again.", "warning");
+    } else if (initialQuery) {
       state.maxStep = 2;
       els.input.value = initialQuery;
       showStep(2);
@@ -2502,11 +2609,11 @@
       '</div><button class="mcc-button mcc-button-secondary" type="button" data-action="map-use-coordinates">Use coordinates</button></details>' +
       '<div data-role="map-status"></div>' +
       '</section>' +
-      '<section class="mcc-card mcc-card-compact">' +
-      '<h3>Browse by province or territory</h3>' +
+      '<details class="mcc-card mcc-card-compact" data-role="map-region-browser">' +
+      '<summary>Browse by province or territory</summary>' +
       '<div class="mcc-region-breadcrumbs" data-role="region-breadcrumbs"></div>' +
       '<div class="mcc-region-children" data-role="region-children"></div>' +
-      '</section>' +
+      '</details>' +
       '<section class="mcc-card mcc-dynamic-card" data-role="map-result-section" hidden>' +
       '<h3>Selected region</h3><div data-role="map-text-result"></div>' +
       '</section>' +
@@ -2558,7 +2665,8 @@
       jurisdictionTag: null,
       type: requestedLargeCoverage ? "high-site" : "residential",
       firmware: data.meta.defaultFirmware || "1.16",
-      includeBaseline: true,
+      radioProfile: "keep",
+      hashMode: ["0", "1", "2"].indexOf(mapParams.get("hash")) !== -1 ? mapParams.get("hash") : "keep",
       selectedMetros: requestedLargeCoverage ? requestedCanadianRegions : [],
       selectedExternalPaths: requestedLargeCoverage ? requestedExternalPaths : [],
       canGenerate: false,
@@ -2681,7 +2789,7 @@
           '<span><strong>' + esc(labelFor(data, child)) + '</strong><small>' +
           (nested ? leafCount + ' subregions' : child.toUpperCase() + ' · region') +
           '</small></span><span aria-hidden="true">' + (nested ? '›' : '✓') + '</span></button>';
-      }).join("") : '<p class="mcc-help">Select this leaf to see its full path.</p>';
+      }).join("") : '<p class="mcc-help">Select this region to see its full path.</p>';
       if (!map || !browseLayer) return;
       browseLayer.clearLayers();
       if (tag !== (data.meta.rootTag || "can") && data.partitionByTag) {
@@ -2728,15 +2836,22 @@
         return normalizeLocationSearch(alias) !== normalizeLocationSearch(tag) &&
           normalizeLocationSearch(alias) !== normalizeLocationSearch(labelFor(data, tag));
       });
+      aliases = aliases.filter(function (alias, index) {
+        return aliases.findIndex(function (item) { return normalizeLocationSearch(item) === normalizeLocationSearch(alias); }) === index;
+      });
+      var communityUrl = new URL("../provinces/", regionPageHref("config"));
+      communityUrl.searchParams.set("community", labelFor(data, provinceTagFor(data, tag)));
       els.resultSection.hidden = false;
       els.textResult.innerHTML =
         '<p class="mcc-deterministic-result"><strong>' + esc(state.name) + '</strong> resolves to <strong>' +
         esc(labelFor(data, tag)) + '</strong> (<code>' + esc(tag) + '</code>).</p>' +
         '<p class="mcc-region-path">' + esc(labelledPath(data, ancestryFor(data, tag))) + '</p>' +
-        '<dl class="mcc-review-list"><div><dt>Province or territory</dt><dd>' + esc(labelFor(data, provinceTagFor(data, tag))) + '</dd></div>' +
+        '<p>These are routing regions, not radio coverage boundaries.</p>' +
+        '<p><a href="' + esc(communityUrl.href) + '">Find a community</a></p>' +
+        '<details><summary>Region details</summary><dl class="mcc-review-list"><div><dt>Province or territory</dt><dd>' + esc(labelFor(data, provinceTagFor(data, tag))) + '</dd></div>' +
         '<div><dt>Status</dt><dd>' + esc(statusLabel(statusFor(data, tag).state || "draft")) + '</dd></div>' +
         '<div><dt>Aliases</dt><dd>' + esc(aliases.length ? aliases.join(", ") : "None recorded") + '</dd></div>' +
-        '<div><dt>Planned paths</dt><dd>' + esc(rec ? rec.paths.length : 1) + '</dd></div></dl>' +
+        '<div><dt>Repeater paths</dt><dd>' + esc(rec ? rec.paths.length : 1) + '</dd></div></dl></details>' +
         '<div class="mcc-detail-actions"><a class="mcc-button" href="' + esc(configHrefForState(state)) + '">Configure this region</a>' +
         '<button type="button" class="mcc-button mcc-button-secondary" data-action="copy-region-link">' + icon("link") + 'Copy link</button></div>';
       var copyLink = els.textResult.querySelector("[data-action='copy-region-link']");
@@ -2812,6 +2927,7 @@
         .catch(function (error) {
           if (error && error.name === "AbortError") return;
           setStatus(els.status, esc(error.message || "Location lookup failed"), "error");
+          showLocationChoices(els.status, error.choices, function (geo) { return useGeo(geo, true, geo.tag); });
         }).finally(function () {
           if (activeGeocodeController !== thisController) return;
           els.locate.disabled = false;
@@ -2941,18 +3057,24 @@
     renderRegionTable(els.table, data, function (tag) { chooseRegionNode(tag); });
     window.setTimeout(loadInteractiveMap, 0);
 
-    var initialLat = Number(mapParams.get("lat"));
-    var initialLon = Number(mapParams.get("lon"));
-    var hasInitialLocation = mapParams.has("lat") && mapParams.has("lon") &&
-      Number.isFinite(initialLat) && Number.isFinite(initialLon) &&
-      initialLat >= -90 && initialLat <= 90 && initialLon >= -180 && initialLon <= 180;
-    if (hasInitialLocation) {
-      var requestedTag = slug(mapParams.get("tag"));
-      if (!data.hierarchy[requestedTag] || !seedForTag(data, requestedTag)) requestedTag = null;
-      var initialName = String(mapParams.get("name") || "").slice(0, 160) ||
-        initialLat.toFixed(4) + ", " + initialLon.toFixed(4);
-      els.input.value = initialName;
-      useGeo({ lat: initialLat, lon: initialLon, name: initialName, countryCode: "ca", tag: requestedTag }, false, requestedTag);
+    keepLanguageSelection(state);
+    // Load the same validated profile list used by the configurator before carrying a choice back.
+    if (radioProfiles) radioProfiles.populate(document.createElement("select")).then(function () {
+      try {
+        radioProfiles.commands(mapParams.get("radio"), "keep");
+        state.radioProfile = mapParams.get("radio") || "keep";
+      } catch (_) { state.radioProfile = "keep"; }
+      renderTextResult();
+    });
+    if (["1.14", "1.15", "1.16"].indexOf(mapParams.get("firmware")) !== -1) state.firmware = mapParams.get("firmware");
+    if (["repeater", "room", "advanced"].indexOf(mapParams.get("role")) !== -1) state.deviceRole = mapParams.get("role");
+    if (["guided", "technical"].indexOf(mapParams.get("instructions")) !== -1) state.finishPath = mapParams.get("instructions");
+    var initialGeo = initialLocation(data, mapParams);
+    if (initialGeo) {
+      els.input.value = initialGeo.name;
+      useGeo(initialGeo, false, initialGeo.tag);
+    } else if (mapParams.has("tag") || mapParams.has("lat") || mapParams.has("lon")) {
+      setStatus(els.status, "This saved location is invalid or no longer available. Choose a region again.", "warning");
     }
     setMapMode(mapParams.get("view") === "audit" ? "audit" : "explore");
   }

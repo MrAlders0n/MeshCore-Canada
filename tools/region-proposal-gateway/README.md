@@ -28,7 +28,7 @@ The base path is `/api/meshcore-canada/submissions`.
 - `GET <base>/config` returns:
 
   ```json
-  {"version":1,"turnstileSiteKey":"...","turnstileAction":"meshcore_submission"}
+  {"version":1,"turnstileSiteKey":"...","turnstileAction":"meshcore_submission","communityIdeaOptionalDetails":true}
   ```
 
 - `POST <base>` accepts exactly:
@@ -62,13 +62,32 @@ newline. It is the idempotency key for both schemas.
 
 The server accepts the fixed category and experience enums plus:
 
-- required `summary`, `need`, `idea`, and `publicAcknowledged: true`;
-- optional `region`, `context`, and `followUp`; and
+- required `summary`, `need`, and `publicAcknowledged: true`;
+- `category` from the existing enum (the form defaults to other feedback);
+- `experience` and `idea` keys, which may now contain empty strings;
+- optional `region`, `context`, `followUp`, and `sourcePage`; and
 - the browser field limits enforced again server-side.
 
 It normalizes line endings, rejects unknown keys, controls and invalid Unicode,
 escapes contributor HTML, and neutralizes GitHub mentions. The issue contains
 human-readable sections and the exact canonical JSON.
+
+`sourcePage` accepts only an HTTPS `meshcore.ca` page with a simple path and
+optional heading anchor. Credentials, query strings, and external sites are rejected.
+Existing complete v1 submissions retain their canonical representation and hash.
+
+### Short-form rollout order
+
+Deploy this backward-compatible gateway update **before** publishing the shorter
+website form. Follow the activation and rollback steps in `instructions.md`, then
+confirm `/config` returns `communityIdeaOptionalDetails: true` with the expected
+CORS headers. Test old and short payloads against a local mocked GitHub service;
+do not create public test issues without approval.
+
+If the older gateway is still serving, the new form keeps its preview, copy, and
+GitHub fallback available but does not attempt an incompatible anonymous POST.
+The region editor does not require this capability and continues to use its
+existing contract. To roll back the gateway, roll back the site form first.
 
 ### `mcc-region-editor-proposal/v1` and `/v2`
 

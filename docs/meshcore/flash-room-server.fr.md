@@ -67,9 +67,9 @@ n’utilisez pas les fichiers d’une autre carte.
 1. Ouvrez le [programme de mise à jour Web MeshCore](https://meshcore.io/flasher) officiel.
 2. Sélectionnez le modèle exact de l’appareil.
 3. Sélectionnez **Room Server** et la version destinée à cette carte.
-4. Cliquez sur **Enter DFU Mode** et attendez que l’appareil attendu apparaisse.
+4. Suivez les étapes de connexion propres à votre carte. Utilisez **Enter DFU Mode** seulement si cette cible le demande.
 5. Vérifiez de nouveau le matériel et le rôle sélectionnés.
-6. Cliquez sur **Erase Flash** et attendez le message confirmant la réussite de l’effacement.
+6. Pour une première installation ou une réinitialisation, sauvegardez d’abord. Cliquez sur **Erase Flash** seulement si les instructions de la carte le demandent. Pour une mise à jour, laissez l’effacement désactivé sauf indication contraire dans les notes de version.
 7. Cliquez sur **Flash** et attendez la fin de l’opération avant de débrancher l’appareil.
 
 Si la programmation échoue après l’effacement, laissez l’appareil branché,

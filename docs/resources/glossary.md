@@ -83,7 +83,7 @@ the linked guides explain how to use each setting or device.
 
 **Observer**
 :   A radio or host service that listens for MeshCore traffic and sends network
-    data to public tools. It does not relay mesh traffic.
+    data to public tools. Observing and repeating are separate functions; a node can do both when configured for it.
 
 **Path hash mode**
 :   The MeshCore setting that controls the size of identifiers in advert paths.

@@ -25,6 +25,8 @@ Un serveur de salon garde un salon partagé accessible. Il ne remplace pas un
 répéteur : utilisez un répéteur pour acheminer le trafic et améliorer la
 couverture.
 
+[Installer et configurer un serveur de salon](../meshcore/flash-room-server.md){ .md-button .md-button--primary }
+
 ## Avant de commencer
 
 - Confirmez que l’outil de reprogrammation offre le micrologiciel
@@ -40,18 +42,7 @@ couverture.
 Le guide lié remplace le micrologiciel et configure l’identité du serveur de
 salon, les identifiants d’accès et les paramètres radio.
 
-<section class="mc-start-progress" data-mc-progress-page="room-server" aria-labelledby="room-server-progress-title">
-  <h2 id="room-server-progress-title">Liste de configuration</h2>
-  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
-  <ol>
-    <li><label><input id="room-server-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel est compatible</label></li>
-    <li><label><input id="room-server-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
-    <li><label><input id="room-server-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
-    <li><label><input id="room-server-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres d’accès et les paramètres locaux</label></li>
-    <li><label><input id="room-server-progress-verify-local" type="checkbox" data-mc-progress> Vérifier le serveur de salon à proximité</label></li>
-    <li><label><input id="room-server-progress-verify-community" type="checkbox" data-mc-progress> Tester la découverte et l’accès des invités</label></li>
-  </ol>
-</section>
+
 
 ## Installer le micrologiciel du serveur de salon
 
@@ -89,3 +80,16 @@ membre de la communauté à proximité de faire un essai avec un deuxième
 compagnon. Revérifiez la découverte et l’accès des invités après tout
 changement de micrologiciel, d’identifiants ou de paramètres radio. En cas
 d’échec, [obtenez de l’aide](get-help.md).
+
+<section class="mc-start-progress" data-mc-progress-page="room-server" aria-labelledby="room-server-progress-title">
+  <h2 id="room-server-progress-title">Liste de vérification</h2>
+  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
+  <ol>
+    <li><label><input id="room-server-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel est compatible</label></li>
+    <li><label><input id="room-server-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
+    <li><label><input id="room-server-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
+    <li><label><input id="room-server-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres d’accès et les paramètres locaux</label></li>
+    <li><label><input id="room-server-progress-verify-local" type="checkbox" data-mc-progress> Vérifier le serveur de salon à proximité</label></li>
+    <li><label><input id="room-server-progress-verify-community" type="checkbox" data-mc-progress> Tester la découverte et l’accès des invités</label></li>
+  </ol>
+</section>

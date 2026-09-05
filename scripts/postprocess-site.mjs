@@ -210,6 +210,20 @@ function fallbackUrl(siteRoot, file, siteBaseUrl) {
   return new URL(route, siteBaseUrl).href;
 }
 
+export function brokerReferenceRows(config, french = false) {
+  const escape = (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll('"', "&quot;");
+  if (config.schema_version !== 1 || config.brokers?.length !== 2 || !config.brokers.every((broker) =>
+    /^mqtt[12]\.meshcore\.ca$/.test(broker.host) && broker.port === 443 && broker.tls === true &&
+    broker.verify_tls === true && broker.transport === "websockets" && broker.token_audience === broker.host)) {
+    throw new Error("Invalid observer broker configuration");
+  }
+  return config.brokers.map((broker) => "<tr>" + [
+    broker.id === "primary" ? (french ? "Principal" : "Primary") : (french ? "Secours" : "Backup"),
+    broker.host, broker.port, "WebSockets", french ? "Requis; vérifier les certificats" : "Required; verify certificates",
+    broker.token_audience,
+  ].map((value) => `<td>${escape(value)}</td>`).join("") + "</tr>").join("\n");
+}
+
 async function hashArtifact(siteRoot) {
   const files = (await walk(siteRoot))
     .map((file) => ({
@@ -273,6 +287,11 @@ export async function postprocessSite(siteDirectory, options = {}) {
     let html = await readFile(file, "utf8");
     const originalHtml = html;
     const pageName = relative(siteRoot, file).split(sep).join("/");
+    if (html.includes('<tbody id="broker-reference-body"></tbody>')) {
+      const config = JSON.parse(await readFile(join(siteRoot, "analyzer/observer-config.json"), "utf8"));
+      html = html.replace('<tbody id="broker-reference-body"></tbody>',
+        `<tbody id="broker-reference-body">${brokerReferenceRows(config, pageName.startsWith("fr/"))}</tbody>`);
+    }
     html = rewriteAlternateLinks(html, siteBaseUrl, pageName);
     if (options.noIndexAll) html = ensureNoIndex(html, file);
     if (html !== originalHtml) await writeFile(file, html, "utf8");

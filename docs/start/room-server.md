@@ -24,6 +24,8 @@ requires:
 A room server keeps a shared room available. It does not replace a repeater;
 use a repeater for routing and coverage.
 
+[Install and configure a room server](../meshcore/flash-room-server.md){ .md-button .md-button--primary }
+
 ## Before you start
 
 - Confirm the flasher offers room-server firmware for the device.
@@ -36,18 +38,7 @@ use a repeater for routing and coverage.
 The linked guide replaces the firmware and sets room-server identity, access
 credentials, and radio settings.
 
-<section class="mc-start-progress" data-mc-progress-page="room-server" aria-labelledby="room-server-progress-title">
-  <h2 id="room-server-progress-title">Setup checklist</h2>
-  <p>Checks are saved only in this browser.</p>
-  <ol>
-    <li><label><input id="room-server-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware</label></li>
-    <li><label><input id="room-server-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
-    <li><label><input id="room-server-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
-    <li><label><input id="room-server-progress-configure" type="checkbox" data-mc-progress> Apply access and local settings</label></li>
-    <li><label><input id="room-server-progress-verify-local" type="checkbox" data-mc-progress> Check the room server nearby</label></li>
-    <li><label><input id="room-server-progress-verify-community" type="checkbox" data-mc-progress> Test discovery and guest access</label></li>
-  </ol>
-</section>
+
 
 ## Flash the room server
 
@@ -75,6 +66,19 @@ The room server is ready when:
 3. the administrator can still recover and maintain it.
 
 Use the [room-server verification checklist](verify.md#room-server).
+
+<section class="mc-start-progress" data-mc-progress-page="room-server" aria-labelledby="room-server-progress-title">
+  <h2 id="room-server-progress-title">Setup checklist</h2>
+  <p>Checks are saved only in this browser.</p>
+  <ol>
+    <li><label><input id="room-server-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware</label></li>
+    <li><label><input id="room-server-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
+    <li><label><input id="room-server-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
+    <li><label><input id="room-server-progress-configure" type="checkbox" data-mc-progress> Apply access and local settings</label></li>
+    <li><label><input id="room-server-progress-verify-local" type="checkbox" data-mc-progress> Check the room server nearby</label></li>
+    <li><label><input id="room-server-progress-verify-community" type="checkbox" data-mc-progress> Test discovery and guest access</label></li>
+  </ol>
+</section>
 
 ## What's next
 

@@ -5,7 +5,19 @@ import { tmpdir } from "node:os";
 import test from "node:test";
 import { gunzipSync, gzipSync } from "node:zlib";
 
-import { postprocessSite } from "../../scripts/postprocess-site.mjs";
+import { postprocessSite, brokerReferenceRows } from "../../scripts/postprocess-site.mjs";
+
+test("broker reference is built from the shared validated configuration", async () => {
+  const config = JSON.parse(await readFile(new URL("../../docs/analyzer/observer-config.json", import.meta.url), "utf8"));
+  for (const french of [false, true]) {
+    const rows = brokerReferenceRows(config, french);
+    assert.equal((rows.match(/<tr>/g) || []).length, 2);
+    assert.match(rows, /mqtt1.meshcore.ca/);
+    assert.match(rows, /mqtt2.meshcore.ca/);
+    assert.match(rows, french ? /vérifier les certificats/ : /verify certificates/);
+  }
+  assert.throws(() => brokerReferenceRows({ ...config, brokers: config.brokers.map((broker) => ({ ...broker, tls: false })) }), /Invalid/);
+});
 
 test("noindex pages are removed from the sitemap and recorded in the manifest", async () => {
   const root = await mkdtemp(join(tmpdir(), "mcc-site-postprocess-"));

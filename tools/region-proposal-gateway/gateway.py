@@ -650,7 +650,7 @@ def validate_idea(raw: object) -> tuple[dict[str, Any], bytes, str]:
         "schema", "category", "experience", "summary", "need", "idea",
         "publicAcknowledged",
     }
-    optional_keys = {"region", "context", "followUp"}
+    optional_keys = {"region", "context", "followUp", "sourcePage"}
     if (
         not isinstance(raw, dict)
         or not required_keys.issubset(raw)
@@ -664,9 +664,9 @@ def validate_idea(raw: object) -> tuple[dict[str, Any], bytes, str]:
         raw.get("category"), 100, required=True, multiline=False
     )
     experience = _clean_idea_text(
-        raw.get("experience"), 100, required=True, multiline=False
+        raw.get("experience"), 100, required=False, multiline=False
     )
-    if category not in IDEA_CATEGORIES or experience not in IDEA_EXPERIENCE_LEVELS:
+    if category not in IDEA_CATEGORIES or (experience and experience not in IDEA_EXPERIENCE_LEVELS):
         raise GatewayError(422, "invalid_submission", "Choose a valid idea category and experience level.")
 
     canonical: dict[str, Any] = {
@@ -675,9 +675,17 @@ def validate_idea(raw: object) -> tuple[dict[str, Any], bytes, str]:
         "experience": experience,
         "summary": _clean_idea_text(raw.get("summary"), 100, required=True, multiline=False),
         "need": _clean_idea_text(raw.get("need"), 2000, required=True, multiline=True),
-        "idea": _clean_idea_text(raw.get("idea"), 2000, required=True, multiline=True),
+        "idea": _clean_idea_text(raw.get("idea"), 2000, required=False, multiline=True),
         "publicAcknowledged": True,
     }
+    if raw.get("sourcePage"):
+        source = _clean_idea_text(raw["sourcePage"], 400, required=False, multiline=False)
+        parsed = urllib.parse.urlsplit(source)
+        if (parsed.scheme != "https" or parsed.netloc != "meshcore.ca" or parsed.query
+                or not re.fullmatch(r"/[a-zA-Z0-9/_.-]*", parsed.path)
+                or not re.fullmatch(r"[a-zA-Z0-9_-]*", parsed.fragment)):
+            raise GatewayError(422, "invalid_submission", "Choose a valid source page.")
+        canonical["sourcePage"] = source
     optional_fields = (
         ("region", 100, False),
         ("context", 2000, True),
@@ -1371,17 +1379,19 @@ def build_idea_issue(
         ),
         f"- Submission SHA-256: `{submission_hash}`",
         f"- Contribution type: **{_safe_markdown_text(canonical['category'])}**",
-        f"- MeshCore experience: **{_safe_markdown_text(canonical['experience'])}**",
+        f"- MeshCore experience: **{_safe_markdown_text(canonical['experience'] or 'Not provided')}**",
     ]
     if canonical.get("region"):
         body_parts.append(
             f"- City or broad region: <span>{_safe_markdown_text(canonical['region'])}</span>"
         )
+    if canonical.get("sourcePage"):
+        body_parts.append(f"- Source page: {_safe_markdown_text(canonical['sourcePage'])}")
     body_parts.extend([
-        "### What are you trying to do, or what is difficult today?",
+        "### Problem or idea",
         _safe_html_block(canonical["need"]),
-        "### What would make it better?",
-        _safe_html_block(canonical["idea"]),
+        "### Suggested change",
+        _safe_html_block(canonical["idea"] or "Not provided"),
     ])
     if canonical.get("context"):
         body_parts.extend([
@@ -1722,7 +1732,7 @@ class GatewayHandler(BaseHTTPRequestHandler):
             return
         self._send(
             200,
-            {"version": API_VERSION, "turnstileSiteKey": self.service.config.turnstile_site_key, "turnstileAction": TURNSTILE_ACTION},
+            {"version": API_VERSION, "turnstileSiteKey": self.service.config.turnstile_site_key, "turnstileAction": TURNSTILE_ACTION, "communityIdeaOptionalDetails": True},
             cors=origin is not None,
         )
 

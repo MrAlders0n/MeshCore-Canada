@@ -23,11 +23,13 @@ requires:
 # Start with an observer
 
 An observer listens through a MeshCore radio and sends network data to
-CoreScope. It does not route mesh traffic. It can run on radio firmware, an
-always-on computer, or a home-automation host.
+CoreScope. Observing does not require repeating; a node can do both if configured
+for it. Observers can run on radio firmware, an always-on computer, or a home-automation host.
 
 Read [what the service collects and who can access
 it](../analyzer/data-collection-access.md) before enabling an observer.
+
+[Choose an observer setup](../analyzer/intro.md){ .md-button .md-button--primary }
 
 ## Before you start
 
@@ -43,19 +45,7 @@ Depending on the method, setup may replace radio firmware, install a host
 service, or add a home-automation integration. It also enables public
 network data publishing.
 
-<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
-  <h2 id="observer-progress-title">Setup checklist</h2>
-  <p>Checks are saved only in this browser.</p>
-  <ol>
-    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Read what observer data becomes public</label></li>
-    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choose a supported observer method</label></li>
-    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
-    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Follow the selected setup guide</label></li>
-    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Apply local radio and service settings</label></li>
-    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Check that the radio hears nearby activity</label></li>
-    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Find the observer in CoreScope</label></li>
-  </ol>
-</section>
+
 
 ## Set up the observer
 
@@ -83,6 +73,20 @@ The observer is working when:
 3. recent activity appears after a nearby transmission.
 
 Use the [observer verification checklist](verify.md#observer).
+
+<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
+  <h2 id="observer-progress-title">Setup checklist</h2>
+  <p>Checks are saved only in this browser.</p>
+  <ol>
+    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Read what observer data becomes public</label></li>
+    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choose a supported observer method</label></li>
+    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
+    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Follow the selected setup guide</label></li>
+    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Apply local radio and service settings</label></li>
+    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Check that the radio hears nearby activity</label></li>
+    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Find the observer in CoreScope</label></li>
+  </ol>
+</section>
 
 ## What's next
 

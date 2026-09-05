@@ -34,8 +34,8 @@ source actuelle.
 
 ### Quels réglages radio dois-je utiliser au Canada?
 
-Pour un répéteur, utilisez le [configurateur de répéteur](../config/index.md). Il
-fournit les réglages actuels pour l’emplacement choisi.
+Utilisez le profil radio de votre communauté. Le [configurateur de répéteur](../config/index.md)
+trouve les chemins régionaux, mais conserve les réglages radio tant que vous ne choisissez pas de profil.
 
 Quel que soit le rôle de l’appareil, consultez d’abord le
 [répertoire des communautés](../provinces/index.md). Lorsqu’une communauté
@@ -43,10 +43,10 @@ publie des réglages locaux différents, suivez-les.
 
 ### Qu’est-ce que le mode de hachage des parcours?
 
-Il détermine la taille des identifiants utilisés dans les parcours d’annonce.
-La norme canadienne des régions et le configurateur fournissent le réglage
-actuel d’un répéteur. Utilisez leur résultat plutôt que de copier une ancienne
-commande provenant d’une discussion ou d’une capture d’écran.
+Il détermine la taille des identifiants dans les parcours d’annonce : 1, 2 ou 3 octets.
+MeshCore Canada recommande 3 octets pour réduire les collisions. Les versions 1.14
+et suivantes peuvent relayer des parcours de tailles différentes; les nœuds voisins
+n’ont pas tous besoin d’utiliser la même taille d’identifiant.
 
 [Lire la norme des régions](../config/standard.md).
 

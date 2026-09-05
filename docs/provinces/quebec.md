@@ -38,7 +38,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -47,9 +47,9 @@ card lists different local settings.
 </ul>
 <p class="mc-community-owner"><strong>Listing contact:</strong> pifane</p>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=charlevoix-yml&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-charlevoix-yml">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-mesh-quebec">
 <div class="mc-community-card__header">
@@ -60,7 +60,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -68,9 +68,9 @@ card lists different local settings.
 <li><strong>Telegram:</strong> <a href="https://t.me/meshtQuebec" rel="noopener">Mesh Quebec Telegram</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=mesh-quebec&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-mesh-quebec">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-montreal-mesh">
 <div class="mc-community-card__header">
@@ -81,7 +81,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -89,9 +89,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://www.montrealmesh.ca" rel="noopener">Montreal Mesh website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=montreal-mesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-montreal-mesh">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-mesh-capitale-yqb">
 <div class="mc-community-card__header">
@@ -102,7 +102,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -110,9 +110,9 @@ card lists different local settings.
 <li><strong>Discord:</strong> <a href="https://discord.gg/UhGjTF2MfA" rel="noopener">Réseau Mesh de la Capitale YQB Discord</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-mesh-capitale-yqb&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-reseau-mesh-capitale-yqb">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-mesh-saguenay-lac-saint-jean-ytf">
 <div class="mc-community-card__header">
@@ -123,7 +123,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -134,7 +134,7 @@ card lists different local settings.
 <p class="mc-community-contact-health">
 <strong>Contact check:</strong> Some links still need review
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-mesh-saguenay-lac-saint-jean-ytf&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-reseau-mesh-saguenay-lac-saint-jean-ytf">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-reseau-libre">
 <div class="mc-community-card__header">
@@ -145,7 +145,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -153,9 +153,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://lora.reseaulibre.ca/" rel="noopener">Réseau Libre website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=reseau-libre&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fquebec%2F%23community-reseau-libre">Update this listing</a></p>
 </article>
 </div>
 

@@ -114,7 +114,7 @@ function Set-EnvValue {
         $lines = Get-Content $Path
     }
     $updated = $false
-    $out = foreach ($line in $lines) {
+    $out = @(foreach ($line in $lines) {
         if ($line -match "^${Key}=") {
             if (-not $updated) {
                 $updated = $true
@@ -124,7 +124,7 @@ function Set-EnvValue {
         else {
             $line
         }
-    }
+    })
     if (-not $updated) {
         $out += "${Key}=${Value}"
     }
@@ -135,16 +135,16 @@ function Set-PacketCaptureSlot {
     param(
         [string]$Path,
         [int]$Slot,
-        [string]$Host
+        [string]$BrokerHost
     )
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_ENABLED" -Value "true"
-    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_SERVER" -Value $Host
+    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_SERVER" -Value $BrokerHost
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_PORT" -Value $BrokerPort
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_TRANSPORT" -Value "websockets"
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_USE_TLS" -Value "true"
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_TLS_VERIFY" -Value "true"
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_USE_AUTH_TOKEN" -Value "true"
-    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_TOKEN_AUDIENCE" -Value $Host
+    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_TOKEN_AUDIENCE" -Value $BrokerHost
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_KEEPALIVE" -Value "120"
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_QOS" -Value "0"
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_RETAIN" -Value "true"
@@ -152,13 +152,29 @@ function Set-PacketCaptureSlot {
     Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_TOPIC_PACKETS" -Value "meshcore/{IATA}/{PUBLIC_KEY}/packets"
 }
 
-function Disable-PacketCaptureSlot {
-    param(
-        [string]$Path,
-        [int]$Slot
-    )
-    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_ENABLED" -Value "false"
-    Set-EnvValue -Path $Path -Key "PACKETCAPTURE_MQTT${Slot}_SERVER" -Value ""
+function Get-PacketCaptureSlots {
+    param([string]$Path)
+    $servers = @{}
+    foreach ($line in Get-Content -LiteralPath $Path) {
+        if ($line -match '^PACKETCAPTURE_MQTT([1-6])_SERVER=(.*)$') {
+            $servers[[int]$Matches[1]] = $Matches[2].Trim().Trim('"', "'")
+        }
+    }
+    $chosen = @($null, $null)
+    for ($index = 0; $index -lt 2; $index++) {
+        $broker = @($Broker1Host, $Broker2Host)[$index]
+        $slot = 1..6 | Where-Object { $servers[$_] -eq $broker -and $_ -notin $chosen } | Select-Object -First 1
+        $chosen[$index] = $slot
+    }
+    for ($index = 0; $index -lt 2; $index++) {
+        if (-not $chosen[$index]) {
+            $chosen[$index] = 1..6 | Where-Object { [string]::IsNullOrWhiteSpace($servers[$_]) -and $_ -notin $chosen } | Select-Object -First 1
+        }
+    }
+    if (-not $chosen[0] -or -not $chosen[1]) {
+        throw 'Not enough empty broker slots. Free slots before trying again. No settings changed.'
+    }
+    return $chosen
 }
 
 function Ensure-PacketCaptureInstall {
@@ -206,15 +222,13 @@ if (-not (Test-Path $envPath)) {
     New-Item -ItemType File -Path $envPath -Force | Out-Null
 }
 
+$slots = @(Get-PacketCaptureSlots -Path $envPath)
 $backupPath = New-BackupPath -Path $envPath
 Copy-Item -Path $envPath -Destination $backupPath -Force
 
 Set-EnvValue -Path $envPath -Key "PACKETCAPTURE_IATA" -Value $Iata
-Set-PacketCaptureSlot -Path $envPath -Slot 1 -Host $Broker1Host
-Set-PacketCaptureSlot -Path $envPath -Slot 2 -Host $Broker2Host
-foreach ($slot in 3..6) {
-    Disable-PacketCaptureSlot -Path $envPath -Slot $slot
-}
+Set-PacketCaptureSlot -Path $envPath -Slot $slots[0] -BrokerHost $Broker1Host
+Set-PacketCaptureSlot -Path $envPath -Slot $slots[1] -BrokerHost $Broker2Host
 
 Write-Host ""
 Write-Info "Patched: $envPath"

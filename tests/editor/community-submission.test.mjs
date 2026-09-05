@@ -9,7 +9,8 @@ import {
   COMMUNITY_SUBMISSION_ENDPOINT,
   buildCommunityIdea,
   buildManualGithubLink,
-  buildSubmissionText
+  buildSubmissionText,
+  normalizeSourcePage
 } from "../../docs/javascripts/community-submission.js";
 
 const validData = {
@@ -44,6 +45,22 @@ test("builds the exact canonical community idea contract", () => {
     region: "Waterloo Region, Ontario",
     followUp: "@meshfriend"
   });
+});
+
+test("a short correction needs only a title, description, and public acknowledgement", () => {
+  const proposal = buildCommunityIdea({ summary: "Fix a label", need: "This label is unclear.", publicAcknowledged: true,
+    sourcePage: "https://meshcore.ca/fr/start/repeater/#before-you-start" });
+  assert.equal(proposal.category, "Other community feedback");
+  assert.equal(proposal.experience, "");
+  assert.equal(proposal.idea, "");
+  assert.match(buildSubmissionText(proposal), /Source page[\s\S]*\/fr\/start\/repeater\//);
+  assert.equal(new URL(buildManualGithubLink(proposal).url).searchParams.get("source_page"), proposal.sourcePage);
+});
+
+test("source-page context excludes external URLs, credentials, and private query strings", () => {
+  for (const url of ["https://example.com/", "https://user:password@meshcore.ca/", "https://meshcore.ca/?token=private", "http://meshcore.ca/", "https://meshcore.ca/%3Cscript%3E", "https://meshcore.ca/#<script>"]) {
+    assert.throws(() => normalizeSourcePage(url), /valid source page/);
+  }
 });
 
 test("validates consent, enums, controls, and Unicode before submission", () => {

@@ -32,6 +32,13 @@ const canonicalProposal = {
 };
 
 const canonicalProposalHash = await submissionSha256(canonicalProposal);
+
+test("optional community details require an explicit gateway capability", () => {
+  const config = { version: 1, turnstileSiteKey: "site-key", turnstileAction: "meshcore_submission" };
+  assert.equal(validateSubmissionConfig(config).communityIdeaOptionalDetails, undefined);
+  assert.equal(validateSubmissionConfig({ ...config, communityIdeaOptionalDetails: "true" }).communityIdeaOptionalDetails, undefined);
+  assert.equal(validateSubmissionConfig({ ...config, communityIdeaOptionalDetails: true }).communityIdeaOptionalDetails, true);
+});
 const editorHtml = await readFile(
   new URL("../../docs/config/editor/index.html", import.meta.url),
   "utf8"

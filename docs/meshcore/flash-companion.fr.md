@@ -69,9 +69,9 @@ officiel. Il faut un navigateur compatible avec
 2. Sélectionnez le modèle exact de la carte.
 3. Sélectionnez **Companion Radio (Bluetooth)**.
 4. Sélectionnez la version du micrologiciel destinée à cette carte.
-5. Cliquez sur **Enter DFU Mode**. Le programme devrait indiquer qu’il a trouvé un appareil dans le mode attendu.
+5. Suivez les étapes de connexion propres à votre carte. Utilisez **Enter DFU Mode** seulement si cette cible le demande. Le programme devrait indiquer qu’il a trouvé un appareil dans le mode attendu.
 6. Vérifiez de nouveau le matériel et le micrologiciel sélectionnés.
-7. Cliquez sur **Erase Flash**, puis attendez le message confirmant la réussite de l’effacement.
+7. Pour une première installation ou une réinitialisation, sauvegardez d’abord. Cliquez sur **Erase Flash** seulement si les instructions de la carte le demandent. Pour une mise à jour, laissez l’effacement désactivé sauf indication contraire dans les notes de version.
 8. Cliquez sur **Flash** et attendez le message de fin avant de débrancher l’appareil.
 
 ## Récupération en cas d’échec
@@ -105,7 +105,7 @@ sauf si votre méthode d’essai locale exige un autre réglage.
 
 1. Confirmez que l’application se reconnecte et affiche le nom de l’appareil et les réglages radio attendus.
 2. Envoyez un message d’essai dans le canal **Public**.
-3. Une réponse comme **Heard X Repeats** indique qu’au moins un répéteur a signalé l’avoir reçu. Un simple résultat **Sent** ne prouve pas que les réglages sont incorrects; rendez-vous dans une zone où la couverture est connue ou demandez à la communauté locale de vous aider à faire l’essai.
+3. Une réponse comme **Heard X Repeats** indique qu’votre compagnon a entendu une retransmission du message. Un simple résultat **Sent** ne prouve pas que les réglages sont incorrects; rendez-vous dans une zone où la couverture est connue ou demandez à la communauté locale de vous aider à faire l’essai.
 
 La configuration n’est terminée que si les réglages enregistrés résistent à un
 redémarrage et qu’un essai local réussit.

@@ -21,7 +21,7 @@ requires:
 page_styles:
   - assets/styles/repeater-hash-check.css?v=20260820-1
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260820-1
+  - assets/javascripts/repeater-hash-check.js?v=20260904-1
 ---
 
 # Start with a repeater
@@ -29,6 +29,8 @@ page_scripts:
 A repeater extends coverage by routing traffic for other users. Because it is
 fixed infrastructure, plan its power, antenna, access, and maintenance before
 installation.
+
+[Install and configure a repeater](../meshcore/flash-repeater.md){ .md-button .md-button--primary }
 
 ## Before you start
 
@@ -42,24 +44,10 @@ installation.
 The guide installs repeater firmware and sets radio, identity, adverts, and
 regional settings. Test on the bench before a difficult installation.
 
-<section class="mc-start-progress" data-mc-progress-page="repeater" aria-labelledby="repeater-progress-title">
-  <h2 id="repeater-progress-title">Setup checklist</h2>
-  <p>Checks are saved only in this browser.</p>
-  <ol>
-    <li><label><input id="repeater-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware and site</label></li>
-    <li><label><input id="repeater-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
-    <li><label><input id="repeater-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
-    <li><label><input id="repeater-progress-configure" type="checkbox" data-mc-progress> Apply local and regional settings</label></li>
-    <li><label><input id="repeater-progress-verify-local" type="checkbox" data-mc-progress> Bench-check the repeater</label></li>
-    <li><label><input id="repeater-progress-verify-community" type="checkbox" data-mc-progress> Test with a nearby companion</label></li>
-  </ol>
-</section>
 
 ## Flash the repeater
 
-Follow [Flash and configure a repeater](../meshcore/flash-repeater.md). Use the
-board-specific decisions, backup guidance, stop conditions, and recovery path
-in that guide.
+Follow [Flash and configure a repeater](../meshcore/flash-repeater.md).
 
 ## Use the right radio and region settings
 
@@ -87,6 +75,19 @@ The repeater is ready to install when:
 3. a nearby known-good companion receives that advert.
 
 Use the [repeater verification checklist](verify.md#repeater).
+
+<section class="mc-start-progress" data-mc-progress-page="repeater" aria-labelledby="repeater-progress-title">
+  <h2 id="repeater-progress-title">Setup checklist</h2>
+  <p>Checks are saved only in this browser.</p>
+  <ol>
+    <li><label><input id="repeater-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware and site</label></li>
+    <li><label><input id="repeater-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
+    <li><label><input id="repeater-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
+    <li><label><input id="repeater-progress-configure" type="checkbox" data-mc-progress> Apply local and regional settings</label></li>
+    <li><label><input id="repeater-progress-verify-local" type="checkbox" data-mc-progress> Bench-check the repeater</label></li>
+    <li><label><input id="repeater-progress-verify-community" type="checkbox" data-mc-progress> Test with a nearby companion</label></li>
+  </ol>
+</section>
 
 ## What's next
 

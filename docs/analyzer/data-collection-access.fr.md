@@ -70,7 +70,7 @@ MeshCore Canada n’offre pas d’abonnement direct général au courtier. L’a
 direct est limité à CoreScope, aux administrateurs des réseaux maillés locaux
 et aux personnes autorisées par les administrateurs de l’infrastructure.
 
-## Comptes MQTT en lecture seule
+## Comptes MQTT en lecture seule { #read-only-mqtt-accounts }
 
 Cet inventaire public répertorie les services qui disposent d’un accès en lecture
 seule aux courtiers MQTT de MeshCore Canada. Il indique le service et

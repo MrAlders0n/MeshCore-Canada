@@ -21,7 +21,7 @@ requires:
 page_styles:
   - assets/styles/repeater-hash-check.css?v=20260820-1
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260820-1
+  - assets/javascripts/repeater-hash-check.js?v=20260904-1
 ---
 
 # Commencer avec un répéteur
@@ -29,6 +29,8 @@ page_scripts:
 Un répéteur améliore la couverture en relayant le trafic des autres personnes.
 Puisqu’il s’agit d’une installation fixe, planifiez l’alimentation, l’antenne,
 l’accès et l’entretien avant de l’installer.
+
+[Installer et configurer un répéteur](../meshcore/flash-repeater.md){ .md-button .md-button--primary }
 
 ## Avant de commencer
 
@@ -44,25 +46,10 @@ Le guide installe le micrologiciel du répéteur et configure la radio,
 l’identité, les annonces et la région. Faites les essais sur l’établi avant
 toute installation difficile d’accès.
 
-<section class="mc-start-progress" data-mc-progress-page="repeater" aria-labelledby="repeater-progress-title">
-  <h2 id="repeater-progress-title">Liste de configuration</h2>
-  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
-  <ol>
-    <li><label><input id="repeater-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel et l’emplacement conviennent</label></li>
-    <li><label><input id="repeater-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
-    <li><label><input id="repeater-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
-    <li><label><input id="repeater-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres locaux et régionaux</label></li>
-    <li><label><input id="repeater-progress-verify-local" type="checkbox" data-mc-progress> Vérifier le répéteur sur l’établi</label></li>
-    <li><label><input id="repeater-progress-verify-community" type="checkbox" data-mc-progress> Faire un essai avec un compagnon à proximité</label></li>
-  </ol>
-</section>
 
 ## Installer le micrologiciel du répéteur
 
-Suivez le guide [Reprogrammer et configurer un
-répéteur](../meshcore/flash-repeater.md). Il présente les choix propres à chaque
-carte, les sauvegardes à faire, les situations où il faut s’arrêter et la
-méthode de récupération.
+Suivez le guide [Reprogrammer et configurer un répéteur](../meshcore/flash-repeater.md).
 
 ## Choisir les bons paramètres radio et régionaux
 
@@ -105,3 +92,16 @@ Consultez les conseils sur les [antennes](../hardware/recommended-antenna.md) et
 les [méthodes de fixation](../hardware/repeater-mounting-options.md) avant
 l’installation finale. Si une vérification échoue,
 [obtenez de l’aide](get-help.md).
+
+<section class="mc-start-progress" data-mc-progress-page="repeater" aria-labelledby="repeater-progress-title">
+  <h2 id="repeater-progress-title">Liste de vérification</h2>
+  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
+  <ol>
+    <li><label><input id="repeater-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel et l’emplacement conviennent</label></li>
+    <li><label><input id="repeater-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
+    <li><label><input id="repeater-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
+    <li><label><input id="repeater-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres locaux et régionaux</label></li>
+    <li><label><input id="repeater-progress-verify-local" type="checkbox" data-mc-progress> Vérifier le répéteur sur l’établi</label></li>
+    <li><label><input id="repeater-progress-verify-community" type="checkbox" data-mc-progress> Faire un essai avec un compagnon à proximité</label></li>
+  </ol>
+</section>

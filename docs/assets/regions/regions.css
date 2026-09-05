@@ -6,15 +6,13 @@ body:has([data-mcc-regions]) {
   background: var(--md-default-bg-color, #ffffff);
 }
 
-/* Region tools use one deliberate dark workbench in either site palette. This
-   keeps dense maps, command output, and status colours readable after a theme
-   switch while the header, navigation, and surrounding site still follow it. */
+/* Use the site's palette for the workbench as well as its surrounding navigation. */
 body:has([data-mcc-regions]) .md-main,
 body:has([data-mcc-regions]) .md-main__inner,
 body:has([data-mcc-regions]) .md-content,
 body:has([data-mcc-regions]) .md-content__inner {
-  color: #dce9e7;
-  background: #0c151c;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color);
 }
 
 body:has([data-mcc-regions="map"]) .md-main__inner {
@@ -24,7 +22,7 @@ body:has([data-mcc-regions="map"]) .md-main__inner {
 body:has([data-mcc-regions]) .md-typeset h1,
 body:has([data-mcc-regions]) .md-typeset h2,
 body:has([data-mcc-regions]) .md-typeset h3 {
-  color: #ffffff;
+  color: var(--md-default-fg-color);
 }
 
 body:has([data-mcc-regions]) .md-main .md-typeset a {
@@ -49,7 +47,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   border: 1px solid rgba(133, 179, 174, 0.24);
   border-left: 0.22rem solid #2f7d68;
   border-radius: 0.35rem;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   background: rgba(88, 184, 137, 0.1);
 }
 
@@ -65,9 +63,9 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   padding: 0.85rem 0.95rem;
   border: 1px solid rgba(133, 179, 174, 0.24);
   border-radius: 0.35rem;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   text-decoration: none;
-  background: #101d26;
+  background: var(--mcc-surface);
 }
 
 .mcc-region-action:hover {
@@ -92,15 +90,20 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   --mcc-blue: #303fa1;
   --mcc-gold: #f4bf5a;
   --mcc-red: #ff7373;
-  --mcc-border: rgba(159, 216, 189, 0.22);
+  --mcc-border: var(--mc-color-border);
   --mcc-soft: rgba(66, 135, 255, 0.15);
-  --mcc-panel: #0c151c;
-  --mcc-surface: #101d26;
-  --mcc-surface-2: #172630;
-  --mcc-text: #dce9e7;
-  --mcc-muted: #a7b9bb;
+  --mcc-panel: var(--md-default-bg-color);
+  --mcc-surface: var(--mc-color-surface);
+  --mcc-surface-2: var(--mc-color-surface-raised);
+  --mcc-text: var(--md-default-fg-color);
+  --mcc-muted: var(--mc-color-text-muted);
+  --mcc-action-text: #fff;
   margin: 1rem 0 2rem;
   color: var(--mcc-text);
+}
+
+[data-md-color-scheme="slate"] [data-mcc-regions] {
+  --mcc-action-text: #101827;
 }
 
 /* Match the first configurator step before its progressive enhancement mounts. */
@@ -137,14 +140,14 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   padding: 0.35rem 0 0.25rem;
   border: 0;
   border-radius: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   background: transparent;
 }
 
 .mcc-console-header h1,
 .mcc-console-header h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: clamp(1.25rem, 2.1vw, 1.65rem);
   letter-spacing: 0;
 }
@@ -286,6 +289,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 
 .mcc-button:hover,
 .mcc-button:focus {
+  color: var(--mcc-action-text);
   background: var(--mcc-green-dark);
   border-color: var(--mcc-green-dark);
 }
@@ -303,7 +307,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 
 .mcc-button-secondary:hover,
 .mcc-button-secondary:focus {
-  color: #ffffff;
+  color: var(--mcc-text);
   background: var(--mcc-soft);
   border-color: var(--mcc-green);
 }
@@ -462,7 +466,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-status-warning {
-  color: #f6dda8;
+  color: var(--mc-color-warning);
   background: color-mix(in srgb, var(--mcc-gold), transparent 82%);
 }
 
@@ -487,7 +491,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   border: 1px solid var(--mcc-border);
   border-radius: 0.35rem;
   color: var(--mcc-text);
-  background: #09131a;
+  background: var(--mcc-surface);
   text-align: left;
   cursor: pointer;
 }
@@ -574,7 +578,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-empty-state strong {
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 1rem;
 }
 
@@ -706,7 +710,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   min-width: 0;
   margin: 0.12rem 0 0;
   overflow: hidden;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   font-size: 0.78rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -928,7 +932,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   z-index: 1001;
   padding: 0.45rem 0.65rem;
   border-radius: 0.3rem;
-  color: #ffffff;
+  color: var(--mcc-action-text);
   background: var(--mcc-green-dark);
   transform: translateY(calc(-100% - 1rem));
 }
@@ -990,7 +994,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 
 .mcc-region-crumb:hover,
 .mcc-region-crumb:focus-visible {
-  color: #ffffff;
+  color: var(--mcc-text);
   text-decoration: underline;
 }
 
@@ -1044,7 +1048,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   padding: 0 0 0.2rem;
   border: 0;
   border-radius: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   background: transparent;
 }
 
@@ -1066,7 +1070,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-panel-header h1,
 .mcc-panel-header h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 1.28rem;
   letter-spacing: 0;
 }
@@ -1100,7 +1104,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-map-canvas .leaflet-bar a,
 .mcc-map-canvas .leaflet-bar a:hover {
   border-color: rgba(133, 179, 174, 0.24);
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   background: rgba(11, 20, 27, 0.92);
 }
 
@@ -1145,7 +1149,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   padding: 0.9rem;
   border: 1px solid rgba(159, 216, 189, 0.24);
   border-radius: 0.45rem;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   background: rgba(7, 16, 22, 0.92);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
 }
@@ -1238,7 +1242,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-detail-node code {
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 0.82rem;
 }
 
@@ -1364,7 +1368,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-visible-legend-head strong {
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   font-size: 0.76rem;
 }
 
@@ -1416,7 +1420,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-visible-region strong {
   display: block;
   overflow: hidden;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   font-size: 0.72rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1507,7 +1511,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   padding: 0.62rem 0.7rem;
   border: 1px solid rgba(159, 216, 189, 0.18);
   border-radius: 0.35rem;
-  color: #eaf3f1;
+  color: var(--mc-color-text);
   background: var(--mcc-surface);
   text-decoration: none;
 }
@@ -1515,7 +1519,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-action-button:hover,
 .mcc-action-button:focus {
   border-color: rgba(159, 216, 189, 0.42);
-  color: #ffffff;
+  color: var(--mcc-text);
   background: rgba(88, 184, 137, 0.11);
   text-decoration: none;
 }
@@ -1572,7 +1576,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 .mcc-stat strong {
   display: block;
   margin-top: 0.18rem;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 1.45rem;
   line-height: 1;
 }
@@ -1593,7 +1597,7 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
   display: flex;
   gap: 0.36rem;
   align-items: center;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 0.86rem;
 }
 
@@ -1717,8 +1721,8 @@ body:has([data-mcc-regions]) .md-main .md-typeset a {
 }
 
 .mcc-region-table td {
-  color: #eaf3f1;
-  background: #101d26;
+  color: var(--mc-color-text);
+  background: var(--mcc-surface);
   font-size: 0.76rem;
 }
 
@@ -1951,7 +1955,7 @@ ol.mcc-wizard-progress > li {
 }
 
 .mcc-finish-path strong {
-  color: #ffffff;
+  color: var(--mcc-text);
 }
 
 .mcc-finish-path small {
@@ -2011,7 +2015,7 @@ ol.mcc-guide-steps > li::before {
 
 .mcc-guide-steps h4 {
   margin: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 0.92rem;
 }
 
@@ -2056,7 +2060,7 @@ ol.mcc-guide-steps > li::before {
 
 .mcc-connect-method h5 {
   margin: 0;
-  color: #ffffff;
+  color: var(--mcc-text);
   font-size: 0.84rem;
 }
 

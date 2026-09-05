@@ -62,9 +62,9 @@ Use the official [MeshCore Web Flasher](https://meshcore.io/flasher). The flashe
 2. Select the exact hardware model.
 3. Select **Companion Radio (Bluetooth)**.
 4. Select the firmware version intended for that board.
-5. Click **Enter DFU Mode**. The flasher should report that it found a device in the expected mode.
+5. Follow the flasher’s connection steps for your board. Use **Enter DFU Mode** only when that target asks for it. The flasher should report that it found a device in the expected mode.
 6. Recheck the hardware and firmware selections.
-7. Click **Erase Flash**, then wait for a successful erase message.
+7. For a first installation or deliberate reset, back up first. Click **Erase Flash** only if the board’s instructions require it. For an update, leave erase off unless its release notes require a reset.
 8. Click **Flash** and wait for the completion message before disconnecting the device.
 
 ## Recovery if flashing fails
@@ -89,7 +89,7 @@ The optional **Message Settings → Auto Reset Path** preference affects how the
 
 1. Confirm the app reconnects and shows the expected device name and radio settings.
 2. Send a test message in the **Public** channel.
-3. A response such as **Heard X Repeats** indicates that at least one repeater reported hearing it. A plain **Sent** result is not proof that the settings are wrong; move to a known coverage area or ask the local community to help test.
+3. A response such as **Heard X Repeats** indicates that your companion heard a rebroadcast of the message. A plain **Sent** result is not proof that the settings are wrong; move to a known coverage area or ask the local community to help test.
 
 Do not consider the setup complete until the saved settings survive a reboot and a local test succeeds.
 

@@ -20,7 +20,7 @@ def contact(health: str, last_checked: str | None = None) -> dict[str, str | Non
 class ContactCheckLabelTests(unittest.TestCase):
     def test_verified_contact_shows_its_check_date(self) -> None:
         contacts = [contact("verified", "2026-08-08")]
-        self.assertEqual("Verified on 2026-08-08", MODULE.contact_check_label(contacts))
+        self.assertEqual("Links checked on 2026-08-08", MODULE.contact_check_label(contacts))
         self.assertEqual("Effectuée le 2026-08-08", MODULE.contact_check_label_fr(contacts))
 
     def test_unreviewed_contacts_remain_explicit(self) -> None:

@@ -38,7 +38,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <p class="mc-community-forming">
@@ -51,7 +51,7 @@ This group is forming. Contact it to learn what is working and where help is nee
 <p class="mc-community-contact-health">
 <strong>Contact check:</strong> Not yet verified
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=southern-new-brunswick&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fnew-brunswick%2F%23community-southern-new-brunswick">Update this listing</a></p>
 </article>
 </div>
 

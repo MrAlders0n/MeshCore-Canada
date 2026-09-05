@@ -15,8 +15,6 @@ estimated_time: 8 minutes
 destructive: false
 page_styles:
   - assets/styles/analyzer.css?v=20260722-2
-page_scripts:
-  - assets/javascripts/analyzer-broker-reference.js?v=20260722-2
 ---
 
 # Observer connection reference
@@ -44,10 +42,13 @@ These values come from the shared [observer configuration](observer-config.json)
       <tbody id="broker-reference-body"></tbody>
     </table>
   </div>
-  <p class="mc-location-status" id="broker-reference-status" role="status">Loading official connection settings…</p>
 </div>
 
-If the table does not load, open [observer-config.json](observer-config.json).
+## Read-only access
+
+See the [read-only MQTT account list](data-collection-access.md#read-only-mqtt-accounts) for approved subscribers, including QuinteMesh. Ask an administrator below to request access.
+
+The JWT settings on this page are for **observers publishing packets**. Read-only subscribers use the credentials and connection instructions supplied by an administrator. Do not use an observer’s private key for subscriber access.
 
 ## Broker administrators
 
