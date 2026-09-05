@@ -80,6 +80,7 @@ l’exploitant, mais jamais les mots de passe ni les jetons.
 |---|---|---|
 | Beacon (`dev.meshcore.ca`) | Exploitants de MeshCore Canada | Visualisation publique des paquets et vérification des identifiants de répéteur |
 | CoreScope (`live.meshcore.ca`) | Exploitants de MeshCore Canada | Outils publics pour les observateurs, les paquets, les nœuds et la carte |
+| [Canadaverse](https://canadaverse.org/) | [n30nex@gmail.com](mailto:n30nex@gmail.com) | Outils régionaux du Grand Toronto et carte CartoLive |
 | [Quinte Mesh](https://quintemesh.ca/) | hansimgamr | Services du réseau communautaire de la région de Quinte |
 
 Les administrateurs de l’infrastructure doivent mettre ce tableau à jour chaque
