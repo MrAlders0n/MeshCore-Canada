@@ -3,7 +3,7 @@ import { extname, join, relative, resolve, sep } from "node:path";
 import process from "node:process";
 
 const siteRoot = resolve(process.argv[2] || ".tmp/site");
-const attributePattern = /\b(?:href|src)=["']([^"']+)["']/gi;
+const attributePattern = /\b(href|src)=["']([^"']+)["']/gi;
 const ignoredSchemes = /^(?:data|mailto|tel|javascript|blob):/i;
 
 async function readSiteIdentity() {
@@ -130,7 +130,7 @@ async function main() {
     const html = await readFile(file, "utf8");
     const base = new URL(pagePath(file, basePath), publicOrigin);
     for (const match of html.matchAll(attributePattern)) {
-      const raw = decodeAttribute(match[1].trim());
+      const raw = decodeAttribute(match[2].trim());
       if (!raw || raw === "#" || raw.startsWith("//") || ignoredSchemes.test(raw)) continue;
 
       let url;
@@ -141,6 +141,9 @@ async function main() {
         continue;
       }
       if (url.origin !== publicOrigin) continue;
+      // A fully qualified hyperlink can point to another site on the preview
+      // host. Relative links and asset sources must still stay inside this build.
+      if (match[1].toLowerCase() === "href" && /^https?:\/\//i.test(raw) && !url.pathname.startsWith(basePath)) continue;
       checked += 1;
       const target = await resolveTarget(url.pathname, basePath);
       if (!target.path) {
