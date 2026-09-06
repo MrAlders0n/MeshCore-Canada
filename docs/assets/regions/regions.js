@@ -172,6 +172,8 @@
     "Step 1 of 4": "Étape 1 sur 4",
     "What are you configuring?": "Quel appareil configurez-vous?",
     "We will recommend forwarding paths, then show how to apply them.": "Nous recommanderons les chemins à relayer, puis nous vous montrerons comment les appliquer.",
+    "Browse the region map": "Parcourir la carte des régions",
+    "Open the region editor": "Ouvrir l’éditeur de régions",
     "Device and experience": "Appareil et niveau d’expérience",
     "Repeater": "Répéteur",
     "Recommended for most operators": "Recommandé pour la plupart des exploitants",
@@ -2022,6 +2024,8 @@
       '<p class="mcc-step-label">Step 1 of 4</p>' +
       '<h2>What are you configuring?</h2>' +
       '<p class="mcc-step-intro">We will recommend forwarding paths, then show how to apply them.</p>' +
+      '<p class="mcc-step-browse"><a data-action="view-map" href="' + esc(regionPageHref("map")) + '">Browse the region map</a> · ' +
+      '<a href="' + esc(new URL("editor/", regionPageHref("config")).href) + '">Open the region editor</a></p>' +
       '<div class="mcc-choice-list mcc-choice-list-large" role="radiogroup" aria-label="Device and experience">' +
       '<label class="mcc-choice"><input type="radio" name="mcc-device-role" value="repeater" checked><span><strong>Repeater</strong><small>Recommended for most operators</small></span></label>' +
       '<label class="mcc-choice"><input type="radio" name="mcc-device-role" value="room"><span><strong>Room server with repeating</strong><small>Uses the same region paths</small></span></label>' +

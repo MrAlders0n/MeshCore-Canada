@@ -14,7 +14,7 @@ difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
 page_styles:
-  - assets/styles/communities.css?v=20260722-2
+  - assets/styles/communities.css?v=20260905-1
 ---
 
 <!-- Généré par scripts/validate-communities.py à partir de data/communities.json et data/communities.fr.json. Ne pas modifier à la main. -->

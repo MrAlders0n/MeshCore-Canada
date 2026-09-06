@@ -1,0 +1,33 @@
+.mc-network { position: relative; flex: 0 0 auto; margin-inline: 0.3rem; }
+.mc-network > summary {
+  display: flex; align-items: center; gap: 0.35rem; min-height: 2.75rem;
+  padding: 0.25rem 0.35rem; border-radius: var(--mc-radius-sm);
+  color: #fff; cursor: pointer; list-style: none; font-size: 0.75rem;
+}
+.mc-network > summary::-webkit-details-marker { display: none; }
+.mc-network > summary:hover, .mc-network[open] > summary { background: rgb(255 255 255 / 8%); }
+.mc-network__icon { display: flex; }
+.mc-network__icon svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
+.mc-network__total { display: inline-block; min-width: 3.2rem; text-align: end; font-variant-numeric: tabular-nums; }
+.mc-network__panel {
+  position: absolute; top: calc(100% + 0.25rem); right: 0; z-index: 5;
+  width: 19rem; max-width: calc(100vw - 1.5rem); padding: 1rem;
+  color: var(--mc-color-text); background: var(--mc-color-surface);
+  border: 1px solid var(--mc-color-border); border-radius: var(--mc-radius-md);
+  box-shadow: var(--mc-shadow-2); font-size: 0.85rem; line-height: 1.5;
+}
+.mc-network__panel p { margin: 0 0 0.6rem; }
+.mc-network__panel dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem 1rem; margin: 0 0 0.9rem; }
+.mc-network__panel dt { color: var(--mc-color-text-muted); }
+.mc-network__panel dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 650; }
+.mc-network__panel .mc-network__period { border-top: 1px solid var(--mc-color-border); padding-top: 0.6rem; font-weight: 650; }
+.mc-network__panel .mc-network__updated { color: var(--mc-color-text-muted); font-size: 0.75rem; }
+.mc-network__panel a { color: var(--mc-color-action); text-decoration: underline; }
+.mc-network [hidden] { display: none !important; }
+@media (max-width: 72em) { .mc-network__label { display: none; } }
+@media (max-width: 45em) {
+  .mc-network { margin-inline: 0; }
+  .mc-network__total { display: none; }
+  .mc-network > summary { min-width: 2rem; justify-content: center; padding: 0.25rem; }
+  .mc-network__panel { position: fixed; top: 3.5rem; right: 0.75rem; }
+}

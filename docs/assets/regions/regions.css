@@ -1135,6 +1135,15 @@ body:has([data-mcc-regions]) .md-typeset h3 {
   background: var(--mcc-surface);
 }
 
+.mcc-map-canvas .leaflet-control-attribution {
+  color: var(--mcc-text);
+  background: var(--mcc-surface);
+}
+
+.mcc-map-canvas .leaflet-control-attribution a {
+  color: var(--md-typeset-a-color);
+}
+
 .mcc-region-borders {
   image-rendering: auto;
 }

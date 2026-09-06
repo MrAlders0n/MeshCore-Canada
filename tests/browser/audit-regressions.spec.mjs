@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./site-fixtures.mjs";
 import AxeBuilder from "@axe-core/playwright";
 import { siteRoute } from "./site-route.mjs";
 import { submissionSha256 } from "../../docs/config/editor/issue.js";
@@ -83,9 +83,17 @@ for (const locale of ["", "fr/"]) {
 
   for (const scheme of ["default", "slate"]) {
     test(`${locale || "en/"} ${scheme} focused map controls remain readable`, async ({ page }) => {
+      await page.route("https://tile.openstreetmap.org/**", (route) => route.fulfill({
+        contentType: "image/png",
+        body: Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=", "base64")
+      }));
       await page.goto(siteRoute(`/${locale}config/map/?tag=ott`));
       await expect(page.locator('[data-role="map-text-result"]')).toContainText("Ottawa");
       await page.locator(`input[data-md-color-scheme="${scheme}"]`).evaluate((element) => element.click());
+      await page.locator(".mcc-map-stage").scrollIntoViewIfNeeded();
+      await expect(page.locator(".mcc-map-stage")).toHaveAttribute("aria-busy", "false");
+      const mapContrast = await new AxeBuilder({ page }).include(".mcc-map-stage").withRules(["color-contrast"]).analyze();
+      expect(mapContrast.violations).toEqual([]);
       const find = page.locator('[data-action="map-locate"]');
       await find.focus();
       await find.hover();

@@ -14,21 +14,21 @@ difficulty: beginner
 estimated_time: 2-5 minutes
 destructive: false
 page_styles:
-  - assets/styles/communities.css?v=20260722-2
+  - assets/styles/communities.css?v=20260905-1
+status_notice: false
 page_scripts:
-  - assets/javascripts/communities.js?v=20260722-2
+  - assets/javascripts/communities.js?v=20260905-1
 ---
 
 <!-- Généré par scripts/validate-communities.py à partir de data/communities.json et data/communities.fr.json. Ne pas modifier à la main. -->
 
 # Trouver une communauté MeshCore au Canada
 
-Recherchez par lieu, province, nom de communauté ou alias courant. La liste
-complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
+Filtrez la liste par communauté ou province, ou cherchez votre ville pour trouver les communautés les plus proches.
+<noscript><p>La recherche de villes nécessite JavaScript. Toutes les communautés sont indiquées ci-dessous.</p></noscript>
 
 !!! note "Les renseignements sur les communautés peuvent changer"
-    0 fiches sur 24 n’ont pas fait l’objet d’une vérification récente des coordonnées.
-    Confirmez les réglages et les coordonnées importants avant de vous y fier.
+    Ces renseignements pourraient être périmés !
 
 <div class="mc-directory-summary" aria-label="Résumé du répertoire">
 <span><strong>24</strong> fiches</span>
@@ -37,10 +37,10 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 <span><strong>1</strong> fiche avec des réglages locaux différents</span>
 </div>
 
-<div class="mc-directory-tools" data-community-directory data-community-locale="fr">
+<form class="mc-directory-tools" data-community-directory data-community-locale="fr">
   <div class="mc-directory-tools__search">
     <label for="community-search">Lieu, province, communauté ou alias</label>
-    <input id="community-search" type="search" name="community" autocomplete="address-level2" placeholder="Essayez Ottawa, YQL ou Québec">
+    <input id="community-search" type="search" name="community" autocomplete="address-level2" maxlength="160" placeholder="Essayez Cambridge, ON ou YQL">
   </div>
   <div class="mc-directory-tools__filter">
     <label for="community-status">État</label>
@@ -54,15 +54,20 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
     <input id="community-override" type="checkbox">
     Possède des réglages locaux différents
   </label>
-  <button class="md-button" type="button" data-community-clear>Effacer</button>
+  <div class="mc-directory-actions"><button class="md-button md-button--primary" type="submit" data-community-locate>Trouver à proximité</button>
+  <button class="md-button" type="button" data-community-clear>Effacer</button></div>
   <output class="mc-directory-tools__count" data-community-count aria-live="polite">
     24 communautés affichées
   </output>
-</div>
+  <div class="mc-directory-lookup" data-community-lookup role="status" aria-live="polite"></div>
+  <div class="mc-directory-choices" data-community-choices hidden></div>
+  <p class="mc-directory-credit" data-community-credit hidden>Lieux : <a href="https://natural-resources.canada.ca/maps-tools-publications/satellite-elevation-air-photos/geolocation-service">Ressources naturelles Canada</a>. Les distances sont approximatives et n’indiquent pas la couverture radio.</p>
+  <button class="md-button" type="button" data-community-show-all hidden>Tout afficher par distance</button>
+</form>
 
 <div class="mc-community-empty" data-community-empty hidden>
   <h2>Aucune communauté correspondante</h2>
-  <p>Essayez une ville voisine, une province, un code comme YQL, ou effacez les filtres.</p>
+  <p>Choisissez Trouver à proximité pour chercher votre ville, ou effacez les filtres.</p>
   <button class="md-button" type="button" data-community-clear>Effacer la recherche</button>
   <p><a href="../submit-idea/">Ajouter une communauté manquante</a></p>
 </div>
@@ -70,7 +75,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 ## Communautés
 
 <div class="mc-community-grid" data-community-results>
-<article class="mc-community-card" id="directory-bc-mesh" data-community-card data-community-status="active" data-community-override="true" data-community-search="bc mesh lower mainland and vancouver island lower mainland et ile de vancouver bc british columbia colombie-britannique lower mainland vancouver island vancouver ridgeline custom 910.425 mhz / 62.5 khz / sf7 / cr5">
+<article class="mc-community-card" id="directory-bc-mesh" data-community-card data-community-status="active" data-community-override="true" data-community-search="bc mesh lower mainland and vancouver island lower mainland et ile de vancouver bc british columbia colombie-britannique lower mainland vancouver island vancouver ridgeline custom 910.425 mhz / 62.5 khz / sf7 / cr5" data-community-points="[{&quot;label&quot;:&quot;Metro Vancouver&quot;,&quot;lat&quot;:49.28173,&quot;lon&quot;:-123.11928},{&quot;label&quot;:&quot;Capital / Victoria&quot;,&quot;lat&quot;:48.43719,&quot;lon&quot;:-123.361624}]">
 <div class="mc-community-card__header">
 <h3><a href="british-columbia/#community-bc-mesh">BC Mesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -84,7 +89,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="british-columbia/#community-bc-mesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-salish-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="salish mesh salish sea and surrounding area mer des salish et environs bc british columbia colombie-britannique salish sea">
+<article class="mc-community-card" id="directory-salish-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="salish mesh salish sea and surrounding area mer des salish et environs bc british columbia colombie-britannique salish sea" data-community-points="[{&quot;label&quot;:&quot;Metro Vancouver&quot;,&quot;lat&quot;:49.28173,&quot;lon&quot;:-123.11928},{&quot;label&quot;:&quot;Capital / Victoria&quot;,&quot;lat&quot;:48.43719,&quot;lon&quot;:-123.361624}]">
 <div class="mc-community-card__header">
 <h3><a href="british-columbia/#community-salish-mesh">Salish Mesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -98,7 +103,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="british-columbia/#community-salish-mesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-alberta-meshcore-networks" data-community-card data-community-status="active" data-community-override="false" data-community-search="alberta meshcore networks alberta ab airdrie calgary edmonton lethbridge albertamesh albertamesh.ca alberta meshcore building alberta&#x27;s community-operated off-grid lora mesh network developpement du reseau maille lora hors reseau de l’alberta, exploite par la communaute">
+<article class="mc-community-card" id="directory-alberta-meshcore-networks" data-community-card data-community-status="active" data-community-override="false" data-community-search="alberta meshcore networks alberta ab airdrie calgary edmonton lethbridge albertamesh albertamesh.ca alberta meshcore building alberta&#x27;s community-operated off-grid lora mesh network developpement du reseau maille lora hors reseau de l’alberta, exploite par la communaute" data-community-points="[{&quot;label&quot;:&quot;Calgary region&quot;,&quot;lat&quot;:51.016738,&quot;lon&quot;:-114.001493},{&quot;label&quot;:&quot;Edmonton metro&quot;,&quot;lat&quot;:53.551268,&quot;lon&quot;:-113.491265},{&quot;label&quot;:&quot;Lethbridge &amp; deep south&quot;,&quot;lat&quot;:49.684963,&quot;lon&quot;:-112.834123}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-alberta-meshcore-networks">Alberta MeshCore Networks</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -120,7 +125,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-alberta-meshcore-networks">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-airdrie-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="airdrie meshcore network airdrie and calgary airdrie et calgary ab alberta airdrie calgary albertamesh airdrie yyc uses the yyc regional identifier shared with the calgary regional network utilise l’identifiant regional yyc partage avec le reseau regional de calgary">
+<article class="mc-community-card" id="directory-airdrie-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="airdrie meshcore network airdrie and calgary airdrie et calgary ab alberta airdrie calgary albertamesh airdrie yyc uses the yyc regional identifier shared with the calgary regional network utilise l’identifiant regional yyc partage avec le reseau regional de calgary" data-community-points="[{&quot;label&quot;:&quot;Airdrie and Calgary&quot;,&quot;lat&quot;:51.2812,&quot;lon&quot;:-113.99718}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-airdrie-meshcore-network">Airdrie MeshCore Network</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -139,7 +144,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-airdrie-meshcore-network">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-calgary-area-meshcore" data-community-card data-community-status="active" data-community-override="false" data-community-search="calgary and area meshcore calgary and area calgary et environs ab alberta calgary yyc">
+<article class="mc-community-card" id="directory-calgary-area-meshcore" data-community-card data-community-status="active" data-community-override="false" data-community-search="calgary and area meshcore calgary and area calgary et environs ab alberta calgary yyc" data-community-points="[{&quot;label&quot;:&quot;Calgary region&quot;,&quot;lat&quot;:51.016738,&quot;lon&quot;:-114.001493}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-calgary-area-meshcore">Calgary and Area MeshCore</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -154,7 +159,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-calgary-area-meshcore">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-calgary-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="calgary meshcore network calgary ab alberta albertamesh calgary yyc calgary meshcore initial albertamesh.ca launch region premiere region lancee sur albertamesh.ca">
+<article class="mc-community-card" id="directory-calgary-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="calgary meshcore network calgary ab alberta albertamesh calgary yyc calgary meshcore initial albertamesh.ca launch region premiere region lancee sur albertamesh.ca" data-community-points="[{&quot;label&quot;:&quot;Calgary&quot;,&quot;lat&quot;:51.01674,&quot;lon&quot;:-114.00149}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-calgary-meshcore-network">Calgary MeshCore Network</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -173,7 +178,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-calgary-meshcore-network">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-edmonton-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="edmonton meshcore network edmonton ab alberta albertamesh edmonton yeg edmonton regional community within alberta meshcore communaute regionale d’edmonton au sein d’alberta meshcore">
+<article class="mc-community-card" id="directory-edmonton-meshcore-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="edmonton meshcore network edmonton ab alberta albertamesh edmonton yeg edmonton regional community within alberta meshcore communaute regionale d’edmonton au sein d’alberta meshcore" data-community-points="[{&quot;label&quot;:&quot;Edmonton&quot;,&quot;lat&quot;:53.45752,&quot;lon&quot;:-113.5832}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-edmonton-meshcore-network">Edmonton MeshCore Network</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -191,7 +196,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-edmonton-meshcore-network">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-yegmesh-ca" data-community-card data-community-status="active" data-community-override="false" data-community-search="yegmesh.ca edmonton ab alberta yeg yeg mesh yegmesh edmonton mesh network community focused on meshcore communaute du reseau maille d’edmonton axee sur meshcore">
+<article class="mc-community-card" id="directory-yegmesh-ca" data-community-card data-community-status="active" data-community-override="false" data-community-search="yegmesh.ca edmonton ab alberta yeg yeg mesh yegmesh edmonton mesh network community focused on meshcore communaute du reseau maille d’edmonton axee sur meshcore" data-community-points="[{&quot;label&quot;:&quot;Edmonton&quot;,&quot;lat&quot;:53.45752,&quot;lon&quot;:-113.5832}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-yegmesh-ca">yegmesh.ca</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -209,7 +214,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-yegmesh-ca">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-yqlmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqlmesh lethbridge ab alberta yql connecting lethbridge, one node at a time relier lethbridge, un nœud a la fois">
+<article class="mc-community-card" id="directory-yqlmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqlmesh lethbridge ab alberta yql connecting lethbridge, one node at a time relier lethbridge, un nœud a la fois" data-community-points="[{&quot;label&quot;:&quot;Lethbridge&quot;,&quot;lat&quot;:49.69091,&quot;lon&quot;:-112.86356}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-yqlmesh">YQLMesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -231,7 +236,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-yqlmesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-southern-alberta" data-community-card data-community-status="active" data-community-override="false" data-community-search="southern alberta southern alberta, including cardston, magrath, raymond, and nearby areas sud de l’alberta, y compris cardston, magrath, raymond et les environs ab alberta cardston magrath raymond">
+<article class="mc-community-card" id="directory-southern-alberta" data-community-card data-community-status="active" data-community-override="false" data-community-search="southern alberta southern alberta, including cardston, magrath, raymond, and nearby areas sud de l’alberta, y compris cardston, magrath, raymond et les environs ab alberta cardston magrath raymond" data-community-points="[{&quot;label&quot;:&quot;Lethbridge &amp; deep south&quot;,&quot;lat&quot;:49.684963,&quot;lon&quot;:-112.834123}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-southern-alberta">Southern Alberta</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -246,7 +251,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-southern-alberta">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-yyc-meshcore-discord" data-community-card data-community-status="active" data-community-override="false" data-community-search="yyc meshcore discord group calgary ab alberta yyc">
+<article class="mc-community-card" id="directory-yyc-meshcore-discord" data-community-card data-community-status="active" data-community-override="false" data-community-search="yyc meshcore discord group calgary ab alberta yyc" data-community-points="[{&quot;label&quot;:&quot;Calgary region&quot;,&quot;lat&quot;:51.016738,&quot;lon&quot;:-114.001493}]">
 <div class="mc-community-card__header">
 <h3><a href="alberta/#community-yyc-meshcore-discord">YYC MeshCore Discord Group</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -261,7 +266,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="alberta/#community-yyc-meshcore-discord">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-stoonmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="stoonmesh central saskatchewan centre de la saskatchewan sk saskatchewan">
+<article class="mc-community-card" id="directory-stoonmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="stoonmesh central saskatchewan centre de la saskatchewan sk saskatchewan" data-community-points="[{&quot;label&quot;:&quot;Saskatoon region&quot;,&quot;lat&quot;:52.1708,&quot;lon&quot;:-106.6997}]">
 <div class="mc-community-card__header">
 <h3><a href="saskatchewan/#community-stoonmesh">StoonMesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -275,7 +280,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-stoonmesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan regina et sud de la saskatchewan sk saskatchewan regina southern saskatchewan yqr">
+<article class="mc-community-card" id="directory-yqrmesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="yqrmesh regina and southern saskatchewan regina et sud de la saskatchewan sk saskatchewan regina southern saskatchewan yqr" data-community-points="[{&quot;label&quot;:&quot;Regina region&quot;,&quot;lat&quot;:50.4319,&quot;lon&quot;:-104.6658}]">
 <div class="mc-community-card__header">
 <h3><a href="saskatchewan/#community-yqrmesh">YQRMesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -288,7 +293,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="saskatchewan/#community-yqrmesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-greater-ottawa-mesh-enthusiasts" data-community-card data-community-status="active" data-community-override="false" data-community-search="greater ottawa mesh enthusiasts eastern ontario and western quebec est de l’ontario et ouest du quebec on ontario ottawa eastern ontario western quebec">
+<article class="mc-community-card" id="directory-greater-ottawa-mesh-enthusiasts" data-community-card data-community-status="active" data-community-override="false" data-community-search="greater ottawa mesh enthusiasts eastern ontario and western quebec est de l’ontario et ouest du quebec on ontario ottawa eastern ontario western quebec" data-community-points="[{&quot;label&quot;:&quot;Ottawa&quot;,&quot;lat&quot;:45.4215,&quot;lon&quot;:-75.6972},{&quot;label&quot;:&quot;Outaouais / Gatineau&quot;,&quot;lat&quot;:45.48,&quot;lon&quot;:-75.65}]">
 <div class="mc-community-card__header">
 <h3><a href="ontario/#community-greater-ottawa-mesh-enthusiasts">Greater Ottawa Mesh Enthusiasts</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -303,7 +308,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="ontario/#community-greater-ottawa-mesh-enthusiasts">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-gta-lora-meshes" data-community-card data-community-status="active" data-community-override="false" data-community-search="gta+-lora-meshes southern ontario sud de l’ontario on ontario gta">
+<article class="mc-community-card" id="directory-gta-lora-meshes" data-community-card data-community-status="active" data-community-override="false" data-community-search="gta+-lora-meshes southern ontario sud de l’ontario on ontario gta" data-community-points="[{&quot;label&quot;:&quot;Toronto&quot;,&quot;lat&quot;:43.6532,&quot;lon&quot;:-79.3832}]">
 <div class="mc-community-card__header">
 <h3><a href="ontario/#community-gta-lora-meshes">GTA+-Lora-Meshes</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -317,7 +322,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="ontario/#community-gta-lora-meshes">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-quinte-mesh-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="quinte mesh network quinte region, including belleville, trenton, prince edward county, and nearby areas region de quinte, y compris belleville, trenton, le comte de prince edward et les environs on ontario belleville trenton prince edward county quinte region">
+<article class="mc-community-card" id="directory-quinte-mesh-network" data-community-card data-community-status="active" data-community-override="false" data-community-search="quinte mesh network quinte region, including belleville, trenton, prince edward county, and nearby areas region de quinte, y compris belleville, trenton, le comte de prince edward et les environs on ontario belleville trenton prince edward county quinte region" data-community-points="[{&quot;label&quot;:&quot;Hastings / Belleville&quot;,&quot;lat&quot;:44.1628,&quot;lon&quot;:-77.3832},{&quot;label&quot;:&quot;Prince Edward County&quot;,&quot;lat&quot;:44.0007,&quot;lon&quot;:-77.25}]">
 <div class="mc-community-card__header">
 <h3><a href="ontario/#community-quinte-mesh-network">Quinte Mesh Network</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -332,7 +337,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="ontario/#community-quinte-mesh-network">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-charlevoix-yml" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de charlevoix (yml) charlevoix, including la malbaie charlevoix, y compris la malbaie qc quebec la malbaie charlevoix yml">
+<article class="mc-community-card" id="directory-charlevoix-yml" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de charlevoix (yml) charlevoix, including la malbaie charlevoix, y compris la malbaie qc quebec la malbaie charlevoix yml" data-community-points="[{&quot;label&quot;:&quot;La Malbaie&quot;,&quot;lat&quot;:47.652419,&quot;lon&quot;:-70.14951}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-charlevoix-yml">Réseau MESH de Charlevoix (YML)</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -346,7 +351,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-charlevoix-yml">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-mesh-quebec" data-community-card data-community-status="active" data-community-override="false" data-community-search="mesh quebec quebec qc">
+<article class="mc-community-card" id="directory-mesh-quebec" data-community-card data-community-status="active" data-community-override="false" data-community-search="mesh quebec quebec qc" data-community-points="[{&quot;label&quot;:&quot;Montréal&quot;,&quot;lat&quot;:45.5017,&quot;lon&quot;:-73.5673},{&quot;label&quot;:&quot;Capitale-Nationale&quot;,&quot;lat&quot;:46.8139,&quot;lon&quot;:-71.208},{&quot;label&quot;:&quot;Saguenay–Lac-Saint-Jean&quot;,&quot;lat&quot;:48.428,&quot;lon&quot;:-71.068}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-mesh-quebec">Mesh Quebec</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -360,7 +365,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-mesh-quebec">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-montreal-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="montreal mesh greater montreal grand montreal qc quebec montreal">
+<article class="mc-community-card" id="directory-montreal-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="montreal mesh greater montreal grand montreal qc quebec montreal" data-community-points="[{&quot;label&quot;:&quot;Montréal&quot;,&quot;lat&quot;:45.5017,&quot;lon&quot;:-73.5673}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-montreal-mesh">Montreal Mesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -374,7 +379,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-montreal-mesh">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-reseau-mesh-capitale-yqb" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de la capitale yqb quebec city ville de quebec qc quebec yqb capitale">
+<article class="mc-community-card" id="directory-reseau-mesh-capitale-yqb" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh de la capitale yqb quebec city ville de quebec qc quebec yqb capitale" data-community-points="[{&quot;label&quot;:&quot;Capitale-Nationale&quot;,&quot;lat&quot;:46.8139,&quot;lon&quot;:-71.208}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-reseau-mesh-capitale-yqb">Réseau Mesh de la Capitale YQB</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -388,7 +393,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-reseau-mesh-capitale-yqb">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-reseau-mesh-saguenay-lac-saint-jean-ytf" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh du saguenay lac st-jean ytf saguenay–lac-saint-jean (ytf) qc quebec saguenay lac-saint-jean ytf saguenay lac st-jean">
+<article class="mc-community-card" id="directory-reseau-mesh-saguenay-lac-saint-jean-ytf" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau mesh du saguenay lac st-jean ytf saguenay–lac-saint-jean (ytf) qc quebec saguenay lac-saint-jean ytf saguenay lac st-jean" data-community-points="[{&quot;label&quot;:&quot;Saguenay–Lac-Saint-Jean&quot;,&quot;lat&quot;:48.428,&quot;lon&quot;:-71.068}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-reseau-mesh-saguenay-lac-saint-jean-ytf">Réseau Mesh du Saguenay Lac st-Jean YTF</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -403,7 +408,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-reseau-mesh-saguenay-lac-saint-jean-ytf">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-reseau-libre" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau libre montreal qc quebec">
+<article class="mc-community-card" id="directory-reseau-libre" data-community-card data-community-status="active" data-community-override="false" data-community-search="reseau libre montreal qc quebec" data-community-points="[{&quot;label&quot;:&quot;Montréal&quot;,&quot;lat&quot;:45.5017,&quot;lon&quot;:-73.5673}]">
 <div class="mc-community-card__header">
 <h3><a href="quebec/#community-reseau-libre">Réseau Libre</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>
@@ -417,7 +422,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="quebec/#community-reseau-libre">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-southern-new-brunswick" data-community-card data-community-status="forming" data-community-override="false" data-community-search="southern new brunswick fredericton, saint john, moncton, and nearby areas sud du nouveau-brunswick, y compris fredericton, saint john, moncton et les environs nb new brunswick nouveau-brunswick fredericton saint john moncton">
+<article class="mc-community-card" id="directory-southern-new-brunswick" data-community-card data-community-status="forming" data-community-override="false" data-community-search="southern new brunswick fredericton, saint john, moncton, and nearby areas sud du nouveau-brunswick, y compris fredericton, saint john, moncton et les environs nb new brunswick nouveau-brunswick fredericton saint john moncton" data-community-points="[{&quot;label&quot;:&quot;York / Fredericton&quot;,&quot;lat&quot;:45.8689,&quot;lon&quot;:-66.5372},{&quot;label&quot;:&quot;Saint John&quot;,&quot;lat&quot;:45.3161,&quot;lon&quot;:-65.8903},{&quot;label&quot;:&quot;Westmorland / Moncton&quot;,&quot;lat&quot;:46.1122,&quot;lon&quot;:-64.6786}]">
 <div class="mc-community-card__header">
 <h3><a href="new-brunswick/#community-southern-new-brunswick">Southern New Brunswick</a></h3>
 <span class="mc-community-status" data-status="forming">En formation</span>
@@ -431,7 +436,7 @@ complète fonctionne sans carte, autorisation de localisation ni compte GitHub.
 </ul>
 <p class="mc-community-card__action"><a href="new-brunswick/#community-southern-new-brunswick">Voir les détails de la fiche</a></p>
 </article>
-<article class="mc-community-card" id="directory-lunenburg-county-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="lunenburg county mesh lunenburg county comte de lunenburg ns nova scotia nouvelle-ecosse">
+<article class="mc-community-card" id="directory-lunenburg-county-mesh" data-community-card data-community-status="active" data-community-override="false" data-community-search="lunenburg county mesh lunenburg county comte de lunenburg ns nova scotia nouvelle-ecosse" data-community-points="[{&quot;label&quot;:&quot;Lunenburg&quot;,&quot;lat&quot;:44.5070278,&quot;lon&quot;:-64.4344556}]">
 <div class="mc-community-card__header">
 <h3><a href="nova-scotia/#community-lunenburg-county-mesh">Lunenburg County Mesh</a></h3>
 <span class="mc-community-status" data-status="active">Active</span>

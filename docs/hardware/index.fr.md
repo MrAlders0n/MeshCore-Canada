@@ -24,14 +24,6 @@ Choisissez d’abord le rôle de l’appareil. Avant de l’acheter, confirmez e
 la carte exacte et la cible du micrologiciel dans le
 [programme officiel de mise à jour MeshCore](https://meshcore.io/flasher).
 
-<div class="mc-guide-status" data-status="draft" markdown>
-
-**Vérifiez avant d’acheter.** Les révisions de produits et la prise en charge
-du micrologiciel changent. Les appareils liés sont des options à comparer, et
-non des garanties de compatibilité.
-
-</div>
-
 ## Choisir un type d’appareil
 
 <div class="mc-device-chooser">

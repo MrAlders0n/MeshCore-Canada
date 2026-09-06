@@ -15,14 +15,24 @@ tested_with:
 difficulty: beginner
 estimated_time: 1-2 minutes
 destructive: false
+page_styles:
+  - assets/styles/home.css?v=20260905-1
 hide:
   - toc
 ---
 
 # MeshCore Canada
 
+<div class="mc-home-hero" markdown>
+
+<div class="mc-home-hero__art" aria-hidden="true"><img src="assets/canada-network-motif.svg" alt="" width="960" height="420" fetchpriority="high"></div>
+
 Welcome! We're improving this site. Found something unclear or outdated?
 [Open a GitHub issue](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).
+
+<p class="mc-home-hero__credit">Illustrative network · <a href="assets/regions/NOTICE.txt">Map sources</a></p>
+
+</div>
 
 ## What are you looking for? { #start-with-your-goal }
 
@@ -104,6 +114,8 @@ Use these defaults unless your local community lists different settings.
 | Command-line path setting | `set path.hash.mode 2` |
 
 </div>
+
+<p class="mc-preset-note">Planned: a separate <strong>Canada</strong> preset with the same radio settings as <strong>USA/Canada</strong> and 3-byte hash mode by default for all device types. <a href="https://github.com/meshcore-dev/MeshCore/issues/3302">Follow the preset discussion</a>.</p>
 
 ## Improve MeshCore Canada
 

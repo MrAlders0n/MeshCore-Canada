@@ -15,15 +15,25 @@ tested_with:
 difficulty: beginner
 estimated_time: 1-2 minutes
 destructive: false
+page_styles:
+  - assets/styles/home.css?v=20260905-1
 hide:
   - toc
 ---
 
 # MeshCore Canada
 
+<div class="mc-home-hero" markdown>
+
+<div class="mc-home-hero__art" aria-hidden="true"><img src="../assets/canada-network-motif.svg" alt="" width="960" height="420" fetchpriority="high"></div>
+
 Bienvenue! Nous améliorons activement ce site. Vous avez trouvé quelque chose
 de difficile à comprendre ou de désuet?
 [Signalez-le sur GitHub](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).
+
+<p class="mc-home-hero__credit">Réseau illustratif · <a href="../assets/regions/NOTICE.txt">Sources cartographiques</a></p>
+
+</div>
 
 ## Que cherchez-vous? { #start-with-your-goal }
 
@@ -106,6 +116,8 @@ Utilisez ces paramètres, sauf si votre communauté en indique d’autres.
 | Commande correspondante | `set path.hash.mode 2` |
 
 </div>
+
+<p class="mc-preset-note">Prévu : un préréglage <strong>Canada</strong> distinct, avec les mêmes paramètres radio que <strong>USA/Canada</strong> et un hachage de 3 octets par défaut pour tous les types d’appareils. <a href="https://github.com/meshcore-dev/MeshCore/issues/3302">Suivre la discussion</a>.</p>
 
 ## Améliorer MeshCore Canada
 

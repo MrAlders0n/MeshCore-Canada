@@ -22,12 +22,6 @@ page_styles:
 
 Choose what the device will do, then confirm the exact board and firmware target in the [official MeshCore flasher](https://meshcore.io/flasher) before buying.
 
-<div class="mc-guide-status" data-status="draft" markdown>
-
-**Check before buying.** Product revisions and firmware support change. Treat the linked devices as options to compare, not compatibility guarantees.
-
-</div>
-
 ## Choose a device type
 
 <div class="mc-device-chooser">

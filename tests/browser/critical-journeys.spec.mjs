@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./site-fixtures.mjs";
 import { normalizeSiteBaseUrl, resolveSiteRoute, siteRoute } from "./site-route.mjs";
 
 const criticalRoutes = [

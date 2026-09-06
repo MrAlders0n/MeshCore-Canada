@@ -1,0 +1,26 @@
+{% set network_fr = i18n_page_locale | default(config.theme.language, true) == "fr" %}
+<details class="mc-network" data-network-summary>
+  <summary aria-label="{{ 'Statistiques du réseau' if network_fr else 'Network statistics' }}">
+    <span class="mc-network__icon" aria-hidden="true">{% include ".icons/material/access-point-network.svg" %}</span>
+    <span class="mc-network__label">{{ 'Réseau' if network_fr else 'Network' }}</span>
+    <span class="mc-network__total" data-network-total>—</span>
+  </summary>
+  <div class="mc-network__panel">
+    <p><strong>{{ 'Appareils connus de Beacon' if network_fr else 'Devices known to Beacon' }}</strong></p>
+    <dl>
+      <dt>{{ 'Répéteurs' if network_fr else 'Repeaters' }}</dt><dd data-network-count="repeaters">—</dd>
+      <dt>{{ 'Compagnons' if network_fr else 'Companions' }}</dt><dd data-network-count="companions">—</dd>
+      <dt>{{ 'Serveurs de salon' if network_fr else 'Room servers' }}</dt><dd data-network-count="rooms">—</dd>
+      <dt>{{ 'Capteurs' if network_fr else 'Sensors' }}</dt><dd data-network-count="sensors">—</dd>
+      <dt data-network-other hidden>{{ 'Autres' if network_fr else 'Other' }}</dt><dd data-network-count="other" data-network-other hidden>—</dd>
+    </dl>
+    <p class="mc-network__period" data-network-period>{{ 'Dernières 24 h' if network_fr else 'Last 24 hours' }}</p>
+    <dl>
+      <dt>{{ 'Observateurs actifs' if network_fr else 'Active observers' }}</dt><dd data-network-count="observers">—</dd>
+      <dt>{{ 'Zones observées' if network_fr else 'Observed areas' }}</dt><dd data-network-count="areas">—</dd>
+      <dt>{{ 'Paquets' if network_fr else 'Packets' }}</dt><dd data-network-count="packets">—</dd>
+    </dl>
+    <p class="mc-network__updated" data-network-updated role="status" aria-live="polite">{{ 'Ouvrez Beacon pour les totaux actuels.' if network_fr else 'Open Beacon for current totals.' }}</p>
+    <a href="https://dev.meshcore.ca/">{{ 'Ouvrir Beacon' if network_fr else 'Open Beacon' }} ↗</a>
+  </div>
+</details>

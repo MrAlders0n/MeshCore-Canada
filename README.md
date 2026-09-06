@@ -25,12 +25,20 @@ Open `http://127.0.0.1:4173/`. Rebuild after editing. Build output belongs in
 - Community listings: `data/communities.json` and `data/communities.fr.json`.
   Run `python scripts/validate-communities.py --write` after editing the source.
   It generates the directory pages and `docs/assets/radio-profiles.json`.
+  Keep `data/community-search-anchors.json` in sync when adding listings. These
+  are approximate search references, not claimed radio locations or coverage.
 - Region tools: `docs/assets/regions/` and `docs/config/editor/`.
   Follow the boundary proposal workflow; do not hand-edit generated geography.
 - Broker settings: `docs/analyzer/observer-config.json`. The build generates the
   broker reference table from this file, including its no-JavaScript version.
 - Anonymous submissions: `tools/region-proposal-gateway/`. The site and gateway
   deploy separately; check the gateway README before changing their contract.
+- Header totals: `docs/assets/javascripts/network-status.js` reads public Beacon
+  aggregates and caches them per tab for five minutes. City search uses Natural
+  Resources Canada's current Geolocator API, only when a search is submitted.
+- Homepage art: run `python scripts/generate-home-hero.py` after installing the
+  region dependencies to regenerate the decorative SVG from existing geography.
+  Compare the custom header with Material's template when upgrading the theme.
 
 Never commit credentials, private keys, precise private locations, or test
 submissions containing personal information. Human maintainers review changes
