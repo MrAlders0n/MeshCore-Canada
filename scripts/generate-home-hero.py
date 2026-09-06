@@ -53,7 +53,7 @@ def generate():
         '<g fill="#9bcdff">' + ''.join(dots) + '</g>',
         '</svg>', ''
     ])
-    OUT.write_text(svg, encoding="utf-8")
+    OUT.write_text(svg, encoding="utf-8", newline="\n")
     print(f"Generated {OUT.name}: {len(svg.encode('utf-8')):,} bytes")
 
 
