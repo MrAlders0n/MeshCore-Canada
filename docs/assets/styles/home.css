@@ -1,0 +1,20 @@
+.mc-home-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: 11rem; padding: 1.5rem; margin: 1rem 0 2rem;
+  border: 1px solid var(--mc-color-border); border-radius: var(--mc-radius-md);
+  background: linear-gradient(115deg, var(--mc-color-surface), var(--mc-color-surface-raised));
+}
+.mc-home-hero > .mc-home-hero__art {
+  position: absolute; z-index: -1; top: 0; right: 0; height: 100%; width: 68%;
+  object-fit: contain; pointer-events: none; opacity: 0.9;
+  mask-image: linear-gradient(to right, transparent, #000 28%);
+}
+.mc-home-hero__art img { width: 100%; height: 100%; object-fit: contain; }
+.mc-home-hero > p { position: relative; max-width: 38ch; margin: 0; }
+.mc-home-hero .mc-home-hero__credit { margin-top: 1rem; font-size: 0.7rem; color: var(--mc-color-text-muted); }
+.mc-preset-note { font-size: 0.85rem; color: var(--mc-color-text-muted); }
+@media (max-width: 45em) {
+  .mc-home-hero { padding: 1.25rem; min-height: 10rem; }
+  .mc-home-hero > .mc-home-hero__art { width: 100%; opacity: 0.25; mask-image: none; }
+  .mc-home-hero > p { max-width: none; }
+}

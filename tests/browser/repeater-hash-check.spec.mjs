@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./site-fixtures.mjs";
 import { siteRoute } from "./site-route.mjs";
 
 const fullKey = `05DE00${"11".repeat(29)}`;
@@ -147,7 +147,10 @@ test("the repeater checker mounts without a disruptive layout shift", async ({ p
 test("the general region configurator does not show the optional ID checker", async ({ page }) => {
   const beaconRequests = [];
   page.on("request", (request) => {
-    if (request.url().startsWith("https://dev.meshcore.ca/")) beaconRequests.push(request.url());
+    const url = request.url();
+    if (url.startsWith("https://dev.meshcore.ca/") && !url.startsWith("https://dev.meshcore.ca/api/v1/stats/")) {
+      beaconRequests.push(url);
+    }
   });
   await page.goto(siteRoute("/config/?place=Ottawa"), { waitUntil: "domcontentloaded" });
   await expect(page.locator("[data-mcc-regions='config'] [data-role='status']")).toContainText("Region found.");

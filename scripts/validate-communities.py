@@ -6,11 +6,13 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 import re
 import sys
 import unicodedata
 from collections import Counter
 from datetime import date
+from functools import cache
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse, quote
@@ -503,13 +505,14 @@ def front_matter(*, title: str, description: str, task: str, metadata: dict[str,
         "estimated_time: 2-5 minutes",
         "destructive: false",
         "page_styles:",
-        "  - assets/styles/communities.css?v=20260722-2",
+        "  - assets/styles/communities.css?v=20260905-1",
     ]
     if scripts:
         lines.extend(
             [
+                "status_notice: false",
                 "page_scripts:",
-                "  - assets/javascripts/communities.js?v=20260722-2",
+                "  - assets/javascripts/communities.js?v=20260905-1",
             ]
         )
     lines.extend(["---", ""])
@@ -618,6 +621,39 @@ def render_settings(community: dict[str, Any], *, compact: bool = False) -> str:
     return prefix + "; ".join(values)
 
 
+@cache
+def search_reference_points() -> dict[str, list[dict[str, Any]]]:
+    catalog = json.loads((ROOT / "docs/assets/regions/canada-regions.json").read_text(encoding="utf-8"))
+    references = json.loads((ROOT / "data/community-search-anchors.json").read_text(encoding="utf-8"))["communities"]
+    communities = json.loads(DATA_PATH.read_text(encoding="utf-8"))["communities"]
+    if set(references) != {community["id"] for community in communities}:
+        raise ValueError("Community search references must match the directory IDs")
+    seeds = {seed["tag"]: seed for seed in catalog["seeds"]}
+    result = {}
+    for community in communities:
+        location = community["location"]
+        if location["latitude"] is not None and location["longitude"] is not None:
+            points = [{"label": community["service_area"], "lat": location["latitude"], "lon": location["longitude"]}]
+        else:
+            points = []
+            for reference in references[community["id"]]:
+                if isinstance(reference, str):
+                    seed = seeds[reference]
+                    points.append({"label": catalog["hierarchy"][reference]["label"], "lat": seed["lat"], "lon": seed["lon"]})
+                else:
+                    points.append({key: reference[key] for key in ("label", "lat", "lon")})
+        if not points or any(not isinstance(point["label"], str) or not point["label"] or
+                             not all(isinstance(point[key], (int, float)) and math.isfinite(point[key]) for key in ("lat", "lon")) or
+                             not 41 <= point["lat"] <= 84 or not -142 <= point["lon"] <= -52 for point in points):
+            raise ValueError(f"Invalid community search reference for {community['id']}")
+        result[community["id"]] = points
+    return result
+
+
+def search_points_attribute(community: dict[str, Any]) -> str:
+    return html.escape(json.dumps(search_reference_points()[community["id"]], ensure_ascii=False, separators=(",", ":")), quote=True)
+
+
 def render_directory_card(community: dict[str, Any], page: dict[str, Any]) -> str:
     search = html.escape(search_text(community, page), quote=True)
     has_override = str(bool(community["settings"]["overrides"])).lower()
@@ -625,7 +661,8 @@ def render_directory_card(community: dict[str, Any], page: dict[str, Any]) -> st
         (
             f'<article class="mc-community-card" id="directory-{community["id"]}" '
             f'data-community-card data-community-status="{community["status"]}" '
-            f'data-community-override="{has_override}" data-community-search="{search}">'
+            f'data-community-override="{has_override}" data-community-search="{search}" '
+            f'data-community-points="{search_points_attribute(community)}">'
         ),
         '<div class="mc-community-card__header">',
         (
@@ -638,6 +675,7 @@ def render_directory_card(community: dict[str, Any], page: dict[str, Any]) -> st
         ),
         "</div>",
         f'<p class="mc-community-area">{html.escape(community["service_area"])}</p>',
+        '<p class="mc-community-distance" data-community-distance hidden></p>',
     ]
     if community.get("summary"):
         lines.append(f'<p class="mc-community-summary">{html.escape(community["summary"])}</p>')
@@ -670,7 +708,6 @@ def render_index(data: dict[str, Any]) -> str:
     active = sum(item["status"] == "active" for item in communities)
     forming = sum(item["status"] == "forming" for item in communities)
     overrides = sum(bool(item["settings"]["overrides"]) for item in communities)
-    unverified = sum(item["verified_at"] is None for item in communities)
 
     lines = [
         front_matter(
@@ -685,12 +722,11 @@ def render_index(data: dict[str, Any]) -> str:
         "",
         "# Find a MeshCore community",
         "",
-        "Search by place, province, community name, or a common alias. The full list",
-        "works without a map, location permission, or a GitHub account.",
+        "Type a community or province to filter the list, or look up your city to find the closest communities.",
+        "<noscript><p>City lookup needs JavaScript. All community listings are available below.</p></noscript>",
         "",
         '!!! note "Community information can change"',
-        f"    {unverified} of {len(communities)} listings do not have a recent contact check.",
-        "    Confirm important settings and contacts before relying on them.",
+        "    This information could be out of date!",
         "",
         '<div class="mc-directory-summary" aria-label="Directory summary">',
         f"<span><strong>{len(communities)}</strong> listings</span>",
@@ -699,12 +735,12 @@ def render_index(data: dict[str, Any]) -> str:
         f"<span><strong>{overrides}</strong> with different local settings</span>",
         "</div>",
         "",
-        '<div class="mc-directory-tools" data-community-directory>',
+        '<form class="mc-directory-tools" data-community-directory>',
         '  <div class="mc-directory-tools__search">',
         '    <label for="community-search">Place, province, community, or alias</label>',
         (
             '    <input id="community-search" type="search" name="community" '
-            'autocomplete="address-level2" placeholder="Try Ottawa, YQL, or Quebec">'
+            'autocomplete="address-level2" maxlength="160" placeholder="Try Cambridge, ON or YQL">'
         ),
         "  </div>",
         '  <div class="mc-directory-tools__filter">',
@@ -719,15 +755,20 @@ def render_index(data: dict[str, Any]) -> str:
         '    <input id="community-override" type="checkbox">',
         "    Has a local settings override",
         "  </label>",
-        '  <button class="md-button" type="button" data-community-clear>Clear</button>',
+        '  <div class="mc-directory-actions"><button class="md-button md-button--primary" type="submit" data-community-locate>Find nearby</button>',
+        '  <button class="md-button" type="button" data-community-clear>Clear</button></div>',
         '  <output class="mc-directory-tools__count" data-community-count aria-live="polite">',
         f"    Showing {len(communities)} communities",
         "  </output>",
-        "</div>",
+        '  <div class="mc-directory-lookup" data-community-lookup role="status" aria-live="polite"></div>',
+        '  <div class="mc-directory-choices" data-community-choices hidden></div>',
+        '  <p class="mc-directory-credit" data-community-credit hidden>Places: <a href="https://natural-resources.canada.ca/maps-tools-publications/satellite-elevation-air-photos/geolocation-service">Natural Resources Canada</a>. Distances are approximate, not coverage estimates.</p>',
+        '  <button class="md-button" type="button" data-community-show-all hidden>Show all by distance</button>',
+        "</form>",
         "",
         '<div class="mc-community-empty" data-community-empty hidden>',
         "  <h2>No matching community</h2>",
-        "  <p>Try a nearby city, a province name, a location code such as YQL, or clear the filters.</p>",
+        "  <p>Choose Find nearby to look up your city, or clear the filters.</p>",
         '  <button class="md-button" type="button" data-community-clear>Clear search</button>',
         '  <p><a href="../submit-idea/">Add a missing community</a></p>',
         "</div>",
@@ -1194,7 +1235,8 @@ def render_directory_card_fr(
         (
             f'<article class="mc-community-card" id="directory-{community["id"]}" '
             f'data-community-card data-community-status="{community["status"]}" '
-            f'data-community-override="{has_override}" data-community-search="{search}">'
+            f'data-community-override="{has_override}" data-community-search="{search}" '
+            f'data-community-points="{search_points_attribute(community)}">'
         ),
         '<div class="mc-community-card__header">',
         (
@@ -1241,16 +1283,6 @@ def render_index_fr(data: dict[str, Any], french: dict[str, Any]) -> str:
     active = sum(item["status"] == "active" for item in communities)
     forming = sum(item["status"] == "forming" for item in communities)
     overrides = sum(bool(item["settings"]["overrides"]) for item in communities)
-    unverified = sum(item["verified_at"] is None for item in communities)
-    if unverified == 1:
-        verification_summary = (
-            f"1 fiche sur {len(communities)} n’a pas fait l’objet d’une vérification récente des coordonnées."
-        )
-    else:
-        verification_summary = (
-            f"{unverified} fiches sur {len(communities)} n’ont pas fait l’objet d’une vérification récente des coordonnées."
-        )
-
     lines = [
         front_matter(
             title="Trouver une communauté MeshCore au Canada",
@@ -1270,12 +1302,11 @@ def render_index_fr(data: dict[str, Any], french: dict[str, Any]) -> str:
         "",
         "# Trouver une communauté MeshCore au Canada",
         "",
-        "Recherchez par lieu, province, nom de communauté ou alias courant. La liste",
-        "complète fonctionne sans carte, autorisation de localisation ni compte GitHub.",
+        "Filtrez la liste par communauté ou province, ou cherchez votre ville pour trouver les communautés les plus proches.",
+        "<noscript><p>La recherche de villes nécessite JavaScript. Toutes les communautés sont indiquées ci-dessous.</p></noscript>",
         "",
         '!!! note "Les renseignements sur les communautés peuvent changer"',
-        f"    {verification_summary}",
-        "    Confirmez les réglages et les coordonnées importants avant de vous y fier.",
+        "    Ces renseignements pourraient être périmés !",
         "",
         '<div class="mc-directory-summary" aria-label="Résumé du répertoire">',
         f"<span><strong>{len(communities)}</strong> {'fiche' if len(communities) == 1 else 'fiches'}</span>",
@@ -1287,12 +1318,12 @@ def render_index_fr(data: dict[str, Any], french: dict[str, Any]) -> str:
         ),
         "</div>",
         "",
-        '<div class="mc-directory-tools" data-community-directory data-community-locale="fr">',
+        '<form class="mc-directory-tools" data-community-directory data-community-locale="fr">',
         '  <div class="mc-directory-tools__search">',
         '    <label for="community-search">Lieu, province, communauté ou alias</label>',
         (
             '    <input id="community-search" type="search" name="community" '
-            'autocomplete="address-level2" placeholder="Essayez Ottawa, YQL ou Québec">'
+            'autocomplete="address-level2" maxlength="160" placeholder="Essayez Cambridge, ON ou YQL">'
         ),
         "  </div>",
         '  <div class="mc-directory-tools__filter">',
@@ -1307,15 +1338,20 @@ def render_index_fr(data: dict[str, Any], french: dict[str, Any]) -> str:
         '    <input id="community-override" type="checkbox">',
         "    Possède des réglages locaux différents",
         "  </label>",
-        '  <button class="md-button" type="button" data-community-clear>Effacer</button>',
+        '  <div class="mc-directory-actions"><button class="md-button md-button--primary" type="submit" data-community-locate>Trouver à proximité</button>',
+        '  <button class="md-button" type="button" data-community-clear>Effacer</button></div>',
         '  <output class="mc-directory-tools__count" data-community-count aria-live="polite">',
         f"    {len(communities)} communautés affichées",
         "  </output>",
-        "</div>",
+        '  <div class="mc-directory-lookup" data-community-lookup role="status" aria-live="polite"></div>',
+        '  <div class="mc-directory-choices" data-community-choices hidden></div>',
+        '  <p class="mc-directory-credit" data-community-credit hidden>Lieux : <a href="https://natural-resources.canada.ca/maps-tools-publications/satellite-elevation-air-photos/geolocation-service">Ressources naturelles Canada</a>. Les distances sont approximatives et n’indiquent pas la couverture radio.</p>',
+        '  <button class="md-button" type="button" data-community-show-all hidden>Tout afficher par distance</button>',
+        "</form>",
         "",
         '<div class="mc-community-empty" data-community-empty hidden>',
         "  <h2>Aucune communauté correspondante</h2>",
-        "  <p>Essayez une ville voisine, une province, un code comme YQL, ou effacez les filtres.</p>",
+        "  <p>Choisissez Trouver à proximité pour chercher votre ville, ou effacez les filtres.</p>",
         '  <button class="md-button" type="button" data-community-clear>Effacer la recherche</button>',
         '  <p><a href="../submit-idea/">Ajouter une communauté manquante</a></p>',
         "</div>",

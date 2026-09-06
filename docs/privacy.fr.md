@@ -24,6 +24,8 @@ Vous pouvez consulter ce site sans compte MeshCore Canada ni compte GitHub.
 | Action | Données transmises | Destination |
 |---|---|---|
 | Rechercher dans cette documentation | Vos mots de recherche restent dans le navigateur | Nulle part |
+| Trouver des communautés à proximité | La ville recherchée | API Géolocalisateur de Ressources naturelles Canada; les distances sont calculées dans votre navigateur |
+| Charger les totaux du réseau dans l’en-tête | Votre adresse IP et les renseignements habituels d’une requête Web, sans texte de recherche | Beacon à dev.meshcore.ca |
 | Rechercher un lieu dans les outils de région | Le lieu, le code d’aéroport ou le code postal saisi | Vérification locale d’abord, puis OpenStreetMap ou geocoder.ca au besoin |
 | Ouvrir la carte interactive des régions | Votre adresse IP et la partie visible de la carte | OpenStreetMap |
 | Vérifier un identifiant de parcours de répéteur | Le premier octet de la clé publique | Beacon à dev.meshcore.ca; les comparaisons régionales et des préfixes plus longs restent dans votre navigateur |
@@ -55,6 +57,9 @@ région Beacon choisi dans l’outil de vérification sont enregistrés uniqueme
 dans votre navigateur lorsque vous utilisez ces fonctions. Les clés publiques
 des répéteurs, les mots de passe, les clés privées, les jetons antipourriel et
 les recherches d’emplacement n’y sont pas enregistrés.
+
+Les totaux de l’en-tête sont mis en cache pendant cinq minutes dans l’onglet courant.
+La ville recherchée dans le répertoire apparaît dans l’URL pour partager ou retrouver les résultats.
 
 Vous pouvez effacer les données enregistrées par ce site dans les paramètres de
 votre navigateur. Le formulaire d’idée offre aussi l’action

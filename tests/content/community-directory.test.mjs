@@ -232,7 +232,7 @@ test("search covers reviewed place names and common aliases", () => {
 
 test("the list remains complete without JavaScript or a map", () => {
   const index = readFileSync(join(provinceDir, "index.md"), "utf8");
-  assert.match(index, /works without a map, location permission, or a GitHub account/);
+  assert.match(index, /<noscript>.*All community listings are available below/);
   assert.equal(
     [...index.matchAll(/data-community-card(?=[\s>])/g)].length,
     data.communities.length,

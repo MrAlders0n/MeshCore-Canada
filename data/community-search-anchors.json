@@ -1,0 +1,29 @@
+{
+  "description": "Approximate search reference points, not radio locations or coverage boundaries. Existing community coordinates take precedence. Regional references use the published canada-regions.json seed coordinates; broad communities may have several references.",
+  "communities": {
+    "bc-mesh": ["mvrd", "crd"],
+    "salish-mesh": ["mvrd", "crd"],
+    "alberta-meshcore-networks": ["cal", "edm", "leth"],
+    "airdrie-meshcore-network": [],
+    "calgary-area-meshcore": ["cal"],
+    "calgary-meshcore-network": [],
+    "edmonton-meshcore-network": [],
+    "yegmesh-ca": [],
+    "yqlmesh": [],
+    "southern-alberta": ["leth"],
+    "yyc-meshcore-discord": ["cal"],
+    "stoonmesh": ["stoon"],
+    "yqrmesh": ["regina"],
+    "greater-ottawa-mesh-enthusiasts": ["ott", "gatout"],
+    "gta-lora-meshes": ["tor"],
+    "quinte-mesh-network": ["has", "pec"],
+    "charlevoix-yml": [{"label": "La Malbaie", "lat": 47.652419, "lon": -70.14951, "source": "https://geolocator.api.geo.ca/?q=La%20Malbaie&lang=en&keys=geonames"}],
+    "mesh-quebec": ["mtl", "capnat", "saglac"],
+    "montreal-mesh": ["mtl"],
+    "reseau-mesh-capitale-yqb": ["capnat"],
+    "reseau-mesh-saguenay-lac-saint-jean-ytf": ["saglac"],
+    "reseau-libre": ["mtl"],
+    "southern-new-brunswick": ["york", "sj", "westm"],
+    "lunenburg-county-mesh": ["lun"]
+  }
+}

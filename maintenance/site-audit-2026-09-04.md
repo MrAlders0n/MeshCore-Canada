@@ -55,6 +55,26 @@ contract is unchanged. No deployment is part of this PR.
 
 ## Review checklist
 
+### September 5 browser feedback
+
+- The directory landing page hides its review banner and uses the requested short
+  out-of-date notice. Individual listing review dates and safety metadata remain.
+- City lookup uses Natural Resources Canada's current Geolocator API with the
+  official place-name source. Exact cities take priority over similarly named
+  geographic features; ambiguous results offer a choice. Nearby results use
+  approximate reference points for all 24 communities, not radio coverage.
+- The hardware landing page no longer repeats the purchase-warning card.
+- The first configurator step links directly to the map and region editor.
+- Header totals use public Beacon aggregates: known devices by type, plus
+  observers, areas, and packets for the overview's reported time window. Counts
+  are cached per tab for five minutes; errors show unavailable values, not zeroes.
+- The homepage adds a theme-aware SVG motif derived from the existing Canadian
+  geography, and a brief note about the planned separate Canada preset. The note
+  links to upstream issue #3302; no release date or installed default is claimed.
+- Neither broker services nor the production site are deployed by these changes.
+
+### Before approval
+
 - Inspect explicit Canada/BC Mesh commands and keep-current defaults.
 - Check the map → configuration → French journey on a phone and desktop.
 - Review short-form feedback in both languages, including the originating page.
