@@ -159,7 +159,8 @@ export function validateSubmissionConfig(value, endpoint = DEFAULT_SUBMISSION_EN
     version: SUBMISSION_CONTRACT_VERSION,
     endpoint: cleanEndpoint(endpoint),
     turnstileSiteKey: siteKey,
-    turnstileAction: action
+    turnstileAction: action,
+    ...(value.communityIdeaOptionalDetails === true ? { communityIdeaOptionalDetails: true } : {})
   });
 }
 

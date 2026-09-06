@@ -3810,9 +3810,9 @@ officiel. Il faut un navigateur compatible avec
 <li>Sélectionnez le modèle exact de la carte.</li>
 <li>Sélectionnez <strong>Companion Radio (Bluetooth)</strong>.</li>
 <li>Sélectionnez la version du micrologiciel destinée à cette carte.</li>
-<li>Cliquez sur <strong>Enter DFU Mode</strong>. Le programme devrait indiquer qu’il a trouvé un appareil dans le mode attendu.</li>
+<li>Suivez les étapes de connexion propres à votre carte. Utilisez <strong>Enter DFU Mode</strong> seulement si cette cible le demande. Le programme devrait indiquer qu’il a trouvé un appareil dans le mode attendu.</li>
 <li>Vérifiez de nouveau le matériel et le micrologiciel sélectionnés.</li>
-<li>Cliquez sur <strong>Erase Flash</strong>, puis attendez le message confirmant la réussite de l’effacement.</li>
+<li>Pour une première installation ou une réinitialisation, sauvegardez d’abord. Cliquez sur <strong>Erase Flash</strong> seulement si les instructions de la carte le demandent. Pour une mise à jour, laissez l’effacement désactivé sauf indication contraire dans les notes de version.</li>
 <li>Cliquez sur <strong>Flash</strong> et attendez le message de fin avant de débrancher l’appareil.</li>
 </ol>
 <h2 id="recuperation-en-cas-dechec">Récupération en cas d’échec<a class="headerlink" href="#recuperation-en-cas-dechec" title="Permanent link">&para;</a></h2>
@@ -3841,7 +3841,7 @@ sauf si votre méthode d’essai locale exige un autre réglage.</p>
 <ol>
 <li>Confirmez que l’application se reconnecte et affiche le nom de l’appareil et les réglages radio attendus.</li>
 <li>Envoyez un message d’essai dans le canal <strong>Public</strong>.</li>
-<li>Une réponse comme <strong>Heard X Repeats</strong> indique qu’au moins un répéteur a signalé l’avoir reçu. Un simple résultat <strong>Sent</strong> ne prouve pas que les réglages sont incorrects; rendez-vous dans une zone où la couverture est connue ou demandez à la communauté locale de vous aider à faire l’essai.</li>
+<li>Une réponse comme <strong>Heard X Repeats</strong> indique qu’votre compagnon a entendu une retransmission du message. Un simple résultat <strong>Sent</strong> ne prouve pas que les réglages sont incorrects; rendez-vous dans une zone où la couverture est connue ou demandez à la communauté locale de vous aider à faire l’essai.</li>
 </ol>
 <p>La configuration n’est terminée que si les réglages enregistrés résistent à un
 redémarrage et qu’un essai local réussit.</p>
@@ -3871,8 +3871,8 @@ récupération USB propre à la carte dans le dossier de l’appareil.</p>
   
   <aside class="mc-page-feedback" aria-label="Commentaires sur la page">
     
-      <p>Cette première version française vous semble-t-elle claire et naturelle?</p>
-      <a class="md-button" href="../../submit-idea/">Signaler une amélioration</a>
+      <p>Cette page vous a-t-elle été utile?</p>
+      <a class="md-button" href="../../submit-idea/?source_page=https%3A//meshcore.ca/fr/meshcore/flash-companion/">Signaler une amélioration</a>
     
   </aside>
 
@@ -3897,46 +3897,6 @@ récupération USB propre à la carte dans le dossier de l’appareil.</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
-        
-          
-          <a href="../../hardware/repeater-mounting-options/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Options de montage">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Précédent
-              </span>
-              <div class="md-ellipsis">
-                Options de montage
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../flash-repeater/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Installer le micrologiciel d&#39;un répéteur">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Suivant
-              </span>
-              <div class="md-ellipsis">
-                Installer le micrologiciel d'un répéteur
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4004,7 +3964,7 @@ récupération USB propre à la carte dans le dossier de l’appareil.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
   

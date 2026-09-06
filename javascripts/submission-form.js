@@ -312,6 +312,7 @@
       idea: value("submission-idea"),
       context: value("submission-context"),
       followUp: value("submission-follow-up"),
+      sourcePage: form.elements.source_page.value,
       publicAcknowledged: document.getElementById("submission-public").checked
     };
   }
@@ -422,6 +423,9 @@
       config = await loaded.transport.fetchSubmissionConfig({
         endpoint: loaded.community.COMMUNITY_SUBMISSION_ENDPOINT
       });
+      // The gateway must support the shorter form before it can accept its payload.
+      // Older deployments still offer the copy/GitHub path, without a failed POST.
+      if (!config.communityIdeaOptionalDetails) throw new Error("Submission service update required");
       turnstile = await loaded.transport.loadTurnstile();
       if (widgetId === null) {
         setAntiSpamStatus("Complete the check.");
@@ -577,6 +581,19 @@
   elements.antiSpamRetry.addEventListener("click", initialiseSubmission);
   initialiseCharacterCounters();
   restoreDraft();
+  loadModules().then(function (loaded) {
+    const params = new URLSearchParams(window.location.search);
+    try {
+      if (params.has("source_page")) form.elements.source_page.value = loaded.community.normalizeSourcePage(params.get("source_page"));
+    } catch (_) { /* Ignore malformed context; the form remains usable. */ }
+    const community = params.get("community");
+    if (community && /^[a-z0-9-]{1,80}$/.test(community) && !document.getElementById("submission-context").value) {
+      document.getElementById("submission-context").value = "Community listing: " + community;
+      document.getElementById("submission-category").value = "Regional community information";
+    } else if (params.has("source_page") && !document.getElementById("submission-category").value) {
+      document.getElementById("submission-category").value = "Documentation correction";
+    }
+  }).catch(function () { /* GitHub fallback remains available. */ });
   updateDraftControls();
   updateActions();
 })();

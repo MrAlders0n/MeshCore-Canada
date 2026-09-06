@@ -3941,6 +3941,9 @@
 </tbody>
 </table>
 <h3 id="3-build-the-commands">3. Build the commands<a class="headerlink" href="#3-build-the-commands" title="Permanent link">&para;</a></h3>
+<p>These commands replace MQTT slots <strong>1 and 2</strong>. Check those slots first; if they
+serve another network, use <strong>Configure via USB</strong> to add Canada in unused slots.
+Slots 3–6 are left unchanged. Repeating is off unless you choose to enable it.</p>
 <p>The CLI has no documented general quoting contract. The builder rejects spaces, quotes, backslashes, control characters, and other ambiguous Wi-Fi values. Use <strong>Configure via USB</strong> for a network it cannot represent safely.</p>
 <div class="mc-command-builder" id="observer-command-builder" data-location-source="../../location-codes.json">
   <div class="mc-command-grid">
@@ -3982,11 +3985,14 @@
     <label class="mc-command-field--wide">
       <strong>Mesh traffic</strong>
       <select id="observer-repeat">
-        <option value="on">Observe and repeat packets</option>
-        <option value="off">Observe only</option>
+        <option value="off">Observe only (recommended)</option>
+        <option value="on">Observe and repeat packets — coordinate locally first</option>
       </select>
     </label>
   </div>
+  <label><strong>Radio network</strong><select id="observer-radio"><option value="keep">Keep current settings</option></select></label>
+  <p>Choose your community’s profile explicitly. Location alone does not select a radio network.</p>
+  <label><strong>Advert ID size</strong><select id="observer-hash"><option value="keep">Keep current settings</option><option value="2">3 bytes</option><option value="1">2 bytes</option><option value="0">1 byte</option></select></label>
   <p class="mc-command-notice" id="observer-location-status" aria-live="polite">Loading Canadian location suggestions…</p>
   <p class="mc-command-notice" id="observer-secret-help">SSID and password stay in this page only. They are cleared when you leave and hidden from the preview until you reveal them.</p>
   <div class="mc-command-errors" id="observer-command-errors" role="alert" aria-live="assertive"></div>
@@ -4002,25 +4008,20 @@
 
 <p>Check the non-sensitive summary and redacted preview. Reveal and copy commands only on a trusted computer. The clipboard will contain Wi-Fi credentials, so clear it after use.</p>
 <h3 id="enter-commands-by-hand">Enter commands by hand<a class="headerlink" href="#enter-commands-by-hand" title="Permanent link">&para;</a></h3>
+<p>These commands preserve radio settings and presets 3–6, but replace presets 1 and 2. On an existing observer, check those slots first. Choose radio values in the builder above; changes take effect after reboot. Observing does not require repeating. Enable repeating only after coordinating with nearby operators.</p>
 <p>If you prefer manual entry, set the non-sensitive values first:</p>
 <div class="highlight"><pre><span></span><code>set name YOW-Repeater-01
-set radio 910.525,62.5,7,5
-set path.hash.mode 2
 set mqtt.iata YOW
 set wifi.powersave none
 set mqtt1.preset meshcore-ca-1
 set mqtt2.preset meshcore-ca-2
-set mqtt3.preset none
-set mqtt4.preset none
-set mqtt5.preset none
-set mqtt6.preset none
 set mqtt.status on
 set mqtt.packets on
 set mqtt.raw off
 set mqtt.rx on
 set mqtt.tx advert
 set bridge.enabled on
-set repeat on
+set repeat off
 advert
 </code></pre></div>
 <p>Replace the name and location code. Use <code>set repeat off</code> for an observe-only node.</p>
@@ -4048,7 +4049,7 @@ get path.hash.mode
 <li>the location code is correct;</li>
 <li>presets are <code>meshcore-ca-1</code> and <code>meshcore-ca-2</code>;</li>
 <li>packet publishing and bridge mode are on; and</li>
-<li>path hash mode is <code>2</code>.</li>
+<li>the radio profile and path hash mode match your explicit choices.</li>
 </ul>
 <h2 id="verify-in-corescope">Verify in CoreScope<a class="headerlink" href="#verify-in-corescope" title="Permanent link">&para;</a></h2>
 <ol>
@@ -4087,7 +4088,7 @@ get path.hash.mode
   <aside class="mc-page-feedback" aria-label="Page feedback">
     
       <p>Was this page useful?</p>
-      <a class="md-button" href="../../../submit-idea/">Suggest a change</a>
+      <a class="md-button" href="../../../submit-idea/?source_page=https%3A//meshcore.ca/analyzer/builds/mqtt-firmware/">Suggest a change</a>
     
   </aside>
 
@@ -4112,46 +4113,6 @@ get path.hash.mode
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../meshcore-ha/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home Assistant">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Home Assistant
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../pymc/" class="md-footer__link md-footer__link--next" aria-label="Next: PyMC">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                PyMC
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4219,7 +4180,7 @@ get path.hash.mode
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   
@@ -4232,7 +4193,9 @@ get path.hash.mode
     
   
     
-      <script src="../../../assets/javascripts/analyzer-command-builder.js?v=20260722-2"></script>
+      <script src="../../../assets/javascripts/radio-profiles.js?v=20260904-1" defer></script>
+    
+      <script src="../../../assets/javascripts/analyzer-command-builder.js?v=20260904-1" defer></script>
     
     
   

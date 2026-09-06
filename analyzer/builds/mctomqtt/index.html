@@ -3943,7 +3943,7 @@
 <li>adds the primary and backup MeshCore Canada addresses and location code; and</li>
 <li>restarts <code>mctomqtt</code> unless <code>--no-restart</code> is used.</li>
 </ul>
-<p>For companion capture, it updates <code>~/.meshcore-packet-capture/.env.local</code>, makes a timestamped backup, configures slots 1 and 2, disables slots 3–6, and may restart the capture service.</p>
+<p>For companion capture, it updates <code>~/.meshcore-packet-capture/.env.local</code>, makes a timestamped backup, updates existing Canada broker slots or uses empty slots, and may restart the capture service.</p>
 <p>Install flags download and run separate upstream installers. Do not use them until you have reviewed the named upstream installer too.</p>
 <h2 id="set-up">Set up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h2>
 <h3 id="1-download-and-inspect-the-helper">1. Download and inspect the helper<a class="headerlink" href="#1-download-and-inspect-the-helper" title="Permanent link">&para;</a></h3>
@@ -3975,7 +3975,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="
 <p>The service should stay active without repeated TLS or authentication errors.</p>
 <h3 id="run-it-directly-after-review">Run it directly after review<a class="headerlink" href="#run-it-directly-after-review" title="Permanent link">&para;</a></h3>
 <p>After reviewing the current published helper, you can run that same file directly:</p>
-<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>&lt;<span class="o">(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://meshcore.ca/analyzer/scripts/add-meshcore-ca-broker.sh<span class="o">)</span><span class="w"> </span>--device<span class="w"> </span>serial-host<span class="w"> </span>--iata<span class="w"> </span>YOW
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>add-meshcore-ca-broker.sh<span class="w"> </span>--device<span class="w"> </span>serial-host<span class="w"> </span>--iata<span class="w"> </span>YOW
 </code></pre></div>
 <p>The downloaded-file method above is easier to review and recover.</p>
 <h3 id="fresh-installation">Fresh installation<a class="headerlink" href="#fresh-installation" title="Permanent link">&para;</a></h3>
@@ -4047,7 +4047,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
   <aside class="mc-page-feedback" aria-label="Page feedback">
     
       <p>Was this page useful?</p>
-      <a class="md-button" href="../../../submit-idea/">Suggest a change</a>
+      <a class="md-button" href="../../../submit-idea/?source_page=https%3A//meshcore.ca/analyzer/builds/mctomqtt/">Suggest a change</a>
     
   </aside>
 
@@ -4072,46 +4072,6 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../remoteterm/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RemoteTerm">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                RemoteTerm
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../meshcore-ha/" class="md-footer__link md-footer__link--next" aria-label="Next: Home Assistant">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Home Assistant
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4179,7 +4139,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   

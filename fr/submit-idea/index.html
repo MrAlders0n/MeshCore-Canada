@@ -3570,13 +3570,33 @@
 
   <div class="submission-form__header">
     <h2>Décrivez votre idée</h2>
-    <p>Remplissez les cinq champs obligatoires.</p>
+    <p>Ajoutez un titre et décrivez le problème ou l’idée. Le reste est facultatif.</p>
   </div>
 
+  <div class="submission-field">
+    <label for="submission-summary">Titre court</label>
+    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Exemple : Ajouter une liste de vérification pour les répéteurs" required>
+  </div>
+
+  <div class="submission-form__grid submission-form__grid--ideas">
+    <div class="submission-field">
+      <label for="submission-need">Problème ou idée</label>
+      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Expliquez-nous ce qui vous a bloqué." required></textarea>
+    </div>
+
+    <div class="submission-field">
+      <label for="submission-idea">Changement proposé (facultatif)</label>
+      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Indiquez le changement qui vous aiderait le plus."></textarea>
+    </div>
+  </div>
+
+  <details class="submission-optional">
+    <summary>Ajouter des précisions <span>Facultatif</span></summary>
+    <div class="submission-optional__body">
   <div class="submission-form__grid">
     <div class="submission-field">
       <label for="submission-category">Type d’idée</label>
-      <select id="submission-category" name="category" required>
+      <select id="submission-category" name="category">
         <option value="">Choisissez la meilleure option</option>
         <option value="Newcomer or accessibility improvement">Amélioration pour les personnes qui débutent ou en matière d’accessibilité</option>
         <option value="Documentation correction">Correction de la documentation</option>
@@ -3590,7 +3610,7 @@
 
     <div class="submission-field">
       <label for="submission-experience">Votre expérience avec MeshCore</label>
-      <select id="submission-experience" name="experience" required>
+      <select id="submission-experience" name="experience">
         <option value="">Choisissez une option</option>
         <option value="Brand new / researching">Je découvre MeshCore ou je me renseigne</option>
         <option value="Setting up my first node">Je configure mon premier nœud</option>
@@ -3601,26 +3621,7 @@
     </div>
   </div>
 
-  <div class="submission-field">
-    <label for="submission-summary">Titre court</label>
-    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Exemple : Ajouter une liste de vérification pour les répéteurs" required>
-  </div>
 
-  <div class="submission-form__grid submission-form__grid--ideas">
-    <div class="submission-field">
-      <label for="submission-need">Qu’est-ce qui est difficile en ce moment?</label>
-      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Expliquez-nous ce qui vous a bloqué." required></textarea>
-    </div>
-
-    <div class="submission-field">
-      <label for="submission-idea">Qu’est-ce qui devrait être amélioré?</label>
-      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Indiquez le changement qui vous aiderait le plus." required></textarea>
-    </div>
-  </div>
-
-  <details class="submission-optional">
-    <summary>Ajouter des précisions <span>Facultatif</span></summary>
-    <div class="submission-optional__body">
       <div class="submission-form__grid">
         <div class="submission-field">
           <label for="submission-region">Ville ou grande région</label>
@@ -3706,8 +3707,8 @@
   
   <aside class="mc-page-feedback" aria-label="Commentaires sur la page">
     
-      <p>Cette première version française vous semble-t-elle claire et naturelle?</p>
-      <a class="md-button" href="./">Signaler une amélioration</a>
+      <p>Cette page vous a-t-elle été utile?</p>
+      <a class="md-button" href="./?source_page=https%3A//meshcore.ca/fr/submit-idea/">Signaler une amélioration</a>
     
   </aside>
 
@@ -3734,48 +3735,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-        
-      
-      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
-        
-          
-          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Façons de contribuer">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Précédent
-              </span>
-              <div class="md-ellipsis">
-                Façons de contribuer
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../privacy/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Confidentialité du site">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Suivant
-              </span>
-              <div class="md-ellipsis">
-                Confidentialité du site
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3843,7 +3802,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
     
     
   
@@ -3856,7 +3815,7 @@
     
   
     
-      <script src="../../javascripts/submission-form.js?v=20260722-2"></script>
+      <script src="../../javascripts/submission-form.js?v=20260904-1" defer></script>
     
     
   

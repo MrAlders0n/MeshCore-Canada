@@ -3642,10 +3642,11 @@
 
   
 <p>An observer listens through a MeshCore radio and sends network data to
-CoreScope. It does not route mesh traffic. It can run on radio firmware, an
-always-on computer, or a home-automation host.</p>
+CoreScope. Observing does not require repeating; a node can do both if configured
+for it. Observers can run on radio firmware, an always-on computer, or a home-automation host.</p>
 <p>Read <a href="../../analyzer/data-collection-access/">what the service collects and who can access
 it</a> before enabling an observer.</p>
+<p><a class="md-button md-button--primary" href="../../analyzer/intro/">Choose an observer setup</a></p>
 <h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Open the <a href="../../analyzer/intro/">observer method chooser</a>.</li>
@@ -3658,20 +3659,6 @@ it</a> before enabling an observer.</p>
 <p>Depending on the method, setup may replace radio firmware, install a host
 service, or add a home-automation integration. It also enables public
 network data publishing.</p>
-<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
-  <h2 id="observer-progress-title">Setup checklist</h2>
-  <p>Checks are saved only in this browser.</p>
-  <ol>
-    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Read what observer data becomes public</label></li>
-    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choose a supported observer method</label></li>
-    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
-    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Follow the selected setup guide</label></li>
-    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Apply local radio and service settings</label></li>
-    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Check that the radio hears nearby activity</label></li>
-    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Find the observer in CoreScope</label></li>
-  </ol>
-</section>
-
 <h2 id="set-up-the-observer">Set up the observer<a class="headerlink" href="#set-up-the-observer" title="Permanent link">&para;</a></h2>
 <p>Use the <a href="../../analyzer/intro/">observer method chooser</a>, then follow only the
 guide for the selected method.</p>
@@ -3694,6 +3681,20 @@ settings do not match nearby devices.</p>
 <li>recent activity appears after a nearby transmission.</li>
 </ol>
 <p>Use the <a href="../verify/#observer">observer verification checklist</a>.</p>
+<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
+  <h2 id="observer-progress-title">Setup checklist</h2>
+  <p>Checks are saved only in this browser.</p>
+  <ol>
+    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Read what observer data becomes public</label></li>
+    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choose a supported observer method</label></li>
+    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
+    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Follow the selected setup guide</label></li>
+    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Apply local radio and service settings</label></li>
+    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Check that the radio hears nearby activity</label></li>
+    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Find the observer in CoreScope</label></li>
+  </ol>
+</section>
+
 <h2 id="whats-next">What's next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <p>Check the observer after radio, network, credential, host, or firmware changes.
 Open <a href="../../analyzer/verify/">Check your observer</a> for the detailed health
@@ -3716,7 +3717,7 @@ view. If it is missing or quiet, <a href="../get-help/">get help</a>.</p>
   <aside class="mc-page-feedback" aria-label="Page feedback">
     
       <p>Was this page useful?</p>
-      <a class="md-button" href="../../submit-idea/">Suggest a change</a>
+      <a class="md-button" href="../../submit-idea/?source_page=https%3A//meshcore.ca/start/observer/">Suggest a change</a>
     
   </aside>
 
@@ -3741,46 +3742,6 @@ view. If it is missing or quiet, <a href="../get-help/">get help</a>.</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../room-server/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Room server">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Room server
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../verify/" class="md-footer__link md-footer__link--next" aria-label="Next: Check your setup">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Check your setup
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3848,7 +3809,7 @@ view. If it is missing or quiet, <a href="../get-help/">get help</a>.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   

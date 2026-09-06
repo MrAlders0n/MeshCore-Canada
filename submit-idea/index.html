@@ -3570,13 +3570,33 @@
 
   <div class="submission-form__header">
     <h2>Describe your idea</h2>
-    <p>Fill five required fields.</p>
+    <p>Add a title and describe the problem or idea. Everything else is optional.</p>
   </div>
 
+  <div class="submission-field">
+    <label for="submission-summary">Short title</label>
+    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Example: Add a repeater checklist" required>
+  </div>
+
+  <div class="submission-form__grid submission-form__grid--ideas">
+    <div class="submission-field">
+      <label for="submission-need">Problem or idea</label>
+      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Tell us what blocked you." required></textarea>
+    </div>
+
+    <div class="submission-field">
+      <label for="submission-idea">Suggested change (optional)</label>
+      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Tell us the one change that would help."></textarea>
+    </div>
+  </div>
+
+  <details class="submission-optional">
+    <summary>Add context <span>Optional</span></summary>
+    <div class="submission-optional__body">
   <div class="submission-form__grid">
     <div class="submission-field">
       <label for="submission-category">Type of idea</label>
-      <select id="submission-category" name="category" required>
+      <select id="submission-category" name="category">
         <option value="">Choose the best match</option>
         <option>Newcomer or accessibility improvement</option>
         <option>Documentation correction</option>
@@ -3590,7 +3610,7 @@
 
     <div class="submission-field">
       <label for="submission-experience">Your MeshCore experience</label>
-      <select id="submission-experience" name="experience" required>
+      <select id="submission-experience" name="experience">
         <option value="">Choose one</option>
         <option>Brand new / researching</option>
         <option>Setting up my first node</option>
@@ -3601,26 +3621,7 @@
     </div>
   </div>
 
-  <div class="submission-field">
-    <label for="submission-summary">Short title</label>
-    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Example: Add a repeater checklist" required>
-  </div>
 
-  <div class="submission-form__grid submission-form__grid--ideas">
-    <div class="submission-field">
-      <label for="submission-need">What is hard right now?</label>
-      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Tell us what blocked you." required></textarea>
-    </div>
-
-    <div class="submission-field">
-      <label for="submission-idea">What should improve?</label>
-      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Tell us the one change that would help." required></textarea>
-    </div>
-  </div>
-
-  <details class="submission-optional">
-    <summary>Add context <span>Optional</span></summary>
-    <div class="submission-optional__body">
       <div class="submission-form__grid">
         <div class="submission-field">
           <label for="submission-region">City or broad region</label>
@@ -3707,7 +3708,7 @@
   <aside class="mc-page-feedback" aria-label="Page feedback">
     
       <p>Was this page useful?</p>
-      <a class="md-button" href="./">Suggest a change</a>
+      <a class="md-button" href="./?source_page=https%3A//meshcore.ca/submit-idea/">Suggest a change</a>
     
   </aside>
 
@@ -3734,48 +3735,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-        
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ways to contribute">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Ways to contribute
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../privacy/" class="md-footer__link md-footer__link--next" aria-label="Next: Site privacy">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Site privacy
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3843,7 +3802,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   
@@ -3856,7 +3815,7 @@
     
   
     
-      <script src="../javascripts/submission-form.js?v=20260722-2"></script>
+      <script src="../javascripts/submission-form.js?v=20260904-1" defer></script>
     
     
   

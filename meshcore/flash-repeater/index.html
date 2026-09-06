@@ -3872,7 +3872,7 @@ it passes every check in this guide.</p>
 <li>[ ] I will bench-test before installing the repeater at height or in a remote enclosure.</li>
 </ul>
 <h2 id="what-flashing-changes">What flashing changes<a class="headerlink" href="#what-flashing-changes" title="Permanent link">&para;</a></h2>
-<p>An erase replaces firmware and can delete identity and settings. The setup also writes radio, advert, path-hash, access, location, and region values that affect the shared network.</p>
+<p>Flashing replaces firmware. Erasing can also delete identity and settings. The setup also writes radio, advert, path-hash, access, location, and region values that affect the shared network.</p>
 <h2 id="recovery-plan">Recovery plan<a class="headerlink" href="#recovery-plan" title="Permanent link">&para;</a></h2>
 <p>Keep the exact board's USB recovery method, known-good data cable, backed-up identity/settings, and verified firmware file at the bench. If an erase or flash fails, do not try another board target; return the exact board to DFU/bootloader mode and retry the same verified role by USB.</p>
 <h2 id="nrf52-bootloader-decision">nRF52 bootloader decision<a class="headerlink" href="#nrf52-bootloader-decision" title="Permanent link">&para;</a></h2>
@@ -3886,7 +3886,7 @@ hardware. Do not use a filename copied from an older guide or screenshot.</p>
 <li>Enter its UF2 bootloader mode. On a RAK4631 this is normally done by double-pressing the button beside USB; other boards use their documented reset method.</li>
 <li>Confirm a USB drive appears and inspect <code>INFO.TXT</code> so the board identity is what you expect.</li>
 <li>Copy the matching UF2 file to that drive. The drive may disconnect as the board reboots.</li>
-<li>Re-enter bootloader mode and confirm <code>INFO.TXT</code> reports bootloader version <code>0.9.2</code> before continuing.</li>
+<li>Re-enter bootloader mode and confirm <code>INFO.TXT</code> reports the board and bootloader version from the release you selected before continuing.</li>
 </ol>
 <p>If the board identity or expected version does not match, stop and recover over USB before flashing MeshCore.</p>
 <h2 id="flash-by-usb-recommended">Flash by USB (recommended)<a class="headerlink" href="#flash-by-usb-recommended" title="Permanent link">&para;</a></h2>
@@ -3895,9 +3895,9 @@ hardware. Do not use a filename copied from an older guide or screenshot.</p>
 <li>Connect the repeater by USB.</li>
 <li>Select the exact hardware model.</li>
 <li>Select <strong>Repeater</strong> as the role and choose the intended version for that board.</li>
-<li>Click <strong>Enter DFU Mode</strong> and wait for the flasher to find the board.</li>
+<li>Follow the flasher’s connection steps for your board. Use <strong>Enter DFU Mode</strong> only when that target asks for it.</li>
 <li>Recheck the selected board and role.</li>
-<li>Click <strong>Erase Flash</strong> and wait for a successful erase message.</li>
+<li>For a first installation or deliberate reset, back up first. Click <strong>Erase Flash</strong> only if the board’s instructions require it. For an update, leave erase off unless its release notes require a reset.</li>
 <li>Click <strong>Flash</strong> and wait for completion before disconnecting.</li>
 </ol>
 <p>If flashing fails after erase, do not repeatedly erase. Refresh the page, return the board to DFU mode, verify the target again, and retry <strong>Flash</strong>. Use the board's USB recovery process if it no longer appears.</p>
@@ -3973,7 +3973,7 @@ healthy. See the <a href="https://docs.meshcore.io/cli_commands/#view-or-change-
   <aside class="mc-page-feedback" aria-label="Page feedback">
     
       <p>Was this page useful?</p>
-      <a class="md-button" href="../../submit-idea/">Suggest a change</a>
+      <a class="md-button" href="../../submit-idea/?source_page=https%3A//meshcore.ca/meshcore/flash-repeater/">Suggest a change</a>
     
   </aside>
 
@@ -3998,46 +3998,6 @@ healthy. See the <a href="https://docs.meshcore.io/cli_commands/#view-or-change-
       </main>
       
         <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../flash-companion/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Flash a companion">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Flash a companion
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../flash-room-server/" class="md-footer__link md-footer__link--next" aria-label="Next: Flash a room server">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Flash a room server
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -4105,7 +4065,7 @@ healthy. See the <a href="https://docs.meshcore.io/cli_commands/#view-or-change-
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
   
@@ -4118,7 +4078,7 @@ healthy. See the <a href="https://docs.meshcore.io/cli_commands/#view-or-change-
     
   
     
-      <script src="../../assets/javascripts/repeater-hash-check.js?v=20260820-1"></script>
+      <script src="../../assets/javascripts/repeater-hash-check.js?v=20260904-1" defer></script>
     
     
   
