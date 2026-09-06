@@ -81,11 +81,11 @@ This is a **companion node** role and requires a smartphone. The MeshCore app co
 | **LoRa board** | Heltec T114 (bundle with screen) | $45.99 | [AliExpress](https://www.aliexpress.com/item/1005007916299029.html) |
 | **Right-angle IPEX to SMA pigtail cable** | SMA-KW 2PCS 8cm | $4.67 | [AliExpress](https://www.aliexpress.com/item/1005009270132403.html) |
 | **Battery** | MakerFocus 3.7V 3000mAh LiPo (pack of 4), Micro JST 1.5 connection with protection board | $34.34 | [MakerFocus](https://www.makerfocus.com/products/makerfocus-3-7v-3000mah-lithium-rechargeable-battery-1s-3c-lipo-battery-pack-of-4?variant=44823607541998) |
-| **Antenna** | Gizont 167CM 915MHz SMA M | $10.68 | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) (make sure you select the right antenna when opening the link) |
+| **Antenna** | Gizont 915 MHz SMA M | $10.68 | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) (make sure you select the right antenna when opening the link) |
 
 </div>
 
-*Approximate total cost:* **$95.68 CAD**
+*Example shopping total:* **$95.68 CAD**, including a four-battery pack and two pigtails. This is not the per-device cost.
 
 *Prices are dated September 2, 2026. Check the linked pages for current prices, shipping, duties, and availability.*
 

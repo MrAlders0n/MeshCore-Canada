@@ -1,0 +1,27 @@
+[
+  {
+    "id": "canada",
+    "name": "Canada default",
+    "name_fr": "Réglages canadiens par défaut",
+    "radio": {
+      "frequency_mhz": 910.525,
+      "bandwidth_khz": 62.5,
+      "spreading_factor": 7,
+      "coding_rate": 5
+    },
+    "route": "provinces/#canada-baseline"
+  },
+  {
+    "id": "bc-mesh",
+    "name": "BC Mesh",
+    "name_fr": "BC Mesh",
+    "radio": {
+      "frequency_mhz": 910.425,
+      "bandwidth_khz": 62.5,
+      "spreading_factor": 7,
+      "coding_rate": 5
+    },
+    "route": "provinces/british-columbia/#community-bc-mesh",
+    "reviewed": "2026-08-29"
+  }
+]

@@ -39,7 +39,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -54,9 +54,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://albertamesh.ca/monitoring-tools/" rel="noopener">Monitoring tools</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=alberta-meshcore-networks&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-alberta-meshcore-networks">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-airdrie-meshcore-network">
 <div class="mc-community-card__header">
@@ -68,7 +68,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -80,9 +80,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://waev.app/#/live-map/@51.28107,-113.99966,14.47z" rel="noopener">WAeV live map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=airdrie-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-airdrie-meshcore-network">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-calgary-area-meshcore">
 <div class="mc-community-card__header">
@@ -93,7 +93,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -104,7 +104,7 @@ card lists different local settings.
 <p class="mc-community-contact-health">
 <strong>Contact check:</strong> Some links still need review
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=calgary-area-meshcore&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-calgary-area-meshcore">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-calgary-meshcore-network">
 <div class="mc-community-card__header">
@@ -116,7 +116,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -128,9 +128,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://albertamesh.ca/calgary/#rx-channels" rel="noopener">Recommended Calgary RX channels</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=calgary-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-calgary-meshcore-network">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-edmonton-meshcore-network">
 <div class="mc-community-card__header">
@@ -142,7 +142,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -153,9 +153,9 @@ card lists different local settings.
 <li><strong>MeshMapper:</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Edmonton network map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=edmonton-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-edmonton-meshcore-network">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yegmesh-ca">
 <div class="mc-community-card__header">
@@ -167,7 +167,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -178,9 +178,9 @@ card lists different local settings.
 <li><strong>MeshMapper:</strong> <a href="https://yeg.meshmapper.net/?lat=53.45752&amp;lon=-113.58320&amp;zoom=10.03" rel="noopener">Edmonton network map</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yegmesh-ca&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-yegmesh-ca">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yqlmesh">
 <div class="mc-community-card__header">
@@ -192,7 +192,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -209,7 +209,7 @@ card lists different local settings.
 <p class="mc-community-contact-health">
 <strong>Contact check:</strong> Some links still need review
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yqlmesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-yqlmesh">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-southern-alberta">
 <div class="mc-community-card__header">
@@ -220,7 +220,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -231,7 +231,7 @@ card lists different local settings.
 <p class="mc-community-contact-health">
 <strong>Contact check:</strong> Some links still need review
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=southern-alberta&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-southern-alberta">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yyc-meshcore-discord">
 <div class="mc-community-card__header">
@@ -242,7 +242,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -251,9 +251,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://meshmonitoring.com/" rel="noopener">MeshMonitoring</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yyc-meshcore-discord&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Falberta%2F%23community-yyc-meshcore-discord">Update this listing</a></p>
 </article>
 </div>
 
@@ -261,7 +261,7 @@ card lists different local settings.
 
 <div class="mc-community-card">
 <p><strong>Telegram:</strong> <a href="https://t.me/MeshCoreCAN" rel="noopener">Alberta topic in MeshCore Canada</a> <span class="mc-community-external">(external)</span></p>
-<p><strong>Contact check:</strong> Verified on 2026-08-29</p>
+<p><strong>Contact check:</strong> Links checked on 2026-08-29</p>
 </div>
 
 ## Add or update a listing

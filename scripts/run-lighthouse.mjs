@@ -2,7 +2,7 @@ import { spawn } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import process from "node:process";
 import { launch } from "chrome-launcher";
-import lighthouse, { desktopConfig } from "lighthouse";
+import lighthouse, { desktopConfig, defaultConfig } from "lighthouse";
 import { normalizeSiteBaseUrl, resolveSiteRoute } from "../tests/browser/site-route.mjs";
 
 const suppliedBaseUrl = process.env.LIGHTHOUSE_BASE_URL;
@@ -14,7 +14,12 @@ const routes = [
   ["config", "/config/"],
   ["submit-idea", "/submit-idea/"],
   ["fr-home", "/fr/"],
-  ["fr-config", "/fr/config/"]
+  ["fr-config", "/fr/config/"],
+  ["map-result", "/config/map/?tag=ott"],
+  ["editor", "/config/editor/"],
+  ["mobile-map-result", "/config/map/?tag=ott", "mobile"],
+  ["mobile-fr-map-result", "/fr/config/map/?tag=ott", "mobile"],
+  ["mobile-editor", "/config/editor/", "mobile"]
 ];
 const budgets = {
   performance: 0.8,
@@ -31,7 +36,7 @@ function startServer() {
   const command = process.platform === "win32" ? "python.exe" : "python3";
   return spawn(
     command,
-    ["-m", "http.server", "4174", "--bind", "127.0.0.1", "--directory", ".tmp/site"],
+    ["scripts/serve-audit-site.py", "--port", "4174", "--directory", ".tmp/site"],
     { stdio: "ignore", windowsHide: true }
   );
 }
@@ -81,7 +86,7 @@ async function run() {
   if (!warmup) throw new Error(`Lighthouse warm-up returned no result for ${warmupUrl}`);
 
   const failures = [];
-  for (const [name, route] of routes) {
+  for (const [name, route, device] of routes) {
     const url = resolveSiteRoute(baseUrl, route);
     const html = await (await fetch(url)).text();
     const intentionallyNoIndex = hasNoIndex(html);
@@ -90,7 +95,7 @@ async function run() {
       output: "json",
       logLevel: "error",
       onlyCategories: Object.keys(budgets)
-    }, desktopConfig);
+    }, device === "mobile" ? defaultConfig : desktopConfig);
     if (!result) throw new Error(`Lighthouse returned no result for ${url}`);
 
     await writeFile(

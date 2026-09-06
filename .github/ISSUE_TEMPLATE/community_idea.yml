@@ -24,7 +24,7 @@ body:
         - Feature or project idea
         - Other community feedback
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: experience
@@ -37,7 +37,7 @@ body:
         - Repeater, room server, or observer operator
         - Developer or documentation contributor
     validations:
-      required: true
+      required: false
 
   - type: input
     id: summary
@@ -71,7 +71,7 @@ body:
       description: What should change?
       placeholder: Add...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: context

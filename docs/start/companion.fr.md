@@ -26,6 +26,8 @@ Un appareil compagnon sert à envoyer et à recevoir des messages personnels. Il
 ne relaie pas le trafic des autres personnes. La plupart se jumellent à une
 application; certains possèdent leur propre écran et leurs propres commandes.
 
+[Installer et configurer un compagnon](../meshcore/flash-companion.md){ .md-button .md-button--primary }
+
 ## Avant de commencer
 
 - Consultez les [appareils compagnons recommandés](../hardware/recommended-companions.md).
@@ -40,25 +42,11 @@ Le guide lié remplace le micrologiciel de l’appareil et le configure comme
 compagnon. Arrêtez-vous avant l’effacement si vous ne pouvez pas récupérer les
 renseignements dont vous avez besoin.
 
-<section class="mc-start-progress" data-mc-progress-page="companion" aria-labelledby="companion-progress-title">
-  <h2 id="companion-progress-title">Liste de configuration</h2>
-  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
-  <ol>
-    <li><label><input id="companion-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel est compatible</label></li>
-    <li><label><input id="companion-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
-    <li><label><input id="companion-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
-    <li><label><input id="companion-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres du Canada ou de la communauté</label></li>
-    <li><label><input id="companion-progress-verify-local" type="checkbox" data-mc-progress> Vérifier l’appareil à proximité</label></li>
-    <li><label><input id="companion-progress-verify-community" type="checkbox" data-mc-progress> Faire un essai avec une autre personne du réseau</label></li>
-  </ol>
-</section>
+
 
 ## Installer le micrologiciel du compagnon
 
-Suivez le guide [Reprogrammer et configurer un appareil
-compagnon](../meshcore/flash-companion.md). Il explique comment choisir
-l’appareil, établir la connexion dans le navigateur, installer le micrologiciel
-et récupérer l’appareil en cas de problème.
+Suivez le guide [Installer et configurer un compagnon](../meshcore/flash-companion.md).
 
 ## Choisir les bons paramètres radio
 
@@ -89,3 +77,16 @@ modification du micrologiciel. Consultez les
 messagerie courantes. [Trouvez votre communauté](../provinces/index.md), puis
 échangez un message d’essai avec une personne à proximité. Si personne ne voit
 l’annonce, [obtenez de l’aide](get-help.md).
+
+<section class="mc-start-progress" data-mc-progress-page="companion" aria-labelledby="companion-progress-title">
+  <h2 id="companion-progress-title">Liste de vérification</h2>
+  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
+  <ol>
+    <li><label><input id="companion-progress-hardware" type="checkbox" data-mc-progress> Confirmer que le matériel est compatible</label></li>
+    <li><label><input id="companion-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
+    <li><label><input id="companion-progress-flash" type="checkbox" data-mc-progress> Suivre le guide d’installation du micrologiciel</label></li>
+    <li><label><input id="companion-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres du Canada ou de la communauté</label></li>
+    <li><label><input id="companion-progress-verify-local" type="checkbox" data-mc-progress> Vérifier l’appareil à proximité</label></li>
+    <li><label><input id="companion-progress-verify-community" type="checkbox" data-mc-progress> Faire un essai avec une autre personne du réseau</label></li>
+  </ol>
+</section>

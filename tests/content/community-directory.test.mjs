@@ -315,7 +315,7 @@ test("all listings inherit the three-byte Canada baseline", () => {
   const quebec = readFileSync(join(provinceDir, "quebec.md"), "utf8");
   assert.match(
     quebec,
-    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Listing contact:<\/strong> pifane[\s\S]*?<strong>Contact check:<\/strong> Verified on 2026-08-29/,
+    /<h3>Réseau MESH de Charlevoix \(YML\)<\/h3>[\s\S]*?<strong>Listing contact:<\/strong> pifane[\s\S]*?<strong>Contact check:<\/strong> Links checked on 2026-08-29/,
   );
   const quebecFr = readFileSync(join(provinceDir, "quebec.fr.md"), "utf8");
   assert.match(

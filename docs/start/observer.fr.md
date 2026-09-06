@@ -23,12 +23,15 @@ requires:
 # Commencer avec un observateur
 
 Un observateur écoute le réseau au moyen d’une radio MeshCore et transmet les
-données captées à CoreScope. Il ne relaie pas le trafic du réseau. Il peut
+données captées à CoreScope. Il n’a pas besoin de relayer le trafic, mais un
+même appareil peut remplir les deux fonctions. Il peut
 fonctionner dans le micrologiciel d’une radio, sur un ordinateur qui reste
 allumé ou sur un système de domotique.
 
 Avant de l’activer, lisez
 [quelles données le service recueille et qui peut y accéder](../analyzer/data-collection-access.md).
+
+[Choisir une méthode d’observation](../analyzer/intro.md){ .md-button .md-button--primary }
 
 ## Avant de commencer
 
@@ -46,19 +49,7 @@ Selon la méthode choisie, la configuration peut remplacer le micrologiciel de
 la radio, installer un service sur le système hôte ou ajouter une intégration
 domotique. Elle permet aussi la transmission publique de données du réseau.
 
-<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
-  <h2 id="observer-progress-title">Liste de configuration</h2>
-  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
-  <ol>
-    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Lire quelles données de l’observateur deviennent publiques</label></li>
-    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choisir une méthode d’observation prise en charge</label></li>
-    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
-    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Suivre le guide de configuration choisi</label></li>
-    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres locaux de la radio et du service</label></li>
-    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Vérifier que la radio capte l’activité à proximité</label></li>
-    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Trouver l’observateur dans CoreScope</label></li>
-  </ol>
-</section>
+
 
 ## Configurer l’observateur
 
@@ -94,3 +85,17 @@ d’identifiants, de système hôte ou de micrologiciel. Ouvrez
 [Vérifier votre observateur](../analyzer/verify.md) pour consulter son état
 détaillé. S’il est absent ou silencieux,
 [obtenez de l’aide](get-help.md).
+
+<section class="mc-start-progress" data-mc-progress-page="observer" aria-labelledby="observer-progress-title">
+  <h2 id="observer-progress-title">Liste de vérification</h2>
+  <p>Cette liste est enregistrée uniquement dans ce navigateur.</p>
+  <ol>
+    <li><label><input id="observer-progress-privacy" type="checkbox" data-mc-progress> Lire quelles données de l’observateur deviennent publiques</label></li>
+    <li><label><input id="observer-progress-method" type="checkbox" data-mc-progress> Choisir une méthode d’observation prise en charge</label></li>
+    <li><label><input id="observer-progress-prepare" type="checkbox" data-mc-progress> Sauvegarder les données et préparer l’appareil</label></li>
+    <li><label><input id="observer-progress-install" type="checkbox" data-mc-progress> Suivre le guide de configuration choisi</label></li>
+    <li><label><input id="observer-progress-configure" type="checkbox" data-mc-progress> Appliquer les paramètres locaux de la radio et du service</label></li>
+    <li><label><input id="observer-progress-verify-local" type="checkbox" data-mc-progress> Vérifier que la radio capte l’activité à proximité</label></li>
+    <li><label><input id="observer-progress-verify-network" type="checkbox" data-mc-progress> Trouver l’observateur dans CoreScope</label></li>
+  </ol>
+</section>

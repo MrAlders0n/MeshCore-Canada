@@ -341,6 +341,18 @@ class PreviewTests(unittest.TestCase):
 
 
 class IdeaValidationTests(unittest.TestCase):
+    def test_short_feedback_and_source_page(self):
+        idea = valid_idea()
+        idea.update(experience="", idea="", sourcePage="https://meshcore.ca/fr/start/repeater/#before-you-start")
+        canonical, payload, digest = gateway.validate_idea(idea)
+        self.assertEqual(canonical["experience"], "")
+        self.assertEqual(canonical["idea"], "")
+        self.assertEqual(canonical["sourcePage"], idea["sourcePage"])
+        self.assertEqual(digest, hashlib.sha256(payload).hexdigest())
+        for source in ["https://example.com/", "https://user:secret@meshcore.ca/", "https://meshcore.ca/?token=private", "http://meshcore.ca/", "https://meshcore.ca/%3Cscript%3E", "https://meshcore.ca/#<script>"]:
+            with self.subTest(source=source), self.assertRaises(gateway.GatewayError):
+                gateway.validate_idea({**idea, "sourcePage": source})
+
     def test_canonicalizes_optional_fields_and_hash(self):
         canonical, payload, digest = gateway.validate_idea(valid_idea())
         self.assertEqual(canonical["summary"], "Better regional setup help")
@@ -983,7 +995,7 @@ class HttpContractTests(unittest.TestCase):
         status, headers, payload = self.request("GET", gateway.DEFAULT_BASE_PATH + "/config", headers={"Origin": "https://meshcore.ca"})
         self.assertEqual(status, 200)
         self.assertEqual(headers["Access-Control-Allow-Origin"], "https://meshcore.ca")
-        self.assertEqual(payload, {"turnstileAction": gateway.TURNSTILE_ACTION, "turnstileSiteKey": "site-key", "version": 1})
+        self.assertEqual(payload, {"turnstileAction": gateway.TURNSTILE_ACTION, "turnstileSiteKey": "site-key", "version": 1, "communityIdeaOptionalDetails": True})
         status, headers, payload = self.request("GET", gateway.DEFAULT_BASE_PATH + "/config")
         self.assertEqual(status, 200)
         self.assertNotIn("Access-Control-Allow-Origin", headers)

@@ -25,12 +25,14 @@
     var paths = Array.isArray(input.paths) ? input.paths.map(normalizeText).filter(Boolean) : [];
     var commands = Array.isArray(input.commands) ? input.commands.map(normalizeText).filter(Boolean) : [];
     var lines = [
-      "MeshCore Canada repeater commissioning summary",
+      "MeshCore Canada repeater setup summary",
       "Generated: " + normalizeText(input.generatedAt),
       "Location label: " + (normalizeText(input.locationLabel) || "Not recorded"),
       "Home region: " + normalizeText(input.homeRegion),
       "Firmware: " + normalizeText(input.firmware),
       "Region budget: " + normalizeText(input.budget),
+      "Radio network: " + normalizeText(input.radio || "Keep current settings"),
+      "Advert ID size: " + normalizeText(input.hashMode || "Keep current settings"),
       "",
       "Forwarding paths:"
     ];
@@ -43,6 +45,8 @@
       "1. Run region before saving and compare every path above.",
       "2. Run region save only after the paths and flood permissions are correct.",
       "3. Run region again after saving.",
+      "4. If radio settings changed, reboot and run get radio to confirm them.",
+      "5. If the advert ID size changed, run get path.hash.mode to confirm it.",
       "",
       "This summary omits exact coordinates, passwords, private keys, and device identifiers."
     );

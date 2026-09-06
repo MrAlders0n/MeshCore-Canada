@@ -18,7 +18,7 @@ page_styles:
 
 # Vérifier votre observateur
 
-Une connexion au courtier confirme seulement l’accès Internet. Votre
+Une connexion ne confirme pas que les paquets arrivent à CoreScope. Votre
 observateur fonctionne lorsqu’un véritable paquet radio se rend jusqu’à
 CoreScope.
 

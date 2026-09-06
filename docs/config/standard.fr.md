@@ -6,7 +6,7 @@ audience:
   - region-maintainer
 task: understand-region-standard
 scope: canada-baseline
-status: verified
+status: draft
 owner: region-maintainers
 last_reviewed: 2026-07-19
 review_by: 2026-10-19
@@ -16,6 +16,18 @@ difficulty: advanced
 ---
 
 # Définition des régions et autorité de MeshCore Canada
+
+## Pour configurer votre appareil
+
+1. [Trouvez votre région](map.md).
+2. Confirmez les réglages radio auprès de votre [communauté](../provinces/index.md).
+3. Sur un répéteur, [préparez les chemins régionaux](index.md), vérifiez-les, puis enregistrez-les.
+
+Une région organise le routage; elle ne garantit pas la portée radio. Ottawa–Gatineau et Lloydminster utilisent plusieurs chemins pour leur zone partagée.
+
+Le reste de cette page décrit les règles proposées et les contrôles destinés aux responsables du registre. Les modifications de limites nécessitent un examen communautaire.
+
+## Référence du registre
 
 Cette norme définit les régions MeshCore du Canada. Elle explique comment les
 emplacements et les limites sont attribués, qui approuve les changements et
@@ -29,7 +41,7 @@ comment les conflits entre sources sont résolus.
 | Entrée sémantique actuelle | Canada MeshCore Region Strategy v1.1.1 |
 | Entrée actuelle pour les limites communautaires | Instantané MeshMapper Canada, 2026-07-12 |
 | Preuve opérationnelle actuelle | Instantané canadien de densité radio protégeant la vie privée, 2026-07-15 UTC; instantané agrégé des routes Canada–États-Unis, 2026-07-18 |
-| Adoption | Devient normative après approbation et fusion par MeshCore Canada |
+| Adoption | Examen communautaire; publier cette page ne signifie pas que tous les réseaux l’ont adoptée |
 
 Statistique Canada emploie en français les termes **aire de diffusion (AD)**,
 **subdivision de recensement (SDR)**, **division de recensement (DR)** et

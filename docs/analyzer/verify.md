@@ -18,7 +18,7 @@ page_styles:
 
 # Check your observer
 
-A broker connection proves only internet access. Your observer is working when
+Connected does not mean packets have reached CoreScope. Your observer is working when
 a real radio packet reaches CoreScope.
 
 ## Follow a packet through four stages

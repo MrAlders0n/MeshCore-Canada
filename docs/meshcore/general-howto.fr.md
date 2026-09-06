@@ -20,6 +20,7 @@ destructive: false
 Choisissez une tâche. Les captures montrent une version de l’application mobile
 MeshCore; les libellés et leur emplacement peuvent différer.
 
+- [Envoyer votre premier message](#send-your-first-message)
 - [Partager votre lien de contact](#share-your-contact-link)
 - [Importer un lien de contact](#import-a-contact-link)
 - [Tracer un parcours](#trace-a-path)
@@ -35,6 +36,16 @@ MeshCore; les libellés et leur emplacement peuvent différer.
   précis dans une capture d’écran partagée.
 
 </div>
+
+## Envoyer votre premier message { #send-your-first-message }
+
+1. Connectez l’application à votre compagnon et confirmez les réglages radio locaux.
+2. Ouvrez le canal de votre communauté ou choisissez un contact importé.
+3. Envoyez une courte salutation et demandez une réponse.
+
+Une réponse confirme la communication dans les deux sens. L’indicateur d’envoi
+ne suffit pas à confirmer la réception. Sans réponse, vérifiez avec une personne
+à proximité avant d’envoyer d’autres essais.
 
 ## Partager votre lien de contact { #share-your-contact-link }
 

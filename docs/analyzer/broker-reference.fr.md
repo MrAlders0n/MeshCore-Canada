@@ -15,8 +15,6 @@ estimated_time: 8 minutes
 destructive: false
 page_styles:
   - assets/styles/analyzer.css?v=20260722-2
-page_scripts:
-  - assets/javascripts/analyzer-broker-reference.js?v=20260722-2
 ---
 
 # Paramètres de connexion des observateurs
@@ -45,10 +43,13 @@ Ces valeurs proviennent de la [configuration commune des observateurs](observer-
       <tbody id="broker-reference-body"></tbody>
     </table>
   </div>
-  <p class="mc-location-status" id="broker-reference-status" role="status">Chargement des paramètres officiels de connexion…</p>
 </div>
 
-Si le tableau ne s’affiche pas, ouvrez [observer-config.json](observer-config.json).
+## Accès en lecture seule
+
+La [liste des comptes MQTT en lecture seule](data-collection-access.md#read-only-mqtt-accounts) indique les abonnés autorisés, dont QuinteMesh. Pour demander un accès, contactez un administrateur ci-dessous.
+
+Les réglages JWT de cette page concernent les **observateurs qui publient des paquets**. Les abonnés en lecture seule utilisent les identifiants et les instructions fournis par un administrateur. N’utilisez pas la clé privée d’un observateur pour cet accès.
 
 ## Administrateurs des courtiers
 

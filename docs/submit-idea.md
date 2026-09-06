@@ -16,7 +16,7 @@ estimated_time: 3-5 minutes
 page_styles:
   - stylesheets/extra.css?v=20260722-2
 page_scripts:
-  - javascripts/submission-form.js?v=20260722-2
+  - javascripts/submission-form.js?v=20260904-1
 hide:
   - toc
 ---
@@ -54,13 +54,33 @@ hide:
 
   <div class="submission-form__header">
     <h2>Describe your idea</h2>
-    <p>Fill five required fields.</p>
+    <p>Add a title and describe the problem or idea. Everything else is optional.</p>
   </div>
 
+  <div class="submission-field">
+    <label for="submission-summary">Short title</label>
+    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Example: Add a repeater checklist" required>
+  </div>
+
+  <div class="submission-form__grid submission-form__grid--ideas">
+    <div class="submission-field">
+      <label for="submission-need">Problem or idea</label>
+      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Tell us what blocked you." required></textarea>
+    </div>
+
+    <div class="submission-field">
+      <label for="submission-idea">Suggested change (optional)</label>
+      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Tell us the one change that would help."></textarea>
+    </div>
+  </div>
+
+  <details class="submission-optional">
+    <summary>Add context <span>Optional</span></summary>
+    <div class="submission-optional__body">
   <div class="submission-form__grid">
     <div class="submission-field">
       <label for="submission-category">Type of idea</label>
-      <select id="submission-category" name="category" required>
+      <select id="submission-category" name="category">
         <option value="">Choose the best match</option>
         <option>Newcomer or accessibility improvement</option>
         <option>Documentation correction</option>
@@ -74,7 +94,7 @@ hide:
 
     <div class="submission-field">
       <label for="submission-experience">Your MeshCore experience</label>
-      <select id="submission-experience" name="experience" required>
+      <select id="submission-experience" name="experience">
         <option value="">Choose one</option>
         <option>Brand new / researching</option>
         <option>Setting up my first node</option>
@@ -85,26 +105,7 @@ hide:
     </div>
   </div>
 
-  <div class="submission-field">
-    <label for="submission-summary">Short title</label>
-    <input id="submission-summary" name="summary" type="text" maxlength="100" autocomplete="off" placeholder="Example: Add a repeater checklist" required>
-  </div>
 
-  <div class="submission-form__grid submission-form__grid--ideas">
-    <div class="submission-field">
-      <label for="submission-need">What is hard right now?</label>
-      <textarea id="submission-need" name="need" maxlength="2000" rows="5" placeholder="Tell us what blocked you." required></textarea>
-    </div>
-
-    <div class="submission-field">
-      <label for="submission-idea">What should improve?</label>
-      <textarea id="submission-idea" name="idea" maxlength="2000" rows="5" placeholder="Tell us the one change that would help." required></textarea>
-    </div>
-  </div>
-
-  <details class="submission-optional">
-    <summary>Add context <span>Optional</span></summary>
-    <div class="submission-optional__body">
       <div class="submission-form__grid">
         <div class="submission-field">
           <label for="submission-region">City or broad region</label>

@@ -38,7 +38,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -48,7 +48,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=stoonmesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fsaskatchewan%2F%23community-stoonmesh">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yqrmesh">
 <div class="mc-community-card__header">
@@ -59,11 +59,11 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <p class="mc-community-no-contact">Aucune coordonnée publique n’a encore été fournie.</p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yqrmesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Fsaskatchewan%2F%23community-yqrmesh">Mettre cette fiche à jour</a></p>
 </article>
 </div>
 

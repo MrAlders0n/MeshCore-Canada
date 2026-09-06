@@ -70,7 +70,7 @@ MeshCore Canada n’offre pas d’abonnement direct général au courtier. L’a
 direct est limité à CoreScope, aux administrateurs des réseaux maillés locaux
 et aux personnes autorisées par les administrateurs de l’infrastructure.
 
-## Comptes MQTT en lecture seule
+## Comptes MQTT en lecture seule { #read-only-mqtt-accounts }
 
 Cet inventaire public répertorie les services qui disposent d’un accès en lecture
 seule aux courtiers MQTT de MeshCore Canada. Il indique le service et
@@ -80,6 +80,7 @@ l’exploitant, mais jamais les mots de passe ni les jetons.
 |---|---|---|
 | Beacon (`dev.meshcore.ca`) | Exploitants de MeshCore Canada | Visualisation publique des paquets et vérification des identifiants de répéteur |
 | CoreScope (`live.meshcore.ca`) | Exploitants de MeshCore Canada | Outils publics pour les observateurs, les paquets, les nœuds et la carte |
+| [Canadaverse](https://canadaverse.org/) | [n30nex@gmail.com](mailto:n30nex@gmail.com) | Outils régionaux du Grand Toronto et carte CartoLive |
 | [Quinte Mesh](https://quintemesh.ca/) | hansimgamr | Services du réseau communautaire de la région de Quinte |
 
 Les administrateurs de l’infrastructure doivent mettre ce tableau à jour chaque

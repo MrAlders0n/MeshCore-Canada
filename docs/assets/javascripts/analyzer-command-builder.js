@@ -78,7 +78,9 @@
       number: document.getElementById("observer-number"),
       ssid: document.getElementById("observer-ssid"),
       password: document.getElementById("observer-password"),
-      repeat: document.getElementById("observer-repeat")
+      repeat: document.getElementById("observer-repeat"),
+      radio: document.getElementById("observer-radio"),
+      hash: document.getElementById("observer-hash")
     };
     var output = document.getElementById("observer-command-output");
     var status = document.getElementById("observer-copy-status");
@@ -99,6 +101,8 @@
     }
 
     root.dataset.ready = "true";
+    var radioProfiles = window.MeshCoreRadioProfiles;
+    if (radioProfiles) radioProfiles.populate(fields.radio);
     var exactCommands = [];
     var commandsRevealed = false;
 
@@ -126,6 +130,8 @@
         [tr("Board", "Carte"), fields.board.options[fields.board.selectedIndex].text],
         [tr("Location", "Emplacement"), iata || tr("Not set", "Non défini")],
         [tr("Node name", "Nom du nœud"), nodeName || tr("Not set", "Non défini")],
+        [tr("Radio network", "Réseau radio"), radioProfiles ? radioProfiles.label(fields.radio.value) : tr("Keep current settings", "Conserver les réglages actuels")],
+        [tr("Advert ID size", "Taille de l’identifiant d’annonce"), fields.hash.options[fields.hash.selectedIndex].text],
         [
           tr("Mesh traffic", "Trafic du réseau maillé"),
           repeat === "on"
@@ -218,18 +224,13 @@
 
       exactCommands = [
         "set name " + nodeName,
-        "set radio 910.525,62.5,7,5",
-        "set path.hash.mode 2",
+      ].concat(radioProfiles ? radioProfiles.commands(fields.radio.value, fields.hash.value) : [], [
         "set mqtt.iata " + iata,
         "set wifi.ssid " + ssid,
         "set wifi.pwd " + password,
         "set wifi.powersave none",
         "set mqtt1.preset meshcore-ca-1",
         "set mqtt2.preset meshcore-ca-2",
-        "set mqtt3.preset none",
-        "set mqtt4.preset none",
-        "set mqtt5.preset none",
-        "set mqtt6.preset none",
         "set mqtt.status on",
         "set mqtt.packets on",
         "set mqtt.raw off",
@@ -239,7 +240,7 @@
         "set repeat " + repeat,
         "advert",
         "reboot"
-      ];
+      ]);
       revealCommandsButton.disabled = false;
       showCurrentCommands();
     }

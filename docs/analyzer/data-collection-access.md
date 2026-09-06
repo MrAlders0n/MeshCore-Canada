@@ -68,6 +68,7 @@ This public inventory lists services with read-only access to the MeshCore Canad
 |---|---|---|
 | Beacon (`dev.meshcore.ca`) | MeshCore Canada operators | Public packet viewer and repeater ID checks |
 | CoreScope (`live.meshcore.ca`) | MeshCore Canada operators | Public observer, packet, node, and map tools |
+| [Canadaverse](https://canadaverse.org/) | [n30nex@gmail.com](mailto:n30nex@gmail.com) | GTA Regional Tools & CartoLive map |
 | [Quinte Mesh](https://quintemesh.ca/) | hansimgamr | Quinte-region community network services |
 
 Infrastructure administrators must update this table whenever they create or remove a read-only account. [Report a missing or outdated entry](https://github.com/MeshCore-ca/MeshCore-Canada/issues/new/choose).

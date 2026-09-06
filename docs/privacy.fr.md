@@ -43,6 +43,13 @@ limitation du débit. Aucune période de conservation n’a encore été publié
 
 ## Données enregistrées sur votre appareil
 
+Changer de langue ou passer entre la carte et le configurateur conserve votre
+sélection dans l’URL de destination. Elle peut contenir les coordonnées saisies,
+un lieu, des chemins régionaux et un profil radio. Ces URL peuvent apparaître dans
+l’historique du navigateur et les journaux du serveur. Ne partagez pas un lien qui
+contient un emplacement privé. Les résumés téléchargés omettent les coordonnées
+exactes et les identifiants de connexion.
+
 Les listes de configuration, les brouillons d’idées et le dernier code de
 région Beacon choisi dans l’outil de vérification sont enregistrés uniquement
 dans votre navigateur lorsque vous utilisez ces fonctions. Les clés publiques

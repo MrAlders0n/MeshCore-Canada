@@ -42,6 +42,12 @@ period has not yet been published.
 
 ## Saved on your device
 
+Switching language or moving between the region map and configurator carries your
+selection in the destination URL. This can include entered coordinates, a location
+label, region paths, and radio-profile choices. These URLs may appear in browser
+history and server access logs. Do not share a link containing a private location.
+Downloaded setup summaries omit exact coordinates and credentials.
+
 Setup checklists, idea drafts, and the last Beacon region code selected in the
 repeater-ID checker are saved in your browser only when you use those features.
 Repeater public keys, passwords, private keys, anti-spam tokens, and location

@@ -244,6 +244,7 @@ test("region map loads OpenStreetMap tiles without a consent gate", async ({ pag
   await page.goto(siteRoute("/config/map/"), { waitUntil: "domcontentloaded" });
   await expect(page.locator("[data-action='tile-consent']")).toHaveCount(0);
   await expect(page.getByText(/Allow OpenStreetMap tiles/i)).toHaveCount(0);
+  await page.locator(".mcc-map-stage").scrollIntoViewIfNeeded();
   await expect(page.locator("[data-role='map-area']")).toBeVisible();
   await expect(page.locator("[data-role='map-loading']")).toBeHidden();
   await expect(page.locator(".leaflet-tile-loaded").first()).toBeVisible();

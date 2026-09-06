@@ -15,10 +15,11 @@ tested_with:
   region_catalog: national-partition-2026-07-19
 difficulty: beginner
 page_styles:
-  - assets/regions/regions.css?v=20260820-1
+  - assets/regions/regions.css?v=20260904-1
 page_scripts:
-  - assets/regions/modules/configurator-support.js?v=20260722-2
-  - assets/regions/regions.js?v=20260820-1
+  - assets/javascripts/radio-profiles.js?v=20260904-1
+  - assets/regions/modules/configurator-support.js?v=20260904-1
+  - assets/regions/regions.js?v=20260904-1
 hide:
   - toc
 ---

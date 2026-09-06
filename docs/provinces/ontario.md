@@ -38,7 +38,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -47,9 +47,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://ottawamesh.ca/" rel="noopener">Ottawa Mesh website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=greater-ottawa-mesh-enthusiasts&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fontario%2F%23community-greater-ottawa-mesh-enthusiasts">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-gta-lora-meshes">
 <div class="mc-community-card__header">
@@ -60,7 +60,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -68,9 +68,9 @@ card lists different local settings.
 <li><strong>Discord:</strong> <a href="https://discord.gg/wSHbeb86r4" rel="noopener">GTA+-Lora-Meshes Discord</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=gta-lora-meshes&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fontario%2F%23community-gta-lora-meshes">Update this listing</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-quinte-mesh-network">
 <div class="mc-community-card__header">
@@ -81,7 +81,7 @@ card lists different local settings.
 <dl class="mc-community-facts">
 <div><dt>Settings</dt>
 <dd>Uses the Canada defaults</dd></div>
-<div><dt>Last verified</dt>
+<div><dt>Listing reviewed</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Contacts</h4>
@@ -90,9 +90,9 @@ card lists different local settings.
 <li><strong>Website:</strong> <a href="https://quintemesh.ca/" rel="noopener">Quinte Mesh Network website</a> <span class="mc-community-external">(external)</span></li>
 </ul>
 <p class="mc-community-contact-health">
-<strong>Contact check:</strong> Verified on 2026-08-29
+<strong>Contact check:</strong> Links checked on 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Update this listing</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=quinte-mesh-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Fprovinces%2Fontario%2F%23community-quinte-mesh-network">Update this listing</a></p>
 </article>
 </div>
 

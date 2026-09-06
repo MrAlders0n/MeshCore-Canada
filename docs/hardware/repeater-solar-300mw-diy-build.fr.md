@@ -201,7 +201,7 @@ chargeur, l’appareil de protection, la carte radio et le panneau exacts.
 </ul>
 
 Ne montez pas l’appareil avant qu’il ait réussi toutes les vérifications et
-qu’une personne responsable de l’examen du matériel ait approuvé le dossier du
+qu’une personne qualifiée en électronique ait approuvé le dossier du
 site.
 
 ## Récupération et retour en arrière

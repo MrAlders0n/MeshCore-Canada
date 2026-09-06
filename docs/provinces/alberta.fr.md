@@ -39,7 +39,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -56,7 +56,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=alberta-meshcore-networks&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-alberta-meshcore-networks">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-airdrie-meshcore-network">
 <div class="mc-community-card__header">
@@ -68,7 +68,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -82,7 +82,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=airdrie-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-airdrie-meshcore-network">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-calgary-area-meshcore">
 <div class="mc-community-card__header">
@@ -93,7 +93,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -104,7 +104,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=calgary-area-meshcore&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-calgary-area-meshcore">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-calgary-meshcore-network">
 <div class="mc-community-card__header">
@@ -116,7 +116,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -130,7 +130,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=calgary-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-calgary-meshcore-network">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-edmonton-meshcore-network">
 <div class="mc-community-card__header">
@@ -142,7 +142,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -155,7 +155,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=edmonton-meshcore-network&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-edmonton-meshcore-network">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yegmesh-ca">
 <div class="mc-community-card__header">
@@ -167,7 +167,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -180,7 +180,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yegmesh-ca&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-yegmesh-ca">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yqlmesh">
 <div class="mc-community-card__header">
@@ -192,7 +192,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -209,7 +209,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yqlmesh&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-yqlmesh">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-southern-alberta">
 <div class="mc-community-card__header">
@@ -220,7 +220,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -231,7 +231,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Certains liens restent à vérifier
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=southern-alberta&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-southern-alberta">Mettre cette fiche à jour</a></p>
 </article>
 <article class="mc-community-card mc-community-card--detail" id="community-yyc-meshcore-discord">
 <div class="mc-community-card__header">
@@ -242,7 +242,7 @@ sauf si une fiche indique des réglages locaux différents.
 <dl class="mc-community-facts">
 <div><dt>Réglages</dt>
 <dd>Réglages par défaut du Canada</dd></div>
-<div><dt>Dernière vérification</dt>
+<div><dt>Fiche révisée</dt>
 <dd>2026-08-29</dd></div>
 </dl>
 <h4>Coordonnées</h4>
@@ -253,7 +253,7 @@ sauf si une fiche indique des réglages locaux différents.
 <p class="mc-community-contact-health">
 <strong>Vérification :</strong> Effectuée le 2026-08-29
 </p>
-<p class="mc-community-card__action"><a href="../../submit-idea/">Mettre cette fiche à jour</a></p>
+<p class="mc-community-card__action"><a href="../../submit-idea/?community=yyc-meshcore-discord&amp;source_page=https%3A%2F%2Fmeshcore.ca%2Ffr%2Fprovinces%2Falberta%2F%23community-yyc-meshcore-discord">Mettre cette fiche à jour</a></p>
 </article>
 </div>
 

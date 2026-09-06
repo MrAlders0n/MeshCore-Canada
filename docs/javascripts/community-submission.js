@@ -54,12 +54,12 @@ function boundedText(value, maximum, label, required = false, multiline = false)
 }
 
 export function buildCommunityIdea(data) {
-  const category = boundedText(data.category, 80, "Contribution type", true);
-  const experience = boundedText(data.experience, 80, "MeshCore experience", true);
+  const category = boundedText(data.category || "Other community feedback", 80, "Contribution type");
+  const experience = boundedText(data.experience, 80, "MeshCore experience");
   if (!COMMUNITY_CATEGORIES.includes(category)) {
     throw new Error("Choose a valid contribution type.");
   }
-  if (!MESHCORE_EXPERIENCE_LEVELS.includes(experience)) {
+  if (experience && !MESHCORE_EXPERIENCE_LEVELS.includes(experience)) {
     throw new Error("Choose a valid MeshCore experience level.");
   }
   if (data.publicAcknowledged !== true) {
@@ -72,7 +72,7 @@ export function buildCommunityIdea(data) {
     experience,
     summary: boundedText(data.summary, 100, "Short title", true),
     need: boundedText(data.need, 2000, "What is difficult now", true, true),
-    idea: boundedText(data.idea, 2000, "What would help", true, true),
+    idea: boundedText(data.idea, 2000, "What would help", false, true),
     publicAcknowledged: true
   };
   const optional = {
@@ -83,7 +83,17 @@ export function buildCommunityIdea(data) {
   Object.entries(optional).forEach(([key, value]) => {
     if (value) proposal[key] = value;
   });
+  if (data.sourcePage) proposal.sourcePage = normalizeSourcePage(data.sourcePage);
   return proposal;
+}
+
+export function normalizeSourcePage(value) {
+  const url = new URL(value);
+  if (url.origin !== "https://meshcore.ca" || url.username || url.password || url.search ||
+      !/^\/[a-zA-Z0-9/_.-]*$/.test(url.pathname) || !/^(?:#[a-zA-Z0-9_-]+)?$/.test(url.hash) || url.href.length > 400) {
+    throw new Error("Choose a valid source page.");
+  }
+  return url.href;
 }
 
 function section(heading, value, fallback = "Not provided") {
@@ -99,6 +109,7 @@ export function buildSubmissionText(proposal) {
     section("Problem", proposal.need),
     section("Suggested change", proposal.idea),
     section("Additional context", proposal.context),
+    ...(proposal.sourcePage ? [section("Source page", proposal.sourcePage)] : []),
     section(
       "Public contact",
       proposal.followUp,
@@ -135,6 +146,7 @@ export function buildFrenchSubmissionText(proposal) {
     frenchSection("Problème", proposal.need),
     frenchSection("Changement proposé", proposal.idea),
     frenchSection("Autres précisions", proposal.context),
+    ...(proposal.sourcePage ? [frenchSection("Page concernée", proposal.sourcePage)] : []),
     frenchSection(
       "Contact public",
       proposal.followUp,
@@ -148,9 +160,7 @@ export function buildManualGithubLink(
   proposal,
   sourcePage = COMMUNITY_SOURCE_PAGE,
 ) {
-  if (![COMMUNITY_SOURCE_PAGE, COMMUNITY_FRENCH_SOURCE_PAGE].includes(sourcePage)) {
-    throw new Error("Choose a valid source page.");
-  }
+  sourcePage = normalizeSourcePage(proposal.sourcePage || sourcePage);
   const params = new URLSearchParams({
     template: "community_idea.yml",
     title: `[Community idea] ${proposal.summary}`,

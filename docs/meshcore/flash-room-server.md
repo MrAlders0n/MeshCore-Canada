@@ -54,9 +54,9 @@ Keep the exact board's USB recovery method, backed-up identity/settings, a known
 1. Open the official [MeshCore Web Flasher](https://meshcore.io/flasher).
 2. Select the exact device model.
 3. Select **Room Server** and the intended version for that board.
-4. Click **Enter DFU Mode** and wait for the expected device to appear.
+4. Follow the flasher’s connection steps for your board. Use **Enter DFU Mode** only when that target asks for it.
 5. Recheck the hardware and role selections.
-6. Click **Erase Flash** and wait for a successful erase message.
+6. For a first installation or deliberate reset, back up first. Click **Erase Flash** only if the board’s instructions require it. For an update, leave erase off unless its release notes require a reset.
 7. Click **Flash** and wait for completion before disconnecting.
 
 If flashing fails after erase, leave the device connected, refresh the flasher, re-enter DFU mode, confirm the board and role, and retry **Flash**. Use the board's documented USB recovery process if it is no longer detected.

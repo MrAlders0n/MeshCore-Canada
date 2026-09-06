@@ -34,18 +34,17 @@ of repeating values that may change.
 
 ### Which radio settings should I use in Canada?
 
-Use the [repeater configurator](../config/index.md) for a repeater. It returns
-the current settings for the location you select.
+Use your community’s radio profile. The [repeater configurator](../config/index.md)
+finds region paths, but keeps your radio settings unless you choose a profile.
 
 For any role, first check the [community directory](../provinces/index.md).
 Follow a published local override when one exists.
 
 ### What is path hash mode?
 
-It controls the size of the identifiers used in advert paths. The Canadian
-region standard and configurator provide the current setting for a repeater.
-Use their output instead of copying an old command from a discussion or
-screenshot.
+It sets the size of the identifiers in this node’s advert paths: 1, 2, or 3 bytes.
+MeshCore Canada recommends 3 bytes to reduce collisions. Firmware 1.14 and newer
+can forward mixed sizes; neighbouring nodes do not all need the same ID size.
 
 [Read the region standard](../config/standard.md).
 

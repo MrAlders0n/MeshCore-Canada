@@ -15,7 +15,8 @@ destructive: true
 page_styles:
   - assets/styles/analyzer.css?v=20260722-2
 page_scripts:
-  - assets/javascripts/analyzer-command-builder.js?v=20260722-2
+  - assets/javascripts/radio-profiles.js?v=20260904-1
+  - assets/javascripts/analyzer-command-builder.js?v=20260904-1
 ---
 
 # Build a standalone MQTT observer
@@ -88,6 +89,10 @@ Use the local mesh settings. When no community override exists, the Canadian onb
 
 ### 3. Build the commands
 
+These commands replace MQTT slots **1 and 2**. Check those slots first; if they
+serve another network, use **Configure via USB** to add Canada in unused slots.
+Slots 3–6 are left unchanged. Repeating is off unless you choose to enable it.
+
 The CLI has no documented general quoting contract. The builder rejects spaces, quotes, backslashes, control characters, and other ambiguous Wi-Fi values. Use **Configure via USB** for a network it cannot represent safely.
 
 <div class="mc-command-builder" id="observer-command-builder" data-location-source="../../location-codes.json">
@@ -130,11 +135,14 @@ The CLI has no documented general quoting contract. The builder rejects spaces, 
     <label class="mc-command-field--wide">
       <strong>Mesh traffic</strong>
       <select id="observer-repeat">
-        <option value="on">Observe and repeat packets</option>
-        <option value="off">Observe only</option>
+        <option value="off">Observe only (recommended)</option>
+        <option value="on">Observe and repeat packets — coordinate locally first</option>
       </select>
     </label>
   </div>
+  <label><strong>Radio network</strong><select id="observer-radio"><option value="keep">Keep current settings</option></select></label>
+  <p>Choose your community’s profile explicitly. Location alone does not select a radio network.</p>
+  <label><strong>Advert ID size</strong><select id="observer-hash"><option value="keep">Keep current settings</option><option value="2">3 bytes</option><option value="1">2 bytes</option><option value="0">1 byte</option></select></label>
   <p class="mc-command-notice" id="observer-location-status" aria-live="polite">Loading Canadian location suggestions…</p>
   <p class="mc-command-notice" id="observer-secret-help">SSID and password stay in this page only. They are cleared when you leave and hidden from the preview until you reveal them.</p>
   <div class="mc-command-errors" id="observer-command-errors" role="alert" aria-live="assertive"></div>
@@ -152,27 +160,23 @@ Check the non-sensitive summary and redacted preview. Reveal and copy commands o
 
 ### Enter commands by hand
 
+These commands preserve radio settings and presets 3–6, but replace presets 1 and 2. On an existing observer, check those slots first. Choose radio values in the builder above; changes take effect after reboot. Observing does not require repeating. Enable repeating only after coordinating with nearby operators.
+
 If you prefer manual entry, set the non-sensitive values first:
 
 ```text
 set name YOW-Repeater-01
-set radio 910.525,62.5,7,5
-set path.hash.mode 2
 set mqtt.iata YOW
 set wifi.powersave none
 set mqtt1.preset meshcore-ca-1
 set mqtt2.preset meshcore-ca-2
-set mqtt3.preset none
-set mqtt4.preset none
-set mqtt5.preset none
-set mqtt6.preset none
 set mqtt.status on
 set mqtt.packets on
 set mqtt.raw off
 set mqtt.rx on
 set mqtt.tx advert
 set bridge.enabled on
-set repeat on
+set repeat off
 advert
 ```
 
@@ -210,7 +214,7 @@ The board is configured correctly when:
 - the location code is correct;
 - presets are `meshcore-ca-1` and `meshcore-ca-2`;
 - packet publishing and bridge mode are on; and
-- path hash mode is `2`.
+- the radio profile and path hash mode match your explicit choices.
 
 ## Verify in CoreScope
 

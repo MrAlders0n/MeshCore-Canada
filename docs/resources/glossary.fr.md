@@ -91,9 +91,8 @@ utiliser chaque paramètre ou appareil.
 :   Tout appareil MeshCore présent sur le réseau.
 
 **Observateur**
-:   Une radio ou un service sur un système hôte qui écoute le trafic MeshCore
-    et transmet des données du réseau aux outils publics. Il ne relaie pas le
-    trafic du réseau.
+:   Une radio ou un service qui transmet des données MeshCore aux outils publics.
+    L’observation et la répétition sont des fonctions distinctes; un appareil peut faire les deux.
 
 **Préréglage**
 :   Un ensemble nommé de paramètres radio.

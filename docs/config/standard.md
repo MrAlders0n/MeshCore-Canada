@@ -6,7 +6,7 @@ audience:
   - region-maintainer
 task: understand-region-standard
 scope: canada-baseline
-status: verified
+status: draft
 owner: region-maintainers
 last_reviewed: 2026-07-19
 review_by: 2026-10-19
@@ -16,6 +16,18 @@ difficulty: advanced
 ---
 
 # MeshCore Canada region definition and authority
+
+## Setting up a device?
+
+1. [Find your region](map.md).
+2. Confirm the radio settings with your [community](../provinces/index.md).
+3. For a repeater, [prepare its region paths](index.md), check them, then save.
+
+A region organizes routing; it does not guarantee radio coverage. Ottawa–Gatineau and Lloydminster use several paths for their shared area.
+
+The rest of this page documents proposed registry rules and maintainer checks. Boundary changes still require community review.
+
+## Registry reference
 
 This standard defines Canada's MeshCore regions. It explains how locations and
 boundaries are assigned, who approves changes, and how source conflicts are
@@ -29,7 +41,7 @@ resolved.
 | Current semantic input | Canada MeshCore Region Strategy v1.1.1 |
 | Current community boundary input | MeshMapper Canada snapshot, 2026-07-12 |
 | Current operational evidence | Privacy-safe Canadian radio-density snapshot, 2026-07-15 UTC; aggregate Canada–U.S. route snapshot, 2026-07-18 |
-| Adoption | Becomes normative when approved and merged by MeshCore Canada |
+| Adoption | Community review; publishing this page does not establish network-wide adoption |
 
 !!! important "What is authoritative today?"
     This page and the generated national partition are proposed for review. The candidate assigns every digital DA exactly once and the public map renders only dissolved leaf regions. No raw source polygon or approximate circle is a boundary. The partition becomes operationally authoritative only after community review and every release check in this standard passes.

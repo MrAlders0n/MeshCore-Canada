@@ -166,6 +166,8 @@ test("observer builder fails closed and redacts valid WiFi credentials", () => {
     ["observer-ssid", new FakeElement()],
     ["observer-password", new FakeElement("", "password")],
     ["observer-repeat", new FakeElement("on")],
+    ["observer-radio", new FakeElement("keep")],
+    ["observer-hash", new FakeElement("keep")],
     ["observer-command-output", new FakeElement()],
     ["observer-copy-status", new FakeElement()],
     ["observer-command-errors", new FakeElement()],
@@ -178,6 +180,7 @@ test("observer builder fails closed and redacts valid WiFi credentials", () => {
     ["observer-location-status", new FakeElement()],
   ]);
   elements.get("observer-board").options = [{ text: "Heltec V3" }];
+  elements.get("observer-hash").options = [{ text: "Keep current settings" }];
   const windowListeners = new Map();
   const fakeWindow = {
     TextEncoder,
@@ -255,11 +258,12 @@ test("observer builder fails closed and redacts valid WiFi credentials", () => {
 test("remote installer guidance explains impact, review, and rollback before one-liners", () => {
   const page = read("docs/analyzer/builds/mctomqtt.md");
   const reviewIndex = page.indexOf("### 1. Download and inspect the helper");
-  const oneLinerIndex = page.indexOf("bash <(curl -fsSL");
+  const oneLinerIndex = page.indexOf("bash add-meshcore-ca-broker.sh");
 
   assert.match(page, /## What this changes/);
   assert.ok(reviewIndex >= 0, "review-first section missing");
-  assert.ok(oneLinerIndex > reviewIndex, "remote one-liner appears before review-first guidance");
+  assert.ok(oneLinerIndex > reviewIndex, "execution appears before review-first guidance");
+  assert.doesNotMatch(page, /bash <\(curl/);
   assert.match(page, /## Recovery/);
   assert.match(page, /not pinned|not versioned/i);
   assert.match(page, /\.bak\.<timestamp>/);

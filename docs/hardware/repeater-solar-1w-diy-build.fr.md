@@ -39,7 +39,7 @@ facultative, ses mesures et ses limites climatiques n’ont pas été reproduite
 <dl class="mc-guide-facts">
   <div><dt>Radio</dt><dd>GOME Ikoka Stick 0.4.0</dd></div>
   <div><dt>Alimentation</dt><dd>Waveshare Solar Power Manager</dd></div>
-  <div><dt>Micrologiciel</dt><dd>Ni épinglé ni reproduit</dd></div>
+  <div><dt>Micrologiciel</dt><dd>Version non confirmée; fonctionnement non vérifié</dd></div>
   <div><dt>Entretien</dt><dd>À définir pendant l’examen du site</dd></div>
 </dl>
 
@@ -52,7 +52,7 @@ de trafic.
 
 Utilisez le [modèle de 300 mW à l’état d’ébauche](repeater-solar-300mw-diy-build.md)
 ou un système préassemblé examiné, sauf si une personne responsable du réseau
-et une personne responsable de l’examen du matériel et des RF conviennent que
+et une personne qualifiée en électronique et en RF conviennent que
 cette expérience répond à un besoin mesuré.
 
 ## Avant de commencer
@@ -63,8 +63,8 @@ cette expérience répond à un besoin mesuré.
 <ul class="mc-checklist">
   <li>Le besoin du réseau local et les effets sur les autres régions sont documentés.</li>
   <li>Le matériel Ikoka exact et la cible du micrologiciel du répéteur sont confirmés et récupérables par USB.</li>
-  <li>Une personne responsable de l’examen du matériel et de l’électricité approuve la pile, le chargeur, le panneau, le câblage, la protection, la télémétrie facultative et le plan thermique du boîtier.</li>
-  <li>Une personne responsable de l’examen RF approuve la radio, le filtre, la ligne de transmission RF, l’antenne, les connecteurs et le site.</li>
+  <li>Une personne qualifiée en électronique approuve la pile, le chargeur, le panneau, le câblage, la protection, la télémétrie facultative et le plan thermique du boîtier.</li>
+  <li>Une personne qualifiée en RF approuve la radio, le filtre, la ligne de transmission RF, l’antenne, les connecteurs et le site.</li>
   <li>Un examen de la structure et du site couvre la masse finale, la surface du panneau, le montage, le vent, la glace, la neige, le passage des câbles et l’accès.</li>
   <li>La construction restera sous surveillance sur l’établi jusqu’à l’approbation de son dossier d’essai.</li>
 </ul>
@@ -152,7 +152,7 @@ maintien de la pile et la qualité d’impression avant l’utilisation.
   <section class="mc-build-stage" data-stage="stop">
     <h3>Étape 4 — Examiner la modification du démarrage du gestionnaire d’alimentation</h3>
     <p><strong>Ne pontez pas les pastilles du bouton de démarrage du gestionnaire d’alimentation.</strong> Cette modification n’a pas été reproduite ni examinée.</p>
-    <p>Avant d’envisager tout changement, exigez qu’une personne responsable de l’examen du matériel approuve le schéma exact, les modes de défaillance, les répercussions sur la garantie, la méthode de soudage, l’essai de démarrage et le retour en arrière.</p>
+    <p>Avant d’envisager tout changement, exigez qu’une personne qualifiée en électronique approuve le schéma exact, les modes de défaillance, les répercussions sur la garantie, la méthode de soudage, l’essai de démarrage et le retour en arrière.</p>
     <figure><img class="mc-build-photo" src="../images/repeater-solar-1w-diy-build-4.jpg" alt="Pont de fil non vérifié sur les pastilles du bouton de démarrage du gestionnaire solaire" loading="lazy"><figcaption>Modification non vérifiée. Ne la reproduisez pas à partir de cette photographie.</figcaption></figure>
   </section>
   <section class="mc-build-stage" data-stage="stop">
@@ -212,7 +212,7 @@ devinés.
   <li>Consignez les pièces exactes, les révisions, les documents sources, le schéma, les photographies, la polarité et les valeurs mesurées.</li>
   <li>Utilisez des méthodes supervisées de première mise sous tension et de limitation du courant adaptées au matériel examiné.</li>
   <li>Confirmez que l’appareil démarre après l’application de chaque source d’alimentation prévue et après une coupure d’alimentation contrôlée.</li>
-  <li>Confirmez que l’identité, le micrologiciel et les réglages de radio, de région, de parcours, d’annonce et d’accès du répéteur résistent au redémarrage.</li>
+  <li>Confirmez que l’identité, le micrologiciel et les réglages de radio, de région, de parcours, d’annonce et d’accès du répéteur sont conservés après le redémarrage.</li>
   <li>Confirmez qu’un compagnon à proximité reçoit une annonce et que l’essai d’acheminement local prévu réussit.</li>
   <li>Mesurez le comportement RF et électrique avec la méthode approuvée par la personne responsable de l’examen; ne déduisez pas la puissance de sortie à partir d’un seul réglage du micrologiciel.</li>
   <li>Effectuez sous surveillance un essai de recharge et de charge qui couvre les conditions examinées sans dépasser les limites des composants.</li>
@@ -221,7 +221,7 @@ devinés.
 </ul>
 
 Ne déployez pas l’appareil avant qu’une personne responsable de l’examen du
-matériel et de l’électricité, une personne responsable de l’examen RF et le
+matériel et de l’électricité, une personne qualifiée en RF et le
 propriétaire du site aient approuvé le dossier d’essai complet.
 
 ## Récupération et retour en arrière

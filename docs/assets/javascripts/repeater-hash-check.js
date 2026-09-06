@@ -315,7 +315,7 @@
     var rows = summaries.map(function (summary) {
       var selected = summary.bytes === selectedBytes;
       return '<tr' + (selected ? ' class="is-selected"' : '') + '>' +
-        '<td data-label="' + escapeHtml(message(language, "modeColumn")) + '"><strong>' + summary.bytes + '</strong> ' +
+        '<td data-label="' + escapeHtml(message(language, "modeColumn")) + '">' +
           escapeHtml(summary.bytes === 1 ? message(language, "oneByte") : message(language, summary.bytes === 2 ? "twoBytes" : "threeBytes")) +
           (selected ? ' <span class="mc-hash-selected">' + escapeHtml(message(language, "selected")) + '</span>' : '') + '</td>' +
         '<td data-label="' + escapeHtml(message(language, "idColumn")) + '"><code>' + escapeHtml(summary.prefix) + '</code></td>' +

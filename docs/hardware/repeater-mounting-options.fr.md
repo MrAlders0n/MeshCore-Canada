@@ -138,11 +138,9 @@ sous tension en hauteur.
 
 <div class="mc-maintenance-record" markdown>
 
-Aucun intervalle d’inspection pancanadien n’a été approuvé. Avant le
-déploiement, consignez un intervalle propre au site et les conditions qui
-déclenchent une inspection supplémentaire, comme des conditions
-météorologiques extrêmes, des travaux à proximité, une infiltration d’eau ou
-un changement du comportement radio.
+Fixez un calendrier d’inspection adapté au site. Inspectez aussi l’installation
+après une tempête, des travaux à proximité, une infiltration d’eau ou un changement
+du comportement radio.
 
 Pour chaque inspection, consignez la date, le nom de la personne qui l’a
 effectuée, les photographies, l’état de la quincaillerie et des câbles, l’état

@@ -25,6 +25,8 @@ requires:
 A companion is a personal messaging device. It does not route traffic for
 other users. Most pair with an app; some have their own screen and controls.
 
+[Install and configure a companion](../meshcore/flash-companion.md){ .md-button .md-button--primary }
+
 ## Before you start
 
 - Check the [recommended companion options](../hardware/recommended-companions.md).
@@ -37,24 +39,11 @@ other users. Most pair with an app; some have their own screen and controls.
 The linked flashing guide replaces the device firmware and configures it as a
 companion. Stop before erasing if you cannot recover information you need.
 
-<section class="mc-start-progress" data-mc-progress-page="companion" aria-labelledby="companion-progress-title">
-  <h2 id="companion-progress-title">Setup checklist</h2>
-  <p>Checks are saved only in this browser.</p>
-  <ol>
-    <li><label><input id="companion-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware</label></li>
-    <li><label><input id="companion-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
-    <li><label><input id="companion-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
-    <li><label><input id="companion-progress-configure" type="checkbox" data-mc-progress> Apply Canada or local settings</label></li>
-    <li><label><input id="companion-progress-verify-local" type="checkbox" data-mc-progress> Check the device nearby</label></li>
-    <li><label><input id="companion-progress-verify-community" type="checkbox" data-mc-progress> Test with another mesh user</label></li>
-  </ol>
-</section>
+
 
 ## Flash the companion
 
-Follow [Flash and configure a companion](../meshcore/flash-companion.md). Use
-that guide for device selection, browser connection, flashing, and recovery
-steps.
+Follow [Flash and configure a companion](../meshcore/flash-companion.md).
 
 ## Use the right radio settings
 
@@ -75,6 +64,19 @@ The companion is ready when:
 2. a nearby known-good device or community member can see its advert.
 
 Use the [companion verification checklist](verify.md#companion).
+
+<section class="mc-start-progress" data-mc-progress-page="companion" aria-labelledby="companion-progress-title">
+  <h2 id="companion-progress-title">Setup checklist</h2>
+  <p>Checks are saved only in this browser.</p>
+  <ol>
+    <li><label><input id="companion-progress-hardware" type="checkbox" data-mc-progress> Confirm compatible hardware</label></li>
+    <li><label><input id="companion-progress-prepare" type="checkbox" data-mc-progress> Back up and prepare</label></li>
+    <li><label><input id="companion-progress-flash" type="checkbox" data-mc-progress> Follow the flashing guide</label></li>
+    <li><label><input id="companion-progress-configure" type="checkbox" data-mc-progress> Apply Canada or local settings</label></li>
+    <li><label><input id="companion-progress-verify-local" type="checkbox" data-mc-progress> Check the device nearby</label></li>
+    <li><label><input id="companion-progress-verify-community" type="checkbox" data-mc-progress> Test with another mesh user</label></li>
+  </ol>
+</section>
 
 ## What's next
 

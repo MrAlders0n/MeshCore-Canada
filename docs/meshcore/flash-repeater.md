@@ -21,7 +21,7 @@ page_styles:
   - assets/styles/devices-builds.css?v=20260728-1
   - assets/styles/repeater-hash-check.css?v=20260820-1
 page_scripts:
-  - assets/javascripts/repeater-hash-check.js?v=20260820-1
+  - assets/javascripts/repeater-hash-check.js?v=20260904-1
 ---
 # Flash, configure, and bench-test a repeater
 
@@ -54,7 +54,7 @@ Never post the private key or passwords in an issue, screenshot, log, or chat. I
 
 ## What flashing changes
 
-An erase replaces firmware and can delete identity and settings. The setup also writes radio, advert, path-hash, access, location, and region values that affect the shared network.
+Flashing replaces firmware. Erasing can also delete identity and settings. The setup also writes radio, advert, path-hash, access, location, and region values that affect the shared network.
 
 ## Recovery plan
 
@@ -74,7 +74,7 @@ hardware. Do not use a filename copied from an older guide or screenshot.
 3. Enter its UF2 bootloader mode. On a RAK4631 this is normally done by double-pressing the button beside USB; other boards use their documented reset method.
 4. Confirm a USB drive appears and inspect `INFO.TXT` so the board identity is what you expect.
 5. Copy the matching UF2 file to that drive. The drive may disconnect as the board reboots.
-6. Re-enter bootloader mode and confirm `INFO.TXT` reports bootloader version `0.9.2` before continuing.
+6. Re-enter bootloader mode and confirm `INFO.TXT` reports the board and bootloader version from the release you selected before continuing.
 
 If the board identity or expected version does not match, stop and recover over USB before flashing MeshCore.
 
@@ -85,9 +85,9 @@ Use the official [MeshCore Web Flasher](https://meshcore.io/flasher) in a browse
 1. Connect the repeater by USB.
 2. Select the exact hardware model.
 3. Select **Repeater** as the role and choose the intended version for that board.
-4. Click **Enter DFU Mode** and wait for the flasher to find the board.
+4. Follow the flasher’s connection steps for your board. Use **Enter DFU Mode** only when that target asks for it.
 5. Recheck the selected board and role.
-6. Click **Erase Flash** and wait for a successful erase message.
+6. For a first installation or deliberate reset, back up first. Click **Erase Flash** only if the board’s instructions require it. For an update, leave erase off unless its release notes require a reset.
 7. Click **Flash** and wait for completion before disconnecting.
 
 If flashing fails after erase, do not repeatedly erase. Refresh the page, return the board to DFU mode, verify the target again, and retry **Flash**. Use the board's USB recovery process if it no longer appears.

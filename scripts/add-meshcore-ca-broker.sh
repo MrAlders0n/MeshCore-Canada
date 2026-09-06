@@ -30,8 +30,9 @@ Supported installs:
   - Companion radio via meshcore-packet-capture (.env.local)
 
 Usage:
-  MESHCORE_CA_IATA=YOW bash <(curl -fsSL https://live.meshcore.ca/scripts/add-meshcore-ca-broker.sh)
-  bash <(curl -fsSL https://live.meshcore.ca/scripts/add-meshcore-ca-broker.sh) --iata YOW --device serial-host
+  curl -fsSLo add-meshcore-ca-broker.sh https://meshcore.ca/analyzer/scripts/add-meshcore-ca-broker.sh
+  less add-meshcore-ca-broker.sh
+  bash ./add-meshcore-ca-broker.sh --iata YOW --device serial-host
 
 Options:
   --iata CODE             Real 3-letter IATA airport code.
@@ -531,15 +532,28 @@ set_packetcapture_slot() {
   upsert_env "$file" "PACKETCAPTURE_MQTT${slot}_TOPIC_PACKETS" 'meshcore/{IATA}/{PUBLIC_KEY}/packets'
 }
 
-disable_packetcapture_slot() {
-  local file="$1"
-  local slot="$2"
-  upsert_env "$file" "PACKETCAPTURE_MQTT${slot}_ENABLED" "false"
-  upsert_env "$file" "PACKETCAPTURE_MQTT${slot}_SERVER" ""
+choose_packetcapture_slots() {
+  local file="$1" n server slot1="" slot2="" free=()
+  for n in 1 2 3 4 5 6; do
+    server="$(env_value "$file" "PACKETCAPTURE_MQTT${n}_SERVER" | tr -d '\r')"
+    server="${server#\"}"; server="${server%\"}"
+    server="${server#\'}"; server="${server%\'}"
+    if [ "$server" = "$BROKER1_HOST" ] && [ -z "$slot1" ]; then slot1="$n"
+    elif [ "$server" = "$BROKER2_HOST" ] && [ -z "$slot2" ]; then slot2="$n"
+    elif [ -z "$server" ]; then free+=("$n")
+    fi
+  done
+  if [ -z "$slot1" ] && [ "${#free[@]}" -gt 0 ]; then slot1="${free[0]}"; free=("${free[@]:1}"); fi
+  if [ -z "$slot2" ] && [ "${#free[@]}" -gt 0 ]; then slot2="${free[0]}"; fi
+  if [ -z "$slot1" ] || [ -z "$slot2" ]; then
+    echo "Not enough empty broker slots. Keep your existing connections, or free two slots and run again. No settings changed." >&2
+    return 1
+  fi
+  printf '%s %s\n' "$slot1" "$slot2"
 }
 
 patch_env_capture() {
-  local env_file current_iata backup n
+  local env_file current_iata backup slots slot1 slot2
   env_file="$(packetcapture_env_path)"
   install_packetcapture
   mkdir -p "$(dirname "$env_file")"
@@ -550,16 +564,15 @@ patch_env_capture() {
   fi
   require_iata
 
+  slots="$(choose_packetcapture_slots "$env_file")" || return 1
+  read -r slot1 slot2 <<< "$slots"
   backup="$(backup_path "$env_file")"
   cp -p "$env_file" "$backup"
   chmod 0600 "$backup"
 
   upsert_env "$env_file" "PACKETCAPTURE_IATA" "$IATA"
-  set_packetcapture_slot "$env_file" 1 "$BROKER1_HOST"
-  set_packetcapture_slot "$env_file" 2 "$BROKER2_HOST"
-  for n in 3 4 5 6; do
-    disable_packetcapture_slot "$env_file" "$n"
-  done
+  set_packetcapture_slot "$env_file" "$slot1" "$BROKER1_HOST"
+  set_packetcapture_slot "$env_file" "$slot2" "$BROKER2_HOST"
   chmod 0600 "$env_file"
   say "Patched: $env_file"
   say "Backup written: $backup"

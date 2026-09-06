@@ -20,6 +20,7 @@ destructive: false
 Choose a task. The screenshots show one version of the MeshCore mobile app, so
 labels and positions may differ.
 
+- [Send your first message](#send-your-first-message)
 - [Share your contact link](#share-your-contact-link)
 - [Import a contact link](#import-a-contact-link)
 - [Trace a path](#trace-a-path)
@@ -35,6 +36,15 @@ labels and positions may differ.
   screenshot.
 
 </div>
+
+## Send your first message
+
+1. Connect the app to your companion and confirm the local radio settings.
+2. Open the channel used by your community, or choose an imported contact.
+3. Send a short greeting and ask for a reply.
+
+A reply confirms two-way communication. A sent indicator alone does not confirm
+delivery. If nobody replies, check with a nearby operator before sending more tests.
 
 ## Share your contact link
 

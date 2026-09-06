@@ -81,11 +81,11 @@ Il s’agit d’un rôle de **compagnon** et il exige un téléphone intelligent
 | **Carte LoRa** | Heltec T114 (ensemble avec écran) | 45,99 $ | [AliExpress](https://www.aliexpress.com/item/1005007916299029.html) |
 | **Câble IPEX à SMA à angle droit** | SMA-KW 2PCS 8cm | 4,67 $ | [AliExpress](https://www.aliexpress.com/item/1005009270132403.html) |
 | **Pile** | MakerFocus LiPo 3,7 V 3000 mAh (paquet de 4), connecteur Micro JST 1.5 avec circuit de protection | 34,34 $ | [MakerFocus](https://www.makerfocus.com/products/makerfocus-3-7v-3000mah-lithium-rechargeable-battery-1s-3c-lipo-battery-pack-of-4?variant=44823607541998) |
-| **Antenne** | Gizont 167CM 915MHz SMA M | 10,68 $ | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) (assurez-vous de choisir la bonne antenne à l’ouverture du lien) |
+| **Antenne** | Gizont 915 MHz SMA M | 10,68 $ | [AliExpress](https://www.aliexpress.com/item/1005004607615001.html) (assurez-vous de choisir la bonne antenne à l’ouverture du lien) |
 
 </div>
 
-*Coût total approximatif :* **95,68 $ CAD**
+*Total de cet exemple d’achat :* **95,68 $ CAD**, dont un lot de quatre piles et deux câbles. Ce n’est pas le coût par appareil.
 
 *Les prix datent du 2 septembre 2026. Consultez les pages liées pour vérifier les prix, l’expédition, les droits de douane et la disponibilité.*
 

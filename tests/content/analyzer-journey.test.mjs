@@ -129,6 +129,8 @@ test("privacy pages state ownership, access, the account inventory, and the unkn
   for (const service of [
     "Beacon (`dev.meshcore.ca`)",
     "CoreScope (`live.meshcore.ca`)",
+    "[Canadaverse](https://canadaverse.org/)",
+    "[n30nex@gmail.com](mailto:n30nex@gmail.com)",
     "[Quinte Mesh](https://quintemesh.ca/)",
   ]) {
     assert.ok(source.includes(service), `English inventory missing ${service}`);
@@ -136,6 +138,8 @@ test("privacy pages state ownership, access, the account inventory, and the unkn
   }
   assert.ok(source.includes("hansimgamr"), "English inventory missing the Quinte Mesh operator");
   assert.ok(french.includes("hansimgamr"), "French inventory missing the Quinte Mesh operator");
+  assert.ok(source.includes("GTA Regional Tools & CartoLive map"), "English inventory missing the Canadaverse purpose");
+  assert.ok(french.includes("Outils régionaux du Grand Toronto et carte CartoLive"), "French inventory missing the Canadaverse purpose");
   assert.match(source, /update this table whenever they create or remove a read-only account/i);
   assert.match(french, /mettre ce tableau à jour chaque\s+fois qu’ils créent ou retirent un compte en lecture seule/i);
 });
@@ -160,7 +164,7 @@ test("broker reference lists every administrator and public contact in both lang
 
 test("verification distinguishes connectivity from an observed packet", () => {
   const source = read("docs/analyzer/verify.md");
-  assert.match(source, /broker connection proves only/i);
+  assert.match(source, /Connected does not mean packets have reached CoreScope/i);
   assert.match(source, /Follow a packet through four stages/);
   for (const stage of ["Radio:", "Observer:", "Observer view:", "Packet view:"]) {
     assert.match(source, new RegExp(stage));
@@ -236,7 +240,7 @@ test("standalone builder is external, fail-closed, redacted, and non-persistent"
   const script = read("docs/assets/javascripts/analyzer-command-builder.js");
 
   assert.doesNotMatch(page, /<style>|<script>/);
-  assert.match(page, /page_scripts:\n  - assets\/javascripts\/analyzer-command-builder\.js/);
+  assert.match(page, /page_scripts:\n(?:  - [^\n]+\n)*  - assets\/javascripts\/analyzer-command-builder\.js/);
   assert.match(page, /type="password"/);
   assert.doesNotMatch(page.match(/<input id="observer-ssid"[^>]*>/)?.[0] || "", /\svalue=/);
   assert.match(script, /safeCliToken/);
@@ -251,8 +255,9 @@ test("standalone builder is external, fail-closed, redacted, and non-persistent"
 test("review-first host setup precedes remote execution and includes rollback", () => {
   const source = read("docs/analyzer/builds/mctomqtt.md");
   const review = source.indexOf("### 1. Download and inspect the helper");
-  const oneLiner = source.indexOf("bash <(curl -fsSL");
-  assert.ok(review >= 0 && oneLiner > review);
+  const runHelper = source.indexOf("bash add-meshcore-ca-broker.sh");
+  assert.ok(review >= 0 && runHelper > review);
+  assert.doesNotMatch(source, /bash <\(curl/);
   assert.match(source, /not pinned|pinned release checksum/i);
   assert.match(source, /--no-restart.*not a dry run/i);
   assert.match(source, /\.bak\.<timestamp>/);

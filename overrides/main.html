@@ -39,7 +39,7 @@
   {{ super() }}
   {% if page and page.meta %}
     {% for script in page.meta.page_scripts or [] %}
-      <script src="{{ script | url }}"></script>
+      <script src="{{ script | url }}" defer></script>
     {% endfor %}
     {% for module in page.meta.page_modules or [] %}
       <script type="module" src="{{ module | url }}"></script>

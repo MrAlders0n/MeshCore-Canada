@@ -15,7 +15,8 @@ destructive: true
 page_styles:
   - assets/styles/analyzer.css?v=20260722-2
 page_scripts:
-  - assets/javascripts/analyzer-command-builder.js?v=20260722-2
+  - assets/javascripts/radio-profiles.js?v=20260904-1
+  - assets/javascripts/analyzer-command-builder.js?v=20260904-1
 ---
 
 # Configurer un observateur MQTT autonome
@@ -100,6 +101,10 @@ propre à la communauté, la configuration canadienne de départ est :
 
 ### 3. Générer les commandes
 
+Ces commandes remplacent les emplacements MQTT **1 et 2**. S’ils servent déjà à un
+autre réseau, ajoutez le Canada dans des emplacements libres avec **Configure via USB**.
+Les emplacements 3 à 6 restent inchangés. La répétition est désactivée par défaut.
+
 L’interface en ligne de commande n’a pas de règle générale documentée pour les
 guillemets. Le générateur rejette les espaces, les guillemets, les barres
 obliques inverses, les caractères de contrôle et les autres valeurs Wi-Fi
@@ -146,11 +151,14 @@ représenter de façon sûre.
     <label class="mc-command-field--wide">
       <strong>Trafic du réseau maillé</strong>
       <select id="observer-repeat">
-        <option value="on">Observer et relayer les paquets</option>
-        <option value="off">Observer seulement</option>
+        <option value="off">Observer seulement (recommandé)</option>
+        <option value="on">Observer et relayer — à coordonner localement</option>
       </select>
     </label>
   </div>
+  <label><strong>Réseau radio</strong><select id="observer-radio"><option value="keep">Conserver les réglages actuels</option></select></label>
+  <p>Choisissez le profil de votre communauté. L’emplacement seul ne détermine pas les réglages radio.</p>
+  <label><strong>Taille de l’identifiant d’annonce</strong><select id="observer-hash"><option value="keep">Conserver les réglages actuels</option><option value="2">3 octets</option><option value="1">2 octets</option><option value="0">1 octet</option></select></label>
   <p class="mc-command-notice" id="observer-location-status" aria-live="polite">Chargement des suggestions d’emplacements canadiens…</p>
   <p class="mc-command-notice" id="observer-secret-help">Le SSID et le mot de passe restent uniquement dans cette page. Ils sont effacés lorsque vous la quittez et masqués dans l’aperçu jusqu’à ce que vous choisissiez de les afficher.</p>
   <div class="mc-command-errors" id="observer-command-errors" role="alert" aria-live="assertive"></div>
@@ -175,23 +183,17 @@ sensibles :
 
 ```text
 set name YOW-Repeater-01
-set radio 910.525,62.5,7,5
-set path.hash.mode 2
 set mqtt.iata YOW
 set wifi.powersave none
 set mqtt1.preset meshcore-ca-1
 set mqtt2.preset meshcore-ca-2
-set mqtt3.preset none
-set mqtt4.preset none
-set mqtt5.preset none
-set mqtt6.preset none
 set mqtt.status on
 set mqtt.packets on
 set mqtt.raw off
 set mqtt.rx on
 set mqtt.tx advert
 set bridge.enabled on
-set repeat on
+set repeat off
 advert
 ```
 
@@ -233,7 +235,7 @@ La carte est correctement configurée lorsque :
 - le code d’emplacement est exact;
 - les préréglages sont `meshcore-ca-1` et `meshcore-ca-2`;
 - la publication des paquets et le mode pont sont activés;
-- le mode de hachage des chemins est `2`.
+- le profil radio et la taille d’identifiant correspondent à vos choix.
 
 ## Vérifier dans CoreScope { #check-in-corescope }
 
