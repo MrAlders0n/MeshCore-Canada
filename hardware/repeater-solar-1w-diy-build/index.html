@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../assets/styles/components.css?v=20260728-1">
     
+      <link rel="stylesheet" href="../../assets/styles/network-status.css?v=20260905-1">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -127,6 +129,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -156,6 +159,32 @@
         </div>
       </div>
     </div>
+    
+<details class="mc-network" data-network-summary>
+  <summary aria-label="Network statistics">
+    <span class="mc-network__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 3.93A9.97 9.97 0 0 0 2 11c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.94 7.94 0 0 1 4 11c0-2.21.89-4.22 2.34-5.66zm14.14 0-1.41 1.41A7.96 7.96 0 0 1 20 11c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.97 9.97 0 0 0 22 11c0-2.76-1.12-5.26-2.93-7.07M7.76 6.76A5.98 5.98 0 0 0 6 11c0 1.65.67 3.15 1.76 4.24l1.41-1.41A4 4 0 0 1 8 11c0-1.11.45-2.11 1.17-2.83zm8.48 0-1.41 1.41A4 4 0 0 1 16 11c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 11c0-1.65-.67-3.15-1.76-4.24M12 9a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2m-1 6v4h-1a1 1 0 0 0-1 1H2v2h7a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1h7v-2h-7a1 1 0 0 0-1-1h-1v-4z"/></svg></span>
+    <span class="mc-network__label">Network</span>
+    <span class="mc-network__total" data-network-total>—</span>
+  </summary>
+  <div class="mc-network__panel">
+    <p><strong>Devices known to Beacon</strong></p>
+    <dl>
+      <dt>Repeaters</dt><dd data-network-count="repeaters">—</dd>
+      <dt>Companions</dt><dd data-network-count="companions">—</dd>
+      <dt>Room servers</dt><dd data-network-count="rooms">—</dd>
+      <dt>Sensors</dt><dd data-network-count="sensors">—</dd>
+      <dt data-network-other hidden>Other</dt><dd data-network-count="other" data-network-other hidden>—</dd>
+    </dl>
+    <p class="mc-network__period" data-network-period>Last 24 hours</p>
+    <dl>
+      <dt>Active observers</dt><dd data-network-count="observers">—</dd>
+      <dt>Observed areas</dt><dd data-network-count="areas">—</dd>
+      <dt>Packets</dt><dd data-network-count="packets">—</dd>
+    </dl>
+    <p class="mc-network__updated" data-network-updated role="status" aria-live="polite">Open Beacon for current totals.</p>
+    <a href="https://dev.meshcore.ca/">Open Beacon ↗</a>
+  </div>
+</details>
     
       
         <form class="md-header__option" data-md-component="palette">
@@ -4207,6 +4236,8 @@ If this experiment is approved and commissioned, complete the
         <script src="../../assets/javascripts/i18n-runtime.js?v=20260829-1"></script>
       
         <script src="../../assets/javascripts/bootstrap.js?v=20260821-1"></script>
+      
+        <script src="../../assets/javascripts/network-status.js?v=20260905-1"></script>
       
     
   
